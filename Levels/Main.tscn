@@ -1,3 +1,97 @@
-[gd_scene format=3 uid="uid://dheajklvrau7e"]
+[gd_scene load_steps=8 format=3 uid="uid://dheajklvrau7e"]
+
+[ext_resource type="PackedScene" uid="uid://deur6yjprct37" path="res://Scenes/Dialogue System Scenes/player.tscn" id="1_1q67n"]
+[ext_resource type="PackedScene" uid="uid://ko7kk35a235d" path="res://Scenes/Dialogue System Scenes/basic_dialogue_interactable.tscn" id="2_bl2xt"]
+[ext_resource type="PackedScene" uid="uid://df0flrxdx2bat" path="res://Scenes/Dialogue System Scenes/interaction_with_animation.tscn" id="3_yy7ei"]
+[ext_resource type="Texture2D" uid="uid://wllqtmf2884x" path="res://Assets/lumaWalk.PNG" id="4_b7uiw"]
+
+[sub_resource type="Animation" id="Animation_ao84u"]
+resource_name = "new_animation"
+length = 2.5
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("animationDialougue-test2")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.06666667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"start_dialogue_from_animation"
+}]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("LumaWalk:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.9, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(50, -42), Vector2(118.505, -42)]
+}
+
+[sub_resource type="Animation" id="Animation_r6vcu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LumaWalk:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(50, -42)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6hska"]
+_data = {
+&"RESET": SubResource("Animation_r6vcu"),
+&"test2": SubResource("Animation_ao84u")
+}
 
 [node name="Main" type="Node2D"]
+
+[node name="player" parent="." instance=ExtResource("1_1q67n")]
+position = Vector2(-6, 8)
+
+[node name="Camera2D" type="Camera2D" parent="player"]
+zoom = Vector2(3, 3)
+
+[node name="basicDialogue-test1" parent="." instance=ExtResource("2_bl2xt")]
+position = Vector2(72, 19)
+dialogue_name = "test1"
+
+[node name="animationDialougue-test2" parent="." node_paths=PackedStringArray("animation_player") instance=ExtResource("3_yy7ei")]
+position = Vector2(50, -31)
+animation_player = NodePath("../AnimationPlayer")
+dialogue_name = "test2"
+animation_name = "test2"
+indicator_pos = Vector2(0, -35.225)
+
+[node name="basicDialogue-test3" parent="." instance=ExtResource("2_bl2xt")]
+position = Vector2(-12, -68)
+dialogue_name = "test3"
+sprite_texture = ExtResource("4_b7uiw")
+hFrames = 4
+vFrames = 4
+interaction_pos = Vector2(0, 10.475)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_6hska")
+}
+
+[node name="LumaWalk" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(50, -42)
+texture = ExtResource("4_b7uiw")
+hframes = 4
+vframes = 4
+frame = 3

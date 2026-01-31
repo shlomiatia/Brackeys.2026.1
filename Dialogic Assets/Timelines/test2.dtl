@@ -1,0 +1,7 @@
+join testCharacter center
+testCharacter: Hello.
+testCharacter: This is the second test.
+testCharacter: I wil now trigger an animation.
+[signal arg="resumetest2"]
+leave testCharacter
+[end_timeline]
