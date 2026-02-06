@@ -29,7 +29,6 @@ func _on_interacted():
 
 # allows the player to move/resets interaction state when dialogue ends
 func _on_timeline_ended():
-	prints("_on_timeline_ended", name)
 	if Global.interaction_state == 'basic':
 		if is_inside_tree():
 			# timeout needed so the interaction state doesn't reset too quickly

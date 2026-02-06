@@ -1,10 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://dheajklvrau7e"]
+[gd_scene load_steps=10 format=3 uid="uid://dheajklvrau7e"]
 
 [ext_resource type="PackedScene" uid="uid://deur6yjprct37" path="res://Scenes/Dialogue System Scenes/player.tscn" id="1_1q67n"]
 [ext_resource type="PackedScene" uid="uid://ko7kk35a235d" path="res://Scenes/Dialogue System Scenes/basic_dialogue_interactable.tscn" id="2_bl2xt"]
 [ext_resource type="PackedScene" uid="uid://df0flrxdx2bat" path="res://Scenes/Dialogue System Scenes/interaction_with_animation.tscn" id="3_yy7ei"]
 [ext_resource type="Texture2D" uid="uid://wllqtmf2884x" path="res://assets/lumaWalk.PNG" id="4_b7uiw"]
-[ext_resource type="PackedScene" uid="uid://bmv00lqu5yns1" path="res://Scenes/Interactable/Interactable.tscn" id="5_bl2xt"]
+[ext_resource type="PackedScene" uid="uid://cfgp45xbt467i" path="res://Scenes/Conversation/Conversation.tscn" id="5_bl2xt"]
 
 [sub_resource type="Animation" id="Animation_r6vcu"]
 length = 0.001
@@ -59,11 +59,7 @@ _data = {
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bl2xt"]
 resource_local_to_scene = true
-size = Vector2(16, 27)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yy7ei"]
-resource_local_to_scene = true
-size = Vector2(12, 29)
+size = Vector2(12, 30.5)
 
 [node name="Main" type="Node2D"]
 y_sort_enabled = true
@@ -106,30 +102,35 @@ hframes = 4
 vframes = 4
 frame = 3
 
-[node name="Interactable-test1" parent="." instance=ExtResource("5_bl2xt")]
-position = Vector2(-75, 10)
+[node name="Node2D-test2" type="Node2D" parent="."]
+position = Vector2(-83, 1)
 
-[node name="CollisionShape2D" parent="Interactable-test1" index="0"]
-shape = SubResource("RectangleShape2D_bl2xt")
-
-[node name="Indicator" parent="Interactable-test1" index="1"]
-position = Vector2(0, -19.000002)
-
-[node name="Sprite2D-test2" type="Sprite2D" parent="."]
-position = Vector2(-74, -41)
+[node name="Sprite2D" type="Sprite2D" parent="Node2D-test2"]
+position = Vector2(0, -17)
 texture = ExtResource("4_b7uiw")
 hframes = 4
 vframes = 4
 frame = 1
 
-[node name="Interactable" parent="Sprite2D-test2" instance=ExtResource("5_bl2xt")]
+[node name="Node2D-test3" type="Node2D" parent="."]
+position = Vector2(2, 59)
 
-[node name="CollisionShape2D" parent="Sprite2D-test2/Interactable" index="0"]
-position = Vector2(0, 2.5)
-shape = SubResource("RectangleShape2D_yy7ei")
+[node name="Sprite2D" type="Sprite2D" parent="Node2D-test3"]
+position = Vector2(-1, -17)
+texture = ExtResource("4_b7uiw")
+hframes = 4
+vframes = 4
+frame = 2
 
-[node name="Indicator" parent="Sprite2D-test2/Interactable" index="1"]
-position = Vector2(0, -21)
+[node name="Conversation" parent="Node2D-test3/Sprite2D" instance=ExtResource("5_bl2xt")]
+dialogue_name = "test3"
 
-[editable path="Interactable-test1"]
-[editable path="Sprite2D-test2/Interactable"]
+[node name="CollisionShape2D" parent="Node2D-test3/Sprite2D/Conversation/Interactable" index="0"]
+position = Vector2(0, 1.75)
+shape = SubResource("RectangleShape2D_bl2xt")
+
+[node name="Indicator" parent="Node2D-test3/Sprite2D/Conversation/Interactable" index="1"]
+position = Vector2(0, -22)
+
+[editable path="Node2D-test3/Sprite2D/Conversation"]
+[editable path="Node2D-test3/Sprite2D/Conversation/Interactable"]
