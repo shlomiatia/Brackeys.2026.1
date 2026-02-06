@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://ddkxp2lfvnj8g" path="res://assets/indicator.PNG" id="1_rve68"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c4toh"]
+resource_local_to_scene = true
+size = Vector2(16, 27)
 
 [node name="Interactable" type="StaticBody2D" groups=["interactables"]]
 collision_layer = 2

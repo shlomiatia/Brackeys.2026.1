@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://df0flrxdx2bat"]
 
 [ext_resource type="PackedScene" uid="uid://r5c43cdno8uh" path="res://Scenes/Dialogue System Scenes/base_interactable.tscn" id="1_l0ndx"]
-[ext_resource type="Script" uid="uid://wrx76l3qa7wi" path="res://scripts/Dialogue System Scripts/interaction_with_animation.gd" id="2_7qpoa"]
+[ext_resource type="Script" uid="uid://wrx76l3qa7wi" path="res://Scripts/Dialogue System Scripts/interaction_with_animation.gd" id="2_7qpoa"]
 
 [node name="interactionWithAnimation" instance=ExtResource("1_l0ndx")]
 script = ExtResource("2_7qpoa")
