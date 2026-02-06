@@ -10,7 +10,7 @@ func _ready() -> void:
 func _on_interacted() -> void:
 	Global.player_can_move = false
 	Global.player_can_interact = false
-	
+
 	Dialogic.start(dialogue_name)
 	await Dialogic.timeline_ended
 	

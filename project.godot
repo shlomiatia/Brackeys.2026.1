@@ -28,7 +28,8 @@ directories/dch_directory={
 directories/dtl_directory={
 "test1": "res://Dialogic Assets/Timelines/test1.dtl",
 "test2": "res://Dialogic Assets/Timelines/test2.dtl",
-"test3": "res://Dialogic Assets/Timelines/test3.dtl"
+"test3": "res://Dialogic Assets/Timelines/test3.dtl",
+"test4": "res://Dialogic Assets/Timelines/test4.dtl"
 }
 layout/style_directory={}
 

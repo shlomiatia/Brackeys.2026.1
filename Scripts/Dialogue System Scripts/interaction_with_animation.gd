@@ -18,7 +18,7 @@ func _ready() -> void:
 # calls update_properties
 func _process(_delta: float) -> void:
 	super._process(_delta)
-	if Engine.is_editor_hint(): 
+	if Engine.is_editor_hint():
 		super.update_properties() # super needed to reference functions in base class
 
 # start interaction sequence with animation
