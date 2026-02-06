@@ -3,6 +3,7 @@ extends CharacterBody2D
 const SPEED: float = 100.0
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var area_2d = $Area2D
 
 # allows for setting the direction the sprite is facing every scene
 @export var current_direction: String = "Bck"

@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bmv00lqu5yns1"]
+
+[ext_resource type="Script" uid="uid://d4jqp3b23a3ab" path="res://Scenes/Interactable/interactable.gd" id="1_c4toh"]
+[ext_resource type="Texture2D" uid="uid://ddkxp2lfvnj8g" path="res://assets/indicator.PNG" id="1_rve68"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c4toh"]
+
+[node name="Interactable" type="StaticBody2D" groups=["interactables"]]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_c4toh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_c4toh")
+
+[node name="Indicator" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(0.289, 0.289)
+texture = ExtResource("1_rve68")

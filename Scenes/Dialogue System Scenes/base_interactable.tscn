@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://r5c43cdno8uh"]
 
 [ext_resource type="Script" uid="uid://cao8prv6vlat3" path="res://Scripts/Dialogue System Scripts/base_interactable.gd" id="1_tn7xj"]
-[ext_resource type="Texture2D" uid="uid://ddkxp2lfvnj8g" path="res://Assets/indicator.PNG" id="2_bmah6"]
+[ext_resource type="Texture2D" uid="uid://ddkxp2lfvnj8g" path="res://assets/indicator.PNG" id="2_bmah6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bmah6"]
 
