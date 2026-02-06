@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://wllqtmf2884x"
-path="res://.godot/imported/lumaWalk.PNG-229d78cb8a9a084e635d167e4914057a.ctex"
+path="res://.godot/imported/lumaWalk.PNG-abfc389f322bc5efdd48ef93f1770e73.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/lumaWalk.PNG"
-dest_files=["res://.godot/imported/lumaWalk.PNG-229d78cb8a9a084e635d167e4914057a.ctex"]
+source_file="res://assets/lumaWalk.PNG"
+dest_files=["res://.godot/imported/lumaWalk.PNG-abfc389f322bc5efdd48ef93f1770e73.ctex"]
 
 [params]
 

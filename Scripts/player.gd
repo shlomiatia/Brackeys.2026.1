@@ -24,7 +24,6 @@ func _physics_process(_delta: float) -> void:
 			# sets player direction according to the last direction the player was moving in
 			current_direction = return_dir(direction)
 			
-			position = position.round()
 		else: # stop movement/walking if player isn't moving
 			velocity = velocity.move_toward(Vector2.ZERO, SPEED)
 			animated_sprite.play("idle" + current_direction)
@@ -35,7 +34,7 @@ func _physics_process(_delta: float) -> void:
 		velocity = Vector2.ZERO
 		
 # returns a direction depending on the direction the player is moving
-func return_dir(dir: Vector2) -> String: 
+func return_dir(dir: Vector2) -> String:
 	if abs(dir.x) > abs(dir.y):
 		return "L" if dir.x < 0 else "R"
 	else:
