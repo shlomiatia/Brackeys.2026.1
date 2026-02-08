@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dheajklvrau7e"]
+[gd_scene load_steps=16 format=3 uid="uid://dheajklvrau7e"]
 
 [ext_resource type="PackedScene" uid="uid://deur6yjprct37" path="res://Scenes/Dialogue System Scenes/player.tscn" id="1_1q67n"]
 [ext_resource type="PackedScene" uid="uid://ko7kk35a235d" path="res://Scenes/Dialogue System Scenes/basic_dialogue_interactable.tscn" id="2_bl2xt"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://wllqtmf2884x" path="res://Assets/lumaWalk.PNG" id="4_b7uiw"]
 [ext_resource type="PackedScene" uid="uid://cfgp45xbt467i" path="res://Scenes/Conversation/Conversation.tscn" id="5_bl2xt"]
 [ext_resource type="Script" uid="uid://bifm2xxvh0bp" path="res://Levels/node_2d_test_2.gd" id="5_yy7ei"]
+[ext_resource type="AudioStream" uid="uid://46k2glcyptho" path="res://audio/sfx/whistle sfx.wav" id="6_b7uiw"]
 
 [sub_resource type="Animation" id="Animation_r6vcu"]
 length = 0.001
@@ -112,6 +113,8 @@ position = Vector2(-6, 8)
 [node name="Camera2D" type="Camera2D" parent="player"]
 zoom = Vector2(3, 3)
 
+[node name="AudioListener2D" type="AudioListener2D" parent="player"]
+
 [node name="basicDialogue-test1" parent="." instance=ExtResource("2_bl2xt")]
 position = Vector2(72, 19)
 dialogue_name = "test1"
@@ -154,6 +157,13 @@ texture = ExtResource("4_b7uiw")
 hframes = 4
 vframes = 4
 frame = 1
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Node2D-test4/Sprite2D"]
+stream = ExtResource("6_b7uiw")
+autoplay = true
+max_distance = 154.0
+attenuation = 2.2191372
+bus = &"SFX"
 
 [node name="Conversation" parent="Node2D-test4" instance=ExtResource("5_bl2xt")]
 position = Vector2(0, -15)
