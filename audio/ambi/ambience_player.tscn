@@ -1,0 +1,41 @@
+[gd_scene load_steps=9 format=3 uid="uid://c56lmfbd2pp3g"]
+
+[ext_resource type="Script" uid="uid://d2mq0n1m42gvb" path="res://audio/ambi/AmbienceArea.gd" id="1_l8hbc"]
+[ext_resource type="Script" uid="uid://bhl7po5o7131j" path="res://audio/ambi/ambi_player.gd" id="1_q3dwg"]
+[ext_resource type="AudioStream" uid="uid://bj2wjalu4th0e" path="res://audio/ambi/cave drip.wav" id="2_aqn3o"]
+[ext_resource type="AudioStream" uid="uid://bxxb8m0cyj42t" path="res://audio/ambi/cave wind.wav" id="3_hn87s"]
+[ext_resource type="AudioStream" uid="uid://ci8srwcjm5ehf" path="res://audio/ambi/wind.wav" id="4_ukuwo"]
+[ext_resource type="AudioStream" uid="uid://gejpje1ci2dc" path="res://audio/ambi/birds.wav" id="5_nx2bt"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_q3dwg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l8hbc"]
+
+[node name="AmbiencePlayer" type="Node2D"]
+
+[node name="Areas" type="Node2D" parent="."]
+
+[node name="Cave" type="Area2D" parent="Areas"]
+script = ExtResource("1_l8hbc")
+streams = Array[AudioStream]([ExtResource("2_aqn3o"), ExtResource("3_hn87s")])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/Cave"]
+shape = SubResource("CircleShape2D_q3dwg")
+
+[node name="Forest" type="Area2D" parent="Areas"]
+script = ExtResource("1_l8hbc")
+streams = Array[AudioStream]([ExtResource("4_ukuwo"), ExtResource("5_nx2bt")])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/Forest"]
+shape = SubResource("CircleShape2D_l8hbc")
+
+[node name="Layers" type="Node2D" parent="."]
+script = ExtResource("1_q3dwg")
+
+[node name="Layer 1" type="AudioStreamPlayer2D" parent="Layers"]
+autoplay = true
+bus = &"Ambi"
+script = ExtResource("1_q3dwg")
+
+[node name="Layer 2" type="AudioStreamPlayer2D" parent="Layers"]
+autoplay = true

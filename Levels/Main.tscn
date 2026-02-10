@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dheajklvrau7e"]
+[gd_scene load_steps=17 format=3 uid="uid://dheajklvrau7e"]
 
 [ext_resource type="PackedScene" uid="uid://deur6yjprct37" path="res://Scenes/Dialogue System Scenes/player.tscn" id="1_1q67n"]
 [ext_resource type="PackedScene" uid="uid://ko7kk35a235d" path="res://Scenes/Dialogue System Scenes/basic_dialogue_interactable.tscn" id="2_bl2xt"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cfgp45xbt467i" path="res://Scenes/Conversation/Conversation.tscn" id="5_bl2xt"]
 [ext_resource type="Script" uid="uid://bifm2xxvh0bp" path="res://Levels/node_2d_test_2.gd" id="5_yy7ei"]
 [ext_resource type="AudioStream" uid="uid://46k2glcyptho" path="res://audio/sfx/whistle sfx.wav" id="6_b7uiw"]
+[ext_resource type="PackedScene" uid="uid://c56lmfbd2pp3g" path="res://audio/ambi/ambience_player.tscn" id="8_ao84u"]
 
 [sub_resource type="Animation" id="Animation_r6vcu"]
 length = 0.001
@@ -200,6 +201,9 @@ shape = SubResource("RectangleShape2D_bl2xt")
 
 [node name="Indicator" parent="Node2D-test5/Sprite2D/Conversation/Interactable" index="1"]
 position = Vector2(0, -22)
+
+[node name="AmbiencePlayer" parent="." instance=ExtResource("8_ao84u")]
+position = Vector2(-107, 61)
 
 [editable path="Node2D-test4/Conversation"]
 [editable path="Node2D-test4/Conversation/Interactable"]
