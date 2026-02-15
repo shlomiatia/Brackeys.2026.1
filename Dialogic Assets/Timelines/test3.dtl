@@ -1,5 +1,0 @@
-join testCharacter center
-testCharacter: Hello.
-testCharacter: This is the third test.
-leave testCharacter
-[end_timeline]
