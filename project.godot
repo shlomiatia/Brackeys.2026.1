@@ -26,6 +26,11 @@ directories/dch_directory={
 "testCharacter": "res://Dialogic Assets/Charactesr/testCharacter.dch"
 }
 directories/dtl_directory={
+"coin_dialog": "res://Dialogic Assets/Timelines/coin_dialog.dtl",
+"door_locked": "res://Dialogic Assets/Timelines/door_locked.dtl",
+"door_locked_sound": "res://Dialogic Assets/Timelines/door_locked_sound.dtl",
+"solved_dialog": "res://Dialogic Assets/Timelines/solved_dialog.dtl",
+"start_dialog": "res://Dialogic Assets/Timelines/start_dialog.dtl",
 "test1": "res://Dialogic Assets/Timelines/test1.dtl",
 "test2": "res://Dialogic Assets/Timelines/test2.dtl",
 "test3": "res://Dialogic Assets/Timelines/test3.dtl",
