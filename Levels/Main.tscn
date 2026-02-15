@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://deur6yjprct37" path="res://Scenes/Player/player.tscn" id="1_1q67n"]
 [ext_resource type="PackedScene" uid="uid://dnwug4pxdwecg" path="res://Scenes/Utils/Fade.tscn" id="1_bl2xt"]
-[ext_resource type="Texture2D" uid="uid://wllqtmf2884x" path="res://assets/lumaWalk.PNG" id="4_b7uiw"]
+[ext_resource type="Texture2D" uid="uid://wllqtmf2884x" path="res://Assets/lumaWalk.PNG" id="4_b7uiw"]
 [ext_resource type="PackedScene" uid="uid://cfgp45xbt467i" path="res://Scenes/Conversation/Conversation.tscn" id="5_bl2xt"]
 [ext_resource type="Script" uid="uid://bifm2xxvh0bp" path="res://Levels/node_2d_test_2.gd" id="5_yy7ei"]
 
