@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://jhevw304dkp4" path="res://Scenes/Player/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://wllqtmf2884x" path="res://Assets/lumaWalk.PNG" id="2_qhqgy"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_dqkch"]
-radius = 5.09902
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a3d8c"]
+size = Vector2(10, 29)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qlg0r"]
 atlas = ExtResource("2_qhqgy")
@@ -197,8 +197,8 @@ y_sort_enabled = true
 script = ExtResource("1_g2els")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -5)
-shape = SubResource("CircleShape2D_dqkch")
+position = Vector2(0, -14.5)
+shape = SubResource("RectangleShape2D_a3d8c")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 y_sort_enabled = true
