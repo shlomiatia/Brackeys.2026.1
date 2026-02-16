@@ -22,4 +22,5 @@ scale = Vector2(1e-05, 1e-05)
 texture = ExtResource("1_money")
 
 [node name="Conversation" parent="Shadow" instance=ExtResource("2_conversation")]
+dialogue_name = "ball_pickup"
 interactable_disabled = true

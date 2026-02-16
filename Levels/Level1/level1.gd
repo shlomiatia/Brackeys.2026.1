@@ -41,3 +41,4 @@ func _on_dialogic_signal(argument: String) -> void:
             if not door_interacted:
                 door_interacted = true
                 ball.fall()
+                _update_conversation_dialogues()
