@@ -6,7 +6,7 @@ var door_interacted: bool = false
 # Node references
 @onready var door: Sprite2D = $Objects/Door
 @onready var door_conversation: Conversation = $Objects/Door/Conversation
-@onready var ball = $Objects/Door/Ball
+@onready var ball = $Objects/Ball
 
 func _ready() -> void:
     Global.can_control = false
