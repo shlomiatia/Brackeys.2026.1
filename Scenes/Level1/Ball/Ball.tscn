@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://d22q58gqy0syp"]
+[gd_scene load_steps=16 format=3 uid="uid://d22q58gqy0syp"]
 
 [ext_resource type="Script" uid="uid://r0il7tu3juii" path="res://Scenes/Level1/Ball/ball.gd" id="1_ball_script"]
 [ext_resource type="PackedScene" uid="uid://cfgp45xbt467i" path="res://Scenes/Conversation/Conversation.tscn" id="2_conversation"]
@@ -10,6 +10,10 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_shadow"]
 shader = ExtResource("3_shadow_shader")
 shader_parameter/shadow_color = Color(0.2, 0.2, 0.2, 0.5)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1kd78"]
+radius = 8.0
+height = 48.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fr8b2"]
 atlas = ExtResource("5_1kd78")
@@ -78,10 +82,16 @@ dialogue_name = "ball_pickup"
 interactable_disabled = true
 
 [node name="Hole" type="Sprite2D" parent="."]
-visible = false
 texture = ExtResource("6_qxpdj")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="Hole"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hole/StaticBody2D"]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_1kd78")
+disabled = true
+
+[node name="DestroyFloor" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -10)
 sprite_frames = SubResource("SpriteFrames_r18ku")
 frame = 5

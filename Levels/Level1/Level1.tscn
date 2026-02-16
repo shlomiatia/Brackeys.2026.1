@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://c5lv2xaxlt7x1"]
+[gd_scene load_steps=18 format=3 uid="uid://c5lv2xaxlt7x1"]
 
 [ext_resource type="Script" uid="uid://bqkavbevvdyxc" path="res://Levels/Level1/level1.gd" id="1_a1y0i"]
 [ext_resource type="PackedScene" uid="uid://dnwug4pxdwecg" path="res://Scenes/Utils/Fade.tscn" id="2_renp8"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cfgp45xbt467i" path="res://Scenes/Conversation/Conversation.tscn" id="6_4ipag"]
 [ext_resource type="PackedScene" uid="uid://d22q58gqy0syp" path="res://Scenes/Level1/Ball/Ball.tscn" id="7_renp8"]
 [ext_resource type="Texture2D" uid="uid://cclfrb70ym7xi" path="res://Assets/destroyFloor.PNG" id="8_renp8"]
+[ext_resource type="Texture2D" uid="uid://dgtkntcg4oxkq" path="res://Assets/money.png" id="10_7ouqh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b1g7e"]
 atlas = ExtResource("8_renp8")
@@ -95,3 +96,15 @@ frame_progress = 1.0
 [node name="ShakingCamera" parent="." instance=ExtResource("5_b1g7e")]
 position = Vector2(-6, 8)
 zoom = Vector2(3, 3)
+
+[node name="Knife" type="Sprite2D" parent="."]
+position = Vector2(180, -36)
+texture = ExtResource("10_7ouqh")
+
+[node name="Conversation" parent="Knife" instance=ExtResource("6_4ipag")]
+
+[node name="Rope" type="Sprite2D" parent="."]
+position = Vector2(-178, 39)
+texture = ExtResource("10_7ouqh")
+
+[node name="Conversation" parent="Rope" instance=ExtResource("6_4ipag")]
