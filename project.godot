@@ -27,10 +27,11 @@ directories/dch_directory={
 "testCharacter": "res://Dialogic Assets/Charactesr/testCharacter.dch"
 }
 directories/dtl_directory={
-"ball_pickup": "res://Dialogic Assets/Timelines/ball_pickup.dtl",
-"door_locked": "res://Dialogic Assets/Timelines/door_locked.dtl",
-"door_locked_sound": "res://Dialogic Assets/Timelines/door_locked_sound.dtl",
-"start_dialog": "res://Dialogic Assets/Timelines/start_dialog.dtl"
+"level1_ball": "res://Dialogic Assets/Timelines/level1_ball.dtl",
+"level1_door": "res://Dialogic Assets/Timelines/level1_door.dtl",
+"level1_door_loop": "res://Dialogic Assets/Timelines/level1_door_loop.dtl",
+"level1_hole": "res://Dialogic Assets/Timelines/level1_hole.dtl",
+"level1_intro": "res://Dialogic Assets/Timelines/level1_intro.dtl"
 }
 layout/style_directory={}
 

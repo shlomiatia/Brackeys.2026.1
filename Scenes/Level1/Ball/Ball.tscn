@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=3 uid="uid://d22q58gqy0syp"]
 
-[ext_resource type="Script" uid="uid://r0il7tu3juii" path="res://Scenes/Level1/Ball/ball.gd" id="1_ball_script"]
+[ext_resource type="Script" uid="uid://r0il7tu3juii" path="res://Scenes/Level1/Ball/Ball.gd" id="1_ball_script"]
 [ext_resource type="PackedScene" uid="uid://cfgp45xbt467i" path="res://Scenes/Conversation/Conversation.tscn" id="2_conversation"]
 [ext_resource type="Texture2D" uid="uid://257la1wtdlsc" path="res://Assets/largeBall.PNG" id="2_qxpdj"]
 [ext_resource type="Shader" uid="uid://sygixmimdiwj" path="res://Shaders/shadow.gdshader" id="3_shadow_shader"]
@@ -78,6 +78,7 @@ scale = Vector2(1e-05, 1e-05)
 texture = ExtResource("2_qxpdj")
 
 [node name="Hole" type="Sprite2D" parent="."]
+visible = false
 texture = ExtResource("6_qxpdj")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Hole"]
@@ -94,5 +95,5 @@ frame = 5
 frame_progress = 1.0
 
 [node name="Conversation" parent="." instance=ExtResource("2_conversation")]
-dialogue_name = "ball_pickup"
+dialogue_name = "level1_ball"
 interactable_disabled = true
