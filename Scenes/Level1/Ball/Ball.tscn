@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://d22q58gqy0syp"]
 
-[ext_resource type="Script" path="res://Scenes/Level1/Ball/Ball.gd" id="1_ball_script"]
+[ext_resource type="Script" uid="uid://d1yc4en58stqs" path="res://Scenes/Level1/Ball/Ball.gd" id="1_ball_script"]
 [ext_resource type="Texture2D" uid="uid://dgtkntcg4oxkq" path="res://Assets/money.png" id="1_money"]
 [ext_resource type="PackedScene" uid="uid://cfgp45xbt467i" path="res://Scenes/Conversation/Conversation.tscn" id="2_conversation"]
 [ext_resource type="Shader" uid="uid://sygixmimdiwj" path="res://Shaders/shadow.gdshader" id="3_shadow_shader"]

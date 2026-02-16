@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dheajklvrau7e"]
+[gd_scene load_steps=8 format=3 uid="uid://c5lv2xaxlt7x1"]
 
 [ext_resource type="Script" uid="uid://bqkavbevvdyxc" path="res://Levels/Level1/level1.gd" id="1_a1y0i"]
 [ext_resource type="PackedScene" uid="uid://dnwug4pxdwecg" path="res://Scenes/Utils/Fade.tscn" id="2_renp8"]
@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://c6kqne8lw34d6" path="res://Assets/sheep.png" id="5_e1uqi"]
 [ext_resource type="PackedScene" uid="uid://cfgp45xbt467i" path="res://Scenes/Conversation/Conversation.tscn" id="6_4ipag"]
 [ext_resource type="PackedScene" uid="uid://d22q58gqy0syp" path="res://Scenes/Level1/Ball/Ball.tscn" id="7_renp8"]
-[ext_resource type="Texture2D" uid="uid://dgtkntcg4oxkq" path="res://Assets/money.png" id="7_umoym"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_a1y0i")
@@ -41,11 +40,3 @@ indicator_offset = Vector2(0, -14)
 
 [node name="Ball" parent="Objects/Door" instance=ExtResource("7_renp8")]
 position = Vector2(123, 127)
-
-[node name="RealDoor" type="Sprite2D" parent="Objects"]
-position = Vector2(174, 95)
-texture = ExtResource("7_umoym")
-
-[node name="Conversation" parent="Objects/RealDoor" instance=ExtResource("6_4ipag")]
-interactable_size = Vector2(16, 16)
-indicator_offset = Vector2(0, -13)
