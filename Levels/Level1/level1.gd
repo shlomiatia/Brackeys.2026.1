@@ -9,8 +9,7 @@ var door_interacted: bool = false
 @onready var ball = $Objects/Door/Ball
 
 func _ready() -> void:
-    Global.player_can_move = false
-    Global.player_can_interact = false
+    Global.can_control = false
 
     # Connect to Dialogic signals
     Dialogic.signal_event.connect(_on_dialogic_signal)

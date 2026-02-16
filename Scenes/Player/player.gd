@@ -16,7 +16,7 @@ func _ready() -> void:
 
 # get the input direction and handle movement
 func _physics_process(_delta: float) -> void:
-    if Global.player_can_move: # only allow movement if the player can move
+    if Global.can_control: # only allow movement/interaction if the player can control
         var direction: Vector2 = Vector2(Input.get_axis("move_left", "move_right"),
         Input.get_axis("move_up", "move_down")).normalized()
         if direction:
@@ -37,7 +37,7 @@ func _physics_process(_delta: float) -> void:
         velocity = Vector2.ZERO
     
     # Handle interaction input
-    if Input.is_action_just_pressed("interact") and Global.player_can_interact:
+    if Input.is_action_just_pressed("interact") and Global.can_control:
         _try_interact()
         
 # returns a direction depending on the direction the player is moving
