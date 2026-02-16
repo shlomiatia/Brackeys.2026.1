@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://d22q58gqy0syp"]
+
+[ext_resource type="Script" path="res://Scenes/Level1/Ball/Ball.gd" id="1_ball_script"]
+[ext_resource type="Texture2D" uid="uid://dgtkntcg4oxkq" path="res://Assets/money.png" id="1_money"]
+[ext_resource type="PackedScene" uid="uid://cfgp45xbt467i" path="res://Scenes/Conversation/Conversation.tscn" id="2_conversation"]
+[ext_resource type="Shader" uid="uid://sygixmimdiwj" path="res://Shaders/shadow.gdshader" id="3_shadow_shader"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_shadow"]
+shader = ExtResource("3_shadow_shader")
+shader_parameter/shadow_color = Color(0.2, 0.2, 0.2, 0.5)
+
+[node name="Ball" type="Node2D"]
+script = ExtResource("1_ball_script")
+
+[node name="Ball" type="Sprite2D" parent="."]
+position = Vector2(0, -160)
+texture = ExtResource("1_money")
+
+[node name="Shadow" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_shadow")
+scale = Vector2(1e-05, 1e-05)
+texture = ExtResource("1_money")
+
+[node name="Conversation" parent="Shadow" instance=ExtResource("2_conversation")]
+interactable_disabled = true
