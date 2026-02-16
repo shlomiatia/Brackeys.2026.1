@@ -1,26 +1,99 @@
-[gd_scene load_steps=6 format=3 uid="uid://d22q58gqy0syp"]
+[gd_scene load_steps=16 format=3 uid="uid://d22q58gqy0syp"]
 
-[ext_resource type="Script" uid="uid://d1yc4en58stqs" path="res://Scenes/Level1/Ball/Ball.gd" id="1_ball_script"]
-[ext_resource type="Texture2D" uid="uid://dgtkntcg4oxkq" path="res://Assets/money.png" id="1_money"]
+[ext_resource type="Script" uid="uid://r0il7tu3juii" path="res://Scenes/Level1/Ball/Ball.gd" id="1_ball_script"]
 [ext_resource type="PackedScene" uid="uid://cfgp45xbt467i" path="res://Scenes/Conversation/Conversation.tscn" id="2_conversation"]
+[ext_resource type="Texture2D" uid="uid://257la1wtdlsc" path="res://Assets/largeBall.PNG" id="2_qxpdj"]
 [ext_resource type="Shader" uid="uid://sygixmimdiwj" path="res://Shaders/shadow.gdshader" id="3_shadow_shader"]
+[ext_resource type="Texture2D" uid="uid://cclfrb70ym7xi" path="res://Assets/destroyFloor.PNG" id="5_1kd78"]
+[ext_resource type="Texture2D" uid="uid://dcsh6vnxl2e85" path="res://Assets/hole.PNG" id="6_qxpdj"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_shadow"]
 shader = ExtResource("3_shadow_shader")
 shader_parameter/shadow_color = Color(0.2, 0.2, 0.2, 0.5)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1kd78"]
+height = 24.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fr8b2"]
+atlas = ExtResource("5_1kd78")
+region = Rect2(0, 0, 59, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iy63w"]
+atlas = ExtResource("5_1kd78")
+region = Rect2(59, 0, 59, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cpirt"]
+atlas = ExtResource("5_1kd78")
+region = Rect2(118, 0, 59, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a0jfa"]
+atlas = ExtResource("5_1kd78")
+region = Rect2(177, 0, 59, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qkxkg"]
+atlas = ExtResource("5_1kd78")
+region = Rect2(236, 0, 59, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pini5"]
+atlas = ExtResource("5_1kd78")
+region = Rect2(295, 0, 59, 38)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r18ku"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fr8b2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iy63w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cpirt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a0jfa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qkxkg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pini5")
+}],
+"loop": false,
+"name": &"default",
+"speed": 8.0
+}]
 
 [node name="Ball" type="Node2D"]
 script = ExtResource("1_ball_script")
 
 [node name="Ball" type="Sprite2D" parent="."]
 position = Vector2(0, -160)
-texture = ExtResource("1_money")
+texture = ExtResource("2_qxpdj")
 
 [node name="Shadow" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_shadow")
 scale = Vector2(1e-05, 1e-05)
-texture = ExtResource("1_money")
+texture = ExtResource("2_qxpdj")
 
-[node name="Conversation" parent="Shadow" instance=ExtResource("2_conversation")]
-dialogue_name = "ball_pickup"
+[node name="Hole" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1, 2)
+texture = ExtResource("6_qxpdj")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -1)
+shape = SubResource("CapsuleShape2D_1kd78")
+disabled = true
+
+[node name="DestroyFloor" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -10)
+sprite_frames = SubResource("SpriteFrames_r18ku")
+frame = 5
+frame_progress = 1.0
+
+[node name="Conversation" parent="." instance=ExtResource("2_conversation")]
+dialogue_name = "level1_ball"
 interactable_disabled = true

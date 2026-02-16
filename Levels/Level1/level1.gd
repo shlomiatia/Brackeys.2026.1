@@ -1,43 +1,38 @@
 extends Node2D
 
-# State tracking
-var door_interacted: bool = false
-
 # Node references
 @onready var door: Sprite2D = $Objects/Door
 @onready var door_conversation: Conversation = $Objects/Door/Conversation
-@onready var ball = $Objects/Door/Ball
+@onready var ball = $Objects/Ball
+@onready var knife: Sprite2D = $Knife
 
 func _ready() -> void:
-    Global.can_control = false
-
     # Connect to Dialogic signals
     Dialogic.signal_event.connect(_on_dialogic_signal)
 
     # Start sequence: disable player movement and show opening dialog
     await _show_start_sequence()
 
-    # Set initial dialogue names for conversations
-    _update_conversation_dialogues()
-
 func _show_start_sequence() -> void:
+    Global.can_control = false
+
     # Wait 1 second
     await get_tree().create_timer(1.0).timeout
 
     # Show opening dialog
-    await DialogDisplayer.start("start_dialog")
-
-func _update_conversation_dialogues() -> void:
-    # Update Door conversation based on interaction state
-    if not door_interacted:
-        door_conversation.dialogue_name = "door_locked_sound"
-    else:
-        door_conversation.dialogue_name = "door_locked"
+    await DialogDisplayer.start("level1_intro")
 
 func _on_dialogic_signal(argument: String) -> void:
     match argument:
-        "solve_puzzle":
-            if not door_interacted:
-                door_interacted = true
-                ball.fall()
-                _update_conversation_dialogues()
+        "door_interacted":
+            ball.fall()
+        "knife_picked_up":
+            _fade_and_remove(knife)
+        "rope_cut":
+            ball.cut()
+
+func _fade_and_remove(node: Node2D) -> void:
+    var tween = create_tween()
+    tween.tween_property(node, "modulate:a", 0.0, 0.5)
+    await tween.finished
+    node.queue_free()

@@ -1,12 +1,65 @@
-[gd_scene load_steps=8 format=3 uid="uid://c5lv2xaxlt7x1"]
+[gd_scene load_steps=18 format=3 uid="uid://c5lv2xaxlt7x1"]
 
 [ext_resource type="Script" uid="uid://bqkavbevvdyxc" path="res://Levels/Level1/level1.gd" id="1_a1y0i"]
 [ext_resource type="PackedScene" uid="uid://dnwug4pxdwecg" path="res://Scenes/Utils/Fade.tscn" id="2_renp8"]
 [ext_resource type="PackedScene" uid="uid://dl4fsjfam7kgc" path="res://Levels/Level1/BackgroundTileMaps.tscn" id="3_a1y0i"]
 [ext_resource type="PackedScene" uid="uid://deur6yjprct37" path="res://Scenes/Player/player.tscn" id="4_7ouqh"]
-[ext_resource type="Texture2D" uid="uid://c6kqne8lw34d6" path="res://Assets/sheep.png" id="5_e1uqi"]
+[ext_resource type="Texture2D" uid="uid://c7dygm2p1hwho" path="res://Assets/door.PNG" id="5_a1y0i"]
+[ext_resource type="PackedScene" uid="uid://bbrs3ouymdwi8" path="res://Scenes/ShakingCamera/ShakingCamera.tscn" id="5_b1g7e"]
 [ext_resource type="PackedScene" uid="uid://cfgp45xbt467i" path="res://Scenes/Conversation/Conversation.tscn" id="6_4ipag"]
 [ext_resource type="PackedScene" uid="uid://d22q58gqy0syp" path="res://Scenes/Level1/Ball/Ball.tscn" id="7_renp8"]
+[ext_resource type="Texture2D" uid="uid://cclfrb70ym7xi" path="res://Assets/destroyFloor.PNG" id="8_renp8"]
+[ext_resource type="Texture2D" uid="uid://dgtkntcg4oxkq" path="res://Assets/money.png" id="10_7ouqh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b1g7e"]
+atlas = ExtResource("8_renp8")
+region = Rect2(0, 0, 59, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ouqh"]
+atlas = ExtResource("8_renp8")
+region = Rect2(59, 0, 59, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e1uqi"]
+atlas = ExtResource("8_renp8")
+region = Rect2(118, 0, 59, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ipag"]
+atlas = ExtResource("8_renp8")
+region = Rect2(177, 0, 59, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_umoym"]
+atlas = ExtResource("8_renp8")
+region = Rect2(236, 0, 59, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iw758"]
+atlas = ExtResource("8_renp8")
+region = Rect2(295, 0, 59, 38)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o6xt3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b1g7e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ouqh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e1uqi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ipag")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_umoym")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iw758")
+}],
+"loop": false,
+"name": &"default",
+"speed": 8.0
+}]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_a1y0i")
@@ -18,26 +71,43 @@ script = ExtResource("1_a1y0i")
 [node name="BackgroundTileMaps" parent="." instance=ExtResource("3_a1y0i")]
 
 [node name="Objects" type="Node2D" parent="."]
+y_sort_enabled = true
 
-[node name="player" parent="Objects" instance=ExtResource("4_7ouqh")]
-position = Vector2(-94, 68)
+[node name="Player" parent="Objects" instance=ExtResource("4_7ouqh")]
+position = Vector2(-6, 8)
 current_direction = "Fr"
 
-[node name="Camera2D" type="Camera2D" parent="Objects/player"]
-zoom = Vector2(3, 3)
-limit_left = 0
-limit_top = 0
-limit_right = 0
-limit_bottom = 0
-
 [node name="Door" type="Sprite2D" parent="Objects"]
-visible = false
-position = Vector2(-1, -90)
-texture = ExtResource("5_e1uqi")
+position = Vector2(-2, -82)
+texture = ExtResource("5_a1y0i")
 
 [node name="Conversation" parent="Objects/Door" instance=ExtResource("6_4ipag")]
-interactable_size = Vector2(16, 16)
-indicator_offset = Vector2(0, -14)
+dialogue_name = "level1_door"
+interactable_size = Vector2(16, 29)
 
-[node name="Ball" parent="Objects/Door" instance=ExtResource("7_renp8")]
-position = Vector2(123, 127)
+[node name="Ball" parent="Objects" instance=ExtResource("7_renp8")]
+position = Vector2(121, 26)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(34, 23)
+sprite_frames = SubResource("SpriteFrames_o6xt3")
+frame = 5
+frame_progress = 1.0
+
+[node name="ShakingCamera" parent="." instance=ExtResource("5_b1g7e")]
+position = Vector2(-6, 8)
+zoom = Vector2(3, 3)
+
+[node name="Knife" type="Sprite2D" parent="."]
+position = Vector2(180, -36)
+texture = ExtResource("10_7ouqh")
+
+[node name="Conversation" parent="Knife" instance=ExtResource("6_4ipag")]
+dialogue_name = "level1_knife"
+
+[node name="Rope" type="Sprite2D" parent="."]
+position = Vector2(-178, 39)
+texture = ExtResource("10_7ouqh")
+
+[node name="Conversation" parent="Rope" instance=ExtResource("6_4ipag")]
+dialogue_name = "level1_rope"
