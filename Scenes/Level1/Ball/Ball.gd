@@ -9,40 +9,40 @@ class_name Ball extends Node2D
 @onready var hole_collision: CollisionShape2D = $StaticBody2D/CollisionShape2D
 
 func fall() -> void:
-    shaking_camera.start_screen_shake()
+	shaking_camera.start_screen_shake()
 
-    var tween = create_tween()
-    tween.set_parallel(true)
-    tween.set_trans(Tween.TRANS_SINE)
-    tween.set_ease(Tween.EASE_OUT)
+	var tween = create_tween()
+	tween.set_parallel(true)
+	tween.set_trans(Tween.TRANS_SINE)
+	tween.set_ease(Tween.EASE_OUT)
 
-    var duration = 0.5
-    tween.tween_property(ball, "position:y", -48, duration)
-    tween.tween_property(shadow, "scale", Vector2(0.8, 0.8), duration)
+	var duration = 0.5
+	tween.tween_property(ball, "position:y", -48, duration)
+	tween.tween_property(shadow, "scale", Vector2(0.8, 0.8), duration)
 
-    await tween.finished
-    conversation.interactable_disabled = false
+	await tween.finished
+	conversation.interactable_disabled = false
 
 func cut() -> void:
-    var tween = create_tween()
-    tween.set_parallel(true)
-    tween.set_trans(Tween.TRANS_SINE)
-    tween.set_ease(Tween.EASE_IN)
+	var tween = create_tween()
+	tween.set_parallel(true)
+	tween.set_trans(Tween.TRANS_SINE)
+	tween.set_ease(Tween.EASE_IN)
 
-    var duration = 0.5
-    tween.tween_property(ball, "position:y", 0, duration)
-    tween.tween_property(shadow, "scale", Vector2.ONE, duration)
+	var duration = 0.5
+	tween.tween_property(ball, "position:y", 0, duration)
+	tween.tween_property(shadow, "scale", Vector2.ONE, duration)
 
-    await tween.finished
+	await tween.finished
 
-    shaking_camera.start_screen_shake()
+	shaking_camera.start_screen_shake()
 
-    ball.visible = false
-    shadow.visible = false
+	ball.visible = false
+	shadow.visible = false
 
-    destroy_floor.play()
+	destroy_floor.play()
 
-    hole.visible = true
-    hole_collision.disabled = false
+	hole.visible = true
+	hole_collision.disabled = false
 
-    conversation.dialogue_name = "level1_hole"
+	conversation.dialogue_name = "level1_hole"

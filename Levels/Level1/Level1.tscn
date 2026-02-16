@@ -4,11 +4,11 @@
 [ext_resource type="PackedScene" uid="uid://dnwug4pxdwecg" path="res://Scenes/Utils/Fade.tscn" id="2_renp8"]
 [ext_resource type="PackedScene" uid="uid://dl4fsjfam7kgc" path="res://Levels/Level1/BackgroundTileMaps.tscn" id="3_a1y0i"]
 [ext_resource type="PackedScene" uid="uid://deur6yjprct37" path="res://Scenes/Player/player.tscn" id="4_7ouqh"]
-[ext_resource type="Texture2D" uid="uid://c7dygm2p1hwho" path="res://Assets/door.PNG" id="5_a1y0i"]
+[ext_resource type="Texture2D" uid="uid://c7dygm2p1hwho" path="res://Assets/Intro/door.PNG" id="5_a1y0i"]
 [ext_resource type="PackedScene" uid="uid://bbrs3ouymdwi8" path="res://Scenes/ShakingCamera/ShakingCamera.tscn" id="5_b1g7e"]
 [ext_resource type="PackedScene" uid="uid://cfgp45xbt467i" path="res://Scenes/Conversation/Conversation.tscn" id="6_4ipag"]
 [ext_resource type="PackedScene" uid="uid://d22q58gqy0syp" path="res://Scenes/Level1/Ball/Ball.tscn" id="7_renp8"]
-[ext_resource type="Texture2D" uid="uid://cclfrb70ym7xi" path="res://Assets/destroyFloor.PNG" id="8_renp8"]
+[ext_resource type="Texture2D" uid="uid://cclfrb70ym7xi" path="res://Assets/Intro/destroyFloor.PNG" id="8_renp8"]
 [ext_resource type="Texture2D" uid="uid://dgtkntcg4oxkq" path="res://Assets/money.png" id="10_7ouqh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b1g7e"]
@@ -74,7 +74,7 @@ script = ExtResource("1_a1y0i")
 y_sort_enabled = true
 
 [node name="Player" parent="Objects" instance=ExtResource("4_7ouqh")]
-position = Vector2(-6, 8)
+position = Vector2(-92, 67)
 current_direction = "Fr"
 
 [node name="Door" type="Sprite2D" parent="Objects"]
