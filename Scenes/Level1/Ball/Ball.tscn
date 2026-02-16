@@ -77,10 +77,6 @@ material = SubResource("ShaderMaterial_shadow")
 scale = Vector2(1e-05, 1e-05)
 texture = ExtResource("2_qxpdj")
 
-[node name="Conversation" parent="Shadow" instance=ExtResource("2_conversation")]
-dialogue_name = "ball_pickup"
-interactable_disabled = true
-
 [node name="Hole" type="Sprite2D" parent="."]
 texture = ExtResource("6_qxpdj")
 
@@ -96,3 +92,7 @@ position = Vector2(0, -10)
 sprite_frames = SubResource("SpriteFrames_r18ku")
 frame = 5
 frame_progress = 1.0
+
+[node name="Conversation" parent="." instance=ExtResource("2_conversation")]
+dialogue_name = "ball_pickup"
+interactable_disabled = true
