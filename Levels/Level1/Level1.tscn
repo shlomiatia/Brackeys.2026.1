@@ -1,0 +1,69 @@
+[gd_scene load_steps=10 format=3 uid="uid://dheajklvrau7e"]
+
+[ext_resource type="Script" uid="uid://bqkavbevvdyxc" path="res://Levels/Level1/level1.gd" id="1_a1y0i"]
+[ext_resource type="PackedScene" uid="uid://dnwug4pxdwecg" path="res://Scenes/Utils/Fade.tscn" id="2_renp8"]
+[ext_resource type="PackedScene" uid="uid://dl4fsjfam7kgc" path="res://Levels/Level1/BackgroundTileMaps.tscn" id="3_a1y0i"]
+[ext_resource type="PackedScene" uid="uid://deur6yjprct37" path="res://Scenes/Player/player.tscn" id="4_7ouqh"]
+[ext_resource type="Texture2D" uid="uid://c6kqne8lw34d6" path="res://Assets/sheep.png" id="5_e1uqi"]
+[ext_resource type="PackedScene" uid="uid://cfgp45xbt467i" path="res://Scenes/Conversation/Conversation.tscn" id="6_4ipag"]
+[ext_resource type="Texture2D" uid="uid://dgtkntcg4oxkq" path="res://Assets/money.png" id="7_umoym"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bl2xt"]
+resource_local_to_scene = true
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yy7ei"]
+resource_local_to_scene = true
+size = Vector2(16, 15)
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_a1y0i")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Fade" parent="CanvasLayer" instance=ExtResource("2_renp8")]
+
+[node name="BackgroundTileMaps" parent="." instance=ExtResource("3_a1y0i")]
+
+[node name="Objects" type="Node2D" parent="."]
+
+[node name="player" parent="Objects" instance=ExtResource("4_7ouqh")]
+position = Vector2(-6, 8)
+current_direction = "Fr"
+
+[node name="Camera2D" type="Camera2D" parent="Objects/player"]
+zoom = Vector2(3, 3)
+limit_left = 0
+limit_top = 0
+limit_right = 0
+limit_bottom = 0
+
+[node name="Door" type="Sprite2D" parent="Objects"]
+position = Vector2(-1, -90)
+texture = ExtResource("5_e1uqi")
+
+[node name="Conversation" parent="Objects/Door" instance=ExtResource("6_4ipag")]
+
+[node name="CollisionShape2D" parent="Objects/Door/Conversation/Interactable" index="0"]
+shape = SubResource("RectangleShape2D_bl2xt")
+
+[node name="Indicator" parent="Objects/Door/Conversation/Interactable" index="1"]
+position = Vector2(0, -13)
+
+[node name="RealDoor" type="Sprite2D" parent="Objects"]
+position = Vector2(174, 95)
+texture = ExtResource("7_umoym")
+
+[node name="Conversation" parent="Objects/RealDoor" instance=ExtResource("6_4ipag")]
+
+[node name="CollisionShape2D" parent="Objects/RealDoor/Conversation/Interactable" index="0"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_yy7ei")
+
+[node name="Indicator" parent="Objects/RealDoor/Conversation/Interactable" index="1"]
+position = Vector2(0, -12)
+
+[editable path="Objects/Door/Conversation"]
+[editable path="Objects/Door/Conversation/Interactable"]
+[editable path="Objects/RealDoor/Conversation"]
+[editable path="Objects/RealDoor/Conversation/Interactable"]
