@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bom3fsriea7cq" path="res://Assets/bellaSprite.PNG" id="2_a3d8c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a3d8c"]
-size = Vector2(10, 29)
+size = Vector2(10, 11)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xpcdj"]
 atlas = ExtResource("2_a3d8c")
@@ -177,11 +177,12 @@ animations = [{
 size = Vector2(10, 29)
 
 [node name="player" type="CharacterBody2D" groups=["player"]]
+z_index = 1
 y_sort_enabled = true
 script = ExtResource("1_g2els")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -14.5)
+position = Vector2(0, -5.5)
 shape = SubResource("RectangleShape2D_a3d8c")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -193,6 +194,7 @@ animation = &"walkR"
 offset = Vector2(0, -17)
 
 [node name="Area2D" type="Area2D" parent="."]
+visible = false
 collision_layer = 0
 collision_mask = 2
 

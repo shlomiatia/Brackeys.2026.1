@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bu5skewtjvxyh"
-path="res://.godot/imported/introTileset.PNG-45ba35950c03173794ad55621b2320a6.ctex"
+uid="uid://dcsh6vnxl2e85"
+path="res://.godot/imported/hole.PNG-0efea4c65eb9f0151abe25b9553ccec0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tilesets/introTileset.PNG"
-dest_files=["res://.godot/imported/introTileset.PNG-45ba35950c03173794ad55621b2320a6.ctex"]
+source_file="res://Assets/Intro/hole.PNG"
+dest_files=["res://.godot/imported/hole.PNG-0efea4c65eb9f0151abe25b9553ccec0.ctex"]
 
 [params]
 

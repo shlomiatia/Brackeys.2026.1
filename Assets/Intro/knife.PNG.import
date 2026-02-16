@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c7dygm2p1hwho"
-path="res://.godot/imported/door.PNG-b9cdba6aaf590c2ce24de267418ca67c.ctex"
+uid="uid://dt5w73ckb8i5f"
+path="res://.godot/imported/knife.PNG-9a9f5425548833ff248c791b8a6000e4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/door.PNG"
-dest_files=["res://.godot/imported/door.PNG-b9cdba6aaf590c2ce24de267418ca67c.ctex"]
+source_file="res://Assets/Intro/knife.PNG"
+dest_files=["res://.godot/imported/knife.PNG-9a9f5425548833ff248c791b8a6000e4.ctex"]
 
 [params]
 
