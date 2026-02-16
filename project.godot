@@ -29,11 +29,18 @@ directories/dch_directory={
 directories/dtl_directory={
 "level1_ball": "res://Dialogic Assets/Timelines/level1_ball.dtl",
 "level1_door": "res://Dialogic Assets/Timelines/level1_door.dtl",
-"level1_door_loop": "res://Dialogic Assets/Timelines/level1_door_loop.dtl",
 "level1_hole": "res://Dialogic Assets/Timelines/level1_hole.dtl",
-"level1_intro": "res://Dialogic Assets/Timelines/level1_intro.dtl"
+"level1_intro": "res://Dialogic Assets/Timelines/level1_intro.dtl",
+"level1_knife": "res://Dialogic Assets/Timelines/level1_knife.dtl",
+"level1_rope": "res://Dialogic Assets/Timelines/level1_rope.dtl"
 }
 layout/style_directory={}
+variables={
+"door_interacted": false,
+"knife_picked_up": false,
+"rope_cut": false
+}
+glossary/default_case_sensitive=true
 
 [display]
 

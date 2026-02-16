@@ -1,2 +1,7 @@
-It's locked
+if {door_interacted} == false:
+	The door is locked, but what is this sound?
+	set {door_interacted} = true
+	[signal arg="door_interacted"]
+else:
+	It's locked
 [end_timeline]

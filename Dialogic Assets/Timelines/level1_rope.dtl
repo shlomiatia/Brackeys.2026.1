@@ -1,0 +1,13 @@
+if {rope_cut} == true:
+	I already cut it
+elif {door_interacted} == false and {knife_picked_up} == false:
+	what is this attached to?
+elif {door_interacted} == false:
+	why should I cut this?
+elif {knife_picked_up} == false:
+	is this attached to the ball?
+else:
+	I wonder...
+	set {rope_cut} = true
+	[signal arg="rope_cut"]
+[end_timeline]

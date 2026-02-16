@@ -82,6 +82,7 @@ position = Vector2(-2, -82)
 texture = ExtResource("5_a1y0i")
 
 [node name="Conversation" parent="Objects/Door" instance=ExtResource("6_4ipag")]
+dialogue_name = "level1_door"
 interactable_size = Vector2(16, 29)
 
 [node name="Ball" parent="Objects" instance=ExtResource("7_renp8")]
@@ -102,9 +103,11 @@ position = Vector2(180, -36)
 texture = ExtResource("10_7ouqh")
 
 [node name="Conversation" parent="Knife" instance=ExtResource("6_4ipag")]
+dialogue_name = "level1_knife"
 
 [node name="Rope" type="Sprite2D" parent="."]
 position = Vector2(-178, 39)
 texture = ExtResource("10_7ouqh")
 
 [node name="Conversation" parent="Rope" instance=ExtResource("6_4ipag")]
+dialogue_name = "level1_rope"

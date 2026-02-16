@@ -1,0 +1,4 @@
+I better take this
+set {knife_picked_up} = true
+[signal arg="knife_picked_up"]
+[end_timeline]
