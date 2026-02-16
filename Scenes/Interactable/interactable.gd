@@ -5,7 +5,7 @@ signal interacted
 @onready var indicator: Sprite2D = $Indicator
 
 func _ready() -> void:
-	indicator.visible = false
+	indicator.visible = Engine.is_editor_hint()
 
 # show or hide the interaction indicator
 func set_can_interact(can_interact: bool) -> void:
