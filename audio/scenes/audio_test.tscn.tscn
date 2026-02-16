@@ -1,0 +1,61 @@
+[gd_scene load_steps=2 format=3 uid="uid://b3mwqr1oo31qd"]
+
+[ext_resource type="Script" uid="uid://c0c4mjcpwtluv" path="res://audio/scripts/audio_test.gd" id="1_o54ec"]
+
+[node name="AudioTest_tscn" type="Node2D"]
+
+[node name="Play Music 1" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Play Music 1
+"
+script = ExtResource("1_o54ec")
+
+[node name="Play Music 2" type="Button" parent="."]
+offset_left = 2.0
+offset_top = 35.0
+offset_right = 105.0
+offset_bottom = 66.0
+text = "Play Music 2
+"
+script = ExtResource("1_o54ec")
+
+[node name="Stop" type="Button" parent="."]
+offset_left = 122.0
+offset_top = 2.0
+offset_right = 225.0
+offset_bottom = 33.0
+text = "Stop Music"
+script = ExtResource("1_o54ec")
+
+[node name="Duck" type="Button" parent="."]
+offset_left = 124.0
+offset_top = 37.0
+offset_right = 227.0
+offset_bottom = 68.0
+text = "Duck "
+script = ExtResource("1_o54ec")
+
+[node name="Restore" type="Button" parent="."]
+offset_left = 252.0
+offset_top = 6.0
+offset_right = 355.0
+offset_bottom = 37.0
+text = "Restore
+"
+script = ExtResource("1_o54ec")
+
+[node name="Play SFX" type="Button" parent="."]
+offset_left = 252.0
+offset_top = 44.0
+offset_right = 355.0
+offset_bottom = 75.0
+text = "SFX "
+script = ExtResource("1_o54ec")
+
+[connection signal="pressed" from="Play Music 1" to="Play Music 1" method="_on_pressed"]
+[connection signal="pressed" from="Play Music 2" to="Play Music 1" method="_on_play_music_2_pressed"]
+[connection signal="pressed" from="Stop" to="Play Music 1" method="_on_stop_pressed"]
+[connection signal="pressed" from="Duck" to="Play Music 1" method="_on_duck_pressed"]
+[connection signal="pressed" from="Restore" to="Play Music 1" method="_on_restore_pressed"]
+[connection signal="pressed" from="Play SFX" to="Play Music 1" method="_on_play_sfx_pressed"]
