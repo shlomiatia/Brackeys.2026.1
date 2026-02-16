@@ -28,10 +28,8 @@ directories/dch_directory={
 }
 directories/dtl_directory={
 "ball_pickup": "res://Dialogic Assets/Timelines/ball_pickup.dtl",
-"coin_dialog": "res://Dialogic Assets/Timelines/coin_dialog.dtl",
 "door_locked": "res://Dialogic Assets/Timelines/door_locked.dtl",
 "door_locked_sound": "res://Dialogic Assets/Timelines/door_locked_sound.dtl",
-"solved_dialog": "res://Dialogic Assets/Timelines/solved_dialog.dtl",
 "start_dialog": "res://Dialogic Assets/Timelines/start_dialog.dtl"
 }
 layout/style_directory={}

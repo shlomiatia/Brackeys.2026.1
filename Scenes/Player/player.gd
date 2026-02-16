@@ -8,6 +8,9 @@ const SPEED: float = 100.0
 # allows for setting the direction the sprite is facing every scene
 @export var current_direction: String = "Bck"
 
+# Auto-movement state
+var target_position: Vector2 = Vector2.ZERO
+
  # makes sure the the player is facing the right direction upon entering scene
 func _ready() -> void:
     animated_sprite.play("idle" + current_direction)
@@ -16,26 +19,31 @@ func _ready() -> void:
 
 # get the input direction and handle movement
 func _physics_process(_delta: float) -> void:
-    if Global.can_control: # only allow movement/interaction if the player can control
-        var direction: Vector2 = Vector2(Input.get_axis("move_left", "move_right"),
+    var direction: Vector2
+
+    # Check if we're auto-moving to a target position
+    if target_position != Vector2.ZERO:
+        direction = (target_position - global_position).normalized()
+    elif Global.can_control:
+        direction = Vector2(Input.get_axis("move_left", "move_right"),
         Input.get_axis("move_up", "move_down")).normalized()
-        if direction:
-            velocity = direction * SPEED
-            # play the right animation when moving
-            animated_sprite.play("walk" + current_direction)
-            
-            # sets player direction according to the last direction the player was moving in
-            current_direction = return_dir(direction)
-            
-        else: # stop movement/walking if player isn't moving
-            velocity = velocity.move_toward(Vector2.ZERO, SPEED)
-            animated_sprite.play("idle" + current_direction)
-            
-        move_and_slide()
-    else: # needed to stop walking animation when interacting
+    else:
+        direction = Vector2.ZERO
+
+    if direction:
+        velocity = direction * SPEED
+        # play the right animation when moving
+        animated_sprite.play("walk" + current_direction)
+
+        # sets player direction according to the last direction the player was moving in
+        current_direction = return_dir(direction)
+
+    else: # stop movement/walking if player isn't moving
+        velocity = velocity.move_toward(Vector2.ZERO, SPEED)
         animated_sprite.play("idle" + current_direction)
-        velocity = Vector2.ZERO
-    
+
+    move_and_slide()
+
     # Handle interaction input
     if Input.is_action_just_pressed("interact") and Global.can_control:
         _try_interact()
@@ -64,3 +72,14 @@ func _on_area_body_entered(body: Node2D) -> void:
 func _on_area_body_exited(body: Node2D) -> void:
     if body.is_in_group("interactables"):
         body.set_can_interact(false)
+
+# Move the player to a target position automatically
+func move_to(target: Vector2) -> void:
+    target_position = target
+
+    # Wait until we're close enough to the target
+    while global_position.distance_to(target_position) > 5.0:
+        await get_tree().process_frame
+
+    # Reset target position when reached
+    target_position = Vector2.ZERO
