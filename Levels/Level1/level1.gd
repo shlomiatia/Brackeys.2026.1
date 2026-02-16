@@ -4,6 +4,7 @@ extends Node2D
 @onready var door: Sprite2D = $Objects/Door
 @onready var door_conversation: Conversation = $Objects/Door/Conversation
 @onready var ball = $Objects/Ball
+@onready var knife: Sprite2D = $Knife
 
 func _ready() -> void:
     # Connect to Dialogic signals
@@ -26,6 +27,12 @@ func _on_dialogic_signal(argument: String) -> void:
         "door_interacted":
             ball.fall()
         "knife_picked_up":
-            pass
+            _fade_and_remove(knife)
         "rope_cut":
             ball.cut()
+
+func _fade_and_remove(node: Node2D) -> void:
+    var tween = create_tween()
+    tween.tween_property(node, "modulate:a", 0.0, 0.5)
+    await tween.finished
+    node.queue_free()

@@ -6,7 +6,7 @@ class_name Ball extends Node2D
 @onready var shaking_camera: ShakingCamera = $"../../ShakingCamera"
 @onready var destroy_floor: AnimatedSprite2D = $DestroyFloor
 @onready var hole: Sprite2D = $Hole
-@onready var hole_collision: CollisionShape2D = $Hole/StaticBody2D/CollisionShape2D
+@onready var hole_collision: CollisionShape2D = $StaticBody2D/CollisionShape2D
 
 func fall() -> void:
     shaking_camera.start_screen_shake()
@@ -17,7 +17,7 @@ func fall() -> void:
     tween.set_ease(Tween.EASE_OUT)
 
     var duration = 0.5
-    tween.tween_property(ball, "position:y", -32, duration)
+    tween.tween_property(ball, "position:y", -48, duration)
     tween.tween_property(shadow, "scale", Vector2(0.8, 0.8), duration)
 
     await tween.finished

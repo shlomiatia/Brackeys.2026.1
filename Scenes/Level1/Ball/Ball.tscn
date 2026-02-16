@@ -12,8 +12,7 @@ shader = ExtResource("3_shadow_shader")
 shader_parameter/shadow_color = Color(0.2, 0.2, 0.2, 0.5)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1kd78"]
-radius = 8.0
-height = 48.0
+height = 24.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fr8b2"]
 atlas = ExtResource("5_1kd78")
@@ -79,12 +78,13 @@ texture = ExtResource("2_qxpdj")
 
 [node name="Hole" type="Sprite2D" parent="."]
 visible = false
+position = Vector2(1, 2)
 texture = ExtResource("6_qxpdj")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Hole"]
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hole/StaticBody2D"]
-rotation = 1.5707964
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -1)
 shape = SubResource("CapsuleShape2D_1kd78")
 disabled = true
 
