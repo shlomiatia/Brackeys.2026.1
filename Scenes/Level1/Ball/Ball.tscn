@@ -1,6 +1,6 @@
-[gd_scene load_steps=16 format=3 uid="uid://d22q58gqy0syp"]
+[gd_scene load_steps=15 format=3 uid="uid://d22q58gqy0syp"]
 
-[ext_resource type="Script" uid="uid://d1yc4en58stqs" path="res://Scenes/Level1/Ball/Ball.gd" id="1_ball_script"]
+[ext_resource type="Script" uid="uid://r0il7tu3juii" path="res://Scenes/Level1/Ball/ball.gd" id="1_ball_script"]
 [ext_resource type="PackedScene" uid="uid://cfgp45xbt467i" path="res://Scenes/Conversation/Conversation.tscn" id="2_conversation"]
 [ext_resource type="Texture2D" uid="uid://257la1wtdlsc" path="res://Assets/largeBall.PNG" id="2_qxpdj"]
 [ext_resource type="Shader" uid="uid://sygixmimdiwj" path="res://Shaders/shadow.gdshader" id="3_shadow_shader"]
@@ -10,9 +10,6 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_shadow"]
 shader = ExtResource("3_shadow_shader")
 shader_parameter/shadow_color = Color(0.2, 0.2, 0.2, 0.5)
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1kd78"]
-load_path = "res://.godot/imported/money.png-603009f0f6c81337af30686b953f0413.ctex"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fr8b2"]
 atlas = ExtResource("5_1kd78")
@@ -74,7 +71,7 @@ texture = ExtResource("2_qxpdj")
 [node name="Shadow" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_shadow")
 scale = Vector2(1e-05, 1e-05)
-texture = SubResource("CompressedTexture2D_1kd78")
+texture = ExtResource("2_qxpdj")
 
 [node name="Conversation" parent="Shadow" instance=ExtResource("2_conversation")]
 dialogue_name = "ball_pickup"

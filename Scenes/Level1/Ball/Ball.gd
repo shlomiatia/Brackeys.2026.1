@@ -1,18 +1,21 @@
-extends Node2D
+class_name Ball extends Node2D
 
 @onready var ball: Sprite2D = $Ball
 @onready var shadow: Sprite2D = $Shadow
 @onready var conversation: Conversation = $Shadow/Conversation
+@onready var shaking_camera: ShakingCamera = $"../../ShakingCamera"
 
 func fall() -> void:
-	var tween = create_tween()
-	tween.set_parallel(true)
-	tween.set_trans(Tween.TRANS_SINE)
-	tween.set_ease(Tween.EASE_OUT)
+    shaking_camera.start_screen_shake()
 
-	var duration = 0.5
-	tween.tween_property(ball, "position:y", -32, duration)
-	tween.tween_property(shadow, "scale", Vector2.ONE, duration)
+    var tween = create_tween()
+    tween.set_parallel(true)
+    tween.set_trans(Tween.TRANS_SINE)
+    tween.set_ease(Tween.EASE_OUT)
 
-	await tween.finished
-	conversation.interactable_disabled = false
+    var duration = 0.5
+    tween.tween_property(ball, "position:y", -32, duration)
+    tween.tween_property(shadow, "scale", Vector2.ONE, duration)
+
+    await tween.finished
+    conversation.interactable_disabled = false

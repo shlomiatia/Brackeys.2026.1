@@ -72,12 +72,9 @@ script = ExtResource("1_a1y0i")
 [node name="Objects" type="Node2D" parent="."]
 y_sort_enabled = true
 
-[node name="player" parent="Objects" instance=ExtResource("4_7ouqh")]
+[node name="Player" parent="Objects" instance=ExtResource("4_7ouqh")]
 position = Vector2(-6, 8)
 current_direction = "Fr"
-
-[node name="ShakingCamera" parent="Objects/player" instance=ExtResource("5_b1g7e")]
-zoom = Vector2(3, 3)
 
 [node name="Door" type="Sprite2D" parent="Objects"]
 position = Vector2(-2, -82)
@@ -94,3 +91,7 @@ position = Vector2(34, 23)
 sprite_frames = SubResource("SpriteFrames_o6xt3")
 frame = 5
 frame_progress = 1.0
+
+[node name="ShakingCamera" parent="." instance=ExtResource("5_b1g7e")]
+position = Vector2(-6, 8)
+zoom = Vector2(3, 3)
