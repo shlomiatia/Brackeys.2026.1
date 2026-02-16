@@ -1,4 +1,4 @@
-join testCharacter center
+join Bella center
 testCharacter: What am I doing here?
 leave testCharacter
 [end_timeline]

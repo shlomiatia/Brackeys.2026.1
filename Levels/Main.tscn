@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=4 uid="uid://dheajklvrau7e"]
 
 [ext_resource type="PackedScene" uid="uid://deur6yjprct37" path="res://Scenes/Player/player.tscn" id="1_1q67n"]
-[ext_resource type="Script" path="res://Levels/main.gd" id="1_b7uiw"]
+[ext_resource type="Script" uid="uid://bqkavbevvdyxc" path="res://Levels/main.gd" id="1_b7uiw"]
 [ext_resource type="PackedScene" uid="uid://dnwug4pxdwecg" path="res://Scenes/Utils/Fade.tscn" id="1_bl2xt"]
 [ext_resource type="TileSet" uid="uid://c275this30rp3" path="res://Assets/tileset.tres" id="2_tileset"]
 [ext_resource type="Texture2D" uid="uid://c6kqne8lw34d6" path="res://Assets/sheep.png" id="4_1q67n"]

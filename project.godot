@@ -23,6 +23,7 @@ Global="*res://Scripts/Global.gd"
 [dialogic]
 
 directories/dch_directory={
+"Bella": "res://Dialogic Assets/Charactesr/Bella.dch",
 "testCharacter": "res://Dialogic Assets/Charactesr/testCharacter.dch"
 }
 directories/dtl_directory={
