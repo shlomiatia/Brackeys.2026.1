@@ -7,6 +7,7 @@ Jump in?
 
 - Yes
 	Bella: I hope I don't regret this...
+	[signal arg="jump_in_hole"]
 - No
 	Bella: I-[pause=0.2]I can't...
 [end_timeline]

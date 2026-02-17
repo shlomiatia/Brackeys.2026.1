@@ -8,9 +8,6 @@ const SPEED: float = 100.0
 # allows for setting the direction the sprite is facing every scene
 @export var current_direction: String = "Bck"
 
-# Auto-movement state
-var target_position: Vector2 = Vector2.ZERO
-
  # makes sure the the player is facing the right direction upon entering scene
 func _ready() -> void:
 	animated_sprite.play("idle" + current_direction)
@@ -19,16 +16,12 @@ func _ready() -> void:
 
 # get the input direction and handle movement
 func _physics_process(_delta: float) -> void:
-	var direction: Vector2
+	if !Global.can_control:
+		return
 
-	# Check if we're auto-moving to a target position
-	if target_position != Vector2.ZERO:
-		direction = (target_position - global_position).normalized()
-	elif Global.can_control:
-		direction = Vector2(Input.get_axis("move_left", "move_right"),
+	
+	var direction = Vector2(Input.get_axis("move_left", "move_right"),
 		Input.get_axis("move_up", "move_down")).normalized()
-	else:
-		direction = Vector2.ZERO
 
 	if direction:
 		velocity = direction * SPEED
@@ -45,7 +38,7 @@ func _physics_process(_delta: float) -> void:
 	move_and_slide()
 
 	# Handle interaction input
-	if Input.is_action_just_pressed("interact") and Global.can_control:
+	if Input.is_action_just_pressed("interact"):
 		_try_interact()
 		
 # returns a direction depending on the direction the player is moving
@@ -72,14 +65,3 @@ func _on_area_body_entered(body: Node2D) -> void:
 func _on_area_body_exited(body: Node2D) -> void:
 	if body.is_in_group("interactables"):
 		body.set_can_interact(false)
-
-# Move the player to a target position automatically
-func move_to(target: Vector2) -> void:
-	target_position = target
-
-	# Wait until we're close enough to the target
-	while global_position.distance_to(target_position) > 5.0:
-		await get_tree().process_frame
-
-	# Reset target position when reached
-	target_position = Vector2.ZERO

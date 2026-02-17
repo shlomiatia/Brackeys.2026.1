@@ -36,7 +36,11 @@ func _on_dialogic_signal(argument: String) -> void:
 		"rope_cut":
 			ball.cut()
 		"show_scene":
-			fade.animation_player.play("Default")
+			fade.fade_in()
+		"jump_in_hole":
+			await get_tree().create_timer(1.0).timeout
+			await fade.fade_out()
+			get_tree().change_scene_to_file("res://Levels/Level2/Level2.tscn")
 
 func _fade_and_remove(node: Node2D) -> void:
 	var tween = create_tween()

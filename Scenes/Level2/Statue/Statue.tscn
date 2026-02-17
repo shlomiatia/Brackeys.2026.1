@@ -38,6 +38,7 @@ shader_parameter/modulate = Color(1, 1, 1, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_e5nhp")
+position = Vector2(0, -15)
 texture = ExtResource("2_nktml")
 region_enabled = true
 region_rect = Rect2(9, 3, 14, 29)

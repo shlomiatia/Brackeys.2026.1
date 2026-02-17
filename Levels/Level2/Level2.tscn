@@ -1,13 +1,22 @@
-[gd_scene load_steps=5 format=3 uid="uid://bmp50wvaog1e"]
+[gd_scene load_steps=7 format=3 uid="uid://bmp50wvaog1e"]
 
 [ext_resource type="PackedScene" uid="uid://deur6yjprct37" path="res://Scenes/Player/player.tscn" id="1_a67fh"]
+[ext_resource type="Script" uid="uid://mbmr1umj5xsk" path="res://Levels/Level2/level2.gd" id="1_script"]
 [ext_resource type="PackedScene" uid="uid://dh6c7ym3x25h7" path="res://Scenes/Level2/Statue/Statue.tscn" id="2_36aoo"]
 [ext_resource type="PackedScene" uid="uid://bbrs3ouymdwi8" path="res://Scenes/ShakingCamera/ShakingCamera.tscn" id="2_p5es7"]
 [ext_resource type="PackedScene" uid="uid://cfgp45xbt467i" path="res://Scenes/Conversation/Conversation.tscn" id="3_conv"]
+[ext_resource type="PackedScene" uid="uid://dnwug4pxdwecg" path="res://Scenes/Utils/Fade.tscn" id="4_fade"]
 
 [node name="Level2" type="Node2D"]
+script = ExtResource("1_script")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Fade" parent="CanvasLayer" instance=ExtResource("4_fade")]
+auto_fade_in = true
 
 [node name="Objects" type="Node2D" parent="."]
+y_sort_enabled = true
 
 [node name="player" parent="Objects" instance=ExtResource("1_a67fh")]
 position = Vector2(253, 159)
