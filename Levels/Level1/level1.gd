@@ -7,7 +7,10 @@ extends Node2D
 @onready var knife: Sprite2D = $Knife
 @onready var fade: Fade = $CanvasLayer/Fade
 
+var intro_music = load("res://audio/music/test Bella - piano sketch.mp3")
+
 func _ready() -> void:
+	play_intro_music()
 	# Connect to Dialogic signals
 	Dialogic.signal_event.connect(_on_dialogic_signal)
 
@@ -27,6 +30,7 @@ func _on_dialogic_signal(argument: String) -> void:
 	match argument:
 		"door_interacted":
 			ball.fall()
+			AudioManager.stop_music()
 		"knife_picked_up":
 			_fade_and_remove(knife)
 		"rope_cut":
@@ -39,3 +43,8 @@ func _fade_and_remove(node: Node2D) -> void:
 	tween.tween_property(node, "modulate:a", 0.0, 0.5)
 	await tween.finished
 	node.queue_free()
+	
+	
+# Audio
+func play_intro_music():
+	AudioManager.play_music(intro_music)
