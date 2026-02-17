@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://c5lv2xaxlt7x1"]
+[gd_scene load_steps=19 format=3 uid="uid://c5lv2xaxlt7x1"]
 
 [ext_resource type="Script" uid="uid://bqkavbevvdyxc" path="res://Levels/Level1/level1.gd" id="1_a1y0i"]
 [ext_resource type="PackedScene" uid="uid://dnwug4pxdwecg" path="res://Scenes/Utils/Fade.tscn" id="2_renp8"]
@@ -9,7 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://cfgp45xbt467i" path="res://Scenes/Conversation/Conversation.tscn" id="6_4ipag"]
 [ext_resource type="PackedScene" uid="uid://d22q58gqy0syp" path="res://Scenes/Level1/Ball/Ball.tscn" id="7_renp8"]
 [ext_resource type="Texture2D" uid="uid://cclfrb70ym7xi" path="res://Assets/Intro/destroyFloor.PNG" id="8_renp8"]
-[ext_resource type="Texture2D" uid="uid://dgtkntcg4oxkq" path="res://Assets/money.png" id="10_7ouqh"]
+[ext_resource type="Texture2D" uid="uid://dt5w73ckb8i5f" path="res://Assets/Intro/knife.PNG" id="10_e1uqi"]
+[ext_resource type="Texture2D" uid="uid://cuh45bmobu3l2" path="res://Assets/Intro/rope.PNG" id="11_4ipag"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b1g7e"]
 atlas = ExtResource("8_renp8")
@@ -78,7 +79,8 @@ position = Vector2(-92, 67)
 current_direction = "Fr"
 
 [node name="Door" type="Sprite2D" parent="Objects"]
-position = Vector2(-2, -82)
+z_index = 1
+position = Vector2(-87, -47)
 texture = ExtResource("5_a1y0i")
 
 [node name="Conversation" parent="Objects/Door" instance=ExtResource("6_4ipag")]
@@ -86,7 +88,8 @@ dialogue_name = "level1_door"
 interactable_size = Vector2(16, 29)
 
 [node name="Ball" parent="Objects" instance=ExtResource("7_renp8")]
-position = Vector2(121, 26)
+z_index = 1
+position = Vector2(51, 21)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(34, 23)
@@ -99,15 +102,19 @@ position = Vector2(-6, 8)
 zoom = Vector2(3, 3)
 
 [node name="Knife" type="Sprite2D" parent="."]
-position = Vector2(180, -36)
-texture = ExtResource("10_7ouqh")
+z_index = 2
+position = Vector2(123, 50)
+texture = ExtResource("10_e1uqi")
 
 [node name="Conversation" parent="Knife" instance=ExtResource("6_4ipag")]
 dialogue_name = "level1_knife"
 
 [node name="Rope" type="Sprite2D" parent="."]
-position = Vector2(-178, 39)
-texture = ExtResource("10_7ouqh")
+z_index = 1
+position = Vector2(-33, -33)
+texture = ExtResource("11_4ipag")
+offset = Vector2(0, -55.48)
 
 [node name="Conversation" parent="Rope" instance=ExtResource("6_4ipag")]
+z_index = 1
 dialogue_name = "level1_rope"

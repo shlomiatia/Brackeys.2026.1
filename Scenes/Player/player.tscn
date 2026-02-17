@@ -190,7 +190,7 @@ y_sort_enabled = true
 texture_filter = 1
 position = Vector2(0, 1)
 sprite_frames = SubResource("SpriteFrames_ke2ow")
-animation = &"walkR"
+animation = &"idleFr"
 offset = Vector2(0, -17)
 
 [node name="Area2D" type="Area2D" parent="."]

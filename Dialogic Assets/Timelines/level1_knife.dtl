@@ -1,4 +1,13 @@
-I better take this
-set {knife_picked_up} = true
-[signal arg="knife_picked_up"]
+join Bella center
+Bella: A knife?![pause=0.2] What's this doing here??
+
+Take the knife?
+- Yes
+	Bella: This could be useful.
+	set {knife_picked_up} = true
+	[signal arg="knife_picked_up"]
+- No
+	Bella: Maybe that isn't a good idea.
+
+leave Bella
 [end_timeline]

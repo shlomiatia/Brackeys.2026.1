@@ -1,2 +1,12 @@
-Here goes noting
+join Bella center
+Bella: That ball created a hole in the ground.
+Bella: ...
+Bella: This might be the only way out...
+
+Jump in?
+
+- Yes
+	Bella: I hope I don't regret this...
+- No
+	Bella: I-[pause=0.2]I can't...
 [end_timeline]

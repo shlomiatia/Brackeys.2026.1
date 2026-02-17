@@ -1,7 +1,27 @@
 if {door_interacted} == false:
-	The door is locked, but what is this sound?
-	set {door_interacted} = true
-	[signal arg="door_interacted"]
+	join Bella center
+	Bella: A door? Maybe it's the way out!
+	
+	Should I try to open it?
+	- Yes
+		Bella: It's locked...
+		Bella: Wait...[pause=0.2]what's that sound?!
+		leave Bella
+		
+		set {door_interacted} = true
+		[signal arg="door_interacted"]
+		[wait time="2.0"]
+		
+		join Bella
+		Bella: Agh!
+		Bella: What?![pause=0.2] How did...?
+	
+	- No
+		Bella: Not yet...
+
 else:
-	It's locked
+	join Bella
+	Bella: It's locked.
+
+leave Bella 
 [end_timeline]

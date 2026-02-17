@@ -1,13 +1,41 @@
+if {rope_interacted} == false:
+	join Bella center
+	Bella: A rope?
+	if {door_interacted} == false:
+		Bella: Why is this here?[pause=0.2] Could it be attached to something?
+	else:
+		Bella: Why is this here?[pause=0.2] Could it be attached to that ball?
+	set {rope_interacted} = true
+	[end_timeline]
+
 if {rope_cut} == true:
-	I already cut it
-elif {door_interacted} == false and {knife_picked_up} == false:
-	what is this attached to?
-elif {door_interacted} == false:
-	why should I cut this?
-elif {knife_picked_up} == false:
-	is this attached to the ball?
+	join Bella center
+	Bella: I don't think there's anything else to do here.
+
+elif {knife_picked_up} == true and {door_interacted} == true:
+	join Bella center
+	Bella: Maybe I could cut this with the knife I got?
+	
+	Should I cut the rope?
+	- Yes
+		Bella: I suppose it's worth a shot.
+		leave Bella
+		[wait time="0.5"]
+		set {rope_cut} = true
+		[signal arg="rope_cut"]
+		[wait time="2.0"]
+		join Bella center
+		Bella: It fell!
+	- No
+		Bella: I'm not so sure about this...
+
+elif {door_interacted} == true:
+	join Bella center
+	Bella: Hm...[pause=0.2] This rope could be attached to that ball.
+	Bella: Perhaps there is something I can do with it?
 else:
-	I wonder...
-	set {rope_cut} = true
-	[signal arg="rope_cut"]
+	join Bella center
+	Bella: What is this attached to?
+
+leave Bella
 [end_timeline]
