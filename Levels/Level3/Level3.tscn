@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://cye4t85qtfng7"]
+
+[ext_resource type="PackedScene" uid="uid://bbrs3ouymdwi8" path="res://Scenes/ShakingCamera/ShakingCamera.tscn" id="1_osmeb"]
+[ext_resource type="PackedScene" uid="uid://clla8xhl4d6s3" path="res://Scenes/Level3/MaskMiniGame/MaskMiniGame.tscn" id="2_o2r2v"]
+
+[node name="Level3" type="Node2D"]
+
+[node name="ShakingCamera" parent="." instance=ExtResource("1_osmeb")]
+zoom = Vector2(3, 3)
+
+[node name="MaskMiniGame" parent="." instance=ExtResource("2_o2r2v")]
+auto_start = true

@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://clla8xhl4d6s3"]
+
+[ext_resource type="Texture2D" uid="uid://bor8hmwg868my" path="res://Assets/bubble128.png" id="1_td4xl"]
+[ext_resource type="Texture2D" uid="uid://l6v6jcoq2mh2" path="res://Assets/blob128.png" id="2_v7k4o"]
+[ext_resource type="Script" uid="uid://duc6ft8khmc84" path="res://Scenes/Level3/MaskMiniGame/MaskMiniGame.gd" id="3_script"]
+
+[node name="MaskMiniGame" type="Node2D"]
+script = ExtResource("3_script")
+
+[node name="Face" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_td4xl")
+
+[node name="Mask" type="Sprite2D" parent="."]
+texture = ExtResource("2_v7k4o")

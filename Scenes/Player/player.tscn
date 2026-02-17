@@ -197,7 +197,6 @@ stream_5/stream = ExtResource("9_dey5f")
 stream_6/stream = ExtResource("10_r5xpd")
 
 [node name="player" type="CharacterBody2D" groups=["player"]]
-y_sort_enabled = true
 script = ExtResource("1_g2els")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

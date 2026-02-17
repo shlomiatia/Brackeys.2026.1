@@ -3,7 +3,6 @@ extends Node
 # vars regarding what the player can control
 var can_control: bool = true
 
-
 func format_collected_letters() -> void:
 	var collected: String = Dialogic.VAR.get_variable("collected_letters")
 	var spaced := " ".join(collected.split(""))
