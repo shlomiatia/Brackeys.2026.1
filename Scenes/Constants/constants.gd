@@ -4,7 +4,7 @@ extends Node2D
 var mask_position_threshold: float = 15.0
 var mask_rotation_threshold_deg: float = 8.0
 var mask_min_step_duration: float = 1.0
-var mask_max_step_duration: float = 2.0
+var mask_max_step_duration: float = 2.5
 var mask_max_position_x: float = 50.0
 var mask_max_position_y: float = 50.0
 var mask_max_rotation_deg: float = 45.0
