@@ -1,0 +1,20 @@
+if {collected_letters} == "":
+	join Bella center
+	Bella: Go talk to the others.
+	leave Bella
+	[end_timeline]
+
+do Global.format_collected_letters()
+join Bella center
+Bella: Your letters are: {letters_display}
+[text_input var="user_answer" text="Enter your answer:" placeholder="" allow_empty="false"]
+do Global.validate_statue_answer()
+if {answer_result} == "missing":
+	Bella: You didn't find those letters yet.
+elif {answer_result} == "correct":
+	Bella: Correct!
+	[signal arg="statue_correct"]
+else:
+	Bella: Incorrect.
+leave Bella
+[end_timeline]

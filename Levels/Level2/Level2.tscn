@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://bmp50wvaog1e"]
+[gd_scene load_steps=5 format=3 uid="uid://bmp50wvaog1e"]
 
 [ext_resource type="PackedScene" uid="uid://deur6yjprct37" path="res://Scenes/Player/player.tscn" id="1_a67fh"]
 [ext_resource type="PackedScene" uid="uid://dh6c7ym3x25h7" path="res://Scenes/Level2/Statue/Statue.tscn" id="2_36aoo"]
+[ext_resource type="PackedScene" uid="uid://bbrs3ouymdwi8" path="res://Scenes/ShakingCamera/ShakingCamera.tscn" id="2_p5es7"]
+[ext_resource type="PackedScene" uid="uid://cfgp45xbt467i" path="res://Scenes/Conversation/Conversation.tscn" id="3_conv"]
 
 [node name="Level2" type="Node2D"]
 
@@ -10,5 +12,53 @@
 [node name="player" parent="Objects" instance=ExtResource("1_a67fh")]
 position = Vector2(253, 159)
 
-[node name="Statue" parent="Objects" instance=ExtResource("2_36aoo")]
+[node name="ShakingCamera" parent="Objects/player" instance=ExtResource("2_p5es7")]
+zoom = Vector2(3, 3)
+
+[node name="MainStatue" parent="Objects" instance=ExtResource("2_36aoo")]
 position = Vector2(300, 147)
+
+[node name="Conversation" parent="Objects/MainStatue" instance=ExtResource("3_conv")]
+dialogue_name = "level2_main_statue"
+
+[node name="Statue1" parent="Objects" instance=ExtResource("2_36aoo")]
+position = Vector2(300, 67)
+
+[node name="Conversation" parent="Objects/Statue1" instance=ExtResource("3_conv")]
+dialogue_name = "level2_statue1"
+
+[node name="Statue2" parent="Objects" instance=ExtResource("2_36aoo")]
+position = Vector2(370, 87)
+
+[node name="Conversation" parent="Objects/Statue2" instance=ExtResource("3_conv")]
+dialogue_name = "level2_statue2"
+
+[node name="Statue3" parent="Objects" instance=ExtResource("2_36aoo")]
+position = Vector2(400, 147)
+
+[node name="Conversation" parent="Objects/Statue3" instance=ExtResource("3_conv")]
+dialogue_name = "level2_statue3"
+
+[node name="Statue4" parent="Objects" instance=ExtResource("2_36aoo")]
+position = Vector2(370, 207)
+
+[node name="Conversation" parent="Objects/Statue4" instance=ExtResource("3_conv")]
+dialogue_name = "level2_statue4"
+
+[node name="Statue5" parent="Objects" instance=ExtResource("2_36aoo")]
+position = Vector2(300, 227)
+
+[node name="Conversation" parent="Objects/Statue5" instance=ExtResource("3_conv")]
+dialogue_name = "level2_statue5"
+
+[node name="Statue6" parent="Objects" instance=ExtResource("2_36aoo")]
+position = Vector2(230, 207)
+
+[node name="Conversation" parent="Objects/Statue6" instance=ExtResource("3_conv")]
+dialogue_name = "level2_statue6"
+
+[node name="Statue7" parent="Objects" instance=ExtResource("2_36aoo")]
+position = Vector2(230, 87)
+
+[node name="Conversation" parent="Objects/Statue7" instance=ExtResource("3_conv")]
+dialogue_name = "level2_statue7"

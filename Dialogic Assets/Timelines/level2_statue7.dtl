@@ -1,0 +1,8 @@
+join Bella center
+if "F" in {collected_letters}:
+	Bella: We already talked.
+else:
+	Bella: One of the letters is F.
+	set {collected_letters} += "F"
+leave Bella
+[end_timeline]

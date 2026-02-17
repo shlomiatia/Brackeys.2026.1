@@ -1,0 +1,8 @@
+join Bella center
+if "O" in {collected_letters}:
+	Bella: We already talked.
+else:
+	Bella: One of the letters is O.
+	set {collected_letters} += "O"
+leave Bella
+[end_timeline]
