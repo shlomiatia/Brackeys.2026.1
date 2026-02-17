@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=3 uid="uid://dh6c7ym3x25h7"]
+
+[ext_resource type="Shader" uid="uid://0pj0fhh50rn" path="res://Shaders/pallete_swap.gdshader" id="1_4ei0v"]
+[ext_resource type="Texture2D" uid="uid://bom3fsriea7cq" path="res://Assets/bellaSprite.PNG" id="2_nktml"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_e5nhp"]
+shader = ExtResource("1_4ei0v")
+shader_parameter/is_disabled = false
+shader_parameter/original_0 = Color(0.078431, 0.07451, 0.082353, 1)
+shader_parameter/original_1 = Color(0.184314, 0.164706, 0.188235, 1)
+shader_parameter/original_2 = Color(0.184314, 0.164706, 0.192157, 1)
+shader_parameter/original_3 = Color(0.356863, 0.168627, 0.568627, 1)
+shader_parameter/original_4 = Color(0.294118, 0.262745, 0.364706, 1)
+shader_parameter/original_5 = Color(0.498039, 0.341176, 0.52549, 1)
+shader_parameter/original_6 = Color(0.658824, 0.498039, 0.411765, 1)
+shader_parameter/original_7 = Color(0.905882, 0.819608, 0.894118, 1)
+shader_parameter/original_8 = Color(0.984314, 0.847059, 0.745098, 1)
+shader_parameter/original_9 = Color(1, 1, 1, 1)
+shader_parameter/original_10 = Color(0, 0, 0, 1)
+shader_parameter/original_11 = Color(0, 0, 0, 1)
+shader_parameter/original_12 = Color(0, 0, 0, 1)
+shader_parameter/replace_0 = Color(0.066667, 0.066667, 0.066667, 1)
+shader_parameter/replace_1 = Color(0.12549, 0.12549, 0.12549, 1)
+shader_parameter/replace_2 = Color(0.184314, 0.184314, 0.184314, 1)
+shader_parameter/replace_3 = Color(0.243137, 0.243137, 0.243137, 1)
+shader_parameter/replace_4 = Color(0.301961, 0.301961, 0.301961, 1)
+shader_parameter/replace_5 = Color(0.360784, 0.360784, 0.360784, 1)
+shader_parameter/replace_6 = Color(0.423529, 0.423529, 0.423529, 1)
+shader_parameter/replace_7 = Color(0.482353, 0.482353, 0.482353, 1)
+shader_parameter/replace_8 = Color(0.541176, 0.541176, 0.541176, 1)
+shader_parameter/replace_9 = Color(0.6, 0.6, 0.6, 1)
+shader_parameter/replace_10 = Color(0, 0, 0, 1)
+shader_parameter/replace_11 = Color(0, 0, 0, 1)
+shader_parameter/replace_12 = Color(0, 0, 0, 1)
+shader_parameter/modulate = Color(1, 1, 1, 1)
+
+[node name="Statue" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_e5nhp")
+texture = ExtResource("2_nktml")
+region_enabled = true
+region_rect = Rect2(9, 3, 14, 29)

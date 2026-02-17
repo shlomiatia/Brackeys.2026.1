@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bmp50wvaog1e"]
+
+[ext_resource type="PackedScene" uid="uid://deur6yjprct37" path="res://Scenes/Player/player.tscn" id="1_a67fh"]
+[ext_resource type="PackedScene" uid="uid://dh6c7ym3x25h7" path="res://Scenes/Level2/Statue/Statue.tscn" id="2_36aoo"]
+
+[node name="Level2" type="Node2D"]
+
+[node name="Objects" type="Node2D" parent="."]
+
+[node name="player" parent="Objects" instance=ExtResource("1_a67fh")]
+position = Vector2(253, 159)
+
+[node name="Statue" parent="Objects" instance=ExtResource("2_36aoo")]
+position = Vector2(300, 147)

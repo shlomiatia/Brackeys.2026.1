@@ -24,8 +24,7 @@ AudioManager="*res://audio/scenes/audio_manager.tscn"
 [dialogic]
 
 directories/dch_directory={
-"Bella": "res://Dialogic Assets/Charactesr/Bella.dch",
-"testCharacter": "res://Dialogic Assets/Charactesr/testCharacter.dch"
+"Bella": "res://Dialogic Assets/Charactesr/Bella.dch"
 }
 directories/dtl_directory={
 "level1_ball": "res://Dialogic Assets/Timelines/level1_ball.dtl",
@@ -33,7 +32,8 @@ directories/dtl_directory={
 "level1_hole": "res://Dialogic Assets/Timelines/level1_hole.dtl",
 "level1_intro": "res://Dialogic Assets/Timelines/level1_intro.dtl",
 "level1_knife": "res://Dialogic Assets/Timelines/level1_knife.dtl",
-"level1_rope": "res://Dialogic Assets/Timelines/level1_rope.dtl"
+"level1_rope": "res://Dialogic Assets/Timelines/level1_rope.dtl",
+"test": "res://test.dtl"
 }
 layout/style_directory={}
 variables={
