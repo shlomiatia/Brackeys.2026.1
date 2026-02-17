@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bu5skewtjvxyh"
-path="res://.godot/imported/introTileset.PNG-45ba35950c03173794ad55621b2320a6.ctex"
+uid="uid://dfhh0g7qnb63j"
+path="res://.godot/imported/maskedMan.PNG-32e29224546f9ddc83959ee21db5d434.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tilesets/introTileset.PNG"
-dest_files=["res://.godot/imported/introTileset.PNG-45ba35950c03173794ad55621b2320a6.ctex"]
+source_file="res://Dialogic Assets/Images/maskedMan.PNG"
+dest_files=["res://.godot/imported/maskedMan.PNG-32e29224546f9ddc83959ee21db5d434.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bu5skewtjvxyh"
-path="res://.godot/imported/introTileset.PNG-45ba35950c03173794ad55621b2320a6.ctex"
+uid="uid://c34j0kd41unmk"
+path="res://.godot/imported/statueFr.PNG-32d5438ef975a0fc90e5882e0cb09f85.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tilesets/introTileset.PNG"
-dest_files=["res://.godot/imported/introTileset.PNG-45ba35950c03173794ad55621b2320a6.ctex"]
+source_file="res://Assets/Masked Section/statueFr.PNG"
+dest_files=["res://.godot/imported/statueFr.PNG-32d5438ef975a0fc90e5882e0cb09f85.ctex"]
 
 [params]
 

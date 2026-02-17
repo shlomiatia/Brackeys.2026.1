@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bu5skewtjvxyh"
-path="res://.godot/imported/introTileset.PNG-45ba35950c03173794ad55621b2320a6.ctex"
+uid="uid://cyvxle3mkv8k1"
+path="res://.godot/imported/sewerEntrance.PNG-fa8c0cc78fdb6126889f2ccdd44044be.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tilesets/introTileset.PNG"
-dest_files=["res://.godot/imported/introTileset.PNG-45ba35950c03173794ad55621b2320a6.ctex"]
+source_file="res://Assets/Masked Section/sewerEntrance.PNG"
+dest_files=["res://.godot/imported/sewerEntrance.PNG-fa8c0cc78fdb6126889f2ccdd44044be.ctex"]
 
 [params]
 

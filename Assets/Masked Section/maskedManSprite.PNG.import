@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bu5skewtjvxyh"
-path="res://.godot/imported/introTileset.PNG-45ba35950c03173794ad55621b2320a6.ctex"
+uid="uid://heuso4le37mm"
+path="res://.godot/imported/maskedManSprite.PNG-845c317a4200e64260a22dd56474c2ce.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tilesets/introTileset.PNG"
-dest_files=["res://.godot/imported/introTileset.PNG-45ba35950c03173794ad55621b2320a6.ctex"]
+source_file="res://Assets/Masked Section/maskedManSprite.PNG"
+dest_files=["res://.godot/imported/maskedManSprite.PNG-845c317a4200e64260a22dd56474c2ce.ctex"]
 
 [params]
 
