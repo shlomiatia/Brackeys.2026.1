@@ -42,7 +42,11 @@ directories/dtl_directory={
 "level2_statue4": "res://Dialogic Assets/Timelines/level2_statue4.dtl",
 "level2_statue5": "res://Dialogic Assets/Timelines/level2_statue5.dtl",
 "level2_statue6": "res://Dialogic Assets/Timelines/level2_statue6.dtl",
-"level2_statue7": "res://Dialogic Assets/Timelines/level2_statue7.dtl"
+"level2_statue7": "res://Dialogic Assets/Timelines/level2_statue7.dtl",
+"level3_masked_creature": "res://Dialogic Assets/Timelines/level3_masked_creature.dtl",
+"level3_small_masked_creature1": "res://Dialogic Assets/Timelines/level3_small_masked_creature1.dtl",
+"level3_small_masked_creature2": "res://Dialogic Assets/Timelines/level3_small_masked_creature2.dtl",
+"level3_small_masked_creature3": "res://Dialogic Assets/Timelines/level3_small_masked_creature3.dtl"
 }
 layout/style_directory={}
 variables={
@@ -51,6 +55,12 @@ variables={
 "door_interacted": false,
 "knife_picked_up": false,
 "letters_display": "",
+"level3_defeated_small_masked_creature1": false,
+"level3_defeated_small_masked_creature2": false,
+"level3_defeated_small_masked_creature3": false,
+"level3_told_secret1": false,
+"level3_told_secret2": false,
+"level3_told_secret3": false,
 "rope_cut": false,
 "rope_interacted": false,
 "user_answer": ""

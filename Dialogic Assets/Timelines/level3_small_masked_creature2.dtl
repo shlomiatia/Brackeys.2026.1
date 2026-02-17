@@ -1,0 +1,4 @@
+join Bella center
+Bella: You came to fight me!
+set {level3_defeated_small_masked_creature2} = true
+[signal arg="fight_small_masked_creature2"]

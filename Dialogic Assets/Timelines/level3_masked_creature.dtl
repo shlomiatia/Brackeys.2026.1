@@ -1,0 +1,20 @@
+join Bella center
+if {level3_defeated_small_masked_creature1} == false and {level3_defeated_small_masked_creature2} == false and {level3_defeated_small_masked_creature3} == false:
+	Bella: Go fight my minions and come to me.
+	[end_timeline]
+if {level3_defeated_small_masked_creature1} == true and {level3_told_secret1} == false:
+	Bella: This is the secret of creature 1.
+	set {level3_told_secret1} = true
+	[end_timeline]
+if {level3_defeated_small_masked_creature2} == true and {level3_told_secret2} == false:
+	Bella: This is the secret of creature 2.
+	set {level3_told_secret2} = true
+	[end_timeline]
+if {level3_defeated_small_masked_creature3} == true and {level3_told_secret3} == false:
+	Bella: This is the secret of creature 3.
+	set {level3_told_secret3} = true
+	[end_timeline]
+if {level3_defeated_small_masked_creature1} == true and {level3_defeated_small_masked_creature2} == true and {level3_defeated_small_masked_creature3} == true:
+	Bella: You won!
+else:
+	Bella: Go fight the others.

@@ -1,12 +1,12 @@
 extends Node2D
 
 # Mask Mini Game - Movement
-var mask_position_threshold: float = 15.0
+var mask_position_threshold: float = 8.0
 var mask_rotation_threshold_deg: float = 8.0
 var mask_min_step_duration: float = 1.0
 var mask_max_step_duration: float = 2.5
-var mask_max_position_x: float = 50.0
-var mask_max_position_y: float = 50.0
+var mask_max_position_x: float = 75.0
+var mask_max_position_y: float = 75.0
 var mask_max_rotation_deg: float = 45.0
 
 
