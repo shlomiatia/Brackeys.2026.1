@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dh6c7ym3x25h7"]
+[gd_scene load_steps=7 format=3 uid="uid://dh6c7ym3x25h7"]
 
 [ext_resource type="Shader" uid="uid://0pj0fhh50rn" path="res://Shaders/pallete_swap.gdshader" id="1_4ei0v"]
+[ext_resource type="Script" uid="uid://bm2vam277q3vl" path="res://Scenes/Level2/Statue/statue.gd" id="1_script"]
 [ext_resource type="Texture2D" uid="uid://bom3fsriea7cq" path="res://Assets/bellaSprite.PNG" id="2_nktml"]
+[ext_resource type="PackedScene" uid="uid://cfgp45xbt467i" path="res://Scenes/Conversation/Conversation.tscn" id="3_conv"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_e5nhp"]
 shader = ExtResource("1_4ei0v")
@@ -38,6 +40,7 @@ shader_parameter/modulate = Color(1, 1, 1, 1)
 radius = 4.0
 
 [node name="Statue" type="Node2D"]
+script = ExtResource("1_script")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_e5nhp")
@@ -51,3 +54,6 @@ region_rect = Rect2(9, 3, 14, 29)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(0, -4)
 shape = SubResource("CircleShape2D_statue")
+
+[node name="Conversation" parent="." instance=ExtResource("3_conv")]
+position = Vector2(0, -15)

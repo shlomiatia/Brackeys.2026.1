@@ -21,6 +21,6 @@ func _on_dialogic_signal(argument: String) -> void:
 	match argument:
 		"statue_correct":
 			var tween = create_tween()
-			tween.tween_property(main_statue, "position", main_statue.position + Vector2(60, 0), 1.0)
+			tween.tween_property(main_statue, "position", main_statue.position + Vector2(32, 0), 1.0)
 			await tween.finished
 			pipe_conversation.interactable_disabled = false
