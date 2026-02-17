@@ -34,6 +34,7 @@ directories/dtl_directory={
 "level1_knife": "res://Dialogic Assets/Timelines/level1_knife.dtl",
 "level1_rope": "res://Dialogic Assets/Timelines/level1_rope.dtl",
 "level2_main_statue": "res://Dialogic Assets/Timelines/level2_main_statue.dtl",
+"level2_pipe": "res://Dialogic Assets/Timelines/level2_pipe.dtl",
 "level2_statue1": "res://Dialogic Assets/Timelines/level2_statue1.dtl",
 "level2_statue2": "res://Dialogic Assets/Timelines/level2_statue2.dtl",
 "level2_statue3": "res://Dialogic Assets/Timelines/level2_statue3.dtl",

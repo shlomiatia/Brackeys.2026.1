@@ -1,9 +1,12 @@
 extends Node2D
 
 @onready var player = $Objects/player
+@onready var main_statue = $Objects/MainStatue
+@onready var pipe_conversation: Conversation = $Objects/Pipe/Conversation
 
 func _ready() -> void:
 	Global.can_control = false
+	Dialogic.signal_event.connect(_on_dialogic_signal)
 	await _player_fall()
 	Global.can_control = true
 
@@ -13,3 +16,11 @@ func _player_fall() -> void:
 	var tween = create_tween()
 	tween.tween_property(player, "position", target_position, 3.0)
 	await tween.finished
+
+func _on_dialogic_signal(argument: String) -> void:
+	match argument:
+		"statue_correct":
+			var tween = create_tween()
+			tween.tween_property(main_statue, "position", main_statue.position + Vector2(60, 0), 1.0)
+			await tween.finished
+			pipe_conversation.interactable_disabled = false
