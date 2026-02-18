@@ -3,6 +3,13 @@ extends Node
 # vars regarding what the player can control
 var can_control: bool = true
 
+func change_scene(scene_path: String) -> void:
+	can_control = false
+	await get_tree().create_timer(1.0).timeout
+	var fade: Fade = get_tree().current_scene.get_node("CanvasLayer/Fade")
+	await fade.fade_out()
+	get_tree().change_scene_to_file(scene_path)
+
 func format_collected_letters() -> void:
 	var collected: String = Dialogic.VAR.get_variable("collected_letters")
 	var spaced := " ".join(collected.split(""))

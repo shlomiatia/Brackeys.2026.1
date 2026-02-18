@@ -11,7 +11,6 @@ func _ready() -> void:
 
 
 func _on_dialogic_signal(argument: String) -> void:
-	print("Received Dialogic signal: ", argument)
 	match argument:
 		"fight_small_masked_creature1":
 			await _fight_creature(small_creature1)
@@ -22,7 +21,6 @@ func _on_dialogic_signal(argument: String) -> void:
 
 
 func _fight_creature(creature: Node2D) -> void:
-	print("Starting fight with creature: ", creature.name)
 	Global.can_control = false
 	await get_tree().create_timer(1.0).timeout
 	mask_mini_game.start()

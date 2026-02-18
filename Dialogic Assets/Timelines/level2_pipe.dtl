@@ -7,6 +7,7 @@ Enter the strange gate?
 
 - Yes
 	Bella: I need to find out who I was...
+	[signal arg="level2_pipe_entered"]
 - No
 	Bella: Not yet...
 leave Bella

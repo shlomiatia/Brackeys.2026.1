@@ -27,3 +27,5 @@ func _on_dialogic_signal(argument: String) -> void:
 			tween.tween_property(main_statue, "position", main_statue.position + Vector2(32, 0), 1.0)
 			await tween.finished
 			pipe_conversation.interactable_disabled = false
+		"level2_pipe_entered":
+			Global.change_scene("res://Levels/Level3/Level3.tscn")
