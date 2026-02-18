@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://q1gslhqa5nn2"]
+
+[ext_resource type="Script" path="res://Scenes/Level5/Gaze/gaze.gd" id="1_gaze"]
+
+[sub_resource type="Curve" id="Curve_acufd"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="Gaze" type="Line2D"]
+script = ExtResource("1_gaze")
+points = PackedVector2Array(0, 0, 92, 77)
+width = 16.0
+width_curve = SubResource("Curve_acufd")
+default_color = Color(1, 1, 1, 0.5019608)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2

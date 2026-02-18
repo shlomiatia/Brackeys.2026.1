@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://r1j83fmfcnft"]
+
+[ext_resource type="Script" uid="uid://k51tlofxn72l" path="res://Scenes/Level5/Mirror/mirror.gd" id="1_48j3y"]
+[ext_resource type="Texture2D" uid="uid://lx83nx2ma6o4" path="res://Assets/Eye Section/mirror.PNG" id="1_ao24r"]
+[ext_resource type="PackedScene" uid="uid://bmv00lqu5yns1" path="res://Scenes/Interactable/Interactable.tscn" id="2_48j3y"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ao24r"]
+radius = 6.0
+height = 28.0
+
+[node name="Mirror" type="Node2D"]
+script = ExtResource("1_48j3y")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ao24r")
+hframes = 4
+
+[node name="Interactable" parent="Sprite2D" instance=ExtResource("2_48j3y")]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("CapsuleShape2D_ao24r")
