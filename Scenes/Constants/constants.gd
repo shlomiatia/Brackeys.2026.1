@@ -9,6 +9,10 @@ var mask_max_position_x: float = 75.0
 var mask_max_position_y: float = 75.0
 var mask_max_rotation_deg: float = 45.0
 
+# Maze Hint
+var maze_modulate_hint_modifier: float = 0.5
+var maze_db_hint_modifier: float = 9.0
+
 
 var canvas_layer: CanvasLayer
 var display_label: Label
@@ -35,6 +39,13 @@ func _ready():
 				["mask_max_position_x", 1],
 				["mask_max_position_y", 1],
 				["mask_max_rotation_deg", 1],
+				]
+		},
+		{
+			"name": "Maze Hint",
+			"properties": [
+				["maze_modulate_hint_modifier", 0.1],
+				["maze_db_hint_modifier", 0.5],
 				]
 		}
 	]

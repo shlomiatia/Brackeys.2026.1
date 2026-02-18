@@ -75,11 +75,11 @@ func play_sfx(stream: AudioStream, bus := "SFX", volume_db := 0.0, pitch := 1.0)
 	player.stream = stream
 	player.bus = bus
 	player.volume_db = volume_db
-	player.pitch_scale = pitch 
+	player.pitch_scale = pitch
 	sfx_root.add_child(player)
 	player.play()
 	
-	player.finished.connect(func(): 
+	player.finished.connect(func():
 		player.queue_free()
 		)
 

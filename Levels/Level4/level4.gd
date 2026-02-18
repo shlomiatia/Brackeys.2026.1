@@ -1,148 +1,98 @@
-extends Node2D
+class_name Level4 extends Node2D
 
-const ROOM_WIDTH := 24
-const ROOM_HEIGHT := 14
+enum Direction {UP, DOWN, LEFT, RIGHT}
 
-const TILE1 := Vector2i(2, 3) # lower horizontal wall / vertical wall
-const TILE2 := Vector2i(3, 4) # upper horizontal wall
+const EDGE_LEFT := -198.0
+const EDGE_RIGHT := 198.0
+const EDGE_TOP := -108.0
+const EDGE_BOTTOM := 137.0
+const CAMERA_WIDTH := EDGE_RIGHT - EDGE_LEFT
+const CAMERA_HEIGHT := EDGE_BOTTOM - EDGE_TOP
 
-@onready var tile_map_layer: TileMapLayer = $TileMapLayer
+@onready var player: Player = $Objects/Player
+@onready var fade: Fade = $CanvasLayer/Fade
+@onready var furniture_layers: Array[TileMapLayer] = [
+    $Objects/FurnitureTileMapLayer1,
+    $Objects/FurnitureTileMapLayer2,
+    $Objects/FurnitureTileMapLayer3,
+    $Objects/FurnitureTileMapLayer4,
+]
 
+var target_direction: Direction
+var current_furniture_index: int = 0
+
+var intro_music = load("res://audio/music/test music/bella theme v2 progress.mp3")
 
 func _ready() -> void:
-    _generate_room()
-    _generate_corridor()
+    pick_direction()
+    AudioManager.play_music(intro_music)
 
+func opposite(dir: Direction) -> Direction:
+    match dir:
+        Direction.UP: return Direction.DOWN
+        Direction.DOWN: return Direction.UP
+        Direction.LEFT: return Direction.RIGHT
+        _: return Direction.LEFT
 
-func _generate_room() -> void:
-    tile_map_layer.clear()
-    _draw_h_corridor(Vector2i(1, 0), ROOM_WIDTH - 2)
-    _draw_h_corridor(Vector2i(1, ROOM_HEIGHT - 2), ROOM_WIDTH - 2)
-    _draw_v_corridor(Vector2i(0, 0), ROOM_HEIGHT)
-    _draw_v_corridor(Vector2i(ROOM_WIDTH - 1, 0), ROOM_HEIGHT)
+func pick_direction() -> void:
+    var new_direction := randi() % 4 as Direction
+    while new_direction == opposite(target_direction):
+        new_direction = randi() % 4 as Direction
+    target_direction = new_direction
+    update_hint_color()
 
+func _physics_process(delta: float) -> void:
+    if !Global.can_control:
+        return
+    update_hint_color()
+    if player.position.x < EDGE_LEFT:
+        await move_room(Direction.LEFT)
+        player.position.x = EDGE_RIGHT
+    elif player.position.x > EDGE_RIGHT:
+        await move_room(Direction.RIGHT)
+        player.position.x = EDGE_LEFT
+    elif player.position.y < EDGE_TOP:
+        await move_room(Direction.UP)
+        player.position.y = EDGE_BOTTOM
+    elif player.position.y > EDGE_BOTTOM:
+        await move_room(Direction.DOWN)
+        player.position.y = EDGE_TOP
 
-func _generate_corridor() -> void:
-    # Top vertical corridor (going down from top wall, dead end at bottom)
-    _draw_v_corridor(Vector2i(10, 2), 2)
-    _draw_v_corridor(Vector2i(13, 2), 2)
-    _draw_corner_bl(Vector2i(10, 4))
-    _draw_dead_end_down(Vector2i(11, 4))
-    _draw_corner_br(Vector2i(13, 4))
+func move_room(exited_direction: Direction) -> void:
+    Global.can_control = false
+    await fade.fade_out()
+    switch_furniture(exited_direction == target_direction)
+    pick_direction()
+    await fade.fade_in()
+    Global.can_control = true
 
-    # Left horizontal corridor (going right, dead end at right)
-    _draw_h_corridor(Vector2i(1, 6), 6)
-    _draw_dead_end_right(Vector2i(7, 6))
+func switch_furniture(correct: bool) -> void:
+    furniture_layers[current_furniture_index].visible = false
+    furniture_layers[current_furniture_index].collision_enabled = false
+    if correct and current_furniture_index < furniture_layers.size() - 1:
+        current_furniture_index += 1
+    elif not correct:
+        current_furniture_index = 0
+    furniture_layers[current_furniture_index].visible = true
+    furniture_layers[current_furniture_index].collision_enabled = true
 
-    # Right horizontal corridor (going left, dead end at left)
-    _draw_dead_end_left(Vector2i(16, 6))
-    _draw_h_corridor(Vector2i(17, 6), 6)
-
-    # Bottom vertical corridor (going up from bottom wall, dead end at top)
-    _draw_corner_tl(Vector2i(10, 8))
-    _draw_dead_end_up(Vector2i(11, 8))
-    _draw_corner_tr(Vector2i(13, 8))
-    _draw_v_corridor(Vector2i(10, 10), 2)
-    _draw_v_corridor(Vector2i(13, 10), 2)
-
-
-# --- Drawing utilities ---
-
-
-## Horizontal corridor wall going right: tile2 at pos.y, tile1 at pos.y+1.
-func _draw_h_corridor(pos: Vector2i, length: int) -> void:
-    for i in range(length):
-        tile_map_layer.set_cell(pos + Vector2i(i, 0), 1, TILE2)
-        tile_map_layer.set_cell(pos + Vector2i(i, 1), 1, TILE1)
-
-
-## Vertical corridor wall going down: tile1 column.
-func _draw_v_corridor(pos: Vector2i, length: int) -> void:
-    for i in range(length):
-        tile_map_layer.set_cell(pos + Vector2i(0, i), 1, TILE1)
-
-
-## Top-left corner: tile2 on top, tile1 below.
-func _draw_corner_tl(pos: Vector2i) -> void:
-    tile_map_layer.set_cell(pos, 1, TILE2)
-    tile_map_layer.set_cell(pos + Vector2i(0, 1), 1, TILE1)
-
-
-## Top-right corner: tile2 on top, tile1 below.
-func _draw_corner_tr(pos: Vector2i) -> void:
-    tile_map_layer.set_cell(pos, 1, TILE2)
-    tile_map_layer.set_cell(pos + Vector2i(0, 1), 1, TILE1)
-
-
-## Bottom-left corner: tile1 on both rows.
-func _draw_corner_bl(pos: Vector2i) -> void:
-    tile_map_layer.set_cell(pos, 1, TILE1)
-    tile_map_layer.set_cell(pos + Vector2i(0, 1), 1, TILE1)
-
-
-## Bottom-right corner: tile1 on both rows.
-func _draw_corner_br(pos: Vector2i) -> void:
-    tile_map_layer.set_cell(pos, 1, TILE1)
-    tile_map_layer.set_cell(pos + Vector2i(0, 1), 1, TILE1)
-
-
-## T-junction down: 2-wide gap in a horizontal wall (corridor branches downward).
-func _draw_t_down(pos: Vector2i) -> void:
-    tile_map_layer.erase_cell(pos)
-    tile_map_layer.erase_cell(pos + Vector2i(1, 0))
-    tile_map_layer.erase_cell(pos + Vector2i(0, 1))
-    tile_map_layer.erase_cell(pos + Vector2i(1, 1))
-
-
-## T-junction up: 2-wide gap in a horizontal wall (corridor branches upward).
-func _draw_t_up(pos: Vector2i) -> void:
-    tile_map_layer.erase_cell(pos)
-    tile_map_layer.erase_cell(pos + Vector2i(1, 0))
-    tile_map_layer.erase_cell(pos + Vector2i(0, 1))
-    tile_map_layer.erase_cell(pos + Vector2i(1, 1))
-
-
-## T-junction right: vertical wall with gap, corridor branches right.
-## Places tile1, empty, tile2, tile1 going down from pos.
-func _draw_t_right(pos: Vector2i) -> void:
-    tile_map_layer.set_cell(pos, 1, TILE1)
-    tile_map_layer.erase_cell(pos + Vector2i(0, 1))
-    tile_map_layer.set_cell(pos + Vector2i(0, 2), 1, TILE2)
-    tile_map_layer.set_cell(pos + Vector2i(0, 3), 1, TILE1)
-
-
-## T-junction left: vertical wall with gap, corridor branches left.
-## Places tile1, empty, tile2, tile1 going down from pos.
-func _draw_t_left(pos: Vector2i) -> void:
-    tile_map_layer.set_cell(pos, 1, TILE1)
-    tile_map_layer.erase_cell(pos + Vector2i(0, 1))
-    tile_map_layer.set_cell(pos + Vector2i(0, 2), 1, TILE2)
-    tile_map_layer.set_cell(pos + Vector2i(0, 3), 1, TILE1)
-
-
-## Dead end right: caps a horizontal corridor on the right. 1x2 tile1 column.
-func _draw_dead_end_right(pos: Vector2i) -> void:
-    tile_map_layer.set_cell(pos, 1, TILE1)
-    tile_map_layer.set_cell(pos + Vector2i(0, 1), 1, TILE1)
-
-
-## Dead end left: caps a horizontal corridor on the left. 1x2 tile1 column.
-func _draw_dead_end_left(pos: Vector2i) -> void:
-    tile_map_layer.set_cell(pos, 1, TILE1)
-    tile_map_layer.set_cell(pos + Vector2i(0, 1), 1, TILE1)
-
-
-## Dead end down: caps a vertical corridor at the bottom. 2x2 tile2/tile1 block.
-func _draw_dead_end_down(pos: Vector2i) -> void:
-    tile_map_layer.set_cell(pos, 1, TILE2)
-    tile_map_layer.set_cell(pos + Vector2i(1, 0), 1, TILE2)
-    tile_map_layer.set_cell(pos + Vector2i(0, 1), 1, TILE1)
-    tile_map_layer.set_cell(pos + Vector2i(1, 1), 1, TILE1)
-
-
-## Dead end up: caps a vertical corridor at the top. 2x2 tile2/tile1 block.
-func _draw_dead_end_up(pos: Vector2i) -> void:
-    tile_map_layer.set_cell(pos, 1, TILE2)
-    tile_map_layer.set_cell(pos + Vector2i(1, 0), 1, TILE2)
-    tile_map_layer.set_cell(pos + Vector2i(0, 1), 1, TILE1)
-    tile_map_layer.set_cell(pos + Vector2i(1, 1), 1, TILE1)
+func update_hint_color() -> void:
+    var distance: float
+    var camera_size: float
+    match target_direction:
+        Direction.UP:
+            distance = player.position.y - EDGE_TOP
+            camera_size = CAMERA_HEIGHT
+        Direction.DOWN:
+            distance = EDGE_BOTTOM - player.position.y
+            camera_size = CAMERA_HEIGHT
+        Direction.LEFT:
+            distance = player.position.x - EDGE_LEFT
+            camera_size = CAMERA_WIDTH
+        Direction.RIGHT:
+            distance = EDGE_RIGHT - player.position.x
+            camera_size = CAMERA_WIDTH
+    var ratio := distance / camera_size
+    var c := 1.0 - ratio * Constants.maze_modulate_hint_modifier
+    modulate = Color(c, c, c)
+    AudioManager.music_player.volume_db = - ratio * Constants.maze_db_hint_modifier
