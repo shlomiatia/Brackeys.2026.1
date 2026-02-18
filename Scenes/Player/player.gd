@@ -8,6 +8,7 @@ const SPEED: float = 100.0
 # allows for setting the direction the sprite is facing every scene
 @export var current_direction: String = "Bck"
 
+var interact_sfx = load("res://audio/sfx/interactions/sfx_ui_interact_1.mp3")
  # makes sure the the player is facing the right direction upon entering scene
 func _ready() -> void:
 	animated_sprite.play("idle" + current_direction)
@@ -53,6 +54,7 @@ func _try_interact() -> void:
 	var overlapping_bodies = area_2d.get_overlapping_bodies()
 	for body in overlapping_bodies:
 		if body.is_in_group("interactables"):
+			AudioManager.play_sfx(interact_sfx, "SFX", -12.0)
 			body.interact()
 			break
 

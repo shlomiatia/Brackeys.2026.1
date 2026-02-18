@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dajk0pr3t7ynq"
+path="res://.godot/imported/paradise v1 progress.mp3-de6304aa60b431d0ef4b535b9084fa7a.mp3str"
+
+[deps]
+
+source_file="res://audio/music/test music/paradise v1 progress.mp3"
+dest_files=["res://.godot/imported/paradise v1 progress.mp3-de6304aa60b431d0ef4b535b9084fa7a.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

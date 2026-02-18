@@ -4,8 +4,11 @@ extends Node2D
 @onready var main_statue = $Objects/MainStatue
 @onready var pipe_conversation: Conversation = $Objects/Pipe/Conversation
 
+var level_music = load("res://audio/music/test music/paradise v1 progress.mp3")
+
 func _ready() -> void:
 	Global.can_control = false
+	AudioManager.play_music(level_music)
 	Dialogic.signal_event.connect(_on_dialogic_signal)
 	await _player_fall()
 	Global.can_control = true
