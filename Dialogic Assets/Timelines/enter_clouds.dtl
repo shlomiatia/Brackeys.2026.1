@@ -1,0 +1,10 @@
+join Bella
+Bella: What...?[pause=0.2] Where am I now?
+Bella: It's beautiful,[pause=0.2] but its unfamiliar.
+Bella: ...
+Bella: Ugh,[pause=0.2] I wish I could remember something![pause=0.2] Anything!
+Bella: Who was I?[pause=0.2] How did I get here?
+Bella: I need to figure it out somehow.[pause=0.2] But how?
+Bella: I suppose all I can do for now is look around.[pause=0.2] Maybe I can find some clues...
+leave Bella
+[end_timeline]

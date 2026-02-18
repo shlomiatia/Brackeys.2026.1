@@ -1,8 +1,22 @@
-join Bella center
-if "F" in {collected_letters}:
-	Bella: We already talked.
+join Bella right
+join Statue left
+
+if {interacted_main_statue} == false:
+	if {talked_to_a_statue} == false:
+		Bella: A statue of me?
+		Statue: We were so fair...
+		Bella: It talked!
+		set {talked_to_a_statue} = true
+	else:
+		Statue: We were so fair...
+elif {statue_moved} == true:
+	Statue: I have nothing else to say to you.
 else:
-	Bella: One of the letters is F.
-	set {collected_letters} += "F"
-leave Bella
+	Bella: I need to know what I valued most in my life.
+	Statue: [color="red"]F[/color]airness![pause=0.2] Both in beauty and judgement.
+	Statue: Others were jealous of our [color="red"]f[/color]etching looks,[pause=0.2] but that was no matter.
+	Bella: I see...
+	if !("F" in {collected_letters}):
+		set {collected_letters} += "F"
+leave --All-- 
 [end_timeline]

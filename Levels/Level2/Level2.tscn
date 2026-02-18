@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://bmp50wvaog1e"]
+[gd_scene load_steps=9 format=3 uid="uid://bmp50wvaog1e"]
 
 [ext_resource type="PackedScene" uid="uid://deur6yjprct37" path="res://Scenes/Player/player.tscn" id="1_a67fh"]
 [ext_resource type="Script" uid="uid://mbmr1umj5xsk" path="res://Levels/Level2/level2.gd" id="1_script"]
 [ext_resource type="PackedScene" uid="uid://dh6c7ym3x25h7" path="res://Scenes/Level2/Statue/Statue.tscn" id="2_36aoo"]
 [ext_resource type="PackedScene" uid="uid://bbrs3ouymdwi8" path="res://Scenes/ShakingCamera/ShakingCamera.tscn" id="2_p5es7"]
+[ext_resource type="PackedScene" uid="uid://bk5igealw1hn0" path="res://Levels/Level2/cloudSectionTileMaps.tscn" id="3_bgei7"]
 [ext_resource type="PackedScene" uid="uid://cfgp45xbt467i" path="res://Scenes/Conversation/Conversation.tscn" id="3_conv"]
 [ext_resource type="PackedScene" uid="uid://dnwug4pxdwecg" path="res://Scenes/Utils/Fade.tscn" id="4_fade"]
 [ext_resource type="Texture2D" uid="uid://dgtkntcg4oxkq" path="res://Assets/money.png" id="5_pipe"]
@@ -16,6 +17,9 @@ script = ExtResource("1_script")
 [node name="Fade" parent="CanvasLayer" instance=ExtResource("4_fade")]
 auto_fade_in = true
 
+[node name="CloudSectionTileMaps" parent="." instance=ExtResource("3_bgei7")]
+position = Vector2(252, 155)
+
 [node name="Objects" type="Node2D" parent="."]
 y_sort_enabled = true
 
@@ -26,7 +30,7 @@ position = Vector2(253, 159)
 zoom = Vector2(3, 3)
 
 [node name="Pipe" type="Sprite2D" parent="Objects"]
-position = Vector2(300, 147)
+position = Vector2(448, -150)
 texture = ExtResource("5_pipe")
 
 [node name="Conversation" parent="Objects/Pipe" instance=ExtResource("3_conv")]
@@ -34,33 +38,33 @@ dialogue_name = "level2_pipe"
 interactable_disabled = true
 
 [node name="MainStatue" parent="Objects" instance=ExtResource("2_36aoo")]
-position = Vector2(300, 147)
+position = Vector2(448, -150)
 dialogue_name = "level2_main_statue"
 
 [node name="Statue1" parent="Objects" instance=ExtResource("2_36aoo")]
-position = Vector2(300, 67)
+position = Vector2(353, 39)
 dialogue_name = "level2_statue1"
 
 [node name="Statue2" parent="Objects" instance=ExtResource("2_36aoo")]
-position = Vector2(370, 87)
+position = Vector2(558, -128)
 dialogue_name = "level2_statue2"
 
 [node name="Statue3" parent="Objects" instance=ExtResource("2_36aoo")]
-position = Vector2(400, 147)
+position = Vector2(617, -68)
 dialogue_name = "level2_statue3"
 
 [node name="Statue4" parent="Objects" instance=ExtResource("2_36aoo")]
-position = Vector2(370, 207)
+position = Vector2(603, 7)
 dialogue_name = "level2_statue4"
 
 [node name="Statue5" parent="Objects" instance=ExtResource("2_36aoo")]
-position = Vector2(300, 227)
+position = Vector2(305, -44)
 dialogue_name = "level2_statue5"
 
 [node name="Statue6" parent="Objects" instance=ExtResource("2_36aoo")]
-position = Vector2(230, 207)
+position = Vector2(531, 45)
 dialogue_name = "level2_statue6"
 
 [node name="Statue7" parent="Objects" instance=ExtResource("2_36aoo")]
-position = Vector2(230, 87)
+position = Vector2(357, -132)
 dialogue_name = "level2_statue7"

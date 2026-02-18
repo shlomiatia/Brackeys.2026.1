@@ -1,4 +1,10 @@
 join Bella center
-Bella: Here goes nothing...
+
+Enter the strange gate?
+
+- Yes
+	Bella: I need to find out who I was...
+- No
+	Bella: Not yet...
 leave Bella
 [end_timeline]

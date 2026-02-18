@@ -25,9 +25,11 @@ Constants="*res://Scenes/Constants/Constants.tscn"
 [dialogic]
 
 directories/dch_directory={
-"Bella": "res://Dialogic Assets/Charactesr/Bella.dch"
+"Bella": "res://Dialogic Assets/Charactesr/Bella.dch",
+"Statue": "res://Dialogic Assets/Charactesr/Statue.dch"
 }
 directories/dtl_directory={
+"enter_clouds": "res://Dialogic Assets/Timelines/enter_clouds.dtl",
 "level1_ball": "res://Dialogic Assets/Timelines/level1_ball.dtl",
 "level1_door": "res://Dialogic Assets/Timelines/level1_door.dtl",
 "level1_hole": "res://Dialogic Assets/Timelines/level1_hole.dtl",
@@ -53,6 +55,7 @@ variables={
 "answer_result": "",
 "collected_letters": "",
 "door_interacted": false,
+"interacted_main_statue": false,
 "knife_picked_up": false,
 "letters_display": "",
 "level3_defeated_small_masked_creature1": false,
@@ -63,6 +66,8 @@ variables={
 "level3_told_secret3": false,
 "rope_cut": false,
 "rope_interacted": false,
+"statue_moved": false,
+"talked_to_a_statue": false,
 "user_answer": ""
 }
 glossary/default_case_sensitive=true
