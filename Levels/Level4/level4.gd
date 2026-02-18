@@ -23,21 +23,27 @@ func _generate_room() -> void:
 
 
 func _generate_corridor() -> void:
-    # Top horizontal wall with T-down in the middle
-    _draw_h_corridor(Vector2i(1, 3), 20)
-    _draw_t_down(Vector2i(11, 3))
+    # Top vertical corridor (going down from top wall, dead end at bottom)
+    _draw_v_corridor(Vector2i(10, 2), 2)
+    _draw_v_corridor(Vector2i(13, 2), 2)
+    _draw_corner_bl(Vector2i(10, 4))
+    _draw_dead_end_down(Vector2i(11, 4))
+    _draw_corner_br(Vector2i(13, 4))
 
-    # Left vertical wall as T-right junction
-    _draw_t_right(Vector2i(3, 5))
+    # Left horizontal corridor (going right, dead end at right)
+    _draw_h_corridor(Vector2i(1, 6), 6)
+    _draw_dead_end_right(Vector2i(7, 6))
 
-    # Right vertical wall as T-left junction
-    _draw_t_left(Vector2i(20, 5))
+    # Right horizontal corridor (going left, dead end at left)
+    _draw_dead_end_left(Vector2i(16, 6))
+    _draw_h_corridor(Vector2i(17, 6), 6)
 
-    # Bottom horizontal wall with corners and T-up in the middle
-    _draw_corner_bl(Vector2i(3, 9))
-    _draw_h_corridor(Vector2i(4, 9), 16)
-    _draw_corner_br(Vector2i(20, 9))
-    _draw_t_up(Vector2i(11, 9))
+    # Bottom vertical corridor (going up from bottom wall, dead end at top)
+    _draw_corner_tl(Vector2i(10, 8))
+    _draw_dead_end_up(Vector2i(11, 8))
+    _draw_corner_tr(Vector2i(13, 8))
+    _draw_v_corridor(Vector2i(10, 10), 2)
+    _draw_v_corridor(Vector2i(13, 10), 2)
 
 
 # --- Drawing utilities ---
@@ -112,3 +118,31 @@ func _draw_t_left(pos: Vector2i) -> void:
     tile_map_layer.erase_cell(pos + Vector2i(0, 1))
     tile_map_layer.set_cell(pos + Vector2i(0, 2), 1, TILE2)
     tile_map_layer.set_cell(pos + Vector2i(0, 3), 1, TILE1)
+
+
+## Dead end right: caps a horizontal corridor on the right. 1x2 tile1 column.
+func _draw_dead_end_right(pos: Vector2i) -> void:
+    tile_map_layer.set_cell(pos, 1, TILE1)
+    tile_map_layer.set_cell(pos + Vector2i(0, 1), 1, TILE1)
+
+
+## Dead end left: caps a horizontal corridor on the left. 1x2 tile1 column.
+func _draw_dead_end_left(pos: Vector2i) -> void:
+    tile_map_layer.set_cell(pos, 1, TILE1)
+    tile_map_layer.set_cell(pos + Vector2i(0, 1), 1, TILE1)
+
+
+## Dead end down: caps a vertical corridor at the bottom. 2x2 tile2/tile1 block.
+func _draw_dead_end_down(pos: Vector2i) -> void:
+    tile_map_layer.set_cell(pos, 1, TILE2)
+    tile_map_layer.set_cell(pos + Vector2i(1, 0), 1, TILE2)
+    tile_map_layer.set_cell(pos + Vector2i(0, 1), 1, TILE1)
+    tile_map_layer.set_cell(pos + Vector2i(1, 1), 1, TILE1)
+
+
+## Dead end up: caps a vertical corridor at the top. 2x2 tile2/tile1 block.
+func _draw_dead_end_up(pos: Vector2i) -> void:
+    tile_map_layer.set_cell(pos, 1, TILE2)
+    tile_map_layer.set_cell(pos + Vector2i(1, 0), 1, TILE2)
+    tile_map_layer.set_cell(pos + Vector2i(0, 1), 1, TILE1)
+    tile_map_layer.set_cell(pos + Vector2i(1, 1), 1, TILE1)
