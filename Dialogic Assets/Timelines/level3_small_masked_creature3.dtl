@@ -1,4 +1,18 @@
 join Bella center
-Bella: You came to fight me!
-set {level3_defeated_small_masked_creature3} = true
-[signal arg="fight_small_masked_creature3"]
+if {level3_seen_masked_creature} == false:
+	Bella: Oh my![pause=0.2] What is this?!
+	Bella: ...
+	Bella: It seems...[pause=0.2]passive?
+	set {level3_seen_masked_creature} = true
+
+if {level3_first_interaction_with_man} == true:
+	Bella: Maybe if I kill it,[pause=0.2] that Masked Man will tell me what I need to know?
+	Bella: ...
+	Bella: I'm sorry...
+	set {level3_defeated_small_masked_creature3} = true
+	[signal arg="fight_small_masked_creature3"]
+else:
+	Bella: I shouldn't bother it now...
+
+leave Bella 
+[end_timeline]

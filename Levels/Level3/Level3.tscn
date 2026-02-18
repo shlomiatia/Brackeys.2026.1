@@ -1,14 +1,16 @@
-[gd_scene load_steps=8 format=3 uid="uid://cye4t85qtfng7"]
+[gd_scene load_steps=9 format=3 uid="uid://cye4t85qtfng7"]
 
 [ext_resource type="PackedScene" uid="uid://deur6yjprct37" path="res://Scenes/Player/player.tscn" id="1_player"]
 [ext_resource type="Script" uid="uid://ce4cch6vd761q" path="res://Levels/Level3/level3.gd" id="1_script"]
 [ext_resource type="PackedScene" uid="uid://bbrs3ouymdwi8" path="res://Scenes/ShakingCamera/ShakingCamera.tscn" id="2_camera"]
 [ext_resource type="PackedScene" uid="uid://clla8xhl4d6s3" path="res://Scenes/Level3/MaskMiniGame/MaskMiniGame.tscn" id="3_mask"]
 [ext_resource type="PackedScene" path="res://Scenes/Level3/MaskedCreature/MaskedCreature.tscn" id="4_creature"]
+[ext_resource type="PackedScene" uid="uid://c253yddhodw6r" path="res://Levels/Level3/sewer_tile_maps.tscn" id="4_vjyig"]
 [ext_resource type="PackedScene" path="res://Scenes/Level3/SmallMaskedCreature/SmallMaskedCreature.tscn" id="5_small"]
 [ext_resource type="PackedScene" uid="uid://dnwug4pxdwecg" path="res://Scenes/Utils/Fade.tscn" id="6_fade"]
 
 [node name="Level3" type="Node2D"]
+modulate = Color(0.46, 0.44873, 0.3634, 1)
 script = ExtResource("1_script")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -18,6 +20,9 @@ auto_fade_in = true
 
 [node name="MaskMiniGame" parent="CanvasLayer" instance=ExtResource("3_mask")]
 position = Vector2(576, 324)
+
+[node name="SewerTileMaps" parent="." instance=ExtResource("4_vjyig")]
+position = Vector2(185, 149)
 
 [node name="Objects" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -29,17 +34,17 @@ position = Vector2(200, 150)
 zoom = Vector2(3, 3)
 
 [node name="MaskedCreature" parent="Objects" instance=ExtResource("4_creature")]
-position = Vector2(280, 130)
+position = Vector2(232, -209)
 dialogue_name = "level3_masked_creature"
 
 [node name="SmallMaskedCreature1" parent="Objects" instance=ExtResource("5_small")]
-position = Vector2(230, 100)
+position = Vector2(-208, -216)
 dialogue_name = "level3_small_masked_creature1"
 
 [node name="SmallMaskedCreature2" parent="Objects" instance=ExtResource("5_small")]
-position = Vector2(310, 160)
+position = Vector2(233, -658)
 dialogue_name = "level3_small_masked_creature2"
 
 [node name="SmallMaskedCreature3" parent="Objects" instance=ExtResource("5_small")]
-position = Vector2(250, 190)
+position = Vector2(673, -219)
 dialogue_name = "level3_small_masked_creature3"

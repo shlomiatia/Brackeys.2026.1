@@ -53,6 +53,7 @@ else:
 	if {answer_result} == "missing":
 		Statue: Hm?[pause=0.2] You don't have the clues for that...
 	elif {answer_result} == "correct":
+		Bella: The thing I valued most...[pause=0.2]was lies.
 		Statue: Tch.[pause=0.2] Correct.
 		Statue: We tried to protect you,[pause=0.2] you stubborn girl.
 		set {statue_moved} = true

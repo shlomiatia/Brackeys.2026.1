@@ -26,16 +26,17 @@ Constants="*res://Scenes/Constants/Constants.tscn"
 
 directories/dch_directory={
 "Bella": "res://Dialogic Assets/Charactesr/Bella.dch",
+"MaskedMan": "res://Dialogic Assets/Charactesr/MaskedMan.dch",
 "Statue": "res://Dialogic Assets/Charactesr/Statue.dch"
 }
 directories/dtl_directory={
-"enter_clouds": "res://Dialogic Assets/Timelines/enter_clouds.dtl",
 "level1_ball": "res://Dialogic Assets/Timelines/level1_ball.dtl",
 "level1_door": "res://Dialogic Assets/Timelines/level1_door.dtl",
 "level1_hole": "res://Dialogic Assets/Timelines/level1_hole.dtl",
 "level1_intro": "res://Dialogic Assets/Timelines/level1_intro.dtl",
 "level1_knife": "res://Dialogic Assets/Timelines/level1_knife.dtl",
 "level1_rope": "res://Dialogic Assets/Timelines/level1_rope.dtl",
+"level2_enter_clouds": "res://Dialogic Assets/Timelines/level2_enter_clouds.dtl",
 "level2_main_statue": "res://Dialogic Assets/Timelines/level2_main_statue.dtl",
 "level2_pipe": "res://Dialogic Assets/Timelines/level2_pipe.dtl",
 "level2_statue1": "res://Dialogic Assets/Timelines/level2_statue1.dtl",
@@ -45,6 +46,7 @@ directories/dtl_directory={
 "level2_statue5": "res://Dialogic Assets/Timelines/level2_statue5.dtl",
 "level2_statue6": "res://Dialogic Assets/Timelines/level2_statue6.dtl",
 "level2_statue7": "res://Dialogic Assets/Timelines/level2_statue7.dtl",
+"level3_enter_sewers": "res://Dialogic Assets/Timelines/level3_enter_sewers.dtl",
 "level3_masked_creature": "res://Dialogic Assets/Timelines/level3_masked_creature.dtl",
 "level3_small_masked_creature1": "res://Dialogic Assets/Timelines/level3_small_masked_creature1.dtl",
 "level3_small_masked_creature2": "res://Dialogic Assets/Timelines/level3_small_masked_creature2.dtl",
@@ -61,6 +63,9 @@ variables={
 "level3_defeated_small_masked_creature1": false,
 "level3_defeated_small_masked_creature2": false,
 "level3_defeated_small_masked_creature3": false,
+"level3_door_opened": false,
+"level3_first_interaction_with_man": false,
+"level3_seen_masked_creature": false,
 "level3_told_secret1": false,
 "level3_told_secret2": false,
 "level3_told_secret3": false,
