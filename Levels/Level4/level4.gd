@@ -20,12 +20,17 @@ const CAMERA_HEIGHT := EDGE_BOTTOM - EDGE_TOP
 
 var target_direction: Direction
 var current_furniture_index: int = 0
+var incorrect_count: int = 0
+var correct_count: int = 0
 
 var intro_music = load("res://audio/music/test music/bella theme v2 progress.mp3")
 
 func _ready() -> void:
     pick_direction()
     AudioManager.play_music(intro_music)
+    Global.can_control = false
+    await get_tree().create_timer(1.0).timeout
+    await DialogDisplayer.start("level4_start")
 
 func opposite(dir: Direction) -> Direction:
     match dir:
@@ -60,10 +65,21 @@ func _physics_process(delta: float) -> void:
 
 func move_room(exited_direction: Direction) -> void:
     Global.can_control = false
+    var correct := exited_direction == target_direction
     await fade.fade_out()
-    switch_furniture(exited_direction == target_direction)
+    switch_furniture(correct)
     pick_direction()
     await fade.fade_in()
+    if correct:
+        correct_count += 1
+        if correct_count == 1:
+            await DialogDisplayer.start("level4_correct1")
+    else:
+        incorrect_count += 1
+        if incorrect_count == 1:
+            await DialogDisplayer.start("level4_incorrect1")
+        elif incorrect_count == 3:
+            await DialogDisplayer.start("level4_incorrect3")
     Global.can_control = true
 
 func switch_furniture(correct: bool) -> void:

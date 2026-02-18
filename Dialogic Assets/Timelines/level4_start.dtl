@@ -1,0 +1,4 @@
+join Bella center
+Bella: What is this place?[pause=0.2] It feels like a maze...
+leave Bella
+[end_timeline]
