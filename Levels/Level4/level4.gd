@@ -39,11 +39,11 @@ func opposite(dir: Direction) -> Direction:
         Direction.LEFT: return Direction.RIGHT
         _: return Direction.LEFT
 
-func pick_direction() -> void:
-    var new_direction := randi() % 4 as Direction
-    while new_direction == opposite(target_direction):
-        new_direction = randi() % 4 as Direction
-    target_direction = new_direction
+func pick_direction(exited_direction := -1) -> void:
+    var new_direction := randi() % 4
+    while exited_direction != -1 and new_direction == opposite(exited_direction as Direction):
+        new_direction = randi() % 4
+    target_direction = new_direction as Direction
     update_hint_color()
 
 func _physics_process(delta: float) -> void:
@@ -68,7 +68,7 @@ func move_room(exited_direction: Direction) -> void:
     var correct := exited_direction == target_direction
     await fade.fade_out()
     switch_furniture(correct)
-    pick_direction()
+    pick_direction(exited_direction)
     await fade.fade_in()
     if correct:
         correct_count += 1
