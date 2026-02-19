@@ -7,9 +7,10 @@ extends Node2D
 @onready var knife: Sprite2D = $Knife
 @onready var fade: Fade = $CanvasLayer/Fade
 
-var intro_music = load("res://audio/music/test music/bella theme v2 progress.mp3")
+var intro_music = load("res://audio/music/test music/bella theme v3 progress.mp3")
 var ball_appear_sfx = load("res://audio/sfx/sfx_cutscene_lvl1_ball_appears.mp3")
 var ball_crash = load("res://audio/sfx/sfx_cutscene_lvl1_ball_crash.mp3")
+var hole_ambi = load("res://audio/sfx/ambi/sfx_ambi_ground_ambi.wav")
 func _ready() -> void:
 	play_intro_music()
 	# Connect to Dialogic signals
@@ -36,7 +37,8 @@ func _on_dialogic_signal(argument: String) -> void:
 		"knife_picked_up":
 			_fade_and_remove(knife)
 		"rope_cut":
-			AudioManager.play_sfx(ball_appear_sfx)
+			AudioManager.play_sfx(ball_appear_sfx, "SFX", -12)
+			AudioManager.play_loop_sfx("hole_ambience", hole_ambi, "Ambi", -20)
 			ball.cut()
 		"show_scene":
 			fade.fade_in()
