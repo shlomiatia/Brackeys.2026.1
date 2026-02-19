@@ -1,0 +1,5 @@
+join Bella center
+Bella: Those eyes...[pause=0.2] they see right through me.
+leave Bella
+[signal arg="level5_eye_woman"]
+[end_timeline]

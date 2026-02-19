@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://cc2kk07rhjji5"]
+[gd_scene load_steps=12 format=4 uid="uid://cc2kk07rhjji5"]
 
 [ext_resource type="PackedScene" uid="uid://cw47gw2hx3my4" path="res://Levels/Level5/lake_tile_map.tscn" id="1_hps50"]
 [ext_resource type="PackedScene" uid="uid://deur6yjprct37" path="res://Scenes/Player/player.tscn" id="1_keobu"]
@@ -11,6 +11,9 @@
 [ext_resource type="PackedScene" uid="uid://cfgp45xbt467i" path="res://Scenes/Conversation/Conversation.tscn" id="7_cobab"]
 [ext_resource type="Script" uid="uid://ctssdyj8vujn1" path="res://Levels/Level5/level5.gd" id="8_level5"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_5bli8"]
+radius = 7.0
+
 [node name="Level5" type="Node2D"]
 script = ExtResource("8_level5")
 
@@ -22,42 +25,57 @@ auto_fade_in = true
 [node name="lakeTileMap" parent="." instance=ExtResource("1_hps50")]
 position = Vector2(4, 32)
 
-[node name="BridgeTileMapLayer1" type="TileMapLayer" parent="."]
+[node name="BridgeTileMapLayer1" type="TileMapLayer" parent="lakeTileMap"]
 visible = false
+position = Vector2(-4, -32)
 tile_map_data = PackedByteArray("AAD///b/AAABAAEAAAD///f/AAABAAEAAAD///j/AAABAAEAAAD///n/AAABAAEAAAD///r/AAABAAEAAAAAAPb/AAABAAEAAAAAAPf/AAABAAEAAAAAAPj/AAABAAEAAAAAAPn/AAABAAEAAAAAAPr/AAABAAEAAAD///v/AAABAAEAAAAAAPv/AAABAAEAAAAAAPz/AAABAAEAAAD///z/AAABAAEAAAA=")
 tile_set = ExtResource("4_5bli8")
 
-[node name="BridgeTileMapLayer2" type="TileMapLayer" parent="."]
+[node name="BridgeTileMapLayer2" type="TileMapLayer" parent="lakeTileMap"]
 visible = false
+position = Vector2(-4, -32)
 tile_map_data = PackedByteArray("AAD//+n/AAABAAEAAAD//+r/AAABAAEAAAD//+v/AAABAAEAAAD//+z/AAABAAEAAAD//+3/AAABAAEAAAD//+7/AAABAAEAAAD//+//AAABAAEAAAAAAOn/AAABAAEAAAAAAOr/AAABAAEAAAAAAOv/AAABAAEAAAAAAOz/AAABAAEAAAAAAO3/AAABAAEAAAAAAO7/AAABAAEAAAAAAO//AAABAAEAAAA=")
 tile_set = ExtResource("4_5bli8")
 
-[node name="Player" parent="." instance=ExtResource("1_keobu")]
+[node name="Objects" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Player" parent="Objects" instance=ExtResource("1_keobu")]
 position = Vector2(92, 89)
 
-[node name="ShakingCamera" parent="Player" instance=ExtResource("2_pt4ky")]
+[node name="ShakingCamera" parent="Objects/Player" instance=ExtResource("2_pt4ky")]
 zoom = Vector2(3, 3)
 
-[node name="EyeWomanSprite" type="Sprite2D" parent="."]
-position = Vector2(-7, -240)
+[node name="EyeWoman" type="Node2D" parent="Objects"]
+position = Vector2(-5, -192)
+
+[node name="EyeWomanSprite" type="Sprite2D" parent="Objects/EyeWoman"]
+position = Vector2(0, -32)
 texture = ExtResource("4_k54bt")
 
-[node name="Gaze" parent="EyeWomanSprite" instance=ExtResource("3_8b7fd")]
+[node name="Gaze" parent="Objects/EyeWoman/EyeWomanSprite" instance=ExtResource("3_8b7fd")]
 visible = false
 position = Vector2(0, -18)
 
-[node name="Conversation" parent="EyeWomanSprite" instance=ExtResource("7_cobab")]
+[node name="Conversation" parent="Objects/EyeWoman/EyeWomanSprite" instance=ExtResource("7_cobab")]
+dialogue_name = "level5_eye_woman"
 interactable_size = Vector2(30, 64)
 indicator_offset = Vector2(0, -37)
 
-[node name="Mirror" parent="." instance=ExtResource("2_ambn0")]
+[node name="StaticBody2D" type="StaticBody2D" parent="Objects/EyeWoman"]
+position = Vector2(0, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/EyeWoman/StaticBody2D"]
+shape = SubResource("CircleShape2D_5bli8")
+
+[node name="Mirror" parent="Objects" instance=ExtResource("2_ambn0")]
 position = Vector2(260, 31)
 
-[node name="Mirror2" parent="." instance=ExtResource("2_ambn0")]
+[node name="Mirror2" parent="Objects" instance=ExtResource("2_ambn0")]
 position = Vector2(-249, -239)
 
-[node name="Mirror3" parent="." instance=ExtResource("2_ambn0")]
+[node name="Mirror3" parent="Objects" instance=ExtResource("2_ambn0")]
 position = Vector2(-270, 50)
 
-[node name="Mirror4" parent="." instance=ExtResource("2_ambn0")]
+[node name="Mirror4" parent="Objects" instance=ExtResource("2_ambn0")]
 position = Vector2(248, -237)

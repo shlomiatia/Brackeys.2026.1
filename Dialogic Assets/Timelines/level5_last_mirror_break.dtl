@@ -1,5 +1,4 @@
 join Bella center
-Bella: All the mirrors...[pause=0.2] they're gone.
 Bella: A path has opened up.
 leave Bella
 [signal arg="level5_last_mirror_break"]
