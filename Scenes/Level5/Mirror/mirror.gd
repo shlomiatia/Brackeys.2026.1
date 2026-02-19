@@ -14,5 +14,4 @@ func _on_interacted() -> void:
 
 func break_mirror() -> void:
 	sprite.texture = broken_texture
-	# Move to layer 2 so the gaze raycast (layer 1 only) no longer hits it
-	static_body.collision_layer = 2
+	static_body.collision_layer = 1

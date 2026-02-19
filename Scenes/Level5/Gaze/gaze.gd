@@ -31,7 +31,7 @@ func _process(_delta: float) -> void:
 	var query = PhysicsRayQueryParameters2D.create(from, to)
 	query.collide_with_areas = false
 	query.collide_with_bodies = true
-	query.collision_mask = 1
+	query.collision_mask = 4
 
 	var result = space_state.intersect_ray(query)
 

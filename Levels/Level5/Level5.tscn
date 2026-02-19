@@ -1,11 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://cc2kk07rhjji5"]
+[gd_scene load_steps=6 format=3 uid="uid://cc2kk07rhjji5"]
 
+[ext_resource type="PackedScene" uid="uid://cw47gw2hx3my4" path="res://Levels/Level5/lake_tile_map.tscn" id="1_hps50"]
 [ext_resource type="PackedScene" uid="uid://deur6yjprct37" path="res://Scenes/Player/player.tscn" id="1_keobu"]
 [ext_resource type="PackedScene" uid="uid://r1j83fmfcnft" path="res://Scenes/Level5/Mirror/Mirror.tscn" id="2_ambn0"]
 [ext_resource type="PackedScene" uid="uid://bbrs3ouymdwi8" path="res://Scenes/ShakingCamera/ShakingCamera.tscn" id="2_pt4ky"]
 [ext_resource type="PackedScene" uid="uid://q1gslhqa5nn2" path="res://Scenes/Level5/Gaze/Gaze.tscn" id="3_8b7fd"]
 
 [node name="Level5" type="Node2D"]
+
+[node name="lakeTileMap" parent="." instance=ExtResource("1_hps50")]
 
 [node name="Player" parent="." instance=ExtResource("1_keobu")]
 position = Vector2(92, 89)
@@ -14,15 +17,16 @@ position = Vector2(92, 89)
 zoom = Vector2(3, 3)
 
 [node name="Gaze" parent="." instance=ExtResource("3_8b7fd")]
+position = Vector2(1, -241)
 
 [node name="Mirror" parent="." instance=ExtResource("2_ambn0")]
-position = Vector2(222, 154)
+position = Vector2(260, 31)
 
 [node name="Mirror2" parent="." instance=ExtResource("2_ambn0")]
-position = Vector2(-105, -82)
+position = Vector2(-283, -122)
 
 [node name="Mirror3" parent="." instance=ExtResource("2_ambn0")]
-position = Vector2(-98, 127)
+position = Vector2(-270, 50)
 
 [node name="Mirror4" parent="." instance=ExtResource("2_ambn0")]
-position = Vector2(213, -77)
+position = Vector2(262, -178)
