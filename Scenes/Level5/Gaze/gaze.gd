@@ -15,6 +15,7 @@ const BREAK_DURATION: float = 1
 
 var breaking: bool = false
 var _flash_tween: Tween
+var _mirrors_broken: int = 0
 
 func _process(_delta: float) -> void:
 	if !player:
@@ -59,6 +60,11 @@ func _start_breaking(mirror: Mirror) -> void:
 	_flash_tween = create_tween()
 	_flash_tween.tween_property(self , "default_color", Color(1, 1, 1, 0.5019608), BREAK_DURATION)
 	await _flash_tween.finished
+	_mirrors_broken += 1
+	if _mirrors_broken == 1:
+		await DialogDisplayer.start("level5_first_mirror_break")
+	else:
+		await DialogDisplayer.start("level5_mirror_break")
 	breaking = false
 
 func _directions_opposite(line_dir: Vector2, mirror_dir: Vector2) -> bool:
