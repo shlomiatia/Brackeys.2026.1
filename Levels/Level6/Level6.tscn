@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://vytm8306a687"]
+[gd_scene load_steps=8 format=3 uid="uid://vytm8306a687"]
 
 [ext_resource type="PackedScene" uid="uid://deur6yjprct37" path="res://Scenes/Player/player.tscn" id="1_player"]
 [ext_resource type="PackedScene" uid="uid://bbrs3ouymdwi8" path="res://Scenes/ShakingCamera/ShakingCamera.tscn" id="2_camera"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://c5m2x1bgaci16" path="res://Levels/Level6/level6.gd" id="4_level6"]
 [ext_resource type="Script" uid="uid://kuqom6rfv5n" path="res://Levels/Level6/death.gd" id="5_death"]
 [ext_resource type="PackedScene" uid="uid://bmv00lqu5yns1" path="res://Scenes/Interactable/Interactable.tscn" id="6_interactable"]
+[ext_resource type="PackedScene" path="res://Scenes/Slowdown/Slowdown.tscn" id="7_slowdown"]
 
 [node name="Level6" type="Node2D"]
 script = ExtResource("4_level6")
@@ -47,3 +48,18 @@ offset_bottom = 0.0
 color = Color(0.8, 0.7, 0.2, 1)
 
 [node name="Interactable" parent="Objects/Target" instance=ExtResource("6_interactable")]
+
+[node name="Slowdown1" parent="Objects" instance=ExtResource("7_slowdown")]
+position = Vector2(200, 10)
+
+[node name="Slowdown2" parent="Objects" instance=ExtResource("7_slowdown")]
+position = Vector2(420, -20)
+
+[node name="Slowdown3" parent="Objects" instance=ExtResource("7_slowdown")]
+position = Vector2(650, 15)
+
+[node name="Slowdown4" parent="Objects" instance=ExtResource("7_slowdown")]
+position = Vector2(880, -10)
+
+[node name="Slowdown5" parent="Objects" instance=ExtResource("7_slowdown")]
+position = Vector2(1050, 5)
