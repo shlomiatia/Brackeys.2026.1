@@ -26,6 +26,7 @@ Constants="*res://Scenes/Constants/Constants.tscn"
 
 directories/dch_directory={
 "Bella": "res://Dialogic Assets/Charactesr/Bella.dch",
+"EyeWoman": "res://Dialogic Assets/Charactesr/EyeWoman.dch",
 "MaskedMan": "res://Dialogic Assets/Charactesr/MaskedMan.dch",
 "Statue": "res://Dialogic Assets/Charactesr/Statue.dch"
 }
