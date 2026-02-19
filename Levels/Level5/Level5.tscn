@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cc2kk07rhjji5"]
+[gd_scene load_steps=11 format=4 uid="uid://cc2kk07rhjji5"]
 
 [ext_resource type="PackedScene" uid="uid://cw47gw2hx3my4" path="res://Levels/Level5/lake_tile_map.tscn" id="1_hps50"]
 [ext_resource type="PackedScene" uid="uid://deur6yjprct37" path="res://Scenes/Player/player.tscn" id="1_keobu"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://r1j83fmfcnft" path="res://Scenes/Level5/Mirror/Mirror.tscn" id="2_ambn0"]
 [ext_resource type="PackedScene" uid="uid://bbrs3ouymdwi8" path="res://Scenes/ShakingCamera/ShakingCamera.tscn" id="2_pt4ky"]
 [ext_resource type="PackedScene" uid="uid://q1gslhqa5nn2" path="res://Scenes/Level5/Gaze/Gaze.tscn" id="3_8b7fd"]
+[ext_resource type="TileSet" uid="uid://dbagak8v7a5s1" path="res://Levels/Level4/eye_tile_map.tres" id="4_5bli8"]
 [ext_resource type="Texture2D" uid="uid://ji4u36q1fhfm" path="res://Assets/Eye Section/eyeWomanSprite.PNG" id="4_k54bt"]
 [ext_resource type="PackedScene" uid="uid://cfgp45xbt467i" path="res://Scenes/Conversation/Conversation.tscn" id="7_cobab"]
 [ext_resource type="Script" uid="uid://ctssdyj8vujn1" path="res://Levels/Level5/level5.gd" id="8_level5"]
@@ -19,6 +20,17 @@ script = ExtResource("8_level5")
 auto_fade_in = true
 
 [node name="lakeTileMap" parent="." instance=ExtResource("1_hps50")]
+position = Vector2(4, 32)
+
+[node name="BridgeTileMapLayer1" type="TileMapLayer" parent="."]
+visible = false
+tile_map_data = PackedByteArray("AAD///b/AAABAAEAAAD///f/AAABAAEAAAD///j/AAABAAEAAAD///n/AAABAAEAAAD///r/AAABAAEAAAAAAPb/AAABAAEAAAAAAPf/AAABAAEAAAAAAPj/AAABAAEAAAAAAPn/AAABAAEAAAAAAPr/AAABAAEAAAD///v/AAABAAEAAAAAAPv/AAABAAEAAAAAAPz/AAABAAEAAAD///z/AAABAAEAAAA=")
+tile_set = ExtResource("4_5bli8")
+
+[node name="BridgeTileMapLayer2" type="TileMapLayer" parent="."]
+visible = false
+tile_map_data = PackedByteArray("AAD//+n/AAABAAEAAAD//+r/AAABAAEAAAD//+v/AAABAAEAAAD//+z/AAABAAEAAAD//+3/AAABAAEAAAD//+7/AAABAAEAAAD//+//AAABAAEAAAAAAOn/AAABAAEAAAAAAOr/AAABAAEAAAAAAOv/AAABAAEAAAAAAOz/AAABAAEAAAAAAO3/AAABAAEAAAAAAO7/AAABAAEAAAAAAO//AAABAAEAAAA=")
+tile_set = ExtResource("4_5bli8")
 
 [node name="Player" parent="." instance=ExtResource("1_keobu")]
 position = Vector2(92, 89)
@@ -42,10 +54,10 @@ indicator_offset = Vector2(0, -37)
 position = Vector2(260, 31)
 
 [node name="Mirror2" parent="." instance=ExtResource("2_ambn0")]
-position = Vector2(-283, -122)
+position = Vector2(-249, -239)
 
 [node name="Mirror3" parent="." instance=ExtResource("2_ambn0")]
 position = Vector2(-270, 50)
 
 [node name="Mirror4" parent="." instance=ExtResource("2_ambn0")]
-position = Vector2(262, -178)
+position = Vector2(248, -237)

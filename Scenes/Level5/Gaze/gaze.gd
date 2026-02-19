@@ -13,6 +13,8 @@ const FRAME_DIRECTIONS: Array[Vector2] = [
 
 const BREAK_DURATION: float = 1
 
+signal all_mirrors_broken
+
 var breaking: bool = false
 var _flash_tween: Tween
 var _mirrors_broken: int = 0
@@ -63,8 +65,11 @@ func _start_breaking(mirror: Mirror) -> void:
 	_mirrors_broken += 1
 	if _mirrors_broken == 1:
 		await DialogDisplayer.start("level5_first_mirror_break")
-	else:
+	elif _mirrors_broken < 4:
 		await DialogDisplayer.start("level5_mirror_break")
+	else:
+		hide()
+		all_mirrors_broken.emit()
 	breaking = false
 
 func _directions_opposite(line_dir: Vector2, mirror_dir: Vector2) -> bool:
