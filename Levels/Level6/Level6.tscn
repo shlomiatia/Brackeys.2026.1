@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://vytm8306a687"]
+
+[ext_resource type="PackedScene" uid="uid://deur6yjprct37" path="res://Scenes/Player/player.tscn" id="1_player"]
+[ext_resource type="PackedScene" uid="uid://bbrs3ouymdwi8" path="res://Scenes/ShakingCamera/ShakingCamera.tscn" id="2_camera"]
+[ext_resource type="PackedScene" uid="uid://dnwug4pxdwecg" path="res://Scenes/Utils/Fade.tscn" id="3_fade"]
+[ext_resource type="Script" uid="uid://c5m2x1bgaci16" path="res://Levels/Level6/level6.gd" id="4_level6"]
+[ext_resource type="Script" uid="uid://kuqom6rfv5n" path="res://Levels/Level6/death.gd" id="5_death"]
+[ext_resource type="PackedScene" uid="uid://bmv00lqu5yns1" path="res://Scenes/Interactable/Interactable.tscn" id="6_interactable"]
+
+[node name="Level6" type="Node2D"]
+script = ExtResource("4_level6")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Fade" parent="CanvasLayer" instance=ExtResource("3_fade")]
+auto_fade_in = true
+
+[node name="Objects" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Player" parent="Objects" instance=ExtResource("1_player")]
+position = Vector2(-11, 2)
+
+[node name="ShakingCamera" parent="Objects/Player" instance=ExtResource("2_camera")]
+zoom = Vector2(3, 3)
+
+[node name="Death" type="CharacterBody2D" parent="Objects"]
+position = Vector2(-190, 0)
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("5_death")
+
+[node name="ColorRect" type="ColorRect" parent="Objects/Death"]
+offset_left = -8.0
+offset_top = -24.0
+offset_right = 8.0
+color = Color(0.15, 0.15, 0.15, 1)
+
+[node name="Target" type="Node2D" parent="Objects"]
+position = Vector2(1140, 2)
+
+[node name="ColorRect" type="ColorRect" parent="Objects/Target"]
+offset_left = -10.0
+offset_top = -24.0
+offset_right = 10.0
+offset_bottom = 0.0
+color = Color(0.8, 0.7, 0.2, 1)
+
+[node name="Interactable" parent="Objects/Target" instance=ExtResource("6_interactable")]

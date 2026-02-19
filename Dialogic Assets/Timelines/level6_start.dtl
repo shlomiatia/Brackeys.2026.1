@@ -1,0 +1,14 @@
+join Death center
+Death: Do you wish to continue?
+
+- Yes
+	Death: Very well.[pause=0.2] Then go.
+	leave Death
+	[signal arg="level6_yes"]
+	[end_timeline]
+
+- No
+	Death: Then you shall not escape me.
+	leave Death
+	[signal arg="level6_no"]
+	[end_timeline]

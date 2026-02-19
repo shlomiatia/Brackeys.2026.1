@@ -5,7 +5,8 @@
       "Bash(find:*)",
       "Bash(python3:*)",
       "Bash(py:*)",
-      "Bash(where:*)"
+      "Bash(where:*)",
+      "Bash(xargs:*)"
     ]
   }
 }
