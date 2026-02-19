@@ -1,12 +1,22 @@
-[gd_scene load_steps=6 format=3 uid="uid://cc2kk07rhjji5"]
+[gd_scene load_steps=10 format=3 uid="uid://cc2kk07rhjji5"]
 
 [ext_resource type="PackedScene" uid="uid://cw47gw2hx3my4" path="res://Levels/Level5/lake_tile_map.tscn" id="1_hps50"]
 [ext_resource type="PackedScene" uid="uid://deur6yjprct37" path="res://Scenes/Player/player.tscn" id="1_keobu"]
+[ext_resource type="PackedScene" uid="uid://dnwug4pxdwecg" path="res://Scenes/Utils/Fade.tscn" id="1_rlfyk"]
 [ext_resource type="PackedScene" uid="uid://r1j83fmfcnft" path="res://Scenes/Level5/Mirror/Mirror.tscn" id="2_ambn0"]
 [ext_resource type="PackedScene" uid="uid://bbrs3ouymdwi8" path="res://Scenes/ShakingCamera/ShakingCamera.tscn" id="2_pt4ky"]
 [ext_resource type="PackedScene" uid="uid://q1gslhqa5nn2" path="res://Scenes/Level5/Gaze/Gaze.tscn" id="3_8b7fd"]
+[ext_resource type="Texture2D" uid="uid://ji4u36q1fhfm" path="res://Assets/Eye Section/eyeWomanSprite.PNG" id="4_k54bt"]
+[ext_resource type="PackedScene" uid="uid://cfgp45xbt467i" path="res://Scenes/Conversation/Conversation.tscn" id="7_cobab"]
+[ext_resource type="Script" uid="uid://ctssdyj8vujn1" path="res://Levels/Level5/level5.gd" id="8_level5"]
 
 [node name="Level5" type="Node2D"]
+script = ExtResource("8_level5")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Fade" parent="CanvasLayer" instance=ExtResource("1_rlfyk")]
+auto_fade_in = true
 
 [node name="lakeTileMap" parent="." instance=ExtResource("1_hps50")]
 
@@ -16,8 +26,17 @@ position = Vector2(92, 89)
 [node name="ShakingCamera" parent="Player" instance=ExtResource("2_pt4ky")]
 zoom = Vector2(3, 3)
 
-[node name="Gaze" parent="." instance=ExtResource("3_8b7fd")]
-position = Vector2(1, -241)
+[node name="EyeWomanSprite" type="Sprite2D" parent="."]
+position = Vector2(-7, -240)
+texture = ExtResource("4_k54bt")
+
+[node name="Gaze" parent="EyeWomanSprite" instance=ExtResource("3_8b7fd")]
+visible = false
+position = Vector2(0, -18)
+
+[node name="Conversation" parent="EyeWomanSprite" instance=ExtResource("7_cobab")]
+interactable_size = Vector2(30, 64)
+indicator_offset = Vector2(0, -37)
 
 [node name="Mirror" parent="." instance=ExtResource("2_ambn0")]
 position = Vector2(260, 31)
