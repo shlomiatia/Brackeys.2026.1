@@ -13,8 +13,11 @@ const FRAME_DIRECTIONS: Array[Vector2] = [
 
 const BREAK_DURATION: float = 1
 
+signal all_mirrors_broken
+
 var breaking: bool = false
 var _flash_tween: Tween
+var _mirrors_broken: int = 0
 
 func _process(_delta: float) -> void:
 	if !player:
@@ -31,7 +34,7 @@ func _process(_delta: float) -> void:
 	var query = PhysicsRayQueryParameters2D.create(from, to)
 	query.collide_with_areas = false
 	query.collide_with_bodies = true
-	query.collision_mask = 1
+	query.collision_mask = 4
 
 	var result = space_state.intersect_ray(query)
 
@@ -59,6 +62,14 @@ func _start_breaking(mirror: Mirror) -> void:
 	_flash_tween = create_tween()
 	_flash_tween.tween_property(self , "default_color", Color(1, 1, 1, 0.5019608), BREAK_DURATION)
 	await _flash_tween.finished
+	_mirrors_broken += 1
+	if _mirrors_broken == 1:
+		await DialogDisplayer.start("level5_first_mirror_break")
+	elif _mirrors_broken < 4:
+		await DialogDisplayer.start("level5_mirror_break")
+	else:
+		hide()
+		all_mirrors_broken.emit()
 	breaking = false
 
 func _directions_opposite(line_dir: Vector2, mirror_dir: Vector2) -> bool:

@@ -1,0 +1,5 @@
+join Bella center
+Bella: A path has opened up.
+leave Bella
+[signal arg="level5_last_mirror_break"]
+[end_timeline]

@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" uid="uid://r0il7tu3juii" path="res://Scenes/Level1/Ball/Ball.gd" id="1_ball_script"]
 [ext_resource type="PackedScene" uid="uid://cfgp45xbt467i" path="res://Scenes/Conversation/Conversation.tscn" id="2_conversation"]
-[ext_resource type="Texture2D" uid="uid://257la1wtdlsc" path="res://Assets/largeBall.PNG" id="2_qxpdj"]
+[ext_resource type="Texture2D" uid="uid://257la1wtdlsc" path="res://Assets/Intro/largeBall.PNG" id="2_qxpdj"]
 [ext_resource type="Shader" uid="uid://sygixmimdiwj" path="res://Shaders/shadow.gdshader" id="3_shadow_shader"]
-[ext_resource type="Texture2D" uid="uid://cclfrb70ym7xi" path="res://Assets/destroyFloor.PNG" id="5_1kd78"]
-[ext_resource type="Texture2D" uid="uid://dcsh6vnxl2e85" path="res://Assets/hole.PNG" id="6_qxpdj"]
+[ext_resource type="Texture2D" uid="uid://cclfrb70ym7xi" path="res://Assets/Intro/destroyFloor.PNG" id="5_1kd78"]
+[ext_resource type="Texture2D" uid="uid://dcsh6vnxl2e85" path="res://Assets/Intro/hole.PNG" id="6_qxpdj"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_shadow"]
 shader = ExtResource("3_shadow_shader")

@@ -1,0 +1,5 @@
+join Bella center
+Bella: What is that?[pause=0.2] Those eyes...
+leave Bella
+[signal arg="level5_start"]
+[end_timeline]

@@ -55,7 +55,12 @@ directories/dtl_directory={
 "level4_correct1": "res://Dialogic Assets/Timelines/level4_correct1.dtl",
 "level4_incorrect1": "res://Dialogic Assets/Timelines/level4_incorrect1.dtl",
 "level4_incorrect3": "res://Dialogic Assets/Timelines/level4_incorrect3.dtl",
-"level4_start": "res://Dialogic Assets/Timelines/level4_start.dtl"
+"level4_start": "res://Dialogic Assets/Timelines/level4_start.dtl",
+"level5_eye_woman": "res://Dialogic Assets/Timelines/level5_eye_woman.dtl",
+"level5_first_mirror_break": "res://Dialogic Assets/Timelines/level5_first_mirror_break.dtl",
+"level5_last_mirror_break": "res://Dialogic Assets/Timelines/level5_last_mirror_break.dtl",
+"level5_mirror_break": "res://Dialogic Assets/Timelines/level5_mirror_break.dtl",
+"level5_start": "res://Dialogic Assets/Timelines/level5_start.dtl"
 }
 layout/style_directory={}
 variables={
