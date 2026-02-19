@@ -2,6 +2,8 @@ class_name Player extends CharacterBody2D
 
 const SPEED: float = 100.0
 
+var speed_modifier: float = 0.0
+
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var area_2d = $Area2D
 
@@ -25,7 +27,7 @@ func _physics_process(_delta: float) -> void:
 		Input.get_axis("move_up", "move_down")).normalized()
 
 	if direction:
-		velocity = direction * SPEED
+		velocity = direction * (SPEED + speed_modifier)
 		# play the right animation when moving
 		animated_sprite.play("walk" + current_direction)
 

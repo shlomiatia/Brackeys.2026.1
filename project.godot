@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Brackeys.2026.1"
-run/main_scene="uid://cc2kk07rhjji5"
+run/main_scene="res://Levels/Level6/Level6.tscn"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -26,6 +26,7 @@ Constants="*res://Scenes/Constants/Constants.tscn"
 
 directories/dch_directory={
 "Bella": "res://Dialogic Assets/Charactesr/Bella.dch",
+"Death": "res://Dialogic Assets/Charactesr/Death.dch",
 "EyeWoman": "res://Dialogic Assets/Charactesr/EyeWoman.dch",
 "MaskedMan": "res://Dialogic Assets/Charactesr/MaskedMan.dch",
 "Statue": "res://Dialogic Assets/Charactesr/Statue.dch"
@@ -60,7 +61,8 @@ directories/dtl_directory={
 "level5_first_mirror_break": "res://Dialogic Assets/Timelines/level5_first_mirror_break.dtl",
 "level5_last_mirror_break": "res://Dialogic Assets/Timelines/level5_last_mirror_break.dtl",
 "level5_mirror_break": "res://Dialogic Assets/Timelines/level5_mirror_break.dtl",
-"level5_start": "res://Dialogic Assets/Timelines/level5_start.dtl"
+"level5_start": "res://Dialogic Assets/Timelines/level5_start.dtl",
+"level6_start": "res://Dialogic Assets/Timelines/level6_start.dtl"
 }
 layout/style_directory={}
 variables={
