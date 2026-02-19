@@ -1,4 +1,5 @@
-join Bella center
-Bella: Wait...[pause=0.2] this doesn't feel right.
+join Bella (default) center
+Bella: Wait...[pause=0.2]what?[pause=0.2] Wasn't I already in this room?
+Bella: This doesn't feel right.
 leave Bella
 [end_timeline]
