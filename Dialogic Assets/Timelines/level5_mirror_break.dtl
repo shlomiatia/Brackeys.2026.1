@@ -1,4 +1,6 @@
-join Bella center
-Bella: Another one...
-leave Bella
+join EyeWoman (default) left
+join Bella (default) right
+EyeWoman: Stop that!!
+Bella: ...
+leave --All-- 
 [end_timeline]

@@ -28,26 +28,26 @@ position = Vector2(4, 32)
 [node name="BridgeTileMapLayer1" type="TileMapLayer" parent="lakeTileMap"]
 visible = false
 position = Vector2(-4, -32)
-tile_map_data = PackedByteArray("AAD///b/AAABAAEAAAD///f/AAABAAEAAAD///j/AAABAAEAAAD///n/AAABAAEAAAD///r/AAABAAEAAAAAAPb/AAABAAEAAAAAAPf/AAABAAEAAAAAAPj/AAABAAEAAAAAAPn/AAABAAEAAAAAAPr/AAABAAEAAAD///v/AAABAAEAAAAAAPv/AAABAAEAAAAAAPz/AAABAAEAAAD///z/AAABAAEAAAA=")
+tile_map_data = PackedByteArray("AAD///b/AAADAAIAAAD///f/AAADAAIAAAD///j/AAADAAIAAAD///n/AAADAAIAAAD///r/AAADAAIAAAAAAPb/AAADAAIAABAAAPf/AAADAAIAABAAAPj/AAADAAIAABAAAPn/AAADAAIAABAAAPr/AAADAAIAABD///v/AAADAAIAAAAAAPv/AAADAAIAABAAAPz/AAADAAIAABD///z/AAADAAIAAAA=")
 tile_set = ExtResource("4_5bli8")
 
 [node name="BridgeTileMapLayer2" type="TileMapLayer" parent="lakeTileMap"]
 visible = false
 position = Vector2(-4, -32)
-tile_map_data = PackedByteArray("AAD//+n/AAABAAEAAAD//+r/AAABAAEAAAD//+v/AAABAAEAAAD//+z/AAABAAEAAAD//+3/AAABAAEAAAD//+7/AAABAAEAAAD//+//AAABAAEAAAAAAOn/AAABAAEAAAAAAOr/AAABAAEAAAAAAOv/AAABAAEAAAAAAOz/AAABAAEAAAAAAO3/AAABAAEAAAAAAO7/AAABAAEAAAAAAO//AAABAAEAAAA=")
+tile_map_data = PackedByteArray("AAD//+n/AAADAAIAAAD//+r/AAADAAIAAAD//+v/AAADAAIAAAD//+z/AAADAAIAAAD//+3/AAADAAIAAAD//+7/AAADAAIAAAD//+//AAADAAIAAAAAAOn/AAADAAIAABAAAOr/AAADAAIAABAAAOv/AAADAAIAABAAAOz/AAADAAIAABAAAO3/AAADAAIAABAAAO7/AAADAAIAABAAAO//AAADAAIAABA=")
 tile_set = ExtResource("4_5bli8")
 
 [node name="Objects" type="Node2D" parent="."]
 y_sort_enabled = true
 
 [node name="Player" parent="Objects" instance=ExtResource("1_keobu")]
-position = Vector2(92, 89)
+position = Vector2(0, 126)
 
 [node name="ShakingCamera" parent="Objects/Player" instance=ExtResource("2_pt4ky")]
 zoom = Vector2(3, 3)
 
 [node name="EyeWoman" type="Node2D" parent="Objects"]
-position = Vector2(-5, -192)
+position = Vector2(0, -205)
 
 [node name="EyeWomanSprite" type="Sprite2D" parent="Objects/EyeWoman"]
 position = Vector2(0, -32)

@@ -52,7 +52,7 @@ tile_set = ExtResource("3_uxo6m")
 collision_enabled = false
 
 [node name="Player" parent="Objects" instance=ExtResource("2_l4fhr")]
-position = Vector2(-4, 14)
+position = Vector2(0, 83)
 
 [node name="ShakingCamera" parent="." instance=ExtResource("3_6aa3k")]
 zoom = Vector2(3, 3)
