@@ -63,6 +63,7 @@ directories/dtl_directory={
 "level5_last_mirror_break": "res://Dialogic Assets/Timelines/level5_last_mirror_break.dtl",
 "level5_mirror_break": "res://Dialogic Assets/Timelines/level5_mirror_break.dtl",
 "level5_start": "res://Dialogic Assets/Timelines/level5_start.dtl",
+"level6_choice": "res://Dialogic Assets/Timelines/level6_choice.dtl",
 "level6_start": "res://Dialogic Assets/Timelines/level6_start.dtl"
 }
 layout/style_directory={}
