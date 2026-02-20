@@ -5,9 +5,9 @@ var mask_position_threshold: float = 8.0
 var mask_rotation_threshold_deg: float = 8.0
 var mask_min_step_duration: float = 1.0
 var mask_max_step_duration: float = 2.5
-var mask_max_position_x: float = 75.0
-var mask_max_position_y: float = 75.0
+var mask_max_position: float = 75.0
 var mask_max_rotation_deg: float = 45.0
+var mask_min_distance_from_origin: float = 16.0
 
 # Maze Hint
 var maze_modulate_hint_modifier: float = 0.8
@@ -36,9 +36,9 @@ func _ready():
 				["mask_rotation_threshold_deg", 1],
 				["mask_min_step_duration", 0.1],
 				["mask_max_step_duration", 0.1],
-				["mask_max_position_x", 1],
-				["mask_max_position_y", 1],
+				["mask_max_position", 1],
 				["mask_max_rotation_deg", 1],
+				["mask_min_distance_from_origin", 1],
 				]
 		},
 		{

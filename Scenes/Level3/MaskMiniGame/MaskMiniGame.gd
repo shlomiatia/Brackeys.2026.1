@@ -67,7 +67,7 @@ func _on_click() -> void:
 		animated_sprite.play("default")
 		await animated_sprite.animation_finished
 		_flash_tween = create_tween()
-		_flash_tween.tween_property(self, "modulate:a", 0.0, fadeout_duration)
+		_flash_tween.tween_property(self , "modulate:a", 0.0, fadeout_duration)
 		await _flash_tween.finished
 		visible = false
 		Global.can_control = true
@@ -97,10 +97,14 @@ func _run_step() -> void:
 		target_rot = - mask.rotation
 		_time_since_origin = 0.0
 	else:
-		target_pos = Vector2(
-			randf_range(-Constants.mask_max_position_x, Constants.mask_max_position_x),
-			randf_range(-Constants.mask_max_position_y, Constants.mask_max_position_y),
-		)
+		var max_attempts := 10
+		for i in range(max_attempts):
+			target_pos = Vector2(
+				randf_range(-Constants.mask_max_position, Constants.mask_max_position),
+				randf_range(-Constants.mask_max_position, Constants.mask_max_position),
+			)
+			if not _segment_crosses_origin_circle(mask.position, target_pos, Constants.mask_min_distance_from_origin):
+				break
 		target_rot = deg_to_rad(randf_range(-Constants.mask_max_rotation_deg, Constants.mask_max_rotation_deg))
 
 	_current_tween = create_tween().set_parallel(true)
@@ -113,3 +117,12 @@ func _run_step() -> void:
 	_current_tween.finished.connect(_run_step)
 
 	_time_since_origin += duration
+
+
+func _segment_crosses_origin_circle(a: Vector2, b: Vector2, radius: float) -> bool:
+	var d := b - a
+	var len_sq := d.dot(d)
+	if len_sq == 0.0:
+		return a.length() < radius
+	var t: float = clamp(-a.dot(d) / len_sq, 0.0, 1.0)
+	return (a + t * d).length() < radius

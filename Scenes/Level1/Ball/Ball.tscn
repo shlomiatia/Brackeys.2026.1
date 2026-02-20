@@ -65,6 +65,7 @@ animations = [{
 }]
 
 [node name="Ball" type="Node2D"]
+y_sort_enabled = true
 script = ExtResource("1_ball_script")
 
 [node name="Ball" type="Sprite2D" parent="."]

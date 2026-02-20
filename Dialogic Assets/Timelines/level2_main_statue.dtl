@@ -46,7 +46,9 @@ else:
 	Bella: All the statues emphasize a [color="red"]letter[/color].
 	Statue: Clever...
 	Bella: The important ones I have so far are\:[pause=0.2] {letters_display}. It needs to be a [color="red"]4-letter[/color]
-	Bella: My answer is...
+	Bella: My answer is...\
+	\
+	[i]Available letters\: {letters_display}[/i]
 	
 	[text_input text="Enter your answer:" var="user_answer"]
 	do Global.validate_statue_answer()

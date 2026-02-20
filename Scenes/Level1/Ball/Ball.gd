@@ -44,5 +44,6 @@ func cut() -> void:
 
 	hole.visible = true
 	hole_collision.disabled = false
+	z_index = 0
 
 	conversation.dialogue_name = "level1_hole"
