@@ -2,7 +2,7 @@
 "@path": "res://addons/dialogic/Resources/character.gd",
 "@subpath": NodePath(""),
 &"_translation_id": "",
-&"color": Color(0.2, 0.2, 0.2, 1),
+&"color": Color(0.39453125, 0.1063385, 0.1063385, 1),
 &"custom_info": {
 "prefix": "",
 "sound_mood_default": "",
@@ -19,7 +19,7 @@
 &"portraits": {
 "default": {
 "export_overrides": {
-"image": "\"res://Dialogic Assets/Images/bellaDefault.PNG\""
+"image": "\"res://Dialogic Assets/Images/death.PNG\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
