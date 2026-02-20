@@ -62,3 +62,11 @@ texture = ExtResource("3_hearg")
 sprite_frames = SubResource("SpriteFrames_xgod1")
 frame = 4
 frame_progress = 1.0
+
+[node name="Instructions" type="Label" parent="."]
+offset_left = -150.0
+offset_top = 80.0
+offset_right = 150.0
+offset_bottom = 120.0
+text = "Click when the mask is over the face!"
+horizontal_alignment = 1

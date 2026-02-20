@@ -6,10 +6,15 @@ extends Node2D
 @onready var ball = $Objects/Ball
 @onready var knife: Sprite2D = $Knife
 @onready var fade: Fade = $CanvasLayer/Fade
+@onready var instruction_label: Label = $CanvasLayer/InstructionLabel
 
 var intro_music = load("res://audio/music/test music/bella theme v2 progress.mp3")
 var ball_appear_sfx = load("res://audio/sfx/sfx_cutscene_lvl1_ball_appears.mp3")
 var ball_crash = load("res://audio/sfx/sfx_cutscene_lvl1_ball_crash.mp3")
+
+enum _InstructionPhase { NONE, MOVE, INTERACT }
+var _instruction_phase: _InstructionPhase = _InstructionPhase.NONE
+
 func _ready() -> void:
 	play_intro_music()
 	# Connect to Dialogic signals
@@ -26,6 +31,30 @@ func _show_start_sequence() -> void:
 
 	# Show opening dialog
 	await DialogDisplayer.start("level1_intro")
+
+	# Show movement hint now that the player has control
+	instruction_label.text = "WASD to move"
+	instruction_label.modulate = Color.WHITE
+	instruction_label.visible = true
+	_instruction_phase = _InstructionPhase.MOVE
+
+func _input(event: InputEvent) -> void:
+	match _instruction_phase:
+		_InstructionPhase.MOVE:
+			if event.is_action_pressed("move_left") or event.is_action_pressed("move_right") \
+					or event.is_action_pressed("move_up") or event.is_action_pressed("move_down"):
+				_instruction_phase = _InstructionPhase.NONE
+				await get_tree().create_timer(1.0).timeout
+				instruction_label.text = "E to interact"
+				instruction_label.modulate = Color.WHITE
+				_instruction_phase = _InstructionPhase.INTERACT
+		_InstructionPhase.INTERACT:
+			if event.is_action_pressed("interact"):
+				_instruction_phase = _InstructionPhase.NONE
+				var tween = create_tween()
+				tween.tween_property(instruction_label, "modulate:a", 0.0, 0.5)
+				await tween.finished
+				instruction_label.visible = false
 
 func _on_dialogic_signal(argument: String) -> void:
 	match argument:
@@ -48,8 +77,8 @@ func _fade_and_remove(node: Node2D) -> void:
 	tween.tween_property(node, "modulate:a", 0.0, 0.5)
 	await tween.finished
 	node.queue_free()
-	
-	
+
+
 # Audio
 func play_intro_music():
 	AudioManager.play_music(intro_music)

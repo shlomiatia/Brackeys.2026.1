@@ -70,7 +70,7 @@ else:
 		MaskedMan: Fine.[pause=0.2] I shall open the way so you can learn more.
 		MaskedMan: Proceed forward,[pause=0.2] and good riddance.
 		set {level3_door_opened} = true
-		signal level3_door_opened
+		[signal arg="level3_door_opened"]
 	else:
 		MaskedMan: I still have more to tell if you are willing to prove yourself.
 
