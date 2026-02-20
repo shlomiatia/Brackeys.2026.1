@@ -10,24 +10,24 @@ extends Node2D
 @onready var exit_interactable: Interactable = $Objects/Exit/Interactable
 
 func _ready() -> void:
-    Dialogic.signal_event.connect(_on_dialogic_signal)
-    gaze.all_mirrors_broken.connect(_on_all_mirrors_broken)
-    exit_interactable.interacted.connect(_on_exit_interacted)
-    await _start_sequence()
+	Dialogic.signal_event.connect(_on_dialogic_signal)
+	gaze.all_mirrors_broken.connect(_on_all_mirrors_broken)
+	exit_interactable.interacted.connect(_on_exit_interacted)
+	await _start_sequence()
 
 func _start_sequence() -> void:
-    Global.can_control = false
+	Global.can_control = false
 
-    await get_tree().create_timer(1.0).timeout
+	await get_tree().create_timer(1.0).timeout
 
-    # Start dialogic conversation (controls already disabled)
-    Dialogic.start("level5_start")
-    await Dialogic.timeline_ended
+	# Start dialogic conversation (controls already disabled)
+	Dialogic.start("level5_start")
+	await Dialogic.timeline_ended
 
 func _on_dialogic_signal(argument: String) -> void:
-    match argument:
-        "level5_pan_to_eye_creature":
-            # Disable camera _process so it doesn't reset position to Vector2.ZERO
+	match argument:
+		"level5_pan_to_eye_creature":
+			# Disable camera _process so it doesn't reset position to Vector2.ZERO
             camera.set_process(false)
 
             # Move camera to EyeWomanSprite over 0.5s

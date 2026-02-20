@@ -70,13 +70,13 @@ script = ExtResource("1_a1y0i")
 [node name="Fade" parent="CanvasLayer" instance=ExtResource("2_renp8")]
 
 [node name="InstructionLabel" type="Label" parent="CanvasLayer"]
-anchor_left = 0.0
-anchor_right = 1.0
+visible = false
+anchors_preset = 12
 anchor_top = 1.0
+anchor_right = 1.0
 anchor_bottom = 1.0
 offset_top = -80.0
 offset_bottom = -40.0
-visible = false
 text = "WASD to move"
 horizontal_alignment = 1
 
