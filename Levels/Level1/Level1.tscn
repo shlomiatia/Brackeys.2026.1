@@ -143,6 +143,10 @@ tile_set = SubResource("TileSet_iw758")
 position = Vector2(-88, 72)
 current_direction = "Fr"
 
+[node name="ShakingCamera" parent="Objects/Player" instance=ExtResource("5_b1g7e")]
+position = Vector2(82, -64)
+zoom = Vector2(3, 3)
+
 [node name="Door" type="Sprite2D" parent="Objects"]
 position = Vector2(-87, -47)
 texture = ExtResource("5_a1y0i")
@@ -160,10 +164,6 @@ position = Vector2(34, 23)
 sprite_frames = SubResource("SpriteFrames_o6xt3")
 frame = 5
 frame_progress = 1.0
-
-[node name="ShakingCamera" parent="." instance=ExtResource("5_b1g7e")]
-position = Vector2(-6, 8)
-zoom = Vector2(3, 3)
 
 [node name="Knife" type="Sprite2D" parent="."]
 z_index = 2
