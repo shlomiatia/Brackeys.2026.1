@@ -11,7 +11,6 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func change_scene(scene_path: String) -> void:
 	can_control = false
-	await get_tree().create_timer(1.0).timeout
 	var fade: Fade = get_tree().current_scene.get_node("CanvasLayer/Fade")
 	await fade.fade_out()
 	get_tree().change_scene_to_file(scene_path)

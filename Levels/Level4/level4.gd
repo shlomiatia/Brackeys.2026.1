@@ -38,7 +38,7 @@ var maze_completed: bool = false
 
 
 func _ready() -> void:
-    pick_direction()
+    pick_direction(Direction.UP)
     Global.can_control = false
     await get_tree().create_timer(1.0).timeout
     await DialogDisplayer.start("level4_start")
@@ -55,12 +55,14 @@ func pick_direction(exited_direction := -1) -> void:
     while exited_direction != -1 and new_direction == opposite(exited_direction as Direction):
         new_direction = randi() % 4
     target_direction = new_direction as Direction
-    update_hint_color()
+    # update_hint_color()
 
 func _physics_process(_delta: float) -> void:
-    if !Global.can_control or maze_completed:
+    if maze_completed:
         return
     update_hint_color()
+    if !Global.can_control:
+        return
     if player.position.x < EDGE_LEFT:
         await move_room(Direction.LEFT)
     elif player.position.x > EDGE_RIGHT:

@@ -2,7 +2,7 @@ extends Node2D
 
 @onready var exit_interactable: Interactable = $Objects/Exit/Interactable
 
-var music = load("res://audio/music/test music/bella theme v2 progress.mp3")
+var music = load("res://audio/music/test music/bella theme v3 progress.mp3")
 
 func _ready() -> void:
 	AudioManager.play_music(music)
