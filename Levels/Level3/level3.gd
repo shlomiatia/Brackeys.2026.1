@@ -6,10 +6,13 @@ extends Node2D
 @onready var small_creature2 = $Objects/SmallMaskedCreature2
 @onready var small_creature3 = $Objects/SmallMaskedCreature3
 @onready var exit_interactable: Interactable = $Objects/Exit/Interactable
+@onready var exit_sewer_closed: Sprite2D = $SewerTileMaps/ExitSewerClosed
+@onready var exit_sewer_open: Sprite2D = $SewerTileMaps/ExitSewerOpen
 
 func _ready() -> void:
 	Dialogic.signal_event.connect(_on_dialogic_signal)
 	exit_interactable.interacted.connect(_on_exit_interacted)
+	exit_interactable.remove_from_group("interactables")
 
 
 func _on_dialogic_signal(argument: String) -> void:
@@ -20,6 +23,10 @@ func _on_dialogic_signal(argument: String) -> void:
 			await _fight_creature(small_creature2)
 		"fight_small_masked_creature3":
 			await _fight_creature(small_creature3)
+		"level3_door_opened":
+			exit_interactable.add_to_group("interactables")
+			exit_sewer_closed.visible = false
+			exit_sewer_open.visible = true
 
 
 func _on_exit_interacted() -> void:
