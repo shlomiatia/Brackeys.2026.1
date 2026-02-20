@@ -4,6 +4,8 @@ extends Node2D
 @onready var door: Sprite2D = $Objects/Door
 @onready var door_conversation: Conversation = $Objects/Door/Conversation
 @onready var ball = $Objects/Ball
+@onready var rope: Sprite2D = $Rope
+@onready var rope_conversation: Conversation = $Rope/Conversation
 @onready var knife: Sprite2D = $Knife
 @onready var fade: Fade = $CanvasLayer/Fade
 @onready var instruction_label: Label = $CanvasLayer/InstructionLabel
@@ -67,6 +69,11 @@ func _on_dialogic_signal(argument: String) -> void:
 			AudioManager.play_sfx(ball_appear_sfx, "SFX", -12)
 			AudioManager.play_loop_sfx("hole_ambience", hole_ambi, "Ambi", -20)
 			ball.cut()
+			rope_conversation.interactable_disabled = true
+			var rope_tween = create_tween()
+			rope_tween.set_trans(Tween.TRANS_SINE)
+			rope_tween.set_ease(Tween.EASE_IN)
+			rope_tween.tween_property(rope, "position:y", -800, 0.8)
 		"show_scene":
 			fade.fade_in()
 		"jump_in_hole":

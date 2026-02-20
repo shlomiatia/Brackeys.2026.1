@@ -1,6 +1,11 @@
 join EyeWoman (default) left
 join Bella (default) right
-EyeWoman: Stop that!!
-Bella: ...
+if {level5_broke_second_mirror} == false
+	EyeWoman: Stop that!!
+	Bella: ...
+	set {level5_broke_second_mirror} = true
+else:
+	EyeWoman: It burns!!
+	Bella: ...
 leave --All-- 
 [end_timeline]

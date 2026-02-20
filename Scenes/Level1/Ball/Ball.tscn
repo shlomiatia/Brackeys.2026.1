@@ -69,7 +69,7 @@ y_sort_enabled = true
 script = ExtResource("1_ball_script")
 
 [node name="Ball" type="Sprite2D" parent="."]
-position = Vector2(0, -160)
+position = Vector2(0, -183)
 texture = ExtResource("2_qxpdj")
 
 [node name="Shadow" type="Sprite2D" parent="."]

@@ -6,9 +6,16 @@ if {level3_seen_masked_creature} == false:
 	set {level3_seen_masked_creature} = true
 
 if {level3_first_interaction_with_man} == true:
-	Bella: Maybe if I kill it,[pause=0.2] that Masked Man will tell me what I need to know?
-	Bella: ...
-	Bella: I'm sorry...
+	if {level3_maskedCreaturesKilled} == 0:
+		Bella: Maybe if I kill it,[pause=0.2] that Masked Man will tell me what I need to know?
+		Bella: ...
+		Bella: I'm sorry...
+	elif {level3_maskedCreaturesKilled} == 1:
+		Bella: Another one...
+		Bella: I should kill this one too.
+	else:
+		Bella: The last one.[pause=0.2] I'm sorry...
+	set {level3_maskedCreaturesKilled} += 1
 	set {level3_defeated_small_masked_creature2} = true
 	[signal arg="fight_small_masked_creature2"]
 else:

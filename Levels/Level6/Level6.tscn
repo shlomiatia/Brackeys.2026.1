@@ -79,7 +79,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_q2muv")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_target"]
-size = Vector2(30, 30)
+size = Vector2(35, 48)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jo5ud"]
 
@@ -251,6 +251,7 @@ texture = ExtResource("6_q2muv")
 [node name="Area2D" type="Area2D" parent="Objects/Target"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Target/Area2D"]
+position = Vector2(-1.5, 2)
 shape = SubResource("RectangleShape2D_target")
 
 [node name="Slowdown1" parent="Objects" instance=ExtResource("7_slowdown")]

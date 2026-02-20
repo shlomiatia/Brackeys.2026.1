@@ -12,6 +12,7 @@ const FRAME_DIRECTIONS: Array[Vector2] = [
 ]
 
 const BREAK_DURATION: float = 1
+const LERP_SPEED: float = 5.0
 
 signal all_mirrors_broken
 
@@ -19,11 +20,14 @@ var breaking: bool = false
 var _flash_tween: Tween
 var _mirrors_broken: int = 0
 
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
 	if !player:
 		return
 
 	if breaking:
+		return
+
+	if !visible:
 		return
 
 	var target = to_local(player.global_position) + Vector2(0, -16)
@@ -49,7 +53,8 @@ func _process(_delta: float) -> void:
 				_start_breaking(mirror)
 				return
 
-	set_point_position(1, target)
+	var current = get_point_position(1)
+	set_point_position(1, current.lerp(target, delta * LERP_SPEED))
 
 func _start_breaking(mirror: Mirror) -> void:
 	breaking = true
