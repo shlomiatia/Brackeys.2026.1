@@ -1,3 +1,11 @@
-join Bella (default) center
-Bella: I made it...
+[background arg="res://Assets/Death Section/escapeEnding.PNG" fade="1.0" wait="true"]
+
+Bella: I made it...[pause=0.2]I actually made it...
+Bella: Somehow,[pause=0.2] I escaped death.
+Bella: I don't know what I'll do if I manage to get back to earth.[pause=0.2] To my life.
+Bella: Take revenge?[pause=0.2] Try to live a better life?
+Bella: I don't know yet.
+Bella: All I know is that I'm not staying here.[pause=0.2] I can't accept my death.
+Bella: Not after everything I now know.
+[wait time="3.0"]
 [end_timeline]

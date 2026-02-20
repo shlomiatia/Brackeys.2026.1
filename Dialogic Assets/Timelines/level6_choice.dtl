@@ -34,5 +34,6 @@ Bella: ...
 	Death: Very well then.[pause=0.2] I will force you to face your fate.
 	Bella: I have to escape!
 	leave --All--
+	set {level6_said_no} = true
 	[signal arg="level6_no"]
 	[end_timeline]

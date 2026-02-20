@@ -86,6 +86,7 @@ variables={
 "level3_told_secret2": false,
 "level3_told_secret3": false,
 "level5_talked_to_eye": false,
+"level6_said_no": false,
 "rope_cut": false,
 "rope_interacted": false,
 "statue_moved": false,
