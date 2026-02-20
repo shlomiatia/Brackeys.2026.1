@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bmp50wvaog1e"]
+[gd_scene load_steps=13 format=4 uid="uid://bmp50wvaog1e"]
 
 [ext_resource type="PackedScene" uid="uid://deur6yjprct37" path="res://Scenes/Player/player.tscn" id="1_a67fh"]
 [ext_resource type="Script" uid="uid://mbmr1umj5xsk" path="res://Levels/Level2/level2.gd" id="1_script"]
@@ -7,7 +7,17 @@
 [ext_resource type="PackedScene" uid="uid://bk5igealw1hn0" path="res://Levels/Level2/cloudSectionTileMaps.tscn" id="3_bgei7"]
 [ext_resource type="PackedScene" uid="uid://cfgp45xbt467i" path="res://Scenes/Conversation/Conversation.tscn" id="3_conv"]
 [ext_resource type="PackedScene" uid="uid://dnwug4pxdwecg" path="res://Scenes/Utils/Fade.tscn" id="4_fade"]
+[ext_resource type="TileSet" uid="uid://bcwcvhehhmadv" path="res://Levels/Level2/Level2TileSet.tres" id="7_l4j0s"]
 [ext_resource type="Texture2D" uid="uid://c34j0kd41unmk" path="res://Assets/Masked Section/statueFr.PNG" id="8_bgei7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l4j0s"]
+size = Vector2(496, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3q646"]
+size = Vector2(211, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_07q1j"]
+size = Vector2(211, 1)
 
 [node name="Level2" type="Node2D"]
 script = ExtResource("1_script")
@@ -24,7 +34,7 @@ position = Vector2(252, 155)
 y_sort_enabled = true
 
 [node name="player" parent="Objects" instance=ExtResource("1_a67fh")]
-position = Vector2(253, 159)
+position = Vector2(283, 142)
 
 [node name="ShakingCamera" parent="Objects/player" instance=ExtResource("2_p5es7")]
 zoom = Vector2(3, 3)
@@ -35,6 +45,11 @@ position = Vector2(448, -150)
 [node name="Conversation" parent="Objects/Pipe" instance=ExtResource("3_conv")]
 dialogue_name = "level2_pipe"
 interactable_disabled = true
+
+[node name="AboveDecorTileMapLayer" type="TileMapLayer" parent="Objects"]
+position = Vector2(252, 107)
+tile_map_data = PackedByteArray("AAD9//z/AAACAAEAACD9//3/AAADAAEAAAD9//7/AAADAAEAAAD9////AAACAAEAAAD+//v/AAAEAAAAAAD+//z/AAADAAIAAAD+//3/AAAEAAEAAAD+//7/AAAEAAIAAAD+////AAAEAAMAAAD///v/AAAEAAAAAAD///z/AAADAAMAAFD///3/AAAEAAEAABD///7/AAAEAAIAABD/////AAAEAAMAABAAAPv/AAAEAAAAAAAAAPz/AAADAAMAAFAAAP3/AAAEAAEAAAAAAP7/AAAEAAIAAAAAAP//AAAEAAMAAAABAPv/AAAEAAAAAAABAPz/AAADAAMAAFABAP3/AAAEAAEAABABAP7/AAAEAAIAABABAP//AAAEAAMAABACAPv/AAAEAAAAAAACAPz/AAADAAMAAFACAP3/AAAEAAEAAAACAP7/AAAEAAIAAAACAP//AAAEAAMAAAADAPv/AAAEAAAAAAADAPz/AAADAAIAABADAP3/AAAEAAEAABADAP7/AAAEAAIAABADAP//AAAEAAMAABAEAPz/AAACAAEAACAEAP3/AAADAAEAAAAEAP7/AAADAAEAAAAEAP//AAACAAEAAAAFAP//AAAAAAEAAAAGAP//AAAAAAEAAAAHAP//AAAAAAEAAAAIAP//AAAAAAEAAAAJAP//AAAAAAEAAAAKAPz/AAACAAIAAAAKAP3/AAADAAMAACAKAP7/AAADAAMAACAKAP//AAADAAMAAAALAPz/AAADAAMAAFAMAPz/AAADAAMAAFANAPz/AAADAAMAAFAOAPz/AAACAAIAABAOAP3/AAADAAMAADAOAP7/AAADAAMAADAOAP//AAADAAMAABAPAP//AAAAAAEAAAAQAP//AAAAAAEAAAARAP//AAAAAAEAAAASAP//AAAAAAEAAAATAP//AAAAAAEAAAAUAPz/AAACAAEAACAUAP3/AAADAAEAAAAUAP7/AAADAAEAAAAUAP//AAACAAEAAAAVAPv/AAAEAAAAAAAVAPz/AAADAAIAAAAVAP3/AAAEAAEAAAAVAP7/AAAEAAIAAAAVAP//AAAEAAMAAAAWAPv/AAAEAAAAAAAWAPz/AAADAAMAAFAWAP3/AAAEAAEAABAWAP7/AAAEAAIAABAWAP//AAAEAAMAABAXAPv/AAAEAAAAAAAXAPz/AAADAAMAAFAXAP3/AAAEAAEAAAAXAP7/AAAEAAIAAAAXAP//AAAEAAMAAAAYAPv/AAAEAAAAAAAYAPz/AAADAAMAAFAYAP3/AAAEAAEAABAYAP7/AAAEAAIAABAYAP//AAAEAAMAABAZAPv/AAAEAAAAAAAZAPz/AAADAAMAAFAZAP3/AAAEAAEAAAAZAP7/AAAEAAIAAAAZAP//AAAEAAMAAAAaAPv/AAAEAAAAAAAaAPz/AAADAAIAABAaAP3/AAAEAAEAABAaAP7/AAAEAAIAABAaAP//AAAEAAMAABAbAPz/AAACAAEAACAbAP3/AAADAAEAAAAbAP7/AAADAAEAAAAbAP//AAACAAEAAAA=")
+tile_set = ExtResource("7_l4j0s")
 
 [node name="MainStatue" parent="Objects" instance=ExtResource("2_36aoo")]
 position = Vector2(448, -136)
@@ -74,5 +89,26 @@ dialogue_name = "level2_statue6"
 [node name="Statue7" parent="Objects" instance=ExtResource("2_36aoo")]
 position = Vector2(357, -132)
 dialogue_name = "level2_statue7"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Objects"]
+position = Vector2(305, 208)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/StaticBody2D"]
+position = Vector2(147, 10.5)
+shape = SubResource("RectangleShape2D_l4j0s")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Objects"]
+position = Vector2(305, 96)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/StaticBody2D2"]
+position = Vector2(4.5, 10.5)
+shape = SubResource("RectangleShape2D_3q646")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Objects"]
+position = Vector2(566, 96)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/StaticBody2D3"]
+position = Vector2(28.5, 10.5)
+shape = SubResource("RectangleShape2D_07q1j")
 
 [editable path="Objects/MainStatue"]

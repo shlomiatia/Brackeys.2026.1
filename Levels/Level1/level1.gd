@@ -35,7 +35,6 @@ func _show_start_sequence() -> void:
 
 	# Show movement hint now that the player has control
 	instruction_label.text = "WASD to move"
-	instruction_label.modulate = Color.BLACK
 	instruction_label.visible = true
 	_instruction_phase = _InstructionPhase.MOVE
 
@@ -47,7 +46,6 @@ func _input(event: InputEvent) -> void:
 				_instruction_phase = _InstructionPhase.NONE
 				await get_tree().create_timer(1.0).timeout
 				instruction_label.text = "E to interact"
-				instruction_label.modulate = Color.BLACK
 				_instruction_phase = _InstructionPhase.INTERACT
 		_InstructionPhase.INTERACT:
 			if event.is_action_pressed("interact"):

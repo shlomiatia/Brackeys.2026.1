@@ -36,11 +36,9 @@ var incorrect_count: int = 0
 var correct_count: int = 0
 var maze_completed: bool = false
 
-var intro_music = load("res://audio/music/test music/bella theme v2 progress.mp3")
 
 func _ready() -> void:
     pick_direction()
-    AudioManager.play_music(intro_music)
     Global.can_control = false
     await get_tree().create_timer(1.0).timeout
     await DialogDisplayer.start("level4_start")
