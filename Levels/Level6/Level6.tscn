@@ -162,7 +162,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"down",
-"speed": 5.0
+"speed": 2.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -285,7 +285,7 @@ animation = &"down"
 autoplay = "down"
 
 [node name="Player" parent="Objects" instance=ExtResource("1_player")]
-position = Vector2(-11, 2)
+position = Vector2(0, -1)
 
 [node name="ShakingCamera" parent="Objects/Player" instance=ExtResource("2_camera")]
 zoom = Vector2(3, 3)

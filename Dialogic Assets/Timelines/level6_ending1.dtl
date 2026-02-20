@@ -1,5 +1,12 @@
 [background arg="res://Assets/Death Section/acceptanceEnding.PNG" fade="1.0" wait="true"]
+if {level6_said_no} == true:
+	Bella: I was caught...
+	Bella: I did all I could.
+	Bella: There's no use running anymore.[pause=0.2] I can't.[pause=0.2] She won't let me.
+	Bella: I have to accept it.
+
 Bella: There's nothing left for me in life...
 Bella: I'm no longer the person I once was.
 Bella: I have to move forward.[pause=0.2] I have to move on.
+[wait time="3.0"]
 [end_timeline]
