@@ -1,12 +1,220 @@
-[gd_scene load_steps=8 format=3 uid="uid://vytm8306a687"]
+[gd_scene load_steps=32 format=4 uid="uid://vytm8306a687"]
 
 [ext_resource type="PackedScene" uid="uid://deur6yjprct37" path="res://Scenes/Player/player.tscn" id="1_player"]
 [ext_resource type="PackedScene" uid="uid://bbrs3ouymdwi8" path="res://Scenes/ShakingCamera/ShakingCamera.tscn" id="2_camera"]
 [ext_resource type="PackedScene" uid="uid://dnwug4pxdwecg" path="res://Scenes/Utils/Fade.tscn" id="3_fade"]
+[ext_resource type="PackedScene" uid="uid://7fol7r5wb36u" path="res://Levels/Level6/death_tile_map.tscn" id="3_jo5ud"]
+[ext_resource type="Texture2D" uid="uid://b8a1j0n2ebd0n" path="res://Assets/Tilesets/deathTileset.PNG" id="4_a34f1"]
 [ext_resource type="Script" uid="uid://c5m2x1bgaci16" path="res://Levels/Level6/level6.gd" id="4_level6"]
 [ext_resource type="Script" uid="uid://kuqom6rfv5n" path="res://Levels/Level6/death.gd" id="5_death"]
+[ext_resource type="Texture2D" uid="uid://qqcgnfto7gid" path="res://Assets/Death Section/deathSprite.PNG" id="5_ufydp"]
 [ext_resource type="PackedScene" uid="uid://bmv00lqu5yns1" path="res://Scenes/Interactable/Interactable.tscn" id="6_interactable"]
-[ext_resource type="PackedScene" path="res://Scenes/Slowdown/Slowdown.tscn" id="7_slowdown"]
+[ext_resource type="Texture2D" uid="uid://c337ld3ilxis" path="res://Assets/Death Section/light.PNG" id="6_q2muv"]
+[ext_resource type="PackedScene" uid="uid://bt4qpxnvs5x18" path="res://Scenes/Slowdown/Slowdown.tscn" id="7_slowdown"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q2muv"]
+texture = ExtResource("4_a34f1")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:1/0 = 0
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:1/0 = 0
+0:2/0 = 0
+0:3/0 = 0
+0:4/0 = 0
+0:5/0 = 0
+0:6/0 = 0
+1:4/size_in_atlas = Vector2i(2, 3)
+1:4/0 = 0
+1:4/0/texture_origin = Vector2i(0, 16)
+1:4/0/y_sort_origin = 9
+1:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 1, 8, 1, 11, 8, -11, 8)
+1:2/size_in_atlas = Vector2i(2, 2)
+1:2/0 = 0
+1:2/0/texture_origin = Vector2i(0, 8)
+1:2/0/y_sort_origin = 9
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 1, 8, 1, 11, 8, -11, 8)
+7:0/size_in_atlas = Vector2i(2, 4)
+7:0/0 = 0
+7:0/0/texture_origin = Vector2i(0, 24)
+7:0/0/y_sort_origin = 9
+7:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-10, 4, -6, 4, -6, 8, -10, 8)
+9:0/size_in_atlas = Vector2i(1, 4)
+9:0/0 = 0
+9:0/0/texture_origin = Vector2i(0, 24)
+9:0/0/y_sort_origin = 9
+9:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5, 4, 2, 4, 2, 8, -5, 8)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:1/0 = 0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:0/0 = 0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:1/0 = 0
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:2/size_in_atlas = Vector2i(2, 4)
+3:2/0 = 0
+3:2/0/texture_origin = Vector2i(-8, 24)
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -56, 24, -56, 24, 8, -8, 8)
+5:2/size_in_atlas = Vector2i(2, 4)
+5:2/0 = 0
+5:2/0/texture_origin = Vector2i(-8, 24)
+8:4/size_in_atlas = Vector2i(2, 4)
+8:4/0 = 0
+8:4/0/texture_origin = Vector2i(0, 24)
+8:4/0/y_sort_origin = 9
+8:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, 4, 5, 4, 5, 8, 0, 8)
+6:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_oi4ni"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_q2muv")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jo5ud"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a34f1"]
+atlas = ExtResource("5_ufydp")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q2muv"]
+atlas = ExtResource("5_ufydp")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oi4ni"]
+atlas = ExtResource("5_ufydp")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5lkka"]
+atlas = ExtResource("5_ufydp")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5tj3f"]
+atlas = ExtResource("5_ufydp")
+region = Rect2(0, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ehkn"]
+atlas = ExtResource("5_ufydp")
+region = Rect2(64, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_esor4"]
+atlas = ExtResource("5_ufydp")
+region = Rect2(128, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ongru"]
+atlas = ExtResource("5_ufydp")
+region = Rect2(192, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_srxv1"]
+atlas = ExtResource("5_ufydp")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jqdqr"]
+atlas = ExtResource("5_ufydp")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ahfxi"]
+atlas = ExtResource("5_ufydp")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oi32g"]
+atlas = ExtResource("5_ufydp")
+region = Rect2(192, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vue2s"]
+atlas = ExtResource("5_ufydp")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_74rqo"]
+atlas = ExtResource("5_ufydp")
+region = Rect2(64, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1kgg4"]
+atlas = ExtResource("5_ufydp")
+region = Rect2(128, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fuesv"]
+atlas = ExtResource("5_ufydp")
+region = Rect2(192, 128, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jo5ud"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a34f1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q2muv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oi4ni")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5lkka")
+}],
+"loop": true,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5tj3f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ehkn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_esor4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ongru")
+}],
+"loop": true,
+"name": &"left",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_srxv1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jqdqr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ahfxi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oi32g")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vue2s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_74rqo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1kgg4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fuesv")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}]
 
 [node name="Level6" type="Node2D"]
 script = ExtResource("4_level6")
@@ -16,49 +224,62 @@ script = ExtResource("4_level6")
 [node name="Fade" parent="CanvasLayer" instance=ExtResource("3_fade")]
 auto_fade_in = true
 
+[node name="deathTileMap" parent="." instance=ExtResource("3_jo5ud")]
+
 [node name="Objects" type="Node2D" parent="."]
 y_sort_enabled = true
+
+[node name="DecorTileMapLayer" type="TileMapLayer" parent="Objects"]
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAD4/+7/AAABAAIAAAD5//X/AAABAAQAAAADAPL/AAAIAAQAAAAEAO//AAABAAQAAAAEAPj/AAABAAIAAAAIAO7/AAABAAIAAAAIAPT/AAAJAAAAAAD5//H/AAAIAAQAAAAAAO7/AAABAAQAAAA=")
+tile_set = SubResource("TileSet_oi4ni")
+
+[node name="Target" type="Node2D" parent="Objects"]
+position = Vector2(1008, -202)
+
+[node name="Interactable" parent="Objects/Target" instance=ExtResource("6_interactable")]
+
+[node name="Light" type="Sprite2D" parent="Objects/Target"]
+texture = ExtResource("6_q2muv")
+
+[node name="Slowdown1" parent="Objects" instance=ExtResource("7_slowdown")]
+position = Vector2(258, -209)
+
+[node name="Slowdown2" parent="Objects" instance=ExtResource("7_slowdown")]
+position = Vector2(353, -241)
+
+[node name="Slowdown3" parent="Objects" instance=ExtResource("7_slowdown")]
+position = Vector2(448, -162)
+
+[node name="Slowdown4" parent="Objects" instance=ExtResource("7_slowdown")]
+position = Vector2(546, -207)
+
+[node name="Slowdown5" parent="Objects" instance=ExtResource("7_slowdown")]
+position = Vector2(644, -161)
+
+[node name="Slowdown6" parent="Objects" instance=ExtResource("7_slowdown")]
+position = Vector2(738, -243)
+
+[node name="Slowdown7" parent="Objects" instance=ExtResource("7_slowdown")]
+position = Vector2(834, -206)
+
+[node name="Death" type="CharacterBody2D" parent="Objects"]
+position = Vector2(-116, -194)
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("5_death")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Death"]
+shape = SubResource("CircleShape2D_jo5ud")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Objects/Death"]
+position = Vector2(0, -31)
+sprite_frames = SubResource("SpriteFrames_jo5ud")
+animation = &"right"
+autoplay = "right"
 
 [node name="Player" parent="Objects" instance=ExtResource("1_player")]
 position = Vector2(-11, 2)
 
 [node name="ShakingCamera" parent="Objects/Player" instance=ExtResource("2_camera")]
 zoom = Vector2(3, 3)
-
-[node name="Death" type="CharacterBody2D" parent="Objects"]
-position = Vector2(-190, 0)
-collision_layer = 0
-collision_mask = 0
-script = ExtResource("5_death")
-
-[node name="ColorRect" type="ColorRect" parent="Objects/Death"]
-offset_left = -8.0
-offset_top = -24.0
-offset_right = 8.0
-color = Color(0.15, 0.15, 0.15, 1)
-
-[node name="Target" type="Node2D" parent="Objects"]
-position = Vector2(1140, 2)
-
-[node name="ColorRect" type="ColorRect" parent="Objects/Target"]
-offset_left = -10.0
-offset_top = -24.0
-offset_right = 10.0
-color = Color(0.8, 0.7, 0.2, 1)
-
-[node name="Interactable" parent="Objects/Target" instance=ExtResource("6_interactable")]
-
-[node name="Slowdown1" parent="Objects" instance=ExtResource("7_slowdown")]
-position = Vector2(200, 10)
-
-[node name="Slowdown2" parent="Objects" instance=ExtResource("7_slowdown")]
-position = Vector2(420, -20)
-
-[node name="Slowdown3" parent="Objects" instance=ExtResource("7_slowdown")]
-position = Vector2(650, 15)
-
-[node name="Slowdown4" parent="Objects" instance=ExtResource("7_slowdown")]
-position = Vector2(880, -10)
-
-[node name="Slowdown5" parent="Objects" instance=ExtResource("7_slowdown")]
-position = Vector2(1050, 5)

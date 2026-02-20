@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Brackeys.2026.1"
-run/main_scene="uid://cye4t85qtfng7"
+run/main_scene="uid://vytm8306a687"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -55,6 +55,7 @@ directories/dtl_directory={
 "level3_small_masked_creature2": "res://Dialogic Assets/Timelines/level3_small_masked_creature2.dtl",
 "level3_small_masked_creature3": "res://Dialogic Assets/Timelines/level3_small_masked_creature3.dtl",
 "level4_correct1": "res://Dialogic Assets/Timelines/level4_correct1.dtl",
+"level4_first_room": "res://Dialogic Assets/Timelines/level4_first_room.dtl",
 "level4_incorrect1": "res://Dialogic Assets/Timelines/level4_incorrect1.dtl",
 "level4_incorrect3": "res://Dialogic Assets/Timelines/level4_incorrect3.dtl",
 "level4_start": "res://Dialogic Assets/Timelines/level4_start.dtl",

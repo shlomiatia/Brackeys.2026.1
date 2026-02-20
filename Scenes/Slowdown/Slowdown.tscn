@@ -1,19 +1,25 @@
-[gd_scene load_steps=3 format=3]
+[gd_scene load_steps=4 format=3 uid="uid://bt4qpxnvs5x18"]
 
-[ext_resource type="Script" path="res://Scenes/Slowdown/slowdown.gd" id="1_slowdown"]
+[ext_resource type="Script" uid="uid://da4ulp17tcff0" path="res://Scenes/Slowdown/slowdown.gd" id="1_slowdown"]
+[ext_resource type="Texture2D" uid="uid://xvd3m3uo5l44" path="res://Assets/Death Section/obstacles.PNG" id="2_vvej3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_slow"]
-radius = 64.0
+radius = 32.0
 
 [node name="Slowdown" type="Node2D"]
 script = ExtResource("1_slowdown")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 0
-collision_mask = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_slow")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -24)
+texture = ExtResource("2_vvej3")
+region_enabled = true
+region_rect = Rect2(5, 1, 22, 48)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_body_exited"]

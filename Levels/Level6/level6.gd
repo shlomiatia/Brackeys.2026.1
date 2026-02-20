@@ -11,8 +11,7 @@ func _ready() -> void:
 	death.caught_player.connect(_on_death_caught_player)
 	Global.can_control = false
 	await get_tree().create_timer(1.0).timeout
-	Dialogic.start("level6_start")
-	await Dialogic.timeline_ended
+	await DialogDisplayer.start("level6_start")
 
 func _on_dialogic_signal(argument: String) -> void:
 	match argument:

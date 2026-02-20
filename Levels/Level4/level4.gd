@@ -17,8 +17,6 @@ const CAMERA_HEIGHT := EDGE_BOTTOM - EDGE_TOP
     $Objects/FurnitureTileMapLayer3,
     $Objects/FurnitureTileMapLayer4,
 ]
-@onready var exit: Node2D = $Objects/Exit
-@onready var exit_interactable: Interactable = $Objects/Exit/Interactable
 
 var target_direction: Direction
 var current_furniture_index: int = 0
@@ -34,7 +32,6 @@ func _ready() -> void:
     Global.can_control = false
     await get_tree().create_timer(1.0).timeout
     await DialogDisplayer.start("level4_start")
-    exit_interactable.interacted.connect(_on_exit_interacted)
 
 func opposite(dir: Direction) -> Direction:
     match dir:
@@ -94,7 +91,7 @@ func switch_furniture(correct: bool) -> void:
     elif correct and current_furniture_index == furniture_layers.size() - 1:
         # Completed the final room
         maze_completed = true
-        exit.visible = true
+        Global.change_scene("res://Levels/Level5/Level5.tscn")
         return
     elif not correct:
         current_furniture_index = 0
@@ -122,5 +119,3 @@ func update_hint_color() -> void:
     modulate = Color(c, c, c)
     AudioManager.music_player.volume_db = - ratio * Constants.maze_db_hint_modifier
 
-func _on_exit_interacted() -> void:
-    Global.change_scene("res://Levels/Level5/Level5.tscn")
