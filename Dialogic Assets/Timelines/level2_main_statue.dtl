@@ -16,7 +16,7 @@ if {interacted_main_statue} == false:
 	Bella: Then who can?
 	Statue: Why does it matter?[pause=0.2] You are in paradise.[pause=0.2] You must stay here.
 	Bella: I can't![pause=0.2] Can you please let me pass?
-	Statue: The truth behind yourself lies past here.[pause=0.2] For your own safety,[pause=0.2] I cannnot.
+	Statue: The truth behind yourself lies past here.[pause=0.2] For your own safety,[pause=0.2] I cannot.
 	Bella: You must![pause=0.2] I have to know.
 	Statue: You fool.[pause=0.2] But that is your choice.
 	Statue: If you wish to know,[pause=0.2] you must first answer this question\:[pause=0.2] What is it that you valued most in your life?

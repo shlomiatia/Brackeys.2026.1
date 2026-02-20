@@ -75,6 +75,8 @@ texture = ExtResource("2_qxpdj")
 material = SubResource("ShaderMaterial_shadow")
 scale = Vector2(1e-05, 1e-05)
 texture = ExtResource("2_qxpdj")
+region_enabled = true
+region_rect = Rect2(0, 37, 31, 23)
 
 [node name="Hole" type="Sprite2D" parent="."]
 visible = false

@@ -13,7 +13,7 @@ func _ready():
 	_last_position = _body.global_position
 	
 func _physics_process(delta: float) -> void:
-	if _body.velocity.length() < 5: 
+	if _body.velocity.length() < 5:
 		_distance = 0
 		_last_position = _body.global_position
 		return
@@ -30,5 +30,3 @@ func _play_step():
 		return
 	
 	AudioManager.play_sfx(footstep_stream, "Foley", volume_db, 1.0)
-
-	

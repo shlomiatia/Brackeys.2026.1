@@ -10,8 +10,8 @@ var mask_max_position_y: float = 75.0
 var mask_max_rotation_deg: float = 45.0
 
 # Maze Hint
-var maze_modulate_hint_modifier: float = 0.5
-var maze_db_hint_modifier: float = 9.0
+var maze_modulate_hint_modifier: float = 0.8
+var maze_db_hint_modifier: float = 18.0
 
 
 var canvas_layer: CanvasLayer

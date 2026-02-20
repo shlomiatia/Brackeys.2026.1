@@ -37,7 +37,7 @@ dialogue_name = "level2_pipe"
 interactable_disabled = true
 
 [node name="MainStatue" parent="Objects" instance=ExtResource("2_36aoo")]
-position = Vector2(448, -150)
+position = Vector2(448, -136)
 dialogue_name = "level2_main_statue"
 
 [node name="Sprite2D" parent="Objects/MainStatue" index="0"]

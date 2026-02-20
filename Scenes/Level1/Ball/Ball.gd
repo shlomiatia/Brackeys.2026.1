@@ -17,7 +17,7 @@ func fall() -> void:
 	tween.set_ease(Tween.EASE_OUT)
 
 	var duration = 0.5
-	tween.tween_property(ball, "position:y", -48, duration)
+	tween.tween_property(ball, "position:y", -103, duration)
 	tween.tween_property(shadow, "scale", Vector2(0.8, 0.8), duration)
 
 	await tween.finished
