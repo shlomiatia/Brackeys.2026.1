@@ -8,7 +8,6 @@
 [ext_resource type="Script" uid="uid://c5m2x1bgaci16" path="res://Levels/Level6/level6.gd" id="4_level6"]
 [ext_resource type="Script" uid="uid://kuqom6rfv5n" path="res://Levels/Level6/death.gd" id="5_death"]
 [ext_resource type="Texture2D" uid="uid://qqcgnfto7gid" path="res://Assets/Death Section/deathSprite.PNG" id="5_ufydp"]
-[ext_resource type="PackedScene" uid="uid://bmv00lqu5yns1" path="res://Scenes/Interactable/Interactable.tscn" id="6_interactable"]
 [ext_resource type="Texture2D" uid="uid://c337ld3ilxis" path="res://Assets/Death Section/light.PNG" id="6_q2muv"]
 [ext_resource type="PackedScene" uid="uid://bt4qpxnvs5x18" path="res://Scenes/Slowdown/Slowdown.tscn" id="7_slowdown"]
 
@@ -78,6 +77,9 @@ texture = ExtResource("4_a34f1")
 [sub_resource type="TileSet" id="TileSet_oi4ni"]
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_q2muv")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_target"]
+size = Vector2(30, 30)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jo5ud"]
 
@@ -246,7 +248,10 @@ position = Vector2(-64, 2)
 scale = Vector2(5, 1)
 texture = ExtResource("6_q2muv")
 
-[node name="Interactable" parent="Objects/Target" instance=ExtResource("6_interactable")]
+[node name="Area2D" type="Area2D" parent="Objects/Target"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Target/Area2D"]
+shape = SubResource("RectangleShape2D_target")
 
 [node name="Slowdown1" parent="Objects" instance=ExtResource("7_slowdown")]
 position = Vector2(256, -162)

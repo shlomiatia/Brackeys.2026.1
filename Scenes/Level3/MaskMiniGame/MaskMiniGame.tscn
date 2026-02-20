@@ -49,7 +49,6 @@ animations = [{
 }]
 
 [node name="MaskMiniGame" type="Node2D"]
-visible = false
 script = ExtResource("3_script")
 
 [node name="Face" type="Sprite2D" parent="."]
@@ -65,8 +64,8 @@ frame_progress = 1.0
 
 [node name="Instructions" type="Label" parent="."]
 offset_left = -150.0
-offset_top = 80.0
+offset_top = 200.0
 offset_right = 150.0
-offset_bottom = 120.0
+offset_bottom = 240.0
 text = "Click when the mask is over the face!"
 horizontal_alignment = 1

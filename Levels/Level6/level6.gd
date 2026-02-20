@@ -3,14 +3,14 @@ extends Node2D
 @onready var player: Player = $Objects/Player
 @onready var camera: ShakingCamera = $Objects/Player/ShakingCamera
 @onready var death: CharacterBody2D = $Objects/Death
-@onready var target_interactable: Interactable = $Objects/Target/Interactable
+@onready var target_area: Area2D = $Objects/Target/Area2D
 @onready var intro_area: Area2D = $Objects/Area2D
 
 var _intro_triggered: bool = false
 
 func _ready() -> void:
 	Dialogic.signal_event.connect(_on_dialogic_signal)
-	target_interactable.interacted.connect(_on_target_interacted)
+	target_area.body_entered.connect(_on_target_interacted)
 	death.caught_player.connect(_on_death_caught_player)
 	intro_area.body_entered.connect(_on_intro_area_body_entered)
 	Global.can_control = false
@@ -47,7 +47,9 @@ func _pan_camera_to_player() -> void:
 	camera.set_process(true)
 	Global.can_control = true
 
-func _on_target_interacted() -> void:
+func _on_target_interacted(body: Node2D) -> void:
+	if not body is Player:
+		return
 	ending2()
 
 func _on_death_caught_player() -> void:
