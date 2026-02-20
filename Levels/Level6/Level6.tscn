@@ -237,25 +237,27 @@ tile_set = SubResource("TileSet_oi4ni")
 [node name="Target" type="Node2D" parent="Objects"]
 position = Vector2(1008, -202)
 
-[node name="Interactable" parent="Objects/Target" instance=ExtResource("6_interactable")]
-
 [node name="Light" type="Sprite2D" parent="Objects/Target"]
+position = Vector2(-64, 2)
+scale = Vector2(5, 1)
 texture = ExtResource("6_q2muv")
 
+[node name="Interactable" parent="Objects/Target" instance=ExtResource("6_interactable")]
+
 [node name="Slowdown1" parent="Objects" instance=ExtResource("7_slowdown")]
-position = Vector2(258, -209)
+position = Vector2(256, -162)
 
 [node name="Slowdown2" parent="Objects" instance=ExtResource("7_slowdown")]
-position = Vector2(353, -241)
+position = Vector2(354, -208)
 
 [node name="Slowdown3" parent="Objects" instance=ExtResource("7_slowdown")]
-position = Vector2(448, -162)
+position = Vector2(448, -244)
 
 [node name="Slowdown4" parent="Objects" instance=ExtResource("7_slowdown")]
-position = Vector2(546, -207)
+position = Vector2(545, -164)
 
 [node name="Slowdown5" parent="Objects" instance=ExtResource("7_slowdown")]
-position = Vector2(644, -161)
+position = Vector2(640, -212)
 
 [node name="Slowdown6" parent="Objects" instance=ExtResource("7_slowdown")]
 position = Vector2(738, -243)
@@ -264,7 +266,7 @@ position = Vector2(738, -243)
 position = Vector2(834, -206)
 
 [node name="Death" type="CharacterBody2D" parent="Objects"]
-position = Vector2(-116, -194)
+position = Vector2(-42, -292)
 collision_layer = 0
 collision_mask = 0
 script = ExtResource("5_death")
@@ -275,8 +277,8 @@ shape = SubResource("CircleShape2D_jo5ud")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Objects/Death"]
 position = Vector2(0, -31)
 sprite_frames = SubResource("SpriteFrames_jo5ud")
-animation = &"right"
-autoplay = "right"
+animation = &"down"
+autoplay = "down"
 
 [node name="Player" parent="Objects" instance=ExtResource("1_player")]
 position = Vector2(-11, 2)
