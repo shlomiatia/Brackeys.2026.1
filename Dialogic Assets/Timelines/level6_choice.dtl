@@ -24,8 +24,8 @@ Bella: ...
 - Yes
 	Death: Very well.
 	Death: My child,[pause=0.2] let us go.
-	leave --All-- 
-	# show CG
+	leave --All--
+	[background arg="res://Assets/Death Section/acceptanceEnding.PNG" fade="1.0" wait="true"]
 	Bella: There's nothing left for me in life...
 	Bella: I'm no longer the person I once was.
 	Bella: I have to move forward.[pause=0.2] I have to move on.
@@ -37,6 +37,6 @@ Bella: ...
 	Death: Then you have not changed after all.
 	Death: Very well then.[pause=0.2] I will force you to face your fate.
 	Bella: I have to escape!
-	leave --All-- 
+	leave --All--
 	[signal arg="level6_no"]
 	[end_timeline]
