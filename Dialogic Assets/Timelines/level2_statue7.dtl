@@ -15,7 +15,7 @@ else:
 	Bella: I need to know what I valued most in my life.
 	Statue: [color="red"]F[/color]airness![pause=0.2] Both in beauty and judgement.
 	Statue: Others were jealous of our [color="red"]f[/color]etching looks,[pause=0.2] but that was no matter.
-	Bella: I see...
+	Bella: Would I really have valued beauty above all?
 	if !("F" in {collected_letters}):
 		set {collected_letters} += "F"
 leave --All-- 

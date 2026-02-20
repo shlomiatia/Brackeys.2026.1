@@ -12,7 +12,7 @@ if {interacted_main_statue} == false:
 elif {statue_moved} == true:
 	Statue: I have nothing else to say to you.
 else:
-	Bella: I need to know what I valued most in my life.
+	Bella: Do you know what I valued most in my life?
 	Statue: [color="red"]E[/color]legance,[pause=0.2] my dear.
 	Statue: Like a swan on a lake.[pause=0.2] Or the [color="red"]e[/color]ffervescent peacock.
 	Bella: I see...

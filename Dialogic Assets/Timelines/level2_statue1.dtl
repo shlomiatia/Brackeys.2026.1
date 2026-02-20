@@ -15,7 +15,7 @@ else:
 	Bella: I need to know what I valued most in my life.
 	Statue: Aha~[pause=0.2] All I can say my dear was that we were quite [color="red"]l[/color]ovely!
 	Statue: People [color="red"]l[/color]oved to be around us![pause=0.2] They would always [color="red"]l[/color]augh and [color="red"]l[/color]avish us with gifts after spending time with us!
-	Bella: I see...
+	Bella: Oh really...
 	if !("L" in {collected_letters}):
 		set {collected_letters} += "L"
 leave --All-- 

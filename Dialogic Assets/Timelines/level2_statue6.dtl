@@ -12,10 +12,10 @@ if {interacted_main_statue} == false:
 elif {statue_moved} == true:
 	Statue: I have nothing else to say to you.
 else:
-	Bella: I need to know what I valued most in my life.
+	Bella: What did I value most in my life?
 	Statue: We were quite [color="red"]s[/color]weet.
 	Statue: We cared so much about others.[pause=0.2] Always [color="red"]s[/color]acrificing our time to give...
-	Bella: I see...
+	Bella: Okay...
 	if !("S" in {collected_letters}):
 		set {collected_letters} += "S"
 leave --All-- 
