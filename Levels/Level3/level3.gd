@@ -5,9 +5,11 @@ extends Node2D
 @onready var small_creature1 = $Objects/SmallMaskedCreature1
 @onready var small_creature2 = $Objects/SmallMaskedCreature2
 @onready var small_creature3 = $Objects/SmallMaskedCreature3
+@onready var exit_interactable: Interactable = $Objects/Exit/Interactable
 
 func _ready() -> void:
 	Dialogic.signal_event.connect(_on_dialogic_signal)
+	exit_interactable.interacted.connect(_on_exit_interacted)
 
 
 func _on_dialogic_signal(argument: String) -> void:
@@ -18,6 +20,10 @@ func _on_dialogic_signal(argument: String) -> void:
 			await _fight_creature(small_creature2)
 		"fight_small_masked_creature3":
 			await _fight_creature(small_creature3)
+
+
+func _on_exit_interacted() -> void:
+	Global.change_scene("res://Levels/Level4/maze_entrance_tile_map.tscn")
 
 
 func _fight_creature(creature: Node2D) -> void:

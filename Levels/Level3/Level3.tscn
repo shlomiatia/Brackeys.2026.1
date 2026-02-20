@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cye4t85qtfng7"]
+[gd_scene load_steps=10 format=3 uid="uid://cye4t85qtfng7"]
 
 [ext_resource type="PackedScene" uid="uid://deur6yjprct37" path="res://Scenes/Player/player.tscn" id="1_player"]
 [ext_resource type="Script" uid="uid://ce4cch6vd761q" path="res://Levels/Level3/level3.gd" id="1_script"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c253yddhodw6r" path="res://Levels/Level3/sewer_tile_maps.tscn" id="4_vjyig"]
 [ext_resource type="PackedScene" path="res://Scenes/Level3/SmallMaskedCreature/SmallMaskedCreature.tscn" id="5_small"]
 [ext_resource type="PackedScene" uid="uid://dnwug4pxdwecg" path="res://Scenes/Utils/Fade.tscn" id="6_fade"]
+[ext_resource type="PackedScene" uid="uid://bmv00lqu5yns1" path="res://Scenes/Interactable/Interactable.tscn" id="9_interactable"]
 
 [node name="Level3" type="Node2D"]
 modulate = Color(0.46, 0.44873, 0.3634, 1)
@@ -48,3 +49,8 @@ dialogue_name = "level3_small_masked_creature2"
 [node name="SmallMaskedCreature3" parent="Objects" instance=ExtResource("5_small")]
 position = Vector2(673, -219)
 dialogue_name = "level3_small_masked_creature3"
+
+[node name="Exit" type="Node2D" parent="Objects"]
+position = Vector2(233.09726, -778.09094)
+
+[node name="Interactable" parent="Objects/Exit" instance=ExtResource("9_interactable")]
