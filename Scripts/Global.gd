@@ -5,6 +5,10 @@ var can_control: bool = true
 var ending_name: String = ""
 var incorrect_statue_count: int = 0
 
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_cancel"):
+		Dialogic.Inputs.auto_skip.enabled = !Dialogic.Inputs.auto_skip.enabled
+
 func change_scene(scene_path: String) -> void:
 	can_control = false
 	await get_tree().create_timer(1.0).timeout
