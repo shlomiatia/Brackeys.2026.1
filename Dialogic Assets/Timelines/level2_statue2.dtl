@@ -1,5 +1,5 @@
-join Bella right
-join Statue left
+join Bella (default) right
+join Statue (default) left
 
 if {interacted_main_statue} == false:
 	if {talked_to_a_statue} == false:

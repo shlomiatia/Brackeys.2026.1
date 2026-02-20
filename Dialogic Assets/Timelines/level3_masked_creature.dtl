@@ -1,5 +1,5 @@
-join Bella left
-join MaskedMan right
+join Bella (default) left
+join MaskedMan (default) right
 
 if {level3_first_interaction_with_man} == false:
 	Bella: Agh![pause=0.2] Oh my...
@@ -55,7 +55,10 @@ else:
 		MaskedMan: Being born rich prevented you from being held down by the of chains of[pause=0.2]...ugh[pause=0.2]...'empathy'.
 		MaskedMan: You treated those the way they deserved.[pause=0.2] But you did so in a way that somehow made you seem 'good'.
 		MaskedMan: It was really quite genius!
-		Bella: Rich?[pause=0.2] Treating people the way they deserved?[pause=0.2] What?
+		MaskedMan: You would've done anything to maintain your status.
+		MaskedMan: From doing whatever you could to become more beautiful.
+		MaskedMan: To spreading lies to tear down others.
+		Bella: That's...[pause=0.2] horrible...
 		set {level3_told_secret3} = true
 	if {level3_defeated_small_masked_creature1} == true and {level3_defeated_small_masked_creature2} == true and {level3_defeated_small_masked_creature3} == true:
 		Bella: I'm not sure I want to know anymore.

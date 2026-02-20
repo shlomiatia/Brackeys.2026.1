@@ -24,6 +24,7 @@ func _on_dialogic_signal(argument: String) -> void:
 	match argument:
 		"statue_correct":
 			var tween = create_tween()
+			AudioManager.play_sfx(load("res://audio/sfx/sfx_game_lvl2_statue_move.wav"))
 			tween.tween_property(main_statue, "position", main_statue.position + Vector2(32, 0), 1.0)
 			await tween.finished
 			pipe_conversation.interactable_disabled = false

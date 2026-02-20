@@ -1,4 +1,4 @@
-join Bella center
+join Bella (default) center
 if {level3_seen_masked_creature} == false:
 	Bella: Oh my![pause=0.2] What is this?!
 	Bella: ...
