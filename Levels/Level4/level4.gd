@@ -17,6 +17,18 @@ const CAMERA_HEIGHT := EDGE_BOTTOM - EDGE_TOP
     $Objects/FurnitureTileMapLayer3,
     $Objects/FurnitureTileMapLayer4,
 ]
+@onready var floor_layers: Array[TileMapLayer] = [
+    $FloorTileMapLayer1,
+    $FloorTileMapLayer2,
+    $FloorTileMapLayer3,
+    $FloorTileMapLayer4,
+]
+@onready var wall_layers: Array[TileMapLayer] = [
+    $WallsTileMapLayer1,
+    $WallsTileMapLayer2,
+    $WallsTileMapLayer3,
+    $WallsTileMapLayer4,
+]
 
 var target_direction: Direction
 var current_furniture_index: int = 0
@@ -47,7 +59,7 @@ func pick_direction(exited_direction := -1) -> void:
     target_direction = new_direction as Direction
     update_hint_color()
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
     if !Global.can_control or maze_completed:
         return
     update_hint_color()
@@ -86,6 +98,8 @@ func move_room(exited_direction: Direction) -> void:
 func switch_furniture(correct: bool) -> void:
     furniture_layers[current_furniture_index].visible = false
     furniture_layers[current_furniture_index].collision_enabled = false
+    floor_layers[current_furniture_index].visible = false
+    wall_layers[current_furniture_index].visible = false
     if correct and current_furniture_index < furniture_layers.size() - 1:
         current_furniture_index += 1
     elif correct and current_furniture_index == furniture_layers.size() - 1:
@@ -97,6 +111,8 @@ func switch_furniture(correct: bool) -> void:
         current_furniture_index = 0
     furniture_layers[current_furniture_index].visible = true
     furniture_layers[current_furniture_index].collision_enabled = true
+    floor_layers[current_furniture_index].visible = true
+    wall_layers[current_furniture_index].visible = true
 
 func update_hint_color() -> void:
     var distance: float
@@ -118,4 +134,3 @@ func update_hint_color() -> void:
     var c := 1.0 - ratio * Constants.maze_modulate_hint_modifier
     modulate = Color(c, c, c)
     AudioManager.music_player.volume_db = - ratio * Constants.maze_db_hint_modifier
-
