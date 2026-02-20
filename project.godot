@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Brackeys.2026.1"
-run/main_scene="uid://bkpwj1wi2cx42"
+run/main_scene="uid://ddx8tx7rot8bd"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -71,6 +71,7 @@ directories/dtl_directory={
 layout/style_directory={}
 variables={
 "answer_result": "",
+"bella_suspects_statues": false,
 "collected_letters": "",
 "door_interacted": false,
 "interacted_main_statue": false,

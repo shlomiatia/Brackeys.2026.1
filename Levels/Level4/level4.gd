@@ -65,16 +65,12 @@ func _physics_process(_delta: float) -> void:
     update_hint_color()
     if player.position.x < EDGE_LEFT:
         await move_room(Direction.LEFT)
-        player.position.x = EDGE_RIGHT
     elif player.position.x > EDGE_RIGHT:
         await move_room(Direction.RIGHT)
-        player.position.x = EDGE_LEFT
     elif player.position.y < EDGE_TOP:
         await move_room(Direction.UP)
-        player.position.y = EDGE_BOTTOM
     elif player.position.y > EDGE_BOTTOM:
         await move_room(Direction.DOWN)
-        player.position.y = EDGE_TOP
 
 func move_room(exited_direction: Direction) -> void:
     Global.can_control = false
@@ -82,6 +78,12 @@ func move_room(exited_direction: Direction) -> void:
     await fade.fade_out()
     switch_furniture(correct)
     pick_direction(exited_direction)
+    match exited_direction:
+        Direction.LEFT: player.position.x = EDGE_RIGHT
+        Direction.RIGHT: player.position.x = EDGE_LEFT
+        Direction.UP: player.position.y = EDGE_BOTTOM
+        Direction.DOWN: player.position.y = EDGE_TOP
+    enter_room(exited_direction)
     await fade.fade_in()
     if correct:
         correct_count += 1
@@ -113,6 +115,30 @@ func switch_furniture(correct: bool) -> void:
     furniture_layers[current_furniture_index].collision_enabled = true
     floor_layers[current_furniture_index].visible = true
     wall_layers[current_furniture_index].visible = true
+
+func enter_room(exited_direction: Direction) -> void:
+    var dir_name: String
+    var move_offset: Vector2
+    match exited_direction:
+        Direction.LEFT:
+            dir_name = "L"
+            move_offset = Vector2(-16, 0)
+        Direction.RIGHT:
+            dir_name = "R"
+            move_offset = Vector2(16, 0)
+        Direction.UP:
+            dir_name = "Bck"
+            move_offset = Vector2(0, -32)
+        Direction.DOWN:
+            dir_name = "Fr"
+            move_offset = Vector2(0, 32)
+    player.current_direction = dir_name
+    player.set_physics_process(false)
+    player.animated_sprite.play("walk" + dir_name)
+    var tween := create_tween()
+    tween.tween_property(player, "position", player.position + move_offset, 0.6)
+    await tween.finished
+    player.set_physics_process(true)
 
 func update_hint_color() -> void:
     var distance: float

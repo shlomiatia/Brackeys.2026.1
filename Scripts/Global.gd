@@ -2,6 +2,8 @@ extends Node
 
 # vars regarding what the player can control
 var can_control: bool = true
+var ending_name: String = ""
+var incorrect_statue_count: int = 0
 
 func change_scene(scene_path: String) -> void:
 	can_control = false
@@ -30,3 +32,6 @@ func validate_statue_answer() -> void:
 		Dialogic.VAR.set_variable("answer_result", "correct")
 	else:
 		Dialogic.VAR.set_variable("answer_result", "incorrect")
+		incorrect_statue_count += 1
+		if incorrect_statue_count == 3:
+			Dialogic.VAR.set_variable("bella_suspects_statues", true)
