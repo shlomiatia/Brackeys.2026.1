@@ -107,7 +107,7 @@ func switch_furniture(correct: bool) -> void:
     elif correct and current_furniture_index == furniture_layers.size() - 1:
         # Completed the final room
         maze_completed = true
-        Global.change_scene("res://Levels/Level5/Level5.tscn")
+        get_tree().change_scene_to_file("res://Levels/Level5/Level5.tscn")
         return
     elif not correct:
         current_furniture_index = 0
@@ -141,22 +141,14 @@ func enter_room(exited_direction: Direction) -> void:
     player.set_physics_process(true)
 
 func update_hint_color() -> void:
-    var distance: float
-    var camera_size: float
+    var target_pos: Vector2
     match target_direction:
-        Direction.UP:
-            distance = player.position.y - EDGE_TOP
-            camera_size = CAMERA_HEIGHT
-        Direction.DOWN:
-            distance = EDGE_BOTTOM - player.position.y
-            camera_size = CAMERA_HEIGHT
-        Direction.LEFT:
-            distance = player.position.x - EDGE_LEFT
-            camera_size = CAMERA_WIDTH
-        Direction.RIGHT:
-            distance = EDGE_RIGHT - player.position.x
-            camera_size = CAMERA_WIDTH
-    var ratio := distance / camera_size
+        Direction.UP: target_pos = Vector2(0, EDGE_TOP)
+        Direction.DOWN: target_pos = Vector2(0, EDGE_BOTTOM)
+        Direction.LEFT: target_pos = Vector2(EDGE_LEFT, -24.0)
+        Direction.RIGHT: target_pos = Vector2(EDGE_RIGHT, -24.0)
+    var max_dist := Vector2(CAMERA_WIDTH, CAMERA_HEIGHT).length()
+    var ratio := player.position.distance_to(target_pos) / max_dist
     var c := 1.0 - ratio * Constants.maze_modulate_hint_modifier
     modulate = Color(c, c, c)
     AudioManager.music_player.volume_db = - ratio * Constants.maze_db_hint_modifier
