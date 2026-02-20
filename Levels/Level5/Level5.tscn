@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://ji4u36q1fhfm" path="res://Assets/Eye Section/eyeWomanSprite.PNG" id="4_k54bt"]
 [ext_resource type="PackedScene" uid="uid://cfgp45xbt467i" path="res://Scenes/Conversation/Conversation.tscn" id="7_cobab"]
 [ext_resource type="Script" uid="uid://ctssdyj8vujn1" path="res://Levels/Level5/level5.gd" id="8_level5"]
+[ext_resource type="PackedScene" uid="uid://bmv00lqu5yns1" path="res://Scenes/Interactable/Interactable.tscn" id="10_interactable"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5bli8"]
 radius = 7.0
@@ -79,3 +80,8 @@ position = Vector2(-270, 50)
 
 [node name="Mirror4" parent="Objects" instance=ExtResource("2_ambn0")]
 position = Vector2(248, -237)
+
+[node name="Exit" type="Node2D" parent="Objects"]
+position = Vector2(0, -479)
+
+[node name="Interactable" parent="Objects/Exit" instance=ExtResource("10_interactable")]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bmp50wvaog1e"]
+[gd_scene load_steps=9 format=3 uid="uid://bmp50wvaog1e"]
 
 [ext_resource type="PackedScene" uid="uid://deur6yjprct37" path="res://Scenes/Player/player.tscn" id="1_a67fh"]
 [ext_resource type="Script" uid="uid://mbmr1umj5xsk" path="res://Levels/Level2/level2.gd" id="1_script"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bk5igealw1hn0" path="res://Levels/Level2/cloudSectionTileMaps.tscn" id="3_bgei7"]
 [ext_resource type="PackedScene" uid="uid://cfgp45xbt467i" path="res://Scenes/Conversation/Conversation.tscn" id="3_conv"]
 [ext_resource type="PackedScene" uid="uid://dnwug4pxdwecg" path="res://Scenes/Utils/Fade.tscn" id="4_fade"]
+[ext_resource type="Texture2D" uid="uid://c34j0kd41unmk" path="res://Assets/Masked Section/statueFr.PNG" id="8_bgei7"]
 
 [node name="Level2" type="Node2D"]
 script = ExtResource("1_script")
@@ -39,20 +40,26 @@ interactable_disabled = true
 position = Vector2(448, -150)
 dialogue_name = "level2_main_statue"
 
+[node name="Sprite2D" parent="Objects/MainStatue" index="0"]
+texture = ExtResource("8_bgei7")
+
 [node name="Statue1" parent="Objects" instance=ExtResource("2_36aoo")]
 position = Vector2(353, 39)
 dialogue_name = "level2_statue1"
 
 [node name="Statue2" parent="Objects" instance=ExtResource("2_36aoo")]
 position = Vector2(558, -128)
+scale = Vector2(-1, 1)
 dialogue_name = "level2_statue2"
 
 [node name="Statue3" parent="Objects" instance=ExtResource("2_36aoo")]
 position = Vector2(617, -68)
+scale = Vector2(-1, 1)
 dialogue_name = "level2_statue3"
 
 [node name="Statue4" parent="Objects" instance=ExtResource("2_36aoo")]
 position = Vector2(603, 7)
+scale = Vector2(-1, 1)
 dialogue_name = "level2_statue4"
 
 [node name="Statue5" parent="Objects" instance=ExtResource("2_36aoo")]
@@ -61,8 +68,11 @@ dialogue_name = "level2_statue5"
 
 [node name="Statue6" parent="Objects" instance=ExtResource("2_36aoo")]
 position = Vector2(531, 45)
+scale = Vector2(-1, 1)
 dialogue_name = "level2_statue6"
 
 [node name="Statue7" parent="Objects" instance=ExtResource("2_36aoo")]
 position = Vector2(357, -132)
 dialogue_name = "level2_statue7"
+
+[editable path="Objects/MainStatue"]

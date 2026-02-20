@@ -2,8 +2,8 @@
 
 [ext_resource type="Shader" uid="uid://0pj0fhh50rn" path="res://Shaders/pallete_swap.gdshader" id="1_4ei0v"]
 [ext_resource type="Script" uid="uid://bm2vam277q3vl" path="res://Scenes/Level2/Statue/statue.gd" id="1_script"]
-[ext_resource type="Texture2D" uid="uid://bom3fsriea7cq" path="res://Assets/bellaSprite.PNG" id="2_nktml"]
 [ext_resource type="PackedScene" uid="uid://cfgp45xbt467i" path="res://Scenes/Conversation/Conversation.tscn" id="3_conv"]
+[ext_resource type="Texture2D" uid="uid://stbqfxtyav5p" path="res://Assets/Masked Section/statueSide.PNG" id="3_e5nhp"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_e5nhp"]
 shader = ExtResource("1_4ei0v")
@@ -36,24 +36,27 @@ shader_parameter/replace_11 = Color(0, 0, 0, 1)
 shader_parameter/replace_12 = Color(0, 0, 0, 1)
 shader_parameter/modulate = Color(1, 1, 1, 1)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_statue"]
-radius = 4.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e5nhp"]
+radius = 2.0
+height = 14.0
 
 [node name="Statue" type="Node2D"]
 script = ExtResource("1_script")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_e5nhp")
-position = Vector2(0, -15)
-texture = ExtResource("2_nktml")
-region_enabled = true
+position = Vector2(0, -28)
+texture = ExtResource("3_e5nhp")
 region_rect = Rect2(9, 3, 14, 29)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(0, -4)
-shape = SubResource("CircleShape2D_statue")
+position = Vector2(1, -2)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_e5nhp")
 
 [node name="Conversation" parent="." instance=ExtResource("3_conv")]
-position = Vector2(0, -15)
+position = Vector2(0, -27)
+interactable_size = Vector2(30, 54)
+indicator_offset = Vector2(0, -32)

@@ -20,6 +20,7 @@ func _ready() -> void:
 # get the input direction and handle movement
 func _physics_process(_delta: float) -> void:
 	if !Global.can_control:
+		animated_sprite.play("idle" + current_direction)
 		return
 
 	

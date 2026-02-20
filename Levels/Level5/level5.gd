@@ -7,25 +7,16 @@ extends Node2D
 @onready var bridge: TileMapLayer = $lakeTileMap/BridgeTileMapLayer1
 @onready var bridge2: TileMapLayer = $lakeTileMap/BridgeTileMapLayer2
 @onready var ground: TileMapLayer = $lakeTileMap/GroundTileMapLayer
+@onready var exit_interactable: Interactable = $Objects/Exit/Interactable
 
 func _ready() -> void:
     Dialogic.signal_event.connect(_on_dialogic_signal)
     gaze.all_mirrors_broken.connect(_on_all_mirrors_broken)
+    exit_interactable.interacted.connect(_on_exit_interacted)
     await _start_sequence()
 
 func _start_sequence() -> void:
     Global.can_control = false
-
-    await get_tree().create_timer(1.0).timeout
-
-    # Disable camera _process so it doesn't reset position to Vector2.ZERO
-    camera.set_process(false)
-
-    # Move camera to EyeWomanSprite over 0.5s
-    var target_offset = eye_woman.global_position - player.global_position
-    var tween = create_tween()
-    tween.tween_property(camera, "position", target_offset, 0.5).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_CUBIC)
-    await tween.finished
 
     await get_tree().create_timer(1.0).timeout
 
@@ -35,6 +26,16 @@ func _start_sequence() -> void:
 
 func _on_dialogic_signal(argument: String) -> void:
     match argument:
+        "level5_pan_to_eye_creature":
+            # Disable camera _process so it doesn't reset position to Vector2.ZERO
+            camera.set_process(false)
+
+            # Move camera to EyeWomanSprite over 0.5s
+            var target_offset = eye_woman.global_position - player.global_position
+            var tween = create_tween()
+            tween.tween_property(camera, "position", target_offset, 0.5).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_CUBIC)
+            await tween.finished
+
         "level5_start":
             gaze.visible = true
 
@@ -88,3 +89,6 @@ func _move_camera_to_player() -> void:
 
     camera.set_process(true)
     Global.can_control = true
+
+func _on_exit_interacted() -> void:
+    Global.change_scene("res://Levels/Level6/Level6.tscn")

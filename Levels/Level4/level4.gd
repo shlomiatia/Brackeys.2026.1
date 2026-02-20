@@ -17,11 +17,24 @@ const CAMERA_HEIGHT := EDGE_BOTTOM - EDGE_TOP
     $Objects/FurnitureTileMapLayer3,
     $Objects/FurnitureTileMapLayer4,
 ]
+@onready var floor_layers: Array[TileMapLayer] = [
+    $FloorTileMapLayer1,
+    $FloorTileMapLayer2,
+    $FloorTileMapLayer3,
+    $FloorTileMapLayer4,
+]
+@onready var wall_layers: Array[TileMapLayer] = [
+    $WallsTileMapLayer1,
+    $WallsTileMapLayer2,
+    $WallsTileMapLayer3,
+    $WallsTileMapLayer4,
+]
 
 var target_direction: Direction
 var current_furniture_index: int = 0
 var incorrect_count: int = 0
 var correct_count: int = 0
+var maze_completed: bool = false
 
 var intro_music = load("res://audio/music/test music/bella theme v2 progress.mp3")
 
@@ -46,8 +59,8 @@ func pick_direction(exited_direction := -1) -> void:
     target_direction = new_direction as Direction
     update_hint_color()
 
-func _physics_process(delta: float) -> void:
-    if !Global.can_control:
+func _physics_process(_delta: float) -> void:
+    if !Global.can_control or maze_completed:
         return
     update_hint_color()
     if player.position.x < EDGE_LEFT:
@@ -85,12 +98,21 @@ func move_room(exited_direction: Direction) -> void:
 func switch_furniture(correct: bool) -> void:
     furniture_layers[current_furniture_index].visible = false
     furniture_layers[current_furniture_index].collision_enabled = false
+    floor_layers[current_furniture_index].visible = false
+    wall_layers[current_furniture_index].visible = false
     if correct and current_furniture_index < furniture_layers.size() - 1:
         current_furniture_index += 1
+    elif correct and current_furniture_index == furniture_layers.size() - 1:
+        # Completed the final room
+        maze_completed = true
+        Global.change_scene("res://Levels/Level5/Level5.tscn")
+        return
     elif not correct:
         current_furniture_index = 0
     furniture_layers[current_furniture_index].visible = true
     furniture_layers[current_furniture_index].collision_enabled = true
+    floor_layers[current_furniture_index].visible = true
+    wall_layers[current_furniture_index].visible = true
 
 func update_hint_color() -> void:
     var distance: float

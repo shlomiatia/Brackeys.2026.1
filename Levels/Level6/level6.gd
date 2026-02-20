@@ -4,14 +4,32 @@ extends Node2D
 @onready var camera: ShakingCamera = $Objects/Player/ShakingCamera
 @onready var death: CharacterBody2D = $Objects/Death
 @onready var target_interactable: Interactable = $Objects/Target/Interactable
+@onready var intro_area: Area2D = $Objects/Area2D
+
+var _intro_triggered: bool = false
 
 func _ready() -> void:
 	Dialogic.signal_event.connect(_on_dialogic_signal)
 	target_interactable.interacted.connect(_on_target_interacted)
 	death.caught_player.connect(_on_death_caught_player)
+	intro_area.body_entered.connect(_on_intro_area_body_entered)
 	Global.can_control = false
 	await get_tree().create_timer(1.0).timeout
-	Dialogic.start("level6_start")
+	await DialogDisplayer.start("level6_start")
+	Global.can_control = true
+
+func _on_intro_area_body_entered(body: Node2D) -> void:
+	if not body is Player or _intro_triggered:
+		return
+	_intro_triggered = true
+	Global.can_control = false
+	camera.set_process(false)
+	var target_offset = death.global_position - player.global_position
+	var tween = create_tween()
+	tween.tween_property(camera, "position", target_offset, 0.5).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_CUBIC)
+	await tween.finished
+	await get_tree().create_timer(0.5).timeout
+	Dialogic.start("level6_choice")
 	await Dialogic.timeline_ended
 
 func _on_dialogic_signal(argument: String) -> void:
@@ -19,8 +37,15 @@ func _on_dialogic_signal(argument: String) -> void:
 		"level6_yes":
 			ending1()
 		"level6_no":
-			Global.can_control = true
+			await _pan_camera_to_player()
 			death.start_chasing(player)
+
+func _pan_camera_to_player() -> void:
+	var tween = create_tween()
+	tween.tween_property(camera, "position", Vector2.ZERO, 0.5).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_CUBIC)
+	await tween.finished
+	camera.set_process(true)
+	Global.can_control = true
 
 func _on_target_interacted() -> void:
 	ending2()
@@ -29,9 +54,10 @@ func _on_death_caught_player() -> void:
 	ending1()
 
 func ending1() -> void:
-	print("ending1")
-	pass
+	Global.can_control = false
+	Dialogic.start("level6_ending1")
 
 func ending2() -> void:
-	print("ending2")
-	pass
+	death.chasing = false
+	Global.can_control = false
+	Dialogic.start("level6_ending2")
