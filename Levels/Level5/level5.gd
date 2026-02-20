@@ -20,23 +20,22 @@ func _start_sequence() -> void:
 
     await get_tree().create_timer(1.0).timeout
 
-    # Disable camera _process so it doesn't reset position to Vector2.ZERO
-    camera.set_process(false)
-
-    # Move camera to EyeWomanSprite over 0.5s
-    var target_offset = eye_woman.global_position - player.global_position
-    var tween = create_tween()
-    tween.tween_property(camera, "position", target_offset, 0.5).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_CUBIC)
-    await tween.finished
-
-    await get_tree().create_timer(1.0).timeout
-
     # Start dialogic conversation (controls already disabled)
     Dialogic.start("level5_start")
     await Dialogic.timeline_ended
 
 func _on_dialogic_signal(argument: String) -> void:
     match argument:
+        "level5_pan_to_eye_creature":
+            # Disable camera _process so it doesn't reset position to Vector2.ZERO
+            camera.set_process(false)
+
+            # Move camera to EyeWomanSprite over 0.5s
+            var target_offset = eye_woman.global_position - player.global_position
+            var tween = create_tween()
+            tween.tween_property(camera, "position", target_offset, 0.5).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_CUBIC)
+            await tween.finished
+
         "level5_start":
             gaze.visible = true
 

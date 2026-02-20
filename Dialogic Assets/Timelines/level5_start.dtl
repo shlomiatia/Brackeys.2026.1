@@ -5,8 +5,7 @@ Bella: Or maybe there's another...[pause=0.2]thing...[pause=0.2]here that can he
 update Bella right
 join EyeWoman (default) left
 EyeWoman: You mean someone like me~?
-
-# camera pans over to eye woman
+[signal arg="level5_pan_to_eye_creature"]
 
 Bella: Oh!
 EyeWoman: Aha![pause=0.2] Why,[pause=0.2] hello there![pause=0.2] Welcome to my [pause=0.2][i]beautiful[/i][pause=0.2] realm!
@@ -21,10 +20,10 @@ Bella: [i]*Speaking louder*[/i[pause=0.2]] Do you happen to know how I died?
 EyeWoman: But of course I do![pause=0.2] But why would I tell you that?
 EyeWoman: You're so small all the way over there![pause=0.2] So small and quiet.
 EyeWoman: And I do so hate straining my [pause=0.2][i]oh-so-angelic[/i][pause=0.2] voice.
-leave EyeWoman 
+leave EyeWoman
 Bella: But--!
 Bella: Ugh...[pause=0.2]I need to find a way to get over to her.
-join EyeWoman left 
+join EyeWoman left
 EyeWoman: Don't do anything daft![pause=0.2] I'm watching you!!
 leave Bella
 [signal arg="level5_start"]
