@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 signal caught_player
 
-const SPEED: float = 90.0
+const SPEED: float = 80.0
 const CATCH_DISTANCE: float = 10.0
 
 var chasing: bool = false

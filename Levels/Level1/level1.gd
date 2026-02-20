@@ -13,7 +13,7 @@ var ball_appear_sfx = load("res://audio/sfx/sfx_cutscene_lvl1_ball_appears.mp3")
 var ball_crash = load("res://audio/sfx/sfx_cutscene_lvl1_ball_crash.mp3")
 var hole_ambi = load("res://audio/sfx/ambi/sfx_ambi_ground_ambi.wav")
 
-enum _InstructionPhase { NONE, MOVE, INTERACT }
+enum _InstructionPhase {NONE, MOVE, INTERACT}
 var _instruction_phase: _InstructionPhase = _InstructionPhase.NONE
 
 func _ready() -> void:
@@ -35,7 +35,6 @@ func _show_start_sequence() -> void:
 
 	# Show movement hint now that the player has control
 	instruction_label.text = "WASD to move"
-	instruction_label.modulate = Color.WHITE
 	instruction_label.visible = true
 	_instruction_phase = _InstructionPhase.MOVE
 
@@ -47,7 +46,6 @@ func _input(event: InputEvent) -> void:
 				_instruction_phase = _InstructionPhase.NONE
 				await get_tree().create_timer(1.0).timeout
 				instruction_label.text = "E to interact"
-				instruction_label.modulate = Color.WHITE
 				_instruction_phase = _InstructionPhase.INTERACT
 		_InstructionPhase.INTERACT:
 			if event.is_action_pressed("interact"):

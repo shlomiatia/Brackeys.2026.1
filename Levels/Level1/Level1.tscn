@@ -1,8 +1,9 @@
-[gd_scene load_steps=19 format=3 uid="uid://c5lv2xaxlt7x1"]
+[gd_scene load_steps=22 format=4 uid="uid://c5lv2xaxlt7x1"]
 
 [ext_resource type="Script" uid="uid://bqkavbevvdyxc" path="res://Levels/Level1/level1.gd" id="1_a1y0i"]
 [ext_resource type="PackedScene" uid="uid://dnwug4pxdwecg" path="res://Scenes/Utils/Fade.tscn" id="2_renp8"]
 [ext_resource type="PackedScene" uid="uid://dl4fsjfam7kgc" path="res://Levels/Level1/BackgroundTileMaps.tscn" id="3_a1y0i"]
+[ext_resource type="Texture2D" uid="uid://bu5skewtjvxyh" path="res://Assets/Tilesets/introTileset.PNG" id="4_4ipag"]
 [ext_resource type="PackedScene" uid="uid://deur6yjprct37" path="res://Scenes/Player/player.tscn" id="4_7ouqh"]
 [ext_resource type="Texture2D" uid="uid://c7dygm2p1hwho" path="res://Assets/Intro/door.PNG" id="5_a1y0i"]
 [ext_resource type="PackedScene" uid="uid://bbrs3ouymdwi8" path="res://Scenes/ShakingCamera/ShakingCamera.tscn" id="5_b1g7e"]
@@ -11,6 +12,51 @@
 [ext_resource type="Texture2D" uid="uid://cclfrb70ym7xi" path="res://Assets/Intro/destroyFloor.PNG" id="8_renp8"]
 [ext_resource type="Texture2D" uid="uid://dt5w73ckb8i5f" path="res://Assets/Intro/knife.PNG" id="10_e1uqi"]
 [ext_resource type="Texture2D" uid="uid://cuh45bmobu3l2" path="res://Assets/Intro/rope.PNG" id="11_4ipag"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_umoym"]
+texture = ExtResource("4_4ipag")
+0:0/0 = 0
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -2, -8, -2, -2, -8, -2)
+5:0/0 = 0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(2, -8, 8, -8, 8, 8, 2, 8)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:3/0 = 0
+2:3/0 = 0
+4:1/size_in_atlas = Vector2i(2, 1)
+4:1/0 = 0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-14, -8, 14, -8, 14, 8, -14, 8)
+2:1/size_in_atlas = Vector2i(2, 2)
+2:1/0 = 0
+2:1/0/y_sort_origin = 16
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-15.161643, -5.9457417, 14.567068, -5.450263, 15.359833, 15.062548, -15.062547, 14.963451)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:3/0 = 0
+4:2/size_in_atlas = Vector2i(1, 2)
+4:2/0 = 0
+4:2/0/y_sort_origin = 16
+4:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-3, 12, 3, 12, 5, 16, -5, 16)
+5:2/size_in_atlas = Vector2i(2, 2)
+5:2/0 = 0
+5:2/0/texture_origin = Vector2i(5, 0)
+5:2/0/y_sort_origin = 16
+5:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-17.410324, 2.7566357, 8, 2.0312042, 8, 16, -18, 16)
+
+[sub_resource type="TileSet" id="TileSet_iw758"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_umoym")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b1g7e"]
 atlas = ExtResource("8_renp8")
@@ -75,8 +121,11 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -80.0
-offset_bottom = -40.0
+offset_top = -66.0
+offset_bottom = -2.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 24
 text = "WASD to move"
 horizontal_alignment = 1
 
@@ -85,8 +134,13 @@ horizontal_alignment = 1
 [node name="Objects" type="Node2D" parent="."]
 y_sort_enabled = true
 
+[node name="FurnitureTileMap" type="TileMapLayer" parent="Objects"]
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAD4/wMAAAACAAEAAAD8//3/AAAEAAIAAAD4//3/AAAEAAIAAAAIAAMAAAAFAAIAAAD6/wEAAAAEAAIAAAAIAAEAAAAEAAIAAAA=")
+tile_set = SubResource("TileSet_iw758")
+
 [node name="Player" parent="Objects" instance=ExtResource("4_7ouqh")]
-position = Vector2(-92, 67)
+position = Vector2(-88, 72)
 current_direction = "Fr"
 
 [node name="Door" type="Sprite2D" parent="Objects"]
@@ -118,6 +172,7 @@ texture = ExtResource("10_e1uqi")
 
 [node name="Conversation" parent="Knife" instance=ExtResource("6_4ipag")]
 dialogue_name = "level1_knife"
+indicator_offset = Vector2(0, -10)
 
 [node name="Rope" type="Sprite2D" parent="."]
 z_index = 1

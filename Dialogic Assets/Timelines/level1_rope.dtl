@@ -1,12 +1,15 @@
 if {rope_interacted} == false:
-	join Bella (default) center
-	Bella: A rope?
-	if {door_interacted} == false:
-		Bella: Why is this here?[pause=0.2] Could it be attached to something?
+	if {knife_picked_up} == false:
+		join Bella (default) center
+		Bella: A rope?
+		if {door_interacted} == false:
+			Bella: Why is this here?[pause=0.2] Could it be attached to something?
+		else:
+			Bella: Why is this here?[pause=0.2] Could it be attached to that ball?
+		set {rope_interacted} = true
+		[end_timeline]
 	else:
-		Bella: Why is this here?[pause=0.2] Could it be attached to that ball?
-	set {rope_interacted} = true
-	[end_timeline]
+		set {rope_interacted} = true
 
 if {rope_cut} == true:
 	join Bella (default) center

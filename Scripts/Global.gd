@@ -2,10 +2,15 @@ extends Node
 
 # vars regarding what the player can control
 var can_control: bool = true
+var ending_name: String = ""
+var incorrect_statue_count: int = 0
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_cancel"):
+		Dialogic.Inputs.auto_skip.enabled = !Dialogic.Inputs.auto_skip.enabled
 
 func change_scene(scene_path: String) -> void:
 	can_control = false
-	await get_tree().create_timer(1.0).timeout
 	var fade: Fade = get_tree().current_scene.get_node("CanvasLayer/Fade")
 	await fade.fade_out()
 	get_tree().change_scene_to_file(scene_path)
@@ -30,3 +35,6 @@ func validate_statue_answer() -> void:
 		Dialogic.VAR.set_variable("answer_result", "correct")
 	else:
 		Dialogic.VAR.set_variable("answer_result", "incorrect")
+		incorrect_statue_count += 1
+		if incorrect_statue_count == 3:
+			Dialogic.VAR.set_variable("bella_suspects_statues", true)

@@ -16,8 +16,8 @@ var _has_risen: bool = false
 func _ready() -> void:
 	_chosen_region = REGIONS[randi() % 2]
 	var sprite := $Sprite2D
-	sprite.region_rect = Rect2(_chosen_region.position.x, _chosen_region.position.y, _chosen_region.size.x, 0.0)
-	sprite.position.y = 0.0
+	sprite.region_rect = Rect2(_chosen_region.position.x, _chosen_region.position.y, _chosen_region.size.x, 1.0)
+	sprite.position.y = -0.5
 
 func _physics_process(_delta: float) -> void:
 	if _player == null:
@@ -26,7 +26,7 @@ func _physics_process(_delta: float) -> void:
 	var dist = global_position.distance_to(_player.global_position)
 	if dist < RADIUS:
 		var factor = 1.0 - (dist / RADIUS)
-		_player.speed_modifier = -MAX_SLOW * factor
+		_player.speed_modifier = - MAX_SLOW * factor
 	else:
 		_player.speed_modifier = 0.0
 
@@ -54,4 +54,4 @@ func _rise() -> void:
 func _set_height(height: float) -> void:
 	var sprite := $Sprite2D
 	sprite.region_rect = Rect2(_chosen_region.position.x, _chosen_region.position.y, _chosen_region.size.x, height)
-	sprite.position.y = -height / 2.0
+	sprite.position.y = - height / 2.0

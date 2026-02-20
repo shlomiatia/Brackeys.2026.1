@@ -9,35 +9,35 @@ if {interacted_main_statue} == false:
 	Statue: Perished...[pause=0.2]unfortunately.
 	Statue: But [pause=0.2][i]fortunately[/i][pause=0.2] for you,[pause=0.2] you are in paradise.
 	Bella: No...[pause=0.2] Th-[pause=0.2]that can't be.
-	Statue: It can,[pause=0.2] my dear. 
+	Statue: It can,[pause=0.2] my dear.
 	Statue: Worry not,[pause=0.2] you are safe here.
 	Bella: I have to know what happened.[pause=0.2] I have to know who I was.
 	Statue: I cannot tell you that.
 	Bella: Then who can?
 	Statue: Why does it matter?[pause=0.2] You are in paradise.[pause=0.2] You must stay here.
 	Bella: I can't![pause=0.2] Can you please let me pass?
-	Statue: The truth behind yourself lies past here.[pause=0.2] For your own safety,[pause=0.2] I cannnot.
+	Statue: The truth behind yourself lies past here.[pause=0.2] For your own safety,[pause=0.2] I cannot.
 	Bella: You must![pause=0.2] I have to know.
 	Statue: You fool.[pause=0.2] But that is your choice.
-	Statue: If you wish to know,[pause=0.2] you must first answer this question:[pause=0.2] What is it that you valued most in your life?
+	Statue: If you wish to know,[pause=0.2] you must first answer this question\:[pause=0.2] What is it that you valued most in your life?
 	Bella: How can I know--
 	Statue: Go and talk to the others.[pause=0.2] Then give me your answer.
 	Statue: All I need is a [color="red"]4-letter[/color] word.
 	set {interacted_main_statue} = true
-	leave --All-- 
+	leave --All--
 	[end_timeline]
 elif {statue_moved} == true:
 	join Bella (default) right
 	join Statue (default) left
 	Statue: You've chosen your fate.
-	leave --All-- 
+	leave --All--
 	[end_timeline]
 else:
 	if {collected_letters} == "":
 		join Bella (default) right
 		join Statue (default) left
 		Bella: Go talk to the others.
-		leave --All-- 
+		leave --All--
 		[end_timeline]
 	
 	do Global.format_collected_letters()
@@ -45,10 +45,12 @@ else:
 	join Statue (default) left
 	Bella: All the statues emphasize a [color="red"]letter[/color].
 	Statue: Clever...
-	Bella: The important ones I have so far are:[pause=0.2] {letters_display}. It needs to be a [color="red"]4-letter[/color]
-	Bella: My answer is...
+	Bella: The important ones I have so far are\:[pause=0.2] {letters_display}. It needs to be a [color="red"]4-letter[/color]
+	Bella: My answer is...\
+	\
+	[i]Available letters\: {letters_display}[/i]
 	
-	[text_input var="user_answer" text="Enter your answer:" placeholder="" allow_empty="false"]
+	[text_input text="Enter your answer:" var="user_answer"]
 	do Global.validate_statue_answer()
 	if {answer_result} == "missing":
 		Statue: Hm?[pause=0.2] You don't have the clues for that...
@@ -60,5 +62,8 @@ else:
 		[signal arg="statue_correct"]
 	else:
 		Statue: Ha![pause=0.2] Incorrect~
-	leave --All-- 
+		if {bella_suspects_statues} == true:
+			Bella: I have a feeling all these statues aren't giving me the whole truth.
+			set {bella_suspects_statues} = false
+	leave --All--
 	[end_timeline]

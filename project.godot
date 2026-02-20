@@ -71,6 +71,7 @@ directories/dtl_directory={
 layout/style_directory={}
 variables={
 "answer_result": "",
+"bella_suspects_statues": false,
 "collected_letters": "",
 "door_interacted": false,
 "interacted_main_statue": false,

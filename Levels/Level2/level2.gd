@@ -10,7 +10,9 @@ func _ready() -> void:
 	Global.can_control = false
 	AudioManager.play_music(level_music)
 	Dialogic.signal_event.connect(_on_dialogic_signal)
+	player.z_index = 4
 	await _player_fall()
+	player.z_index = 0
 	Global.can_control = true
 
 func _player_fall() -> void:
