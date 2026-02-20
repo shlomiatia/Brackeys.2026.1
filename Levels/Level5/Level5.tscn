@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://cc2kk07rhjji5"]
+[gd_scene load_steps=16 format=4 uid="uid://cc2kk07rhjji5"]
 
 [ext_resource type="PackedScene" uid="uid://cw47gw2hx3my4" path="res://Levels/Level5/lake_tile_map.tscn" id="1_hps50"]
 [ext_resource type="PackedScene" uid="uid://deur6yjprct37" path="res://Scenes/Player/player.tscn" id="1_keobu"]
@@ -12,8 +12,19 @@
 [ext_resource type="Script" uid="uid://ctssdyj8vujn1" path="res://Levels/Level5/level5.gd" id="8_level5"]
 [ext_resource type="PackedScene" uid="uid://bmv00lqu5yns1" path="res://Scenes/Interactable/Interactable.tscn" id="10_interactable"]
 
+[sub_resource type="Gradient" id="Gradient_tq4jq"]
+offsets = PackedFloat32Array(0, 0.5, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_qnaao"]
+gradient = SubResource("Gradient_tq4jq")
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_5bli8"]
 radius = 7.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tq4jq"]
+resource_local_to_scene = true
+size = Vector2(30, 30)
 
 [node name="Level5" type="Node2D"]
 script = ExtResource("8_level5")
@@ -55,7 +66,13 @@ position = Vector2(0, -32)
 texture = ExtResource("4_k54bt")
 
 [node name="Gaze" parent="Objects/EyeWoman/EyeWomanSprite" instance=ExtResource("3_8b7fd")]
+visible = false
 position = Vector2(-0.5, -17)
+points = PackedVector2Array(0, 0, -0.5, 2)
+default_color = Color(1, 1, 1, 1)
+texture = SubResource("GradientTexture2D_qnaao")
+begin_cap_mode = 2
+end_cap_mode = 2
 
 [node name="Conversation" parent="Objects/EyeWoman/EyeWomanSprite" instance=ExtResource("7_cobab")]
 dialogue_name = "level5_eye_woman"
@@ -84,3 +101,12 @@ position = Vector2(275, -119)
 position = Vector2(0, -479)
 
 [node name="Interactable" parent="Objects/Exit" instance=ExtResource("10_interactable")]
+
+[node name="CollisionShape2D" parent="Objects/Exit/Interactable" index="0"]
+shape = SubResource("RectangleShape2D_tq4jq")
+
+[node name="Indicator" parent="Objects/Exit/Interactable" index="1"]
+visible = true
+position = Vector2(0, -36)
+
+[editable path="Objects/Exit/Interactable"]
