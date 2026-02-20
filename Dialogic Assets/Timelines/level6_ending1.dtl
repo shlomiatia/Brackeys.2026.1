@@ -1,3 +1,5 @@
-join Death (default) center
-Death: You cannot run from fate.
+[background arg="res://Assets/Death Section/acceptanceEnding.PNG" fade="1.0" wait="true"]
+Bella: There's nothing left for me in life...
+Bella: I'm no longer the person I once was.
+Bella: I have to move forward.[pause=0.2] I have to move on.
 [end_timeline]

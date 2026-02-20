@@ -25,10 +25,6 @@ Bella: ...
 	Death: Very well.
 	Death: My child,[pause=0.2] let us go.
 	leave --All--
-	[background arg="res://Assets/Death Section/acceptanceEnding.PNG" fade="1.0" wait="true"]
-	Bella: There's nothing left for me in life...
-	Bella: I'm no longer the person I once was.
-	Bella: I have to move forward.[pause=0.2] I have to move on.
 	[wait time="3.0"]
 	[signal arg="level6_yes"]
 	[end_timeline]

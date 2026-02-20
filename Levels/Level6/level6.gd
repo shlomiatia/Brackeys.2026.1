@@ -58,5 +58,6 @@ func ending1() -> void:
 	Dialogic.start("level6_ending1")
 
 func ending2() -> void:
+	death.chasing = false
 	Global.can_control = false
 	Dialogic.start("level6_ending2")
