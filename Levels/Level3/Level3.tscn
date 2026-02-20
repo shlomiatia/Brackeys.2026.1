@@ -1,13 +1,14 @@
-[gd_scene load_steps=10 format=3 uid="uid://cye4t85qtfng7"]
+[gd_scene load_steps=11 format=3 uid="uid://cye4t85qtfng7"]
 
 [ext_resource type="PackedScene" uid="uid://deur6yjprct37" path="res://Scenes/Player/player.tscn" id="1_player"]
 [ext_resource type="Script" uid="uid://ce4cch6vd761q" path="res://Levels/Level3/level3.gd" id="1_script"]
 [ext_resource type="PackedScene" uid="uid://bbrs3ouymdwi8" path="res://Scenes/ShakingCamera/ShakingCamera.tscn" id="2_camera"]
 [ext_resource type="PackedScene" uid="uid://clla8xhl4d6s3" path="res://Scenes/Level3/MaskMiniGame/MaskMiniGame.tscn" id="3_mask"]
-[ext_resource type="PackedScene" path="res://Scenes/Level3/MaskedCreature/MaskedCreature.tscn" id="4_creature"]
+[ext_resource type="PackedScene" uid="uid://ekfngeaxhpf7" path="res://Scenes/Level3/MaskedCreature/MaskedCreature.tscn" id="4_creature"]
 [ext_resource type="PackedScene" uid="uid://c253yddhodw6r" path="res://Levels/Level3/sewer_tile_maps.tscn" id="4_vjyig"]
-[ext_resource type="PackedScene" path="res://Scenes/Level3/SmallMaskedCreature/SmallMaskedCreature.tscn" id="5_small"]
+[ext_resource type="PackedScene" uid="uid://dl024myu1p434" path="res://Scenes/Level3/SmallMaskedCreature/SmallMaskedCreature.tscn" id="5_small"]
 [ext_resource type="PackedScene" uid="uid://dnwug4pxdwecg" path="res://Scenes/Utils/Fade.tscn" id="6_fade"]
+[ext_resource type="Texture2D" uid="uid://ubu2j21etarb" path="res://Assets/Masked Section/maskedCreatureFr.PNG" id="9_bs6lv"]
 [ext_resource type="PackedScene" uid="uid://bmv00lqu5yns1" path="res://Scenes/Interactable/Interactable.tscn" id="9_interactable"]
 
 [node name="Level3" type="Node2D"]
@@ -40,11 +41,15 @@ dialogue_name = "level3_masked_creature"
 
 [node name="SmallMaskedCreature1" parent="Objects" instance=ExtResource("5_small")]
 position = Vector2(-208, -216)
+scale = Vector2(-1, 1)
 dialogue_name = "level3_small_masked_creature1"
 
 [node name="SmallMaskedCreature2" parent="Objects" instance=ExtResource("5_small")]
 position = Vector2(233, -658)
 dialogue_name = "level3_small_masked_creature2"
+
+[node name="Sprite2D" parent="Objects/SmallMaskedCreature2" index="0"]
+texture = ExtResource("9_bs6lv")
 
 [node name="SmallMaskedCreature3" parent="Objects" instance=ExtResource("5_small")]
 position = Vector2(673, -219)
@@ -54,3 +59,5 @@ dialogue_name = "level3_small_masked_creature3"
 position = Vector2(233.09726, -778.09094)
 
 [node name="Interactable" parent="Objects/Exit" instance=ExtResource("9_interactable")]
+
+[editable path="Objects/SmallMaskedCreature2"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://c253yddhodw6r"]
+[gd_scene load_steps=8 format=4 uid="uid://c253yddhodw6r"]
 
 [ext_resource type="Texture2D" uid="uid://bijkp4k1q36pr" path="res://Assets/Tilesets/maskedTileset.PNG" id="1_6jsyp"]
 [ext_resource type="Texture2D" uid="uid://bv0q2nn4ou0ak" path="res://Assets/Masked Section/exitSewerClosed.PNG" id="3_sknon"]
@@ -198,6 +198,9 @@ physics_layer_0/collision_layer = 4
 physics_layer_0/collision_mask = 4
 sources/0 = SubResource("TileSetAtlasSource_6jsyp")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6jsyp"]
+size = Vector2(32, 1)
+
 [node name="SewerTileMaps" type="Node2D"]
 
 [node name="FloorTileMapLayer" type="TileMapLayer" parent="."]
@@ -221,3 +224,9 @@ tile_set = SubResource("TileSet_sknon")
 [node name="ExitSewerClosed" type="Sprite2D" parent="."]
 position = Vector2(48, -952)
 texture = ExtResource("3_sknon")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="ExitSewerClosed"]
+position = Vector2(0, 23)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitSewerClosed/StaticBody2D"]
+shape = SubResource("RectangleShape2D_6jsyp")
