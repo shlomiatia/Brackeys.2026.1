@@ -1,9 +1,10 @@
+join Bella (defaultNone) center
 Bella: Ugh...
 Bella: My head hurts...
 [wait time="1.0"]
 [signal arg="show_scene"]
 [wait time="2.0"]
-join Bella center
+update Bella (default) center
 Bella: W-[pause=0.2]what?
 Bella: What's going on?!
 Bella: Where...[pause=0.2]Where am I?

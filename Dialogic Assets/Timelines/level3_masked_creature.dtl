@@ -1,5 +1,5 @@
-join Bella left
-join MaskedMan right
+join Bella (default) left
+join MaskedMan (default) right
 
 if {level3_first_interaction_with_man} == false:
 	Bella: Agh![pause=0.2] Oh my...

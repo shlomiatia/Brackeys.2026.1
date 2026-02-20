@@ -129,6 +129,7 @@ audio/channel_defaults={
 layout/style_list=[]
 layout/default_style="Default"
 text/input_action="dialogic_default_action"
+audio/type_sound_bus="SFX"
 
 [display]
 
