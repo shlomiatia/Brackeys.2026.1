@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bbrs3ouymdwi8" path="res://Scenes/ShakingCamera/ShakingCamera.tscn" id="3_6aa3k"]
 [ext_resource type="TileSet" uid="uid://dbagak8v7a5s1" path="res://Levels/Level4/eye_tile_map.tres" id="3_uxo6m"]
 [ext_resource type="Script" uid="uid://b56n8t3orihgv" path="res://Levels/Level4/level4.gd" id="4_maze"]
+[ext_resource type="PackedScene" uid="uid://bmv00lqu5yns1" path="res://Scenes/Interactable/Interactable.tscn" id="6_interactable"]
 
 [node name="Level4" type="Node2D"]
 script = ExtResource("4_maze")
@@ -56,3 +57,9 @@ position = Vector2(0, 83)
 
 [node name="ShakingCamera" parent="." instance=ExtResource("3_6aa3k")]
 zoom = Vector2(3, 3)
+
+[node name="Exit" type="Node2D" parent="Objects"]
+visible = false
+position = Vector2(0, -93)
+
+[node name="Interactable" parent="Objects/Exit" instance=ExtResource("6_interactable")]

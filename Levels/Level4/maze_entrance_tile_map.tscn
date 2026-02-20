@@ -1,8 +1,13 @@
-[gd_scene load_steps=8 format=4 uid="uid://bkpwj1wi2cx42"]
+[gd_scene load_steps=11 format=4 uid="uid://bkpwj1wi2cx42"]
 
 [ext_resource type="Texture2D" uid="uid://d87w0ophkvyp" path="res://Assets/Tilesets/EyeTileset.PNG" id="1_htwis"]
+[ext_resource type="Script" path="res://Levels/Level4/maze_entrance_tile_map.gd" id="1_script"]
 [ext_resource type="Texture2D" uid="uid://c5h5q03gt71m8" path="res://Assets/Tilesets/cloudsTileset.PNG" id="2_6mc07"]
+[ext_resource type="PackedScene" uid="uid://dnwug4pxdwecg" path="res://Scenes/Utils/Fade.tscn" id="2_fade"]
+[ext_resource type="PackedScene" uid="uid://deur6yjprct37" path="res://Scenes/Player/player.tscn" id="2_player"]
 [ext_resource type="Texture2D" uid="uid://c7dygm2p1hwho" path="res://Assets/Intro/door.PNG" id="3_t5yw6"]
+[ext_resource type="PackedScene" uid="uid://bbrs3ouymdwi8" path="res://Scenes/ShakingCamera/ShakingCamera.tscn" id="4_camera"]
+[ext_resource type="PackedScene" uid="uid://bmv00lqu5yns1" path="res://Scenes/Interactable/Interactable.tscn" id="8_interactable"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8vb0h"]
 texture = ExtResource("1_htwis")
@@ -131,6 +136,12 @@ texture = ExtResource("2_6mc07")
 sources/0 = SubResource("TileSetAtlasSource_5g80h")
 
 [node name="mazeEntranceTileMap" type="Node2D"]
+script = ExtResource("1_script")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Fade" parent="CanvasLayer" instance=ExtResource("2_fade")]
+auto_fade_in = true
 
 [node name="SkyTileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(-4, -30)
@@ -165,3 +176,17 @@ texture = ExtResource("3_t5yw6")
 position = Vector2(4, -173)
 scale = Vector2(-1, -1)
 texture = ExtResource("3_t5yw6")
+
+[node name="Objects" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Player" parent="Objects" instance=ExtResource("2_player")]
+position = Vector2(0, 126)
+
+[node name="ShakingCamera" parent="Objects/Player" instance=ExtResource("4_camera")]
+zoom = Vector2(3, 3)
+
+[node name="Exit" type="Node2D" parent="Objects"]
+position = Vector2(-4, -173)
+
+[node name="Interactable" parent="Objects/Exit" instance=ExtResource("8_interactable")]

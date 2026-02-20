@@ -17,11 +17,14 @@ const CAMERA_HEIGHT := EDGE_BOTTOM - EDGE_TOP
     $Objects/FurnitureTileMapLayer3,
     $Objects/FurnitureTileMapLayer4,
 ]
+@onready var exit: Node2D = $Objects/Exit
+@onready var exit_interactable: Interactable = $Objects/Exit/Interactable
 
 var target_direction: Direction
 var current_furniture_index: int = 0
 var incorrect_count: int = 0
 var correct_count: int = 0
+var maze_completed: bool = false
 
 var intro_music = load("res://audio/music/test music/bella theme v2 progress.mp3")
 
@@ -31,6 +34,7 @@ func _ready() -> void:
     Global.can_control = false
     await get_tree().create_timer(1.0).timeout
     await DialogDisplayer.start("level4_start")
+    exit_interactable.interacted.connect(_on_exit_interacted)
 
 func opposite(dir: Direction) -> Direction:
     match dir:
@@ -47,7 +51,7 @@ func pick_direction(exited_direction := -1) -> void:
     update_hint_color()
 
 func _physics_process(delta: float) -> void:
-    if !Global.can_control:
+    if !Global.can_control or maze_completed:
         return
     update_hint_color()
     if player.position.x < EDGE_LEFT:
@@ -87,6 +91,11 @@ func switch_furniture(correct: bool) -> void:
     furniture_layers[current_furniture_index].collision_enabled = false
     if correct and current_furniture_index < furniture_layers.size() - 1:
         current_furniture_index += 1
+    elif correct and current_furniture_index == furniture_layers.size() - 1:
+        # Completed the final room
+        maze_completed = true
+        exit.visible = true
+        return
     elif not correct:
         current_furniture_index = 0
     furniture_layers[current_furniture_index].visible = true
@@ -112,3 +121,6 @@ func update_hint_color() -> void:
     var c := 1.0 - ratio * Constants.maze_modulate_hint_modifier
     modulate = Color(c, c, c)
     AudioManager.music_player.volume_db = - ratio * Constants.maze_db_hint_modifier
+
+func _on_exit_interacted() -> void:
+    Global.change_scene("res://Levels/Level5/Level5.tscn")

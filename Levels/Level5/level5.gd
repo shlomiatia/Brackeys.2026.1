@@ -7,10 +7,12 @@ extends Node2D
 @onready var bridge: TileMapLayer = $lakeTileMap/BridgeTileMapLayer1
 @onready var bridge2: TileMapLayer = $lakeTileMap/BridgeTileMapLayer2
 @onready var ground: TileMapLayer = $lakeTileMap/GroundTileMapLayer
+@onready var exit_interactable: Interactable = $Objects/Exit/Interactable
 
 func _ready() -> void:
     Dialogic.signal_event.connect(_on_dialogic_signal)
     gaze.all_mirrors_broken.connect(_on_all_mirrors_broken)
+    exit_interactable.interacted.connect(_on_exit_interacted)
     await _start_sequence()
 
 func _start_sequence() -> void:
@@ -88,3 +90,6 @@ func _move_camera_to_player() -> void:
 
     camera.set_process(true)
     Global.can_control = true
+
+func _on_exit_interacted() -> void:
+    Global.change_scene("res://Levels/Level6/Level6.tscn")
