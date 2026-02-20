@@ -153,10 +153,10 @@ tile_map_data = PackedByteArray("AAD2/+H/AAADAAEAACD3/+H/AAADAAEAACD4/+H/AAADAAE
 tile_set = SubResource("TileSet_amt82")
 
 [node name="Door" type="Sprite2D" parent="."]
-position = Vector2(-12, -511)
+position = Vector2(-12, -527)
 texture = ExtResource("3_fh3cv")
 
 [node name="Door2" type="Sprite2D" parent="."]
-position = Vector2(4, -511)
+position = Vector2(4, -527)
 scale = Vector2(-1, -1)
 texture = ExtResource("3_fh3cv")

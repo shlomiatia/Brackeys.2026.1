@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://cc2kk07rhjji5"]
+[gd_scene load_steps=13 format=4 uid="uid://cc2kk07rhjji5"]
 
 [ext_resource type="PackedScene" uid="uid://cw47gw2hx3my4" path="res://Levels/Level5/lake_tile_map.tscn" id="1_hps50"]
 [ext_resource type="PackedScene" uid="uid://deur6yjprct37" path="res://Scenes/Player/player.tscn" id="1_keobu"]
@@ -55,8 +55,7 @@ position = Vector2(0, -32)
 texture = ExtResource("4_k54bt")
 
 [node name="Gaze" parent="Objects/EyeWoman/EyeWomanSprite" instance=ExtResource("3_8b7fd")]
-visible = false
-position = Vector2(0, -18)
+position = Vector2(-0.5, -17)
 
 [node name="Conversation" parent="Objects/EyeWoman/EyeWomanSprite" instance=ExtResource("7_cobab")]
 dialogue_name = "level5_eye_woman"
@@ -73,13 +72,13 @@ shape = SubResource("CircleShape2D_5bli8")
 position = Vector2(260, 31)
 
 [node name="Mirror2" parent="Objects" instance=ExtResource("2_ambn0")]
-position = Vector2(-249, -239)
+position = Vector2(-280, -138)
 
 [node name="Mirror3" parent="Objects" instance=ExtResource("2_ambn0")]
 position = Vector2(-270, 50)
 
 [node name="Mirror4" parent="Objects" instance=ExtResource("2_ambn0")]
-position = Vector2(248, -237)
+position = Vector2(275, -119)
 
 [node name="Exit" type="Node2D" parent="Objects"]
 position = Vector2(0, -479)
