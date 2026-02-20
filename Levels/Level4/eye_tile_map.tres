@@ -1,6 +1,6 @@
 [gd_resource type="TileSet" load_steps=3 format=3 uid="uid://dbagak8v7a5s1"]
 
-[ext_resource type="Texture2D" uid="uid://d87w0ophkvyp" path="res://Assets/tilesets/EyeTileset.PNG" id="1_0e1u4"]
+[ext_resource type="Texture2D" uid="uid://d87w0ophkvyp" path="res://Assets/Tilesets/EyeTileset.PNG" id="1_0e1u4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a6q0c"]
 texture = ExtResource("1_0e1u4")
@@ -101,6 +101,9 @@ texture = ExtResource("1_0e1u4")
 4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 7:1/0 = 0
 7:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:2/0 = 0
+4:1/0 = 0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [resource]
 physics_layer_0/collision_layer = 1

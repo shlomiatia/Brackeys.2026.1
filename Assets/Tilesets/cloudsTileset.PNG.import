@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c5h5q03gt71m8"
-path="res://.godot/imported/cloudsTileset.PNG-57c3a4bb3e357adabde70c4ade3f3f47.ctex"
+path="res://.godot/imported/cloudsTileset.PNG-2a4ee2a8516d191bfa293a490781d1c9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/tilesets/cloudsTileset.PNG"
-dest_files=["res://.godot/imported/cloudsTileset.PNG-57c3a4bb3e357adabde70c4ade3f3f47.ctex"]
+source_file="res://Assets/Tilesets/cloudsTileset.PNG"
+dest_files=["res://.godot/imported/cloudsTileset.PNG-2a4ee2a8516d191bfa293a490781d1c9.ctex"]
 
 [params]
 

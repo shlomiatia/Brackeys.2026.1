@@ -32,6 +32,7 @@ directories/dch_directory={
 "Statue": "res://Dialogic Assets/Charactesr/Statue.dch"
 }
 directories/dtl_directory={
+"enter_level4": "res://Dialogic Assets/Timelines/enter_level4.dtl",
 "level1_ball": "res://Dialogic Assets/Timelines/level1_ball.dtl",
 "level1_door": "res://Dialogic Assets/Timelines/level1_door.dtl",
 "level1_hole": "res://Dialogic Assets/Timelines/level1_hole.dtl",
@@ -62,6 +63,7 @@ directories/dtl_directory={
 "level5_last_mirror_break": "res://Dialogic Assets/Timelines/level5_last_mirror_break.dtl",
 "level5_mirror_break": "res://Dialogic Assets/Timelines/level5_mirror_break.dtl",
 "level5_start": "res://Dialogic Assets/Timelines/level5_start.dtl",
+"level6_choice": "res://Dialogic Assets/Timelines/level6_choice.dtl",
 "level6_start": "res://Dialogic Assets/Timelines/level6_start.dtl"
 }
 layout/style_directory={}
@@ -81,6 +83,7 @@ variables={
 "level3_told_secret1": false,
 "level3_told_secret2": false,
 "level3_told_secret3": false,
+"level5_talked_to_eye": false,
 "rope_cut": false,
 "rope_interacted": false,
 "statue_moved": false,

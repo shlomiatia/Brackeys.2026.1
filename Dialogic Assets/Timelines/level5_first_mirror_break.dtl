@@ -1,4 +1,9 @@
-join Bella center
-Bella: The mirror...[pause=0.2] it shattered!
-leave Bella
+join EyeWoman (default) left
+EyeWoman: Aghhh![pause=0.2] It burns!
+EyeWoman: Rude![pause=0.2] How so very rude!
+join Bella (default) right
+Bella: The mirror broke!
+Bella: Maybe I can use this to convince her to tell me the truth!
+
+leave --All-- 
 [end_timeline]

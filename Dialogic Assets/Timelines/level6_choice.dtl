@@ -1,0 +1,42 @@
+join Death (default) left
+join Bella (default) right
+Death: Hello,[pause=0.2] my child.
+Bella: Who are you?
+Death: I go by many names.[pause=0.2] Most humans call me [pause=0.2]'Death'.
+Bella: Death?!
+Death: You've travelled far.
+Death: Even without your memory,[pause=0.2] you still retain your determination.[pause=0.2] Yet,[pause=0.2] its focused on something less...[pause=0.2]negative.
+Death: You remember now?
+Bella: I-[pause=0.2]I do...[pause=0.2]I remember it all.
+Bella: I am Bella.[pause=0.2] I was born into a rich family.
+Bella: I did whatever it took to get what I wanted.[pause=0.2] It didn't matter what it was.[pause=0.2] Lies,[pause=0.2] deceit,[pause=0.2] manipulation.[pause=0.2] Whatever it took.
+Bella: Above all,[pause=0.2] I valued my status,[pause=0.2] my beauty.
+Bella: I had a best friend.[pause=0.2] She was just like me.
+Bella: For the longest time,[pause=0.2] I didn't trust anyone.[pause=0.2] Not even her.[pause=0.2] But I began to grow fond of her.
+Bella: I let down my guard,[pause=0.2] and she could tell I was growing soft.
+Bella: She took advantage of that...[pause=0.2]and poisoned me with Belladonna.
+Bella: She told me...[pause=0.2]it would make me more beautiful.[pause=0.2] But I just felt sick and dizzy.
+Bella: She told me to go lie down.[pause=0.2] I just barely made it to bed before I passed out...[pause=0.2]and away.
+Death: That is correct.
+Death: And now that you know,[pause=0.2] are you ready to accept it and pass on?
+Bella: ...
+
+- Yes
+	Death: Very well.
+	Death: My child,[pause=0.2] let us go.
+	leave --All--
+	[background arg="res://Assets/Death Section/acceptanceEnding.PNG" fade="1.0" wait="true"]
+	Bella: There's nothing left for me in life...
+	Bella: I'm no longer the person I once was.
+	Bella: I have to move forward.[pause=0.2] I have to move on.
+	[wait time="3.0"]
+	[signal arg="level6_yes"]
+	[end_timeline]
+
+- No
+	Death: Then you have not changed after all.
+	Death: Very well then.[pause=0.2] I will force you to face your fate.
+	Bella: I have to escape!
+	leave --All--
+	[signal arg="level6_no"]
+	[end_timeline]

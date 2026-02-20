@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bijkp4k1q36pr"
-path="res://.godot/imported/maskedTileset.PNG-4b12bc6ef85802674c712b1fba11866e.ctex"
+uid="uid://dgook235hbjut"
+path="res://.godot/imported/escapeEnding.PNG-eeec7ffbd6e4657656378a8980c77198.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tilesets/maskedTileset.PNG"
-dest_files=["res://.godot/imported/maskedTileset.PNG-4b12bc6ef85802674c712b1fba11866e.ctex"]
+source_file="res://Assets/Death Section/escapeEnding.PNG"
+dest_files=["res://.godot/imported/escapeEnding.PNG-eeec7ffbd6e4657656378a8980c77198.ctex"]
 
 [params]
 

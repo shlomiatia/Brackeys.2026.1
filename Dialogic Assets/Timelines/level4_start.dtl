@@ -1,4 +1,5 @@
-join Bella center
-Bella: What is this place?[pause=0.2] It feels like a maze...
+join Bella (default) center
+Bella: More of this strange [pause=0.2]'hospital'[pause=0.2].
+Bella: There are so many paths.[pause=0.2] I wonder which way I should go?
 leave Bella
 [end_timeline]
