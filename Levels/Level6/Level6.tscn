@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=4 uid="uid://vytm8306a687"]
+[gd_scene load_steps=33 format=4 uid="uid://vytm8306a687"]
 
 [ext_resource type="PackedScene" uid="uid://deur6yjprct37" path="res://Scenes/Player/player.tscn" id="1_player"]
 [ext_resource type="PackedScene" uid="uid://bbrs3ouymdwi8" path="res://Scenes/ShakingCamera/ShakingCamera.tscn" id="2_camera"]
@@ -216,6 +216,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q2muv"]
+size = Vector2(64, 2)
+
 [node name="Level6" type="Node2D"]
 script = ExtResource("4_level6")
 
@@ -235,6 +238,7 @@ tile_map_data = PackedByteArray("AAD4/+7/AAABAAIAAAD5//X/AAABAAQAAAADAPL/AAAIAAQ
 tile_set = SubResource("TileSet_oi4ni")
 
 [node name="Target" type="Node2D" parent="Objects"]
+z_index = 1
 position = Vector2(1008, -202)
 
 [node name="Light" type="Sprite2D" parent="Objects/Target"]
@@ -285,3 +289,9 @@ position = Vector2(-11, 2)
 
 [node name="ShakingCamera" parent="Objects/Player" instance=ExtResource("2_camera")]
 zoom = Vector2(3, 3)
+
+[node name="Area2D" type="Area2D" parent="Objects"]
+position = Vector2(0, -113)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Area2D"]
+shape = SubResource("RectangleShape2D_q2muv")

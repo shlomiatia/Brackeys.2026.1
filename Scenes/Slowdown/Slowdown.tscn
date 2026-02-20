@@ -6,8 +6,9 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_slow"]
 radius = 32.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vvej3"]
-size = Vector2(22, 3)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vvej3"]
+radius = 1.01
+height = 22.0
 
 [node name="Slowdown" type="Node2D"]
 script = ExtResource("1_slowdown")
@@ -26,8 +27,8 @@ region_rect = Rect2(37, 17, 22, 32)
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(0, -1.5)
-shape = SubResource("RectangleShape2D_vvej3")
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_vvej3")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_body_exited"]
