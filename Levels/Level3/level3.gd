@@ -21,6 +21,7 @@ func _ready() -> void:
 	AudioManager.play_loop_sfx("sewer", load("res://audio/sfx/ambi/sfx_sewer_ambi_loop.mp3"), "Ambi")
 	exit_interactable.interacted.connect(_on_exit_interacted)
 	exit_interactable.remove_from_group("interactables")
+	mask_mini_game.camera = player.get_node("ShakingCamera")
 	_setup_water_lights()
 	await fade.fade_in()
 	await DialogDisplayer.start("level3_enter_sewers")

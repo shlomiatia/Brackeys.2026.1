@@ -255,22 +255,22 @@ position = Vector2(-1.5, 2)
 shape = SubResource("RectangleShape2D_target")
 
 [node name="Slowdown1" parent="Objects" instance=ExtResource("7_slowdown")]
-position = Vector2(256, -162)
+position = Vector2(252, -146)
 
 [node name="Slowdown2" parent="Objects" instance=ExtResource("7_slowdown")]
 position = Vector2(354, -208)
 
 [node name="Slowdown3" parent="Objects" instance=ExtResource("7_slowdown")]
-position = Vector2(448, -244)
+position = Vector2(446, -254)
 
 [node name="Slowdown4" parent="Objects" instance=ExtResource("7_slowdown")]
-position = Vector2(545, -164)
+position = Vector2(546, -147)
 
 [node name="Slowdown5" parent="Objects" instance=ExtResource("7_slowdown")]
 position = Vector2(640, -212)
 
 [node name="Slowdown6" parent="Objects" instance=ExtResource("7_slowdown")]
-position = Vector2(738, -243)
+position = Vector2(736, -254)
 
 [node name="Slowdown7" parent="Objects" instance=ExtResource("7_slowdown")]
 position = Vector2(834, -206)

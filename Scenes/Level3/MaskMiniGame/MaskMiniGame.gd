@@ -12,6 +12,8 @@ const MASK_CRACKED := preload("res://Assets/Masked Section/maskCracked.PNG")
 @onready var mask: Sprite2D = $Mask
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
+var camera: ShakingCamera
+
 var _current_tween: Tween
 var _flash_tween: Tween
 var _is_running: bool = false
@@ -60,6 +62,9 @@ func _on_click() -> void:
 
 	if _flash_tween and _flash_tween.is_valid():
 		_flash_tween.kill()
+
+	if camera:
+		camera.start_screen_shake(1.0, 10.0, 0.1)
 
 	if success:
 		stop()

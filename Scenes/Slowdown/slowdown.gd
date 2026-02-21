@@ -16,8 +16,8 @@ var _has_risen: bool = false
 func _ready() -> void:
 	_chosen_region = REGIONS[randi() % 2]
 	var sprite := $Sprite2D
-	sprite.region_rect = Rect2(_chosen_region.position.x, _chosen_region.position.y, _chosen_region.size.x, 1.0)
-	sprite.position.y = -0.5
+	sprite.region_rect = Rect2(_chosen_region.position.x, _chosen_region.position.y, _chosen_region.size.x, 8.0)
+	sprite.position.y = -4
 
 func _physics_process(_delta: float) -> void:
 	if _player == null:
