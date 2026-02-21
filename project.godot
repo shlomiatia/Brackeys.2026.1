@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Brackeys.2026.1"
-run/main_scene="uid://decbfqj3ogq53"
+run/main_scene="uid://cye4t85qtfng7"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -135,6 +135,7 @@ layout/default_style="Default"
 text/input_action="dialogic_default_action"
 audio/type_sound_bus="SFX"
 animations/join_default="Fade In Up"
+animations/cross_fade_default="Fade Cross"
 
 [display]
 

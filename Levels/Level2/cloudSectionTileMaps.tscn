@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=4 uid="uid://bk5igealw1hn0"]
+[gd_scene load_steps=9 format=4 uid="uid://bk5igealw1hn0"]
 
+[ext_resource type="Shader" uid="uid://cvt3pghw20e7k" path="res://Shaders/haze.gdshader" id="1_eeueb"]
 [ext_resource type="Texture2D" uid="uid://bijkp4k1q36pr" path="res://Assets/Tilesets/maskedTileset.PNG" id="1_vff6s"]
 [ext_resource type="Texture2D" uid="uid://b30cpfg623gyo" path="res://Assets/Masked Section/clouds-masked.PNG" id="2_yl0c8"]
 [ext_resource type="TileSet" uid="uid://bcwcvhehhmadv" path="res://Levels/Level2/Level2TileSet.tres" id="3_eeueb"]
@@ -90,6 +91,12 @@ texture = ExtResource("1_vff6s")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_j4nld")
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yl0c8"]
+shader = ExtResource("1_eeueb")
+shader_parameter/speed = 0.25
+shader_parameter/intensity = 0.002000000095
+shader_parameter/blur_amount = 0.0
+
 [node name="CloudSectionTileMaps" type="Node2D"]
 
 [node name="SkyTileMapLayer" type="TileMapLayer" parent="."]
@@ -97,6 +104,7 @@ tile_map_data = PackedByteArray("AAD6/+z/AAAIAAEAAAD6/+3/AAAIAAEAAAD6/+7/AAAIAAE
 tile_set = SubResource("TileSet_j4nld")
 
 [node name="CloudsMasked" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_yl0c8")
 position = Vector2(208, -185)
 scale = Vector2(1.1142857, 1.1142857)
 texture = ExtResource("2_yl0c8")

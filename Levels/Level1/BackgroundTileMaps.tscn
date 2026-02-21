@@ -1,7 +1,14 @@
-[gd_scene load_steps=5 format=4 uid="uid://dl4fsjfam7kgc"]
+[gd_scene load_steps=7 format=4 uid="uid://dl4fsjfam7kgc"]
 
 [ext_resource type="Texture2D" uid="uid://d2iub7xn4hl8x" path="res://Assets/Intro/clouds.PNG" id="2_g23o2"]
 [ext_resource type="Texture2D" uid="uid://bu5skewtjvxyh" path="res://Assets/Tilesets/introTileset.PNG" id="2_p364y"]
+[ext_resource type="Shader" uid="uid://cvt3pghw20e7k" path="res://Shaders/haze.gdshader" id="3_haze"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g23o2"]
+shader = ExtResource("3_haze")
+shader_parameter/speed = 0.25
+shader_parameter/intensity = 0.002000000095
+shader_parameter/blur_amount = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p364y"]
 texture = ExtResource("2_p364y")
@@ -51,7 +58,8 @@ sources/0 = SubResource("TileSetAtlasSource_p364y")
 [node name="BackgroundTileMaps" type="Node2D"]
 
 [node name="Clouds" type="Sprite2D" parent="."]
-position = Vector2(126, 17)
+material = SubResource("ShaderMaterial_g23o2")
+position = Vector2(289, 17)
 scale = Vector2(4.875, 4.875)
 texture = ExtResource("2_g23o2")
 
