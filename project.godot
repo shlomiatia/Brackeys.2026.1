@@ -135,6 +135,7 @@ layout/default_style="Default"
 text/input_action="dialogic_default_action"
 audio/type_sound_bus="SFX"
 animations/join_default="Fade In Up"
+animations/cross_fade_default="Fade Cross"
 
 [display]
 
