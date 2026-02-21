@@ -11,4 +11,5 @@ Bella: Not after everything I now know.
 Bella: And maybe I can pay that friend of mine a visit...
 [wait time="3.0"]
 [background arg="#000000ff" fade="1.0" wait="true"]
+[signal arg="ending_done"]
 [end_timeline]

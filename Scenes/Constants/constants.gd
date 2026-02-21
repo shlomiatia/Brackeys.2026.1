@@ -22,7 +22,7 @@ var properties: Array = []
 var categories: Array = []
 
 var timer = 0
-const is_disabled = false
+const is_disabled = true
 
 func _ready():
 	if is_disabled:

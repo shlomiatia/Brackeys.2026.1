@@ -5,6 +5,7 @@ extends Node2D
 @onready var death: CharacterBody2D = $Objects/Death
 @onready var target_area: Area2D = $Objects/Target/Area2D
 @onready var intro_area: Area2D = $Objects/Area2D
+@onready var run_label: Label = $CanvasLayer/RunLabel
 
 var _intro_triggered: bool = false
 
@@ -45,7 +46,10 @@ func _on_dialogic_signal(argument: String) -> void:
 			AudioManager.stop_music()
 			AudioManager.play_sfx(boss_stinger)
 			await _pan_camera_to_player()
+			run_label.visible = true
 			death.start_chasing(player)
+		"ending_done":
+			get_tree().change_scene_to_file("res://Levels/EndingScreen/EndingScreen.tscn")
 
 func _pan_camera_to_player() -> void:
 	var tween = create_tween()
@@ -64,15 +68,11 @@ func _on_death_caught_player() -> void:
 
 func ending1() -> void:
 	Global.can_control = false
-	Dialogic.start("level6_ending1")
-	await Dialogic.timeline_ended
 	Global.ending_name = "The Acceptance Ending"
-	get_tree().change_scene_to_file("res://Levels/EndingScreen/EndingScreen.tscn")
+	Dialogic.start("level6_ending1")
 
 func ending2() -> void:
 	death.chasing = false
 	Global.can_control = false
-	Dialogic.start("level6_ending2")
-	await Dialogic.timeline_ended
 	Global.ending_name = "The Escape Ending"
-	get_tree().change_scene_to_file("res://Levels/EndingScreen/EndingScreen.tscn")
+	Dialogic.start("level6_ending2")

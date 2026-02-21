@@ -57,6 +57,7 @@ func _process(delta: float) -> void:
 	set_point_position(1, current.lerp(target, delta * LERP_SPEED))
 
 func _start_breaking(mirror: Mirror) -> void:
+	Global.can_control = false
 	breaking = true
 	mirror.break_mirror()
 
@@ -67,6 +68,7 @@ func _start_breaking(mirror: Mirror) -> void:
 	_flash_tween = create_tween()
 	_flash_tween.tween_property(self , "default_color", Color(1, 1, 1, 0.5019608), BREAK_DURATION)
 	await _flash_tween.finished
+	Global.can_control = true
 	_mirrors_broken += 1
 	if _mirrors_broken == 1:
 		await DialogDisplayer.start("level5_first_mirror_break")

@@ -3,6 +3,7 @@ extends Node
 # vars regarding what the player can control
 var can_control: bool = true
 var ending_name: String = ""
+var came_from_ending: bool = false
 var incorrect_statue_count: int = 0
 
 func _unhandled_input(event: InputEvent) -> void:
