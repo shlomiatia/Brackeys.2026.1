@@ -253,12 +253,12 @@ y_sort_enabled = true
 
 [node name="DecorTileMapLayer" type="TileMapLayer" parent="Objects"]
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAD4/+7/AAABAAIAAAD5//X/AAABAAQAAAADAPL/AAAIAAQAAAAEAO//AAABAAQAAAAEAPj/AAABAAIAAAAIAO7/AAABAAIAAAAIAPT/AAAJAAAAAAD5//H/AAAIAAQAAAAAAO7/AAABAAQAAAA=")
+tile_map_data = PackedByteArray("AAD4/+7/AAABAAIAAAD5//X/AAABAAQAAAADAPL/AAAHAAAAAAAEAO//AAABAAQAAAAEAPj/AAABAAIAAAAIAO7/AAABAAIAAAAIAPT/AAAJAAAAAAD5//H/AAAIAAQAAAAAAO7/AAABAAQAAAD8//j/AAAHAAAAAAAHAO3/AAAHAAAAAAD6/+3/AAAJAAAAAAADAPf/AAAJAAAAAAD9//P/AAAHAAAAABAGAPf/AAAJAAAAAAACAO3/AAAJAAAAAAA=")
 tile_set = SubResource("TileSet_oi4ni")
 
 [node name="Target" type="Node2D" parent="Objects"]
 z_index = 1
-position = Vector2(1008, -202)
+position = Vector2(1810, -301)
 
 [node name="Light" type="Sprite2D" parent="Objects/Target"]
 position = Vector2(-64, 2)
@@ -272,25 +272,136 @@ position = Vector2(-1.5, 2)
 shape = SubResource("RectangleShape2D_target")
 
 [node name="Slowdown1" parent="Objects" instance=ExtResource("7_slowdown")]
-position = Vector2(252, -146)
+position = Vector2(200, -156)
 
 [node name="Slowdown2" parent="Objects" instance=ExtResource("7_slowdown")]
-position = Vector2(354, -208)
+position = Vector2(242, -247)
 
 [node name="Slowdown3" parent="Objects" instance=ExtResource("7_slowdown")]
-position = Vector2(446, -254)
+position = Vector2(321, -178)
 
 [node name="Slowdown4" parent="Objects" instance=ExtResource("7_slowdown")]
-position = Vector2(546, -147)
+position = Vector2(424, -225)
 
 [node name="Slowdown5" parent="Objects" instance=ExtResource("7_slowdown")]
-position = Vector2(640, -212)
+position = Vector2(476, -153)
 
 [node name="Slowdown6" parent="Objects" instance=ExtResource("7_slowdown")]
-position = Vector2(736, -254)
+position = Vector2(552, -252)
 
 [node name="Slowdown7" parent="Objects" instance=ExtResource("7_slowdown")]
-position = Vector2(834, -206)
+position = Vector2(639, -202)
+
+[node name="Slowdown8" parent="Objects" instance=ExtResource("7_slowdown")]
+position = Vector2(739, -249)
+
+[node name="Slowdown9" parent="Objects" instance=ExtResource("7_slowdown")]
+position = Vector2(759, -158)
+
+[node name="Slowdown11" parent="Objects" instance=ExtResource("7_slowdown")]
+position = Vector2(845, -220)
+
+[node name="Slowdown12" parent="Objects" instance=ExtResource("7_slowdown")]
+position = Vector2(927, -161)
+
+[node name="Slowdown13" parent="Objects" instance=ExtResource("7_slowdown")]
+position = Vector2(1085, -258)
+
+[node name="Slowdown33" parent="Objects" instance=ExtResource("7_slowdown")]
+position = Vector2(1182, -177)
+
+[node name="Slowdown21" parent="Objects" instance=ExtResource("7_slowdown")]
+position = Vector2(1196, -265)
+
+[node name="Slowdown22" parent="Objects" instance=ExtResource("7_slowdown")]
+position = Vector2(1142, -362)
+
+[node name="Slowdown41" parent="Objects" instance=ExtResource("7_slowdown")]
+position = Vector2(1231, -354)
+
+[node name="Slowdown23" parent="Objects" instance=ExtResource("7_slowdown")]
+position = Vector2(1199, -426)
+
+[node name="Slowdown24" parent="Objects" instance=ExtResource("7_slowdown")]
+position = Vector2(1132, -473)
+
+[node name="Slowdown42" parent="Objects" instance=ExtResource("7_slowdown")]
+position = Vector2(1238, -522)
+
+[node name="Slowdown25" parent="Objects" instance=ExtResource("7_slowdown")]
+position = Vector2(1163, -570)
+
+[node name="Slowdown26" parent="Objects" instance=ExtResource("7_slowdown")]
+position = Vector2(1237, -625)
+
+[node name="Slowdown14" parent="Objects" instance=ExtResource("7_slowdown")]
+position = Vector2(1150, -677)
+
+[node name="Slowdown15" parent="Objects" instance=ExtResource("7_slowdown")]
+position = Vector2(1325, -705)
+
+[node name="Slowdown28" parent="Objects" instance=ExtResource("7_slowdown")]
+position = Vector2(1355, -647)
+
+[node name="Slowdown27" parent="Objects" instance=ExtResource("7_slowdown")]
+position = Vector2(1222, -730)
+
+[node name="Slowdown16" parent="Objects" instance=ExtResource("7_slowdown")]
+position = Vector2(1471, -684)
+
+[node name="Slowdown43" parent="Objects" instance=ExtResource("7_slowdown")]
+position = Vector2(1480, -626)
+
+[node name="Slowdown29" parent="Objects" instance=ExtResource("7_slowdown")]
+position = Vector2(1418, -722)
+
+[node name="Slowdown17" parent="Objects" instance=ExtResource("7_slowdown")]
+position = Vector2(1662, -727)
+
+[node name="Slowdown30" parent="Objects" instance=ExtResource("7_slowdown")]
+position = Vector2(1528, -717)
+
+[node name="Slowdown18" parent="Objects" instance=ExtResource("7_slowdown")]
+position = Vector2(1588, -577)
+
+[node name="Slowdown31" parent="Objects" instance=ExtResource("7_slowdown")]
+position = Vector2(1591, -674)
+
+[node name="Slowdown32" parent="Objects" instance=ExtResource("7_slowdown")]
+position = Vector2(1662, -604)
+
+[node name="Slowdown19" parent="Objects" instance=ExtResource("7_slowdown")]
+position = Vector2(1632, -409)
+
+[node name="Slowdown34" parent="Objects" instance=ExtResource("7_slowdown")]
+position = Vector2(1665, -498)
+
+[node name="Slowdown35" parent="Objects" instance=ExtResource("7_slowdown")]
+position = Vector2(1571, -472)
+
+[node name="Slowdown20" parent="Objects" instance=ExtResource("7_slowdown")]
+position = Vector2(1652, -325)
+
+[node name="Slowdown44" parent="Objects" instance=ExtResource("7_slowdown")]
+position = Vector2(1680, -255)
+
+[node name="Slowdown36" parent="Objects" instance=ExtResource("7_slowdown")]
+position = Vector2(1564, -358)
+
+[node name="Slowdown37" parent="Objects" instance=ExtResource("7_slowdown")]
+position = Vector2(1742, -344)
+
+[node name="Slowdown38" parent="Objects" instance=ExtResource("7_slowdown")]
+position = Vector2(1573, -262)
+
+[node name="Slowdown39" parent="Objects" instance=ExtResource("7_slowdown")]
+position = Vector2(1755, -271)
+
+[node name="Slowdown10" parent="Objects" instance=ExtResource("7_slowdown")]
+position = Vector2(999, -244)
+
+[node name="Slowdown40" parent="Objects" instance=ExtResource("7_slowdown")]
+position = Vector2(1066, -148)
 
 [node name="Death" type="CharacterBody2D" parent="Objects"]
 position = Vector2(-42, -292)
