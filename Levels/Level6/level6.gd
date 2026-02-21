@@ -8,11 +8,16 @@ extends Node2D
 
 var _intro_triggered: bool = false
 
+var boss_dia_music = load("res://audio/music/deaths anticipation.mp3")
+var boss_stinger = load("res://audio/music/boss music stinger.mp3")
+#var boss_music
+
 func _ready() -> void:
 	Dialogic.signal_event.connect(_on_dialogic_signal)
 	target_area.body_entered.connect(_on_target_interacted)
 	death.caught_player.connect(_on_death_caught_player)
 	intro_area.body_entered.connect(_on_intro_area_body_entered)
+	AudioManager.play_music(boss_dia_music)
 	Global.can_control = false
 	await get_tree().create_timer(1.0).timeout
 	await DialogDisplayer.start("level6_start")
@@ -37,6 +42,8 @@ func _on_dialogic_signal(argument: String) -> void:
 		"level6_yes":
 			ending1()
 		"level6_no":
+			AudioManager.stop_music()
+			AudioManager.play_sfx(boss_stinger)
 			await _pan_camera_to_player()
 			death.start_chasing(player)
 

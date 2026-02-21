@@ -61,13 +61,13 @@ func _on_dialogic_signal(argument: String) -> void:
 	match argument:
 		"door_interacted":
 			ball.fall()
-			AudioManager.play_sfx(ball_crash)
+			AudioManager.play_sfx(ball_appear_sfx)
 			AudioManager.stop_music()
 		"knife_picked_up":
 			_fade_and_remove(knife)
 		"rope_cut":
-			AudioManager.play_sfx(ball_appear_sfx, "SFX", -12)
-			AudioManager.play_loop_sfx("hole_ambience", hole_ambi, "Ambi", -20)
+			AudioManager.play_sfx(ball_crash, "SFX", -12)
+			AudioManager.play_loop_sfx("hole_ambience", hole_ambi, "Ambi", -10)
 			ball.cut()
 			rope_conversation.interactable_disabled = true
 			var rope_tween = create_tween()

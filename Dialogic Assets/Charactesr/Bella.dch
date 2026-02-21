@@ -10,12 +10,12 @@
 "Bella Voice": {
 "mode": 0,
 "name": "Bella Voice",
-"pitch_base": 1.0,
-"pitch_variance": 0.0,
+"pitch_base": 1.7,
+"pitch_variance": -0.2,
 "skip_characters": 0.0,
-"sound_path": "res://audio/sfx/ui/sfx_ui_hover_c.wav",
-"volume_base": 0.0,
-"volume_variance": 0.0
+"sound_path": "res://audio/sfx/voices/sfx_voice_d.mp3",
+"volume_base": -0.4,
+"volume_variance": 0.2
 }
 },
 "style": "",
