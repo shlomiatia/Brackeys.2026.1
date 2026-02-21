@@ -3,6 +3,7 @@ shader_type canvas_item;
 uniform vec4 color1 : source_color = vec4(1.0, 0.0, 0.0, 1.0);
 uniform vec4 color2 : source_color = vec4(1.0, 0.0, 0.0, 1.0);
 uniform vec4 color3 : source_color = vec4(1.0, 0.0, 0.0, 1.0);
+uniform vec4 color4 : source_color = vec4(1.0, 0.0, 0.0, 1.0);
 uniform vec4 bg_color : source_color = vec4(1.0, 0.0, 0.0, 1.0);
 uniform vec2 direction = vec2(1.0, 0.0);
 uniform float max_distance : hint_range(0.0, 100.0) = 10.0;
@@ -40,11 +41,12 @@ void fragment() {
         COLOR = color2;
     } else if (colors_match(src_color, color3)) {
         COLOR = color3;
-    } else if (colors_match(current_color, color1)) {
-        COLOR = bg_color;
-    } else if (colors_match(current_color, color2)) {
-        COLOR = bg_color;
-    } else if (colors_match(current_color, color3)) {
+    } else if (colors_match(src_color, color4)) {
+        COLOR = color4;
+    } else if (colors_match(current_color, color1) ||
+               colors_match(current_color, color2) || 
+               colors_match(current_color, color3) || 
+               colors_match(current_color, color4)) {
         COLOR = bg_color;
     }
 }

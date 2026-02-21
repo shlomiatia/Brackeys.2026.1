@@ -10,6 +10,7 @@ shader = ExtResource("5_water")
 shader_parameter/color1 = Color(0.019607844, 0.05882353, 0, 1)
 shader_parameter/color2 = Color(0.023529412, 0.0627451, 0, 1)
 shader_parameter/color3 = Color(0.27450982, 0.27450982, 0.17254902, 1)
+shader_parameter/color4 = Color(0.03529412, 0.0627451, 0, 1)
 shader_parameter/bg_color = Color(0.17254902, 0.17254902, 0.08627451, 1)
 shader_parameter/direction = Vector2(0, 1)
 shader_parameter/max_distance = 10.0
