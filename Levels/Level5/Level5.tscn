@@ -40,12 +40,14 @@ position = Vector2(4, 32)
 
 [node name="BridgeTileMapLayer1" type="TileMapLayer" parent="lakeTileMap"]
 visible = false
+z_index = -1
 position = Vector2(-4, -32)
 tile_map_data = PackedByteArray("AAD///b/AAADAAIAAAD///f/AAADAAIAAAD///j/AAADAAIAAAD///n/AAADAAIAAAD///r/AAADAAIAAAAAAPb/AAADAAIAABAAAPf/AAADAAIAABAAAPj/AAADAAIAABAAAPn/AAADAAIAABAAAPr/AAADAAIAABD///v/AAADAAIAAAAAAPv/AAADAAIAABAAAPz/AAADAAIAABD///z/AAADAAIAAAA=")
 tile_set = ExtResource("4_5bli8")
 
 [node name="BridgeTileMapLayer2" type="TileMapLayer" parent="lakeTileMap"]
 visible = false
+z_index = -1
 position = Vector2(-4, -32)
 tile_map_data = PackedByteArray("AAD//+n/AAADAAIAAAD//+r/AAADAAIAAAD//+v/AAADAAIAAAD//+z/AAADAAIAAAD//+3/AAADAAIAAAD//+7/AAADAAIAAAD//+//AAADAAIAAAAAAOn/AAADAAIAABAAAOr/AAADAAIAABAAAOv/AAADAAIAABAAAOz/AAADAAIAABAAAO3/AAADAAIAABAAAO7/AAADAAIAABAAAO//AAADAAIAABA=")
 tile_set = ExtResource("4_5bli8")
@@ -99,7 +101,7 @@ position = Vector2(-169, -10)
 supported_frames = Array[int]([1, 0])
 
 [node name="Mirror4" parent="Objects" instance=ExtResource("2_ambn0")]
-position = Vector2(181, 52)
+position = Vector2(205, 28)
 supported_frames = Array[int]([0, 2])
 
 [node name="Mirror5" parent="Objects" instance=ExtResource("2_ambn0")]
@@ -107,7 +109,7 @@ position = Vector2(-296, 51)
 supported_frames = Array[int]([0, 3])
 
 [node name="Mirror6" parent="Objects" instance=ExtResource("2_ambn0")]
-position = Vector2(-404, -17)
+position = Vector2(-388, -17)
 supported_frames = Array[int]([0, 1])
 
 [node name="Mirror7" parent="Objects" instance=ExtResource("2_ambn0")]

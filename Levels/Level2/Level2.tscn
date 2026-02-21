@@ -71,15 +71,24 @@ position = Vector2(581, -133)
 scale = Vector2(-1, 1)
 dialogue_name = "level2_statue2"
 
+[node name="Conversation" parent="Objects/Statue2" index="2"]
+scale = Vector2(-1, 1)
+
 [node name="Statue3" parent="Objects" instance=ExtResource("2_36aoo")]
 position = Vector2(645, -74)
 scale = Vector2(-1, 1)
 dialogue_name = "level2_statue3"
 
+[node name="Conversation" parent="Objects/Statue3" index="2"]
+scale = Vector2(-1, 1)
+
 [node name="Statue4" parent="Objects" instance=ExtResource("2_36aoo")]
 position = Vector2(619, 21)
 scale = Vector2(-1, 1)
 dialogue_name = "level2_statue4"
+
+[node name="Conversation" parent="Objects/Statue4" index="2"]
+scale = Vector2(-1, 1)
 
 [node name="Statue5" parent="Objects" instance=ExtResource("2_36aoo")]
 position = Vector2(305, -44)
@@ -89,6 +98,9 @@ dialogue_name = "level2_statue5"
 position = Vector2(531, 45)
 scale = Vector2(-1, 1)
 dialogue_name = "level2_statue6"
+
+[node name="Conversation" parent="Objects/Statue6" index="2"]
+scale = Vector2(-1, 1)
 
 [node name="Statue7" parent="Objects" instance=ExtResource("2_36aoo")]
 position = Vector2(357, -132)
@@ -123,3 +135,7 @@ position = Vector2(-0.5, -9.75)
 shape = SubResource("RectangleShape2D_uadv8")
 
 [editable path="Objects/MainStatue"]
+[editable path="Objects/Statue2"]
+[editable path="Objects/Statue3"]
+[editable path="Objects/Statue4"]
+[editable path="Objects/Statue6"]
