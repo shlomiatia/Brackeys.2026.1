@@ -11,6 +11,8 @@ const CAMERA_HEIGHT := EDGE_BOTTOM - EDGE_TOP
 
 @onready var player: Player = $Objects/Player
 @onready var fade: Fade = $CanvasLayer/Fade
+@onready var camera: ShakingCamera = $ShakingCamera
+@onready var red_flash: ColorRect = $CanvasLayer/RedFlash
 @onready var furniture_layers: Array[TileMapLayer] = [
 	$Objects/FurnitureTileMapLayer1,
 	$Objects/FurnitureTileMapLayer2,
@@ -86,6 +88,9 @@ func move_room(exited_direction: Direction) -> void:
 		Direction.UP: player.position.y = EDGE_BOTTOM
 		Direction.DOWN: player.position.y = EDGE_TOP
 	enter_room(exited_direction)
+	if not correct:
+		camera.start_screen_shake(1.0, 10.0, 0.05)
+		flash_red()
 	await fade.fade_in()
 	if correct:
 		correct_count += 1
@@ -141,6 +146,11 @@ func enter_room(exited_direction: Direction) -> void:
 	tween.tween_property(player, "position", player.position + move_offset, 0.6)
 	await tween.finished
 	player.set_physics_process(true)
+
+func flash_red() -> void:
+	red_flash.color.a = 0.5
+	var tween := create_tween()
+	tween.tween_property(red_flash, "color:a", 0.0, 0.8)
 
 func update_hint_color() -> void:
 	var target_pos: Vector2

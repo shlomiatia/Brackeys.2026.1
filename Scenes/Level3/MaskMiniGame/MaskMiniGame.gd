@@ -27,7 +27,7 @@ func _ready() -> void:
 func _input(event: InputEvent) -> void:
 	if not _is_running or not _can_click:
 		return
-	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+	if Input.is_action_just_pressed("dialogic_default_action"):
 		_on_click()
 
 

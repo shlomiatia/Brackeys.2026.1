@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://bmp50wvaog1e"]
+[gd_scene load_steps=14 format=4 uid="uid://bmp50wvaog1e"]
 
 [ext_resource type="PackedScene" uid="uid://deur6yjprct37" path="res://Scenes/Player/player.tscn" id="1_a67fh"]
 [ext_resource type="Script" uid="uid://mbmr1umj5xsk" path="res://Levels/Level2/level2.gd" id="1_script"]
@@ -18,6 +18,9 @@ size = Vector2(211, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_07q1j"]
 size = Vector2(211, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uadv8"]
+size = Vector2(65, 20.5)
 
 [node name="Level2" type="Node2D"]
 script = ExtResource("1_script")
@@ -44,6 +47,7 @@ position = Vector2(448, -150)
 
 [node name="Conversation" parent="Objects/Pipe" instance=ExtResource("3_conv")]
 dialogue_name = "level2_pipe"
+indicator_offset = Vector2(0, -48)
 interactable_disabled = true
 
 [node name="AboveDecorTileMapLayer" type="TileMapLayer" parent="Objects"]
@@ -63,17 +67,17 @@ position = Vector2(353, 39)
 dialogue_name = "level2_statue1"
 
 [node name="Statue2" parent="Objects" instance=ExtResource("2_36aoo")]
-position = Vector2(558, -128)
+position = Vector2(581, -133)
 scale = Vector2(-1, 1)
 dialogue_name = "level2_statue2"
 
 [node name="Statue3" parent="Objects" instance=ExtResource("2_36aoo")]
-position = Vector2(617, -68)
+position = Vector2(645, -74)
 scale = Vector2(-1, 1)
 dialogue_name = "level2_statue3"
 
 [node name="Statue4" parent="Objects" instance=ExtResource("2_36aoo")]
-position = Vector2(603, 7)
+position = Vector2(619, 21)
 scale = Vector2(-1, 1)
 dialogue_name = "level2_statue4"
 
@@ -110,5 +114,12 @@ position = Vector2(566, 96)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/StaticBody2D3"]
 position = Vector2(28.5, 10.5)
 shape = SubResource("RectangleShape2D_07q1j")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Objects"]
+position = Vector2(448, -160)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/StaticBody2D4"]
+position = Vector2(-0.5, -9.75)
+shape = SubResource("RectangleShape2D_uadv8")
 
 [editable path="Objects/MainStatue"]
