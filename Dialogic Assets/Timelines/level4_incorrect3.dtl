@@ -3,5 +3,6 @@ Bella: I'm sure I've been in this room a couple times already!
 Bella: I think I'm lost.[pause=0.2] There has to be a way out of here!
 update Bella (question)
 Bella: Maybe there's some kind of clue that tells me which way I need to go?
+Bella: Something visual or auditory...
 leave Bella
 [end_timeline]
