@@ -67,7 +67,7 @@ func ending1() -> void:
 	Dialogic.start("level6_ending1")
 	await Dialogic.timeline_ended
 	Global.ending_name = "The Acceptance Ending"
-	Global.change_scene("res://Levels/EndingScreen/EndingScreen.tscn")
+	get_tree().change_scene_to_file("res://Levels/EndingScreen/EndingScreen.tscn")
 
 func ending2() -> void:
 	death.chasing = false
@@ -75,4 +75,4 @@ func ending2() -> void:
 	Dialogic.start("level6_ending2")
 	await Dialogic.timeline_ended
 	Global.ending_name = "The Escape Ending"
-	Global.change_scene("res://Levels/EndingScreen/EndingScreen.tscn")
+	get_tree().change_scene_to_file("res://Levels/EndingScreen/EndingScreen.tscn")

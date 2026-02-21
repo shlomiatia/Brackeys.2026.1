@@ -35,6 +35,7 @@ Bella: ...
 	Death: Very well.
 	Death: My child,[pause=0.2] let us go.
 	leave --All--
+	set {level6_said_no} = false
 	[signal arg="level6_yes"]
 	[end_timeline]
 

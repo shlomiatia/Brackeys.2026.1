@@ -39,7 +39,7 @@ var maze_completed: bool = false
 var intro_music = load("res://audio/music/test music/bella theme v3 progress.mp3")
 
 func _ready() -> void:
-	pick_direction()
+	pick_direction(Direction.UP)
 	AudioManager.play_music(intro_music)
 	Global.can_control = false
 	await get_tree().create_timer(1.0).timeout
@@ -149,8 +149,8 @@ func update_hint_color() -> void:
 		Direction.DOWN: target_pos = Vector2(0, EDGE_BOTTOM)
 		Direction.LEFT: target_pos = Vector2(EDGE_LEFT, -24.0)
 		Direction.RIGHT: target_pos = Vector2(EDGE_RIGHT, -24.0)
-	var max_dist := Vector2(CAMERA_WIDTH, CAMERA_HEIGHT).length()
-	var ratio := player.position.distance_to(target_pos) / max_dist
+	var max_dist := Vector2(CAMERA_WIDTH / 2.0, CAMERA_HEIGHT / 4.0).length()
+	var ratio := minf(1.0, player.position.distance_to(target_pos) / max_dist)
 	var c := 1.0 - ratio * Constants.maze_modulate_hint_modifier
 	modulate = Color(c, c, c)
 	AudioManager.music_player.volume_db = - ratio * Constants.maze_db_hint_modifier

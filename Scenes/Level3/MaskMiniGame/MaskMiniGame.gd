@@ -115,10 +115,10 @@ func _run_step() -> void:
 	_current_tween = create_tween().set_parallel(true)
 	_current_tween.tween_property(
 		mask, "position", target_pos, duration
-	).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN_OUT)
+	).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN_OUT)
 	_current_tween.tween_property(
 		mask, "rotation", target_rot, duration
-	).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN_OUT)
+	).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN_OUT)
 	_current_tween.finished.connect(_run_step)
 
 	_time_since_origin += duration

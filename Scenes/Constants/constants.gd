@@ -11,7 +11,7 @@ var mask_min_distance_from_origin: float = 16.0
 
 # Maze Hint
 var maze_modulate_hint_modifier: float = 0.8
-var maze_db_hint_modifier: float = 18.0
+var maze_db_hint_modifier: float = 24.0
 
 
 var canvas_layer: CanvasLayer
@@ -44,7 +44,7 @@ func _ready():
 		{
 			"name": "Maze Hint",
 			"properties": [
-				["maze_modulate_hint_modifier", 0.1],
+				["maze_modulate_hint_modifier", 0.05],
 				["maze_db_hint_modifier", 0.5],
 				]
 		}
