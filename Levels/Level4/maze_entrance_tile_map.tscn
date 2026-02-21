@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://bkpwj1wi2cx42"]
+[gd_scene load_steps=15 format=4 uid="uid://bkpwj1wi2cx42"]
 
 [ext_resource type="Texture2D" uid="uid://d87w0ophkvyp" path="res://Assets/Tilesets/EyeTileset.PNG" id="1_htwis"]
 [ext_resource type="Script" uid="uid://cv7y1nlecm86g" path="res://Levels/Level4/maze_entrance_tile_map.gd" id="1_script"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dnwug4pxdwecg" path="res://Scenes/Utils/Fade.tscn" id="2_fade"]
 [ext_resource type="PackedScene" uid="uid://deur6yjprct37" path="res://Scenes/Player/player.tscn" id="2_player"]
 [ext_resource type="Texture2D" uid="uid://c7dygm2p1hwho" path="res://Assets/Intro/door.PNG" id="3_t5yw6"]
+[ext_resource type="Shader" uid="uid://cvt3pghw20e7k" path="res://Shaders/haze.gdshader" id="4_2utav"]
 [ext_resource type="PackedScene" uid="uid://bbrs3ouymdwi8" path="res://Scenes/ShakingCamera/ShakingCamera.tscn" id="4_camera"]
 [ext_resource type="PackedScene" uid="uid://bmv00lqu5yns1" path="res://Scenes/Interactable/Interactable.tscn" id="8_interactable"]
 
@@ -115,7 +116,13 @@ texture = ExtResource("1_htwis")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_8vb0h")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5g80h"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ais6b"]
+shader = ExtResource("4_2utav")
+shader_parameter/speed = 0.25
+shader_parameter/intensity = 0.002000000095
+shader_parameter/blur_amount = 0.0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jyo3q"]
 texture = ExtResource("2_6mc07")
 5:1/0 = 0
 0:0/size_in_atlas = Vector2i(3, 1)
@@ -133,7 +140,7 @@ texture = ExtResource("2_6mc07")
 3:0/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_2qnqf"]
-sources/0 = SubResource("TileSetAtlasSource_5g80h")
+sources/0 = SubResource("TileSetAtlasSource_jyo3q")
 
 [node name="mazeEntranceTileMap" type="Node2D"]
 script = ExtResource("1_script")
@@ -149,6 +156,7 @@ tile_map_data = PackedByteArray("AADq/+z/AAAIAAAAAADq/+3/AAAIAAAAAADq/+7/AAAIAAA
 tile_set = SubResource("TileSet_j4nhl")
 
 [node name="CloudsTileMapLayer" type="TileMapLayer" parent="."]
+material = SubResource("ShaderMaterial_ais6b")
 position = Vector2(-4, -30)
 tile_map_data = PackedByteArray("AADp/wcAAAAAAAIAAADp/woAAAADAAAAAADr//T/AAADAAEAAADr/wwAAAACAAEAAADs//D/AAAAAAIAAADs/woAAAAAAAIAAADt//j/AAAAAAIAAADt//v/AAADAAAAAADt//7/AAAFAAEAAADt/wUAAAADAAIAAADv/woAAAAFAAEAAADx//r/AAACAAEAAADx////AAADAAEAAADy//b/AAADAAEAAADz/wMAAAADAAIAAAD0/+z/AAADAAEAAAD1/wkAAAAAAAEAAAD2//X/AAAAAAAAAAD3//P/AAAAAAEAAAD4//f/AAADAAIAAAD4//r/AAAAAAAAAAD4/wsAAAAAAAAAAAD6//f/AAAFAAEAAAD6/wEAAAAAAAAAAAD9/+//AAAAAAIAAAD9/wQAAAAAAAEAAAD9/wYAAAAAAAIAAAD9/wcAAAADAAIAAAD+//z/AAADAAAAAAD+/wcAAAAAAAEAAAD//+7/AAADAAEAAAD///b/AAADAAEAAAD//wYAAAAAAAEAAAAAAOz/AAADAAAAAAAAAAwAAAAAAAEAAAABAPb/AAACAAEAAAACAO7/AAAAAAEAAAADAPD/AAAAAAIAAAAFAO//AAADAAEAAAAFAPz/AAADAAEAAAAFAA0AAAADAAAAAAAGAPr/AAAAAAEAAAAHAPX/AAAAAAIAAAAIAO7/AAACAAEAAAAIAPD/AAAAAAAAAAAJAAIAAAAAAAAAAAAKAAsAAAAAAAEAAAALAAwAAAAAAAEAAAAMAPP/AAADAAAAAAANAOz/AAADAAEAAAANAO//AAAAAAIAAAANAP7/AAADAAAAAAAOAO//AAADAAAAAAAOAAUAAAAFAAEAAAAOAAcAAAAAAAEAAAAOAAkAAAACAAEAAAAPAPD/AAADAAAAAAAQAP3/AAAAAAEAAAAQAAAAAAAAAAEAAAAQAAEAAAAAAAEAAAARAOz/AAACAAEAAAARAPH/AAACAAEAAAASAAIAAAADAAEAAAASAAsAAAAAAAEAAAATAPP/AAADAAAAAAATAPn/AAADAAIAAAAUAAcAAAAAAAIAAAAVAAEAAAADAAIAAAAVAAcAAAAAAAIAAAAWAPr/AAADAAEAAAAWAAIAAAAFAAEAAAAXAPD/AAADAAIAAAAYAO7/AAAAAAIAAAAZAO3/AAAAAAEAAAAZAAYAAAADAAAAAAA=")
 tile_set = SubResource("TileSet_2qnqf")

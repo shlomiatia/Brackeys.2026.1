@@ -2,6 +2,7 @@ class_name Level4 extends Node2D
 
 enum Direction {UP, DOWN, LEFT, RIGHT}
 
+const CLOUD_SPEED := 1.0
 const EDGE_LEFT := -198.0
 const EDGE_RIGHT := 198.0
 const EDGE_TOP := -108.0
@@ -9,6 +10,7 @@ const EDGE_BOTTOM := 137.0
 const CAMERA_WIDTH := EDGE_RIGHT - EDGE_LEFT
 const CAMERA_HEIGHT := EDGE_BOTTOM - EDGE_TOP
 
+@onready var clouds_layer: TileMapLayer = $CloudsTileMapLayer
 @onready var player: Player = $Objects/Player
 @onready var fade: Fade = $CanvasLayer/Fade
 @onready var camera: ShakingCamera = $ShakingCamera
@@ -32,6 +34,9 @@ const CAMERA_HEIGHT := EDGE_BOTTOM - EDGE_TOP
 	$WallsTileMapLayer4,
 ]
 
+var _cloud_start_x: float
+var _cloud_wrap_width: float
+
 var target_direction: Direction
 var current_furniture_index: int = 0
 var incorrect_count: int = 0
@@ -41,11 +46,19 @@ var maze_completed: bool = false
 var intro_music = load("res://audio/music/test music/bella theme v3 progress.mp3")
 
 func _ready() -> void:
+	_cloud_start_x = clouds_layer.position.x
+	var used_rect := clouds_layer.get_used_rect()
+	_cloud_wrap_width = used_rect.size.x * clouds_layer.tile_set.tile_size.x
 	pick_direction(Direction.UP)
 	AudioManager.play_music(intro_music)
 	Global.can_control = false
 	await get_tree().create_timer(1.0).timeout
 	await DialogDisplayer.start("level4_start")
+
+func _process(delta: float) -> void:
+	clouds_layer.position.x -= CLOUD_SPEED * delta
+	if clouds_layer.position.x < _cloud_start_x - _cloud_wrap_width:
+		clouds_layer.position.x += _cloud_wrap_width
 
 func opposite(dir: Direction) -> Direction:
 	match dir:
