@@ -5,7 +5,7 @@ if {interacted_main_statue} == false:
 	Statue: We've been awaiting you.
 	if {talked_to_a_statue} == false:
 		update Bella (shock)
-		Bella: You talked?!
+		Bella: Did you just speak?!
 		Statue: I did,[pause=0.2] dear.[pause=0.2] We are no ordinary statues.
 		update Bella (default)
 	else:
@@ -28,7 +28,7 @@ if {interacted_main_statue} == false:
 	Statue: Why does it matter?[pause=0.2] You are in paradise.[pause=0.2] You must stay here.
 	update Bella (serious)
 	Bella: I can't![pause=0.2] Can you please let me pass?
-	Statue: The truth behind yourself lies past here.[pause=0.2] For your own safety,[pause=0.2] I cannot.
+	Statue: The truth of who you were lies past this gate.[pause=0.2] For your own safety,[pause=0.2] I cannot.
 	Bella: You must![pause=0.2] I have to know.
 	update Statue (mad)
 	Statue: You fool.[pause=0.2] But that is your choice.
@@ -78,6 +78,11 @@ else:
 		Statue: We tried to protect you,[pause=0.2] you stubborn girl.
 		set {statue_moved} = true
 		[signal arg="statue_correct"]
+	elif {answer_result} == "self":
+		update Bella (question)
+		Bella: Is it...[pause=0.2]'self'?
+		Statue: A good guess,[pause=0.2] but not quite,[pause=0.2] my dear.
+		Statue: Though you did care a lot about yourself.
 	else:
 		Statue: Ha![pause=0.2] Incorrect~
 		if {bella_suspects_statues} == true:

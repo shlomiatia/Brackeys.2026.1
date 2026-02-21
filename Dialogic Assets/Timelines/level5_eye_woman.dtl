@@ -44,6 +44,7 @@ if {level5_talked_to_eye} == false:
 	Bella: We're getting off topic![pause=0.2] I was [color="purple"][pause=0.2][i]poisoned[/i][/color]?!
 	update EyeWoman (happy)
 	EyeWoman: Why, yes![pause=0.2] By your best friend,[pause=0.2] no less!
+	EyeWoman: What was her name again?[pause=0.2] 'Circe',[pause=0.2] I think...
 	update Bella (shock)
 	Bella: M-[pause=0.2]my...my best friend?
 	update EyeWoman (default)

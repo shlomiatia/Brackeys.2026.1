@@ -1,8 +1,8 @@
 join Bella (serious)
 Bella: Ugh![pause=0.2] This place is disgusting![pause=0.2] The smell is horrid.
-Bella: But I need to push through.
+Bella: But I must push through.
 update Bella (question)
-Bella: According to that statue,[pause=0.2] this is where I learn about who I was in my life.
+Bella: According to that statue,[pause=0.2] this is where I learn about who I really was in my life.
 update Bella (serious)
 Bella: And maybe I can learn how I died as well.
 update Bella (look)
@@ -11,7 +11,7 @@ update Bella (sad)
 Bella: I still can't believe that.[pause=0.2] How can I be dead?
 Bella: ...
 update Bella (default)
-Bella: I just hope I wasn't a sewer worker or anything...
+Bella: I just hope I wasn't a sewer worker or something...
 
 leave Bella
 [end_timeline]

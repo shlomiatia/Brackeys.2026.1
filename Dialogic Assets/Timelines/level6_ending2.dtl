@@ -9,6 +9,7 @@ Bella: I don't know yet.
 Bella: All I know is that I'm not staying here.[pause=0.2] I can't accept my death.
 Bella: Not after everything I now know.
 Bella: And maybe I can pay that friend of mine a visit...
+Bella: Circe...
 [wait time="3.0"]
 [background arg="#000000ff" fade="1.0" wait="true"]
 [signal arg="ending_done"]
