@@ -16,6 +16,7 @@ extends Node2D
 func _ready() -> void:
 	Dialogic.signal_event.connect(_on_dialogic_signal)
 	AudioManager.play_music(load("res://audio/music/music_dark and cold.mp3"))
+	AudioManager.play_loop_sfx("sewer", load("res://audio/sfx/ambi/sfx_sewer_ambi_loop.mp3"), "Ambi")
 	exit_interactable.interacted.connect(_on_exit_interacted)
 	exit_interactable.remove_from_group("interactables")
 	_setup_water_lights()

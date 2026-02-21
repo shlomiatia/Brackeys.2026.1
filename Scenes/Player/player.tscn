@@ -223,4 +223,4 @@ shape = SubResource("RectangleShape2D_hcopq")
 script = ExtResource("3_xpcdj")
 footstep_stream = SubResource("AudioStreamRandomizer_xpcdj")
 step_distance = 34.515
-volume_db = -25.22
+volume_db = -18.18
