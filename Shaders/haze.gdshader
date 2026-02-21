@@ -3,6 +3,7 @@ shader_type canvas_item;
 uniform float speed : hint_range(0.0, 2.0) = 0.25;
 uniform float intensity : hint_range(0.0, 0.05) = 0.007;
 uniform float blur_amount : hint_range(0.0, 0.01, 0.0001) = 0.003;
+uniform vec4 modulate_color : source_color = vec4(1.0, 1.0, 1.0, 1.0);
 
 void fragment() {
 	float t = TIME * speed;
@@ -29,5 +30,5 @@ void fragment() {
 	col += texture(TEXTURE, uv + vec2( blur, -blur) * 0.707);
 	col += texture(TEXTURE, uv + vec2(-blur, -blur) * 0.707);
 
-	COLOR = col / 9.0;
+	COLOR = col / 9.0 * modulate_color;
 }

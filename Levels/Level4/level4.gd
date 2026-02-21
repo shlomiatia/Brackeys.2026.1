@@ -175,5 +175,7 @@ func update_hint_color() -> void:
 	var max_dist := Vector2(CAMERA_WIDTH / 2.0, CAMERA_HEIGHT / 4.0).length()
 	var ratio := minf(1.0, player.position.distance_to(target_pos) / max_dist)
 	var c := 1.0 - ratio * Constants.maze_modulate_hint_modifier
-	modulate = Color(c, c, c)
+	var hint_color := Color(c, c, c)
+	modulate = hint_color
+	(clouds_layer.material as ShaderMaterial).set_shader_parameter("modulate_color", hint_color)
 	AudioManager.music_player.volume_db = - ratio * Constants.maze_db_hint_modifier

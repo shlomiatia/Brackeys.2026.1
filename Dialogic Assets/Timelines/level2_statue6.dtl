@@ -14,8 +14,8 @@ elif {statue_moved} == true:
 	Statue: I have nothing else to say to you.
 else:
 	Bella: What did I value most in my life?
-	Statue: We were quite [color="red"]s[/color]weet.
-	Statue: We cared so much about others.[pause=0.2] Always [color="red"]s[/color]acrificing our time to give...
+	Statue: We were quite [color="purple"]s[/color]weet.
+	Statue: We cared so much about others.[pause=0.2] Always [color="purple"]s[/color]acrificing our time to give...
 	Bella: Okay...
 	if !("S" in {collected_letters}):
 		set {collected_letters} += "S"
