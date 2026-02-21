@@ -34,6 +34,8 @@ func validate_statue_answer() -> void:
 
 	if answer.to_lower() == "lies":
 		Dialogic.VAR.set_variable("answer_result", "correct")
+	elif answer.to_lower() == "self":
+		Dialogic.VAR.set_variable("answer_result", "self")
 	else:
 		Dialogic.VAR.set_variable("answer_result", "incorrect")
 		incorrect_statue_count += 1

@@ -3,14 +3,7 @@ join Bella (look) center
 Bella: I must have lied a lot in my life.[pause=0.2] This isn't looking good.
 update Bella (default)
 Bella: But hopefully...[pause=0.2]it won't get worse.[pause=0.2] I couldn't have been a bad person...
-
-Enter the strange gate?
-
-- Yes
-	update Bella (serious)
-	Bella: I need to find out who I was...
-	[signal arg="level2_pipe_entered"]
-- No
-	Bella: Not yet...
+Bella: I need to find out who I was...
+[signal arg="level2_pipe_entered"]
 leave Bella
 [end_timeline]
