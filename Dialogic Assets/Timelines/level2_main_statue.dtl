@@ -37,7 +37,7 @@ if {interacted_main_statue} == false:
 	Bella: How can I know--?
 	update Statue (default)
 	Statue: Go and talk to the others.[pause=0.2] Then give me your answer.
-	Statue: All I need is a [color="red"]4-letter[/color] word.
+	Statue: All I need is a [color="purple"]4-letter[/color] word.
 	set {interacted_main_statue} = true
 	set {talked_to_a_statue} = true
 	leave --All--
@@ -59,9 +59,9 @@ else:
 	do Global.format_collected_letters()
 	join Bella (question) right
 	join Statue (default) left
-	Bella: All the statues emphasize a [color="red"]letter[/color].
+	Bella: All the statues emphasize a [color="purple"]letter[/color].
 	Statue: Clever...
-	Bella: The important ones I have so far are\:[pause=0.2] {letters_display}.[pause=0.2] It needs to be a [color="red"]4-letter[/color] word.
+	Bella: The important ones I have so far are\:[pause=0.2] {letters_display}.[pause=0.2] It needs to be a [color="purple"]4-letter[/color] word.
 	Bella: My answer is...\
 	\
 	[i]Available letters\: {letters_display}[/i]

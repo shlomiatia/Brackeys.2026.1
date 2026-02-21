@@ -15,8 +15,8 @@ elif {statue_moved} == true:
 else:
 	Bella: Can you tell me what I valued most in my life?
 	Statue: My dear,[pause=0.2] I will tell you.
-	Statue: We did no wrong.[pause=0.2] We were [color="red"]v[/color]irtuous.
-	Statue: Innocent...[pause=0.2][color="red"]v[/color]eracious.
+	Statue: We did no wrong.[pause=0.2] We were [color="purple"]v[/color]irtuous.
+	Statue: Innocent...[pause=0.2][color="purple"]v[/color]eracious.
 	Bella: 'Did no wrong',[pause=0.2] huh?
 	if !("V" in {collected_letters}):
 		set {collected_letters} += "V"

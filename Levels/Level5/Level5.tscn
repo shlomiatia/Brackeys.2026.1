@@ -27,6 +27,7 @@ resource_local_to_scene = true
 size = Vector2(30, 30)
 
 [node name="Level5" type="Node2D"]
+y_sort_enabled = true
 script = ExtResource("8_level5")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
