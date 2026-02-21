@@ -14,8 +14,8 @@ elif {statue_moved} == true:
 	Statue: I have nothing else to say to you.
 else:
 	Bella: I need to know what I valued most in my life.
-	Statue: Aha~[pause=0.2] All I can say,[pause=0.2] my dear,[pause=0.2] is that we were quite [color="red"]l[/color]ovely!
-	Statue: People [color="red"]l[/color]oved to be around us![pause=0.2] They would always [color="red"]l[/color]augh at our jokes and [color="red"]l[/color]avish us with gifts!
+	Statue: Aha~[pause=0.2] All I can say,[pause=0.2] my dear,[pause=0.2] is that we were quite [color="purple"]l[/color]ovely!
+	Statue: People [color="purple"]l[/color]oved to be around us![pause=0.2] They would always [color="purple"]l[/color]augh at our jokes and [color="purple"]l[/color]avish us with gifts!
 	Bella: Oh really...
 	if !("L" in {collected_letters}):
 		set {collected_letters} += "L"
