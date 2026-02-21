@@ -10,6 +10,7 @@
 shader = ExtResource("5_haze")
 shader_parameter/speed = 0.25
 shader_parameter/intensity = 0.007
+shader_parameter/blur_amount = 0.001
 
 [node name="TitleScreen" type="Node2D"]
 script = ExtResource("1_script")
