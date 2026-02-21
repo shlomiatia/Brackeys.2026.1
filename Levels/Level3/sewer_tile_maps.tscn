@@ -1,8 +1,10 @@
-[gd_scene load_steps=9 format=4 uid="uid://c253yddhodw6r"]
+[gd_scene load_steps=11 format=4 uid="uid://c253yddhodw6r"]
 
 [ext_resource type="Texture2D" uid="uid://bijkp4k1q36pr" path="res://Assets/Tilesets/maskedTileset.PNG" id="1_6jsyp"]
 [ext_resource type="Texture2D" uid="uid://bv0q2nn4ou0ak" path="res://Assets/Masked Section/exitSewerClosed.PNG" id="3_sknon"]
+[ext_resource type="Texture2D" uid="uid://bewo20e4t0eq8" path="res://Assets/Masked Section/brokenStatueFr.PNG" id="4_gob3m"]
 [ext_resource type="Texture2D" uid="uid://do7017j3a6476" path="res://Assets/Masked Section/exitSewerOpen.PNG" id="4_open"]
+[ext_resource type="Texture2D" uid="uid://c22syw0gffcek" path="res://Assets/Masked Section/brokenStatueSide.PNG" id="5_mpjx3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_38tkt"]
 texture = ExtResource("1_6jsyp")
@@ -235,3 +237,27 @@ shape = SubResource("RectangleShape2D_6jsyp")
 visible = false
 position = Vector2(48, -952)
 texture = ExtResource("4_open")
+
+[node name="BrokenStatueFr" type="Sprite2D" parent="."]
+position = Vector2(-221.99998, -426.99997)
+rotation = 1.573324
+texture = ExtResource("4_gob3m")
+
+[node name="BrokenStatueFr3" type="Sprite2D" parent="."]
+position = Vector2(89.00003, -905)
+rotation = 0.8469629
+texture = ExtResource("4_gob3m")
+
+[node name="BrokenStatueFr2" type="Sprite2D" parent="."]
+position = Vector2(51, -208)
+texture = ExtResource("4_gob3m")
+
+[node name="BrokenStatueSide" type="Sprite2D" parent="."]
+position = Vector2(48, -27)
+rotation = -0.39338225
+texture = ExtResource("5_mpjx3")
+
+[node name="BrokenStatueSide2" type="Sprite2D" parent="."]
+position = Vector2(268, -379.00003)
+rotation = -0.39338225
+texture = ExtResource("5_mpjx3")
