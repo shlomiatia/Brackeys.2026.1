@@ -24,7 +24,7 @@ var _mask_original_texture: Texture2D
 func _ready() -> void:
 	_mask_original_texture = mask.texture
 
-func _input(event: InputEvent) -> void:
+func _process(_delta: float) -> void:
 	if not _is_running or not _can_click:
 		return
 	if Input.is_action_just_pressed("dialogic_default_action"):
