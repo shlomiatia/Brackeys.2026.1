@@ -6,7 +6,8 @@
       "Bash(python3:*)",
       "Bash(py:*)",
       "Bash(where:*)",
-      "Bash(xargs:*)"
+      "Bash(xargs:*)",
+      "Bash(identify:*)"
     ]
   }
 }

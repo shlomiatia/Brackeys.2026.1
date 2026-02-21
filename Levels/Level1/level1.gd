@@ -1,6 +1,7 @@
 extends Node2D
 
 # Node references
+@onready var clouds: Sprite2D = $BackgroundTileMaps/Clouds
 @onready var door: Sprite2D = $Objects/Door
 @onready var door_conversation: Conversation = $Objects/Door/Conversation
 @onready var ball = $Objects/Ball
@@ -9,6 +10,9 @@ extends Node2D
 @onready var knife: Sprite2D = $Knife
 @onready var fade: Fade = $CanvasLayer/Fade
 @onready var instruction_label: Label = $CanvasLayer/InstructionLabel
+
+const CLOUD_SPEED := 1.0 # pixels per second (world space)
+var _cloud_wrap_width: float
 
 var intro_music = load("res://audio/music/test music/bella theme v3 progress.mp3")
 var ball_appear_sfx = load("res://audio/sfx/sfx_cutscene_lvl1_ball_appears.mp3")
@@ -19,12 +23,18 @@ enum _InstructionPhase {NONE, MOVE, INTERACT}
 var _instruction_phase: _InstructionPhase = _InstructionPhase.NONE
 
 func _ready() -> void:
+	_cloud_wrap_width = clouds.texture.get_width() * clouds.scale.x
 	play_intro_music()
 	# Connect to Dialogic signals
 	Dialogic.signal_event.connect(_on_dialogic_signal)
 
 	# Start sequence: disable player movement and show opening dialog
 	await _show_start_sequence()
+
+func _process(delta: float) -> void:
+	clouds.position.x -= CLOUD_SPEED * delta
+	if clouds.position.x < -_cloud_wrap_width * 0.5:
+		clouds.position.x += _cloud_wrap_width
 
 func _show_start_sequence() -> void:
 	Global.can_control = false

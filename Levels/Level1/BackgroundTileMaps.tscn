@@ -51,7 +51,7 @@ sources/0 = SubResource("TileSetAtlasSource_p364y")
 [node name="BackgroundTileMaps" type="Node2D"]
 
 [node name="Clouds" type="Sprite2D" parent="."]
-position = Vector2(126, 17)
+position = Vector2(289, 17)
 scale = Vector2(4.875, 4.875)
 texture = ExtResource("2_g23o2")
 
