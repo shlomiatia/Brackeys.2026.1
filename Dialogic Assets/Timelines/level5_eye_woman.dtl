@@ -46,7 +46,7 @@ if {level5_talked_to_eye} == false:
 	EyeWoman: Why, yes![pause=0.2] By your best friend,[pause=0.2] no less!
 	EyeWoman: What was her name again?[pause=0.2] 'Circe',[pause=0.2] I think...
 	update Bella (shock)
-	Bella: M-[pause=0.2]my...my best friend?
+	Bella: M-[pause=0.2]my...[pause=0.2]my best friend?
 	update EyeWoman (default)
 	EyeWoman: Oh,[pause=0.2] you really don't remember?[pause=0.2] What drama![pause=0.2] Let me help you with that...
 	EyeWoman: You spent most of your life distrusting others...[pause=0.2]not even your own best friend.

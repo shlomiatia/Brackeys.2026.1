@@ -9,6 +9,7 @@ if {interacted_main_statue} == false:
 		Statue: I did,[pause=0.2] dear.[pause=0.2] We are no ordinary statues.
 		update Bella (default)
 	else:
+		update Bella (look)
 		Bella: All of you look like me...
 	Statue: We are but reflections of your past life.
 	update Bella (panic)
@@ -23,6 +24,7 @@ if {interacted_main_statue} == false:
 	Bella: I have to know what happened.[pause=0.2] I have to know who I was.
 	update Statue (open)
 	Statue: I cannot tell you that.
+	update Bella (question)
 	Bella: Then who can?
 	update Statue (default)
 	Statue: Why does it matter?[pause=0.2] You are in paradise.[pause=0.2] You must stay here.
@@ -33,7 +35,7 @@ if {interacted_main_statue} == false:
 	update Statue (mad)
 	Statue: You fool.[pause=0.2] But that is your choice.
 	Statue: If you wish to know,[pause=0.2] you must first answer this question\:[pause=0.2] What is it that you valued most in your life?
-	update Bella (default)
+	update Bella (shock)
 	Bella: How can I know--?
 	update Statue (default)
 	Statue: Go and talk to the others.[pause=0.2] Then give me your answer.
