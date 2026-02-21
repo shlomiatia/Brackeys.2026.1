@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://gsgf5e4w0fxm"
+path="res://.godot/imported/deaths embrace.mp3-325cc164158b8a50c526534344bab972.mp3str"
+
+[deps]
+
+source_file="res://audio/music/deaths embrace.mp3"
+dest_files=["res://.godot/imported/deaths embrace.mp3-325cc164158b8a50c526534344bab972.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4
