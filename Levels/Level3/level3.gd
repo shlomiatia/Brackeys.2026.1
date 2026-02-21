@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var player = $Objects/player
+@onready var fade: Fade = $CanvasLayer/Fade
 @onready var mask_mini_game = $CanvasLayer/MaskMiniGame
 @onready var small_creature1 = $Objects/SmallMaskedCreature1
 @onready var small_creature2 = $Objects/SmallMaskedCreature2
@@ -14,12 +15,15 @@ extends Node2D
 @export var water_light_texture_scale: float = 1.0
 
 func _ready() -> void:
+	Global.can_control = false
 	Dialogic.signal_event.connect(_on_dialogic_signal)
 	AudioManager.play_music(load("res://audio/music/music_dark and cold.mp3"))
 	AudioManager.play_loop_sfx("sewer", load("res://audio/sfx/ambi/sfx_sewer_ambi_loop.mp3"), "Ambi")
 	exit_interactable.interacted.connect(_on_exit_interacted)
 	exit_interactable.remove_from_group("interactables")
 	_setup_water_lights()
+	await fade.fade_in()
+	await DialogDisplayer.start("level3_enter_sewers")
 
 
 func _setup_water_lights() -> void:

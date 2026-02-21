@@ -24,12 +24,11 @@ func play_music(stream: AudioStream, fade_time := 1.0):
 		
 	if music_tween:
 		music_tween.kill()
-	
-	music_tween = create_tween()
-	
+
 	if music_player.playing:
+		music_tween = create_tween()
 		music_tween.tween_property(music_player, "volume_db", -40, fade_time)
-		
+
 		await music_tween.finished
 		music_player.stop()
 		

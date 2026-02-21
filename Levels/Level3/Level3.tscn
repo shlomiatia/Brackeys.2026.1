@@ -128,7 +128,7 @@ color = Color(0.45882353, 0.44705883, 0.3647059, 1)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Fade" parent="CanvasLayer" instance=ExtResource("6_fade")]
-auto_fade_in = true
+auto_fade_in = false
 
 [node name="MaskMiniGame" parent="CanvasLayer" instance=ExtResource("3_mask")]
 position = Vector2(576, 324)

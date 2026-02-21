@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Brackeys.2026.1"
-run/main_scene="uid://c5lv2xaxlt7x1"
+run/main_scene="res://Levels/TitleScreen/TitleScreen.tscn"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 

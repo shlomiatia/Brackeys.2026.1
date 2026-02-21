@@ -12,7 +12,7 @@ func _ready():
 	_body = get_parent() as CharacterBody2D
 	_last_position = _body.global_position
 	
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if _body.velocity.length() < 5:
 		_distance = 0
 		_last_position = _body.global_position

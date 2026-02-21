@@ -13,6 +13,7 @@ func _ready() -> void:
 	player.z_index = 4
 	await _player_fall()
 	player.z_index = 0
+	await DialogDisplayer.start("level2_enter_clouds")
 	Global.can_control = true
 
 func _player_fall() -> void:
