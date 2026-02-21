@@ -1,5 +1,6 @@
 join Bella (default) center
 Bella: I finally got out![pause=0.2] But that didn't help me learn anything about how I died.
+update Bella (question)
 Bella: I'm outside now,[pause=0.2] so maybe I can find some clues?
 Bella: Or maybe there's another...[pause=0.2]thing...[pause=0.2]here that can help me?
 leave Bella 
@@ -10,24 +11,36 @@ join Bella (default) right
 join EyeWoman (default) left
 EyeWoman: You mean someone like me~?
 
+update Bella (panic)
 Bella: Oh!
+update EyeWoman (happy)
 EyeWoman: Aha![pause=0.2] Why,[pause=0.2] hello there![pause=0.2] Welcome to my [pause=0.2][i]beautiful[/i][pause=0.2] realm!
+update EyeWoman (default)
 EyeWoman: Did I scare you with my [pause=0.2][i]radiant[/i][pause=0.2] beauty?[pause=0.2] Don't I just have the most [pause=0.2][i]beautiful[/i][pause=0.2] [color="red"]eyes[/color]!
+update Bella (shock)
 Bella: Ah...[pause=0.2]um...
+update EyeWoman (happy)
 EyeWoman: You need not say a word,[pause=0.2] little flower!
 EyeWoman: My beauty has been known to stun people into silence!
+update Bella (look)
 Bella: ...
+update Bella (default)
 Bella: Ah...[pause=0.2]m-[pause=0.2]miss?
+update EyeWoman (default)
 EyeWoman: I'm so sorry,[pause=0.2] flower![pause=0.2] I can't hear your puny voice from all the way over here![pause=0.2] Speak [speed=5][b]LOUDER[/b][speed]!
+update Bella (shock)
 Bella: [i]*Speaking louder*[/i[pause=0.2]] Do you happen to know how I died?
 EyeWoman: But of course I do![pause=0.2] But why would I tell you that?
 EyeWoman: You're so small all the way over there![pause=0.2] So small and quiet.
+update EyeWoman (happy)
 EyeWoman: And I do so hate straining my [pause=0.2][i]oh-so-angelic[/i][pause=0.2] voice.
 leave EyeWoman
+update Bella (shock)
 Bella: But--!
+update Bella (serious)
 Bella: Ugh...[pause=0.2]I need to find a way to get over to her.
 join EyeWoman (default) left
 EyeWoman: Don't do anything daft![pause=0.2] I'm watching you!!
-leave Bella
+leave --All-- 
 [signal arg="level5_start"]
 [end_timeline]

@@ -1,10 +1,13 @@
 if {door_interacted} == false:
-	join Bella (default) center
-	Bella: A door? Maybe it's the way out!
+	join Bella (shock) center
+	Bella: A door?[pause=0.2] Maybe it's the way out!
+	update Bella (default)
 	
-	Should I try to open it?
+	Try to open it?
 	- Yes
+		update Bella (question)
 		Bella: It's locked...
+		update Bella (panic)
 		Bella: Wait...[pause=0.2]what's that sound?!
 		leave Bella
 		
@@ -12,7 +15,7 @@ if {door_interacted} == false:
 		[signal arg="door_interacted"]
 		[wait time="2.0"]
 		
-		join Bella (default) center
+		join Bella (panic) center
 		Bella: Agh!
 		Bella: What?![pause=0.2] How did...?
 	

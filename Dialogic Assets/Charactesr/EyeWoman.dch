@@ -37,6 +37,36 @@
 "scale": 1,
 "scene": "",
 "sound_mood": "Eye Voice"
+},
+"happy": {
+"export_overrides": {
+"image": "\"res://Dialogic Assets/Images/eyeWomanHappy.PNG\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": "",
+"sound_mood": "Eye Voice"
+},
+"mad": {
+"export_overrides": {
+"image": "\"res://Dialogic Assets/Images/eyeWomanMad.PNG\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": "",
+"sound_mood": "Eye Voice"
+},
+"pain": {
+"export_overrides": {
+"image": "\"res://Dialogic Assets/Images/eyeWomanPain.PNG\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": "",
+"sound_mood": "Eye Voice"
 }
 },
 &"scale": 1.0

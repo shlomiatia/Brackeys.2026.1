@@ -1,10 +1,15 @@
-join Bella (default)
+join Bella (question)
 Bella: What...?[pause=0.2] Where am I now?
+Bella: And how did I not get hurt from falling so far?
 Bella: It's beautiful,[pause=0.2] but its unfamiliar.
+update Bella (look)
 Bella: ...
+update Bella (default)
 Bella: Ugh,[pause=0.2] I wish I could remember something![pause=0.2] Anything!
+update Bella (question)
 Bella: Who was I?[pause=0.2] How did I get here?
 Bella: I need to figure it out somehow.[pause=0.2] But how?
+update Bella (default)
 Bella: I suppose all I can do for now is look around.[pause=0.2] Maybe I can find some clues...
 leave Bella (default)
 [end_timeline]

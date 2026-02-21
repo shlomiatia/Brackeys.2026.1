@@ -1,7 +1,8 @@
-join EyeWoman (default) left
+join EyeWoman (pain) left
 join Bella (default) right
 EyeWoman: Fine![pause=0.2] I relent,[pause=0.2] you cruel flower!
 EyeWoman: Get over here already!
+update Bella (shock)
 Bella: A path has opened up.[pause=0.2] I need to get over there!
 leave --All-- 
 [signal arg="level5_last_mirror_break"]

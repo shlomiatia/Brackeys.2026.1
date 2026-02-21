@@ -1,12 +1,14 @@
-join Bella (default) center
+join Bella (shock) center
 Bella: A knife?![pause=0.2] What's this doing here??
 
 Take the knife?
 - Yes
+	update Bella (question)
 	Bella: This could be useful.
 	set {knife_picked_up} = true
 	[signal arg="knife_picked_up"]
 - No
+	update Bella (look)
 	Bella: Maybe that isn't a good idea.
 
 leave Bella

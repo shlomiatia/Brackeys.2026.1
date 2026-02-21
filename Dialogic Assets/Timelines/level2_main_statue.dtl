@@ -3,27 +3,43 @@ if {interacted_main_statue} == false:
 	join Statue (default) left
 	Statue: Hello,[pause=0.2] my dear.
 	Statue: We've been awaiting you.
-	Bella: All of you look like me...
+	if {talked_to_a_statue} == false:
+		update Bella (shock)
+		Bella: You talked?!
+		Statue: I did,[pause=0.2] dear.[pause=0.2] We are no ordinary statues.
+		update Bella (default)
+	else:
+		Bella: All of you look like me...
 	Statue: We are but reflections of your past life.
+	update Bella (panic)
 	Bella: Past life?![pause=0.2] Does that mean I'm--?
 	Statue: Perished...[pause=0.2]unfortunately.
 	Statue: But [pause=0.2][i]fortunately[/i][pause=0.2] for you,[pause=0.2] you are in paradise.
+	update Bella (sad)
 	Bella: No...[pause=0.2] Th-[pause=0.2]that can't be.
 	Statue: It can,[pause=0.2] my dear.
 	Statue: Worry not,[pause=0.2] you are safe here.
+	update Bella (default)
 	Bella: I have to know what happened.[pause=0.2] I have to know who I was.
+	update Statue (open)
 	Statue: I cannot tell you that.
 	Bella: Then who can?
+	update Statue (default)
 	Statue: Why does it matter?[pause=0.2] You are in paradise.[pause=0.2] You must stay here.
+	update Bella (serious)
 	Bella: I can't![pause=0.2] Can you please let me pass?
 	Statue: The truth behind yourself lies past here.[pause=0.2] For your own safety,[pause=0.2] I cannot.
 	Bella: You must![pause=0.2] I have to know.
+	update Statue (mad)
 	Statue: You fool.[pause=0.2] But that is your choice.
 	Statue: If you wish to know,[pause=0.2] you must first answer this question\:[pause=0.2] What is it that you valued most in your life?
-	Bella: How can I know--
+	update Bella (default)
+	Bella: How can I know--?
+	update Statue (default)
 	Statue: Go and talk to the others.[pause=0.2] Then give me your answer.
 	Statue: All I need is a [color="red"]4-letter[/color] word.
 	set {interacted_main_statue} = true
+	set {talked_to_a_statue} = true
 	leave --All--
 	[end_timeline]
 elif {statue_moved} == true:
@@ -41,7 +57,7 @@ else:
 		[end_timeline]
 	
 	do Global.format_collected_letters()
-	join Bella (default) right
+	join Bella (question) right
 	join Statue (default) left
 	Bella: All the statues emphasize a [color="red"]letter[/color].
 	Statue: Clever...
@@ -55,7 +71,9 @@ else:
 	if {answer_result} == "missing":
 		Statue: Hm?[pause=0.2] You don't have the clues for that...
 	elif {answer_result} == "correct":
+		update Bella (serious)
 		Bella: The thing I valued most...[pause=0.2]was lies.
+		update Statue (mad)
 		Statue: Tch.[pause=0.2] Correct.
 		Statue: We tried to protect you,[pause=0.2] you stubborn girl.
 		set {statue_moved} = true
@@ -64,6 +82,8 @@ else:
 		Statue: Ha![pause=0.2] Incorrect~
 		if {bella_suspects_statues} == true:
 			Bella: I have a feeling all these statues aren't giving me the whole truth.
+			Bella: Perhaps that can help me find the answer.
+			Bella: Not the truth,[pause=0.2] but...
 			set {bella_suspects_statues} = false
 	leave --All--
 	[end_timeline]

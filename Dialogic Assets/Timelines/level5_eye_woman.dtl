@@ -2,45 +2,71 @@ join EyeWoman (default) left
 join Bella (default) right
 
 if {level5_talked_to_eye} == false:
+	update EyeWoman (pain)
 	EyeWoman: You're cruel![pause=0.2] My beautiful eyes...
+	update Bella (shock)
 	Bella: I'm so sorry...[pause=0.2]but I just needed to know--!
+	update EyeWoman (mad)
 	EyeWoman: I know,[pause=0.2] I know![pause=0.2] You don't need to tell me again!
 	EyeWoman: Ugh...[pause=0.2]that putrid man was correct.[pause=0.2] You are quite ruthless.
+	update Bella (look)
 	Bella: ...
+	update EyeWoman (default)
 	EyeWoman: What was it you needed to know again?
+	update Bella (shock)
 	Bella: You just said--!
+	update EyeWoman (mad)
 	EyeWoman: I know what I said![pause=0.2] Just say it again!
+	update Bella (look)
 	Bella: Oh...
+	update Bella (default)
 	Bella: I-[pause=0.2]I want to know how I died.
+	update EyeWoman (default)
 	EyeWoman: How you died?[pause=0.2] Look around, flower.[pause=0.2] The answer is all around you.[pause=0.2] Even on your lovely dress~
+	update Bella (shock)
 	Bella: What?
+	update Bella (question)
 	Bella: ...
 	Bella: Flowers?
+	update EyeWoman (happy)
 	EyeWoman: Not just any flowers![pause=0.2] The most beautiful kind.
 	EyeWoman: [color="purple"]Belladonna![/color]
-	Bella: Bella...[pause=0.2]donna?
-	EyeWoman: Yes,[pause=0.2] Belladonna![pause=0.2] Also known as deadly nightshade![pause=0.2] Also known as Atropa Belladonna!
+	update Bella (shock)
+	Bella: [color="purple"]Bella...[pause=0.2]donna[/color]?
+	EyeWoman: Yes,[pause=0.2] [color="purple"]Belladonna![pause=0.2][/color] Also known as [color="purple"]deadly nightshade![pause=0.2][/color] Also known as [color="purple"]Atropa Belladonna[/color]!
+	update EyeWoman (default)
 	EyeWoman: Oh,[pause=0.2] speaking of which,[pause=0.2] have you met her yet?
+	update Bella (question)
 	Bella: Who?
+	update EyeWoman (happy)
 	EyeWoman: Oh,[pause=0.2] you will soon!
-	Bella: We're getting off topic![pause=0.2] I was [pause=0.2][i]poisoned[/i]?!
+	update Bella (serious)
+	Bella: We're getting off topic![pause=0.2] I was [color="purple"][pause=0.2][i]poisoned[/i][/color]?!
+	update EyeWoman (happy)
 	EyeWoman: Why, yes![pause=0.2] By your best friend,[pause=0.2] no less!
+	update Bella (shock)
 	Bella: M-[pause=0.2]my...my best friend?
-	EyeWoman: Oh,[pause=0.2] you really don't remember?[pause=0.2] Let me help you with that...
+	update EyeWoman (default)
+	EyeWoman: Oh,[pause=0.2] you really don't remember?[pause=0.2] What drama![pause=0.2] Let me help you with that...
 	EyeWoman: You spent most of your life distrusting others...[pause=0.2]not even your own best friend.
 	EyeWoman: But one day,[pause=0.2] you grew complacent...
 	EyeWoman: And trusted the one person you actually cared for...
 	EyeWoman: And then...[pause=0.2]she poisoned you,[pause=0.2] telling you it would make you more beautiful...
+	update EyeWoman (happy)
 	EyeWoman: Ahahahaha~!
+	update Bella (sad)
 	Bella: ...
 	Bella: I...[pause=0.2]I remember...
 	Bella: I remember everything...
+	update EyeWoman (default)
 	EyeWoman: Oh,[pause=0.2] you look so sad!
+	update EyeWoman (mad)
 	EyeWoman: That's what you get for attacking me!
 	EyeWoman: Now get out of here!
 	set {level5_talked_to_eye} = true
 	[signal arg="level5_eye_woman"]
 else:
+	update EyeWoman (mad)
 	EyeWoman: Excuse me![pause=0.2] I have a lot of reflection-admiring to get to![pause=0.2] Go away!
 
 leave --All-- 

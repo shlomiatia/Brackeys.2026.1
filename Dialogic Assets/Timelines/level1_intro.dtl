@@ -5,15 +5,23 @@ Bella: My head hurts...
 [signal arg="show_scene"]
 [wait time="2.0"]
 update Bella (default) center
+Bella: ...
+update Bella (panic)
 Bella: W-[pause=0.2]what?
 Bella: What's going on?!
 Bella: Where...[pause=0.2]Where am I?
+update Bella (shock)
 Bella: ...
 Bella: What is this room?[pause=0.2] How did I get here??
+update Bella (default)
 Bella: Ugh...[pause=0.2]I remember nothing.[pause=0.2] Nothing but my name...
+update Bella (question)
 Bella: At least...[pause=0.2]I think its my name?
-Bella: "Bella" sounds right though...
+update Bella (default)
+Bella: "Bella"[pause=0.2] sounds right though...
+update Bella (look)
 Bella: ...
+update Bella (question)
 Bella: I-[pause=0.2]I need to get out of here![pause=0.2] But how?
 leave Bella
 [end_timeline]

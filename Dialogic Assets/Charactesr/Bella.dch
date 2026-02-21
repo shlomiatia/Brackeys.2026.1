@@ -47,6 +47,66 @@
 "scale": 1,
 "scene": "",
 "sound_mood": "Bella Voice"
+},
+"look": {
+"export_overrides": {
+"image": "\"res://Dialogic Assets/Images/bellaLook.PNG\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": "",
+"sound_mood": "Bella Voice"
+},
+"panic": {
+"export_overrides": {
+"image": "\"res://Dialogic Assets/Images/bellaPanic.PNG\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": "",
+"sound_mood": "Bella Voice"
+},
+"question": {
+"export_overrides": {
+"image": "\"res://Dialogic Assets/Images/bellaQuestioning.PNG\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": "",
+"sound_mood": "Bella Voice"
+},
+"sad": {
+"export_overrides": {
+"image": "\"res://Dialogic Assets/Images/bellaSad.PNG\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": "",
+"sound_mood": "Bella Voice"
+},
+"serious": {
+"export_overrides": {
+"image": "\"res://Dialogic Assets/Images/bellaSerious.PNG\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": "",
+"sound_mood": "Bella Voice"
+},
+"shock": {
+"export_overrides": {
+"image": "\"res://Dialogic Assets/Images/bellaShock.PNG\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": "",
+"sound_mood": "Bella Voice"
 }
 },
 &"scale": 1.0

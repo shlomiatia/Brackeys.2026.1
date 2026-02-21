@@ -1,17 +1,23 @@
 join Bella (default) center
-if {level3_seen_masked_creature} == false:
+if {level3_seen_masked_creature} == false:\
+	update Bella (panic)
 	Bella: Oh my![pause=0.2] What is this?!
 	Bella: ...
+	update Bella (question)
 	Bella: It seems...[pause=0.2]passive?
 	set {level3_seen_masked_creature} = true
 
 if {level3_first_interaction_with_man} == true:
 	if {level3_maskedCreaturesKilled} == 0:
+		update Bella (question)
 		Bella: Maybe if I kill it,[pause=0.2] that Masked Man will tell me what I need to know?
+		update Bella (default)
 		Bella: ...
 		Bella: I'm sorry...
 	elif {level3_maskedCreaturesKilled} == 1:
+		update Bella (look)
 		Bella: Another one...
+		update Bella (default)
 		Bella: I should kill this one too.
 	else:
 		Bella: The last one.[pause=0.2] I'm sorry...

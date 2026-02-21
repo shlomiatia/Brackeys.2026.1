@@ -1,5 +1,6 @@
-join Bella (default) center
+join Bella (shock) center
 Bella: This room is slightly different than the last one!
+update Bella (default)
 Bella: I think I'm progressing.
 leave Bella
 [end_timeline]

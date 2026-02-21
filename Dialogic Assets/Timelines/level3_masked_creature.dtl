@@ -2,20 +2,31 @@ join Bella (default) left
 join MaskedMan (default) right
 
 if {level3_first_interaction_with_man} == false:
+	update Bella (panic)
 	Bella: Agh![pause=0.2] Oh my...
 	MaskedMan: Annoying girl,[pause=0.2] get out of my sight.
 	MaskedMan: Your presence pains me gravely.
+	update Bella (look)
 	Bella: How rude...
+	update Bella (serious)
 	Bella: I've come to learn about my past.[pause=0.2] Are you the one who knows that information?
+	update MaskedMan (mad)
 	MaskedMan: Tch.[pause=0.2] You ignore my demands and dare call me 'rude'?
+	update MaskedMan (default)
 	MaskedMan: In life you were such a delightful specimen.[pause=0.2] But without your memory...
+	update MaskedMan (mad)
 	MaskedMan: You're just a pathetic excuse for what you once were.
 	Bella: So you do know.[pause=0.2] Please tell me!
+	update MaskedMan (default)
 	MaskedMan: I will not.[pause=0.2] My stomach churns at the mere sight of you.[pause=0.2] Begone.
+	update Bella (shock)
 	Bella: Surely there's a way to convince you!
 	MaskedMan: Hmm...[pause=0.2] Perhaps if you were to showcase even a glimpse of the ruthless person you were before.
+	update Bella (question)
 	Bella: Ruthless...?
+	update MaskedMan (happy)
 	MaskedMan: Yes.[pause=0.2] It would bring me much joy.
+	update Bella (look)
 	Bella: I suppose I will have to find a way...
 	Bella: I still have this knife...
 	set {level3_first_interaction_with_man} = true
@@ -26,50 +37,74 @@ elif {level3_defeated_small_masked_creature1} == false and {level3_defeated_smal
 else:
 	if {level3_defeated_small_masked_creature1} == true and {level3_told_secret1} == false:
 		MaskedMan: Argh...
+		update MaskedMan (happy)
 		MaskedMan: You decimated my minion on the left.[pause=0.2] How utterly [pause=0.2][i]ruthless[/i].
+		update MaskedMan (default)
 		MaskedMan: Fine,[pause=0.2] I will tell you this.
 		MaskedMan: You were a wonderful liar.[pause=0.2] You could convince a man that he was a cow.
 		MaskedMan: It was really quite a feat.
 		MaskedMan: I would even go as far as to say that you told lies more than truths.
+		update Bella (serious)
 		Bella: So that's why...
 		Bella: I really was a liar.[pause=0.2] And a good one at that.
+		update Bella (shock)
 		Bella: That's terrible.
 		set {level3_told_secret1} = true
 	if {level3_defeated_small_masked_creature2} == true and {level3_told_secret2} == false:
 		MaskedMan: Ugh.[pause=0.2] You destroyed my minion up above.
+		update MaskedMan (happy)
 		MaskedMan: Wonderful...
+		update MaskedMan (default)
 		MaskedMan: I suppose I could tell you this.
 		MaskedMan: You were much like me,[pause=0.2] girl.
 		MaskedMan: Always putting on a mask.[pause=0.2] Always pretending to be something you weren't.
 		MaskedMan: Always figuring out the next way to get exactly what you wanted.
+		update MaskedMan (happy)
 		MaskedMan: It was beautiful.
+		update Bella (shock)
 		Bella: Pretending to be something I'm not?
+		update Bella (look)
 		Bella: It seems even in life,[pause=0.2] I didn't know who I was.[pause=0.2] How could I when I was always pretending to be someone else?
+		update Bella (question)
 		Bella: Why was I like that?[pause=0.2] Why did I need to manipulate people?
 		set {level3_told_secret2} = true
 	if {level3_defeated_small_masked_creature3} == true and {level3_told_secret3} == false:
+		update MaskedMan (happy)
 		MaskedMan: Ah![pause=0.2] You dispatched of my minion to the right!
 		MaskedMan: It was quite beautiful to watch!
+		update MaskedMan (default)
 		MaskedMan: Let me tell you this,[pause=0.2] girl.
 		MaskedMan: You came from a [pause=0.2][i]very[/i][pause=0.2] rich family.[pause=0.2] Those are the best kind.
-		MaskedMan: Being born rich prevented you from being held down by the of chains of[pause=0.2]...ugh[pause=0.2]...'empathy'.
+		MaskedMan: Being born rich prevented you from being held down by the chains of[pause=0.2]...ugh[pause=0.2]...'empathy'.
 		MaskedMan: You treated those the way they deserved.[pause=0.2] But you did so in a way that somehow made you seem [pause=0.2]'good'.
+		update MaskedMan (happy)
 		MaskedMan: It was really quite genius!
+		update MaskedMan (default)
 		MaskedMan: You would've done anything to maintain your status.
 		MaskedMan: From doing whatever you could to become more beautiful.
 		MaskedMan: To spreading lies to tear down others.
+		update Bella (shock)
 		Bella: That's...[pause=0.2] horrible...
 		set {level3_told_secret3} = true
 	if {level3_defeated_small_masked_creature1} == true and {level3_defeated_small_masked_creature2} == true and {level3_defeated_small_masked_creature3} == true:
+		update Bella (look)
 		Bella: I'm not sure I want to know anymore.
+		update Bella (sad)
 		Bella: I...[pause=0.2]I was horrible.
+		update MaskedMan (happy)
 		MaskedMan: You were magnificent!
+		update MaskedMan (mad)
 		MaskedMan: But now?[pause=0.2] You're only a hollow shell of what you once were.
 		Bella: ...
+		update MaskedMan (default)
 		MaskedMan: You don't have to go on.
+		update Bella (look)
 		Bella: I have to.[pause=0.2] I was horrible.
+		update Bella (serious)
 		Bella: And yet...[pause=0.2]I still want to know how I died.
+		update MaskedMan (mad)
 		MaskedMan: Tch.[pause=0.2] Annoying.
+		update MaskedMan (default)
 		MaskedMan: Fine.[pause=0.2] I shall open the way so you can learn more.
 		MaskedMan: Proceed forward,[pause=0.2] and good riddance.
 		set {level3_door_opened} = true

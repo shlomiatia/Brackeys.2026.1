@@ -37,6 +37,26 @@
 "scale": 1,
 "scene": "",
 "sound_mood": "Mask Voice"
+},
+"happy": {
+"export_overrides": {
+"image": "\"res://Dialogic Assets/Images/MaskedManHappy.PNG\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": "",
+"sound_mood": "Mask Voice"
+},
+"mad": {
+"export_overrides": {
+"image": "\"res://Dialogic Assets/Images/MaskedManMad.PNG\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": "",
+"sound_mood": "Mask Voice"
 }
 },
 &"scale": 1.0

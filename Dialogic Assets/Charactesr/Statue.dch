@@ -37,6 +37,26 @@
 "scale": 1,
 "scene": "",
 "sound_mood": "Statue Voice"
+},
+"mad": {
+"export_overrides": {
+"image": "\"res://Dialogic Assets/Images/statueBellaMad.PNG\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": "",
+"sound_mood": "Statue Voice"
+},
+"open": {
+"export_overrides": {
+"image": "\"res://Dialogic Assets/Images/statueBellaOpen.PNG\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": "",
+"sound_mood": "Statue Voice"
 }
 },
 &"scale": 1.0

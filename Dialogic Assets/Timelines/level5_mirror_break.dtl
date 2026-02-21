@@ -1,11 +1,13 @@
-join EyeWoman (default) left
+join EyeWoman (pain) left
 join Bella (default) right
 if {level5_broke_second_mirror} == false
 	EyeWoman: Stop that!!
+	update Bella (look)
 	Bella: ...
 	set {level5_broke_second_mirror} = true
 else:
 	EyeWoman: It burns!!
+	update Bella (look)
 	Bella: ...
 leave --All-- 
 [end_timeline]
