@@ -11,7 +11,7 @@ var _intro_triggered: bool = false
 
 var boss_dia_music = load("res://audio/music/deaths anticipation.mp3")
 var boss_stinger = load("res://audio/music/boss music stinger.mp3")
-#var boss_music
+var boss_music = load("res://audio/music/deaths embrace.mp3")
 
 func _ready() -> void:
 	Dialogic.signal_event.connect(_on_dialogic_signal)
@@ -43,8 +43,7 @@ func _on_dialogic_signal(argument: String) -> void:
 		"level6_yes":
 			ending1()
 		"level6_no":
-			AudioManager.stop_music()
-			AudioManager.play_sfx(boss_stinger)
+			AudioManager.play_music(boss_music)
 			await _pan_camera_to_player()
 			run_label.visible = true
 			death.start_chasing(player)
@@ -61,9 +60,11 @@ func _pan_camera_to_player() -> void:
 func _on_target_interacted(body: Node2D) -> void:
 	if not body is Player:
 		return
+	AudioManager.stop_music()
 	ending2()
 
 func _on_death_caught_player() -> void:
+	AudioManager.stop_music()
 	ending1()
 
 func ending1() -> void:
