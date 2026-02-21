@@ -53,7 +53,7 @@ else:
 		MaskedMan: Let me tell you this,[pause=0.2] girl.
 		MaskedMan: You came from a [pause=0.2][i]very[/i][pause=0.2] rich family.[pause=0.2] Those are the best kind.
 		MaskedMan: Being born rich prevented you from being held down by the of chains of[pause=0.2]...ugh[pause=0.2]...'empathy'.
-		MaskedMan: You treated those the way they deserved.[pause=0.2] But you did so in a way that somehow made you seem 'good'.
+		MaskedMan: You treated those the way they deserved.[pause=0.2] But you did so in a way that somehow made you seem [pause=0.2]'good'.
 		MaskedMan: It was really quite genius!
 		MaskedMan: You would've done anything to maintain your status.
 		MaskedMan: From doing whatever you could to become more beautiful.
@@ -64,7 +64,7 @@ else:
 		Bella: I'm not sure I want to know anymore.
 		Bella: I...[pause=0.2]I was horrible.
 		MaskedMan: You were magnificent!
-		MaskedMan: But now?[pause=0.2] You're only a hollow shell of what you once more.
+		MaskedMan: But now?[pause=0.2] You're only a hollow shell of what you once were.
 		Bella: ...
 		MaskedMan: You don't have to go on.
 		Bella: I have to.[pause=0.2] I was horrible.

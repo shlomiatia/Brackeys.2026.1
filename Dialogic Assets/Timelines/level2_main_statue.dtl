@@ -36,7 +36,7 @@ else:
 	if {collected_letters} == "":
 		join Bella (default) right
 		join Statue (default) left
-		Bella: Go talk to the others.
+		Statue: Go talk to the others.
 		leave --All--
 		[end_timeline]
 	
@@ -45,7 +45,7 @@ else:
 	join Statue (default) left
 	Bella: All the statues emphasize a [color="red"]letter[/color].
 	Statue: Clever...
-	Bella: The important ones I have so far are\:[pause=0.2] {letters_display}. It needs to be a [color="red"]4-letter[/color]
+	Bella: The important ones I have so far are\:[pause=0.2] {letters_display}.[pause=0.2] It needs to be a [color="red"]4-letter[/color] word.
 	Bella: My answer is...\
 	\
 	[i]Available letters\: {letters_display}[/i]

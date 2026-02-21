@@ -1,4 +1,5 @@
 [background arg="res://Assets/Death Section/escapeEnding.PNG" fade="1.0" wait="true"]
+join Bella (defaultNone) center
 
 Bella: I made it...[pause=0.2]I actually made it...
 Bella: Somehow,[pause=0.2] I escaped death.
@@ -7,6 +8,7 @@ Bella: Take revenge?[pause=0.2] Try to live a better life?
 Bella: I don't know yet.
 Bella: All I know is that I'm not staying here.[pause=0.2] I can't accept my death.
 Bella: Not after everything I now know.
-Bella: And maybe I can pay that friend of mine a visit.
+Bella: And maybe I can pay that friend of mine a visit...
 [wait time="3.0"]
+[background arg="#000000ff" fade="1.0" wait="true"]
 [end_timeline]
