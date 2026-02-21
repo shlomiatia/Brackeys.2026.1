@@ -21,7 +21,7 @@ void fragment() {
     //}
     float tile_height_uv = 17.0 * TEXTURE_PIXEL_SIZE.y;
     if (UV.y <= tile_height_uv) {
-        float source_y = UV.y - mod(current_offset, 16) * TEXTURE_PIXEL_SIZE.y;
+        float source_y = UV.y - mod(TIME, 16) * TEXTURE_PIXEL_SIZE.y;
         if (source_y < 0.0) {
             source_y = 16.0 * TEXTURE_PIXEL_SIZE.y + source_y;
         }

@@ -86,16 +86,32 @@ position = Vector2(0, -7)
 shape = SubResource("CircleShape2D_5bli8")
 
 [node name="Mirror" parent="Objects" instance=ExtResource("2_ambn0")]
-position = Vector2(260, 31)
+position = Vector2(302, -42)
+supported_frames = Array[int]([2, 0])
 
 [node name="Mirror2" parent="Objects" instance=ExtResource("2_ambn0")]
-position = Vector2(-280, -138)
+position = Vector2(-296, -83)
+supported_frames = Array[int]([3, 1])
 
 [node name="Mirror3" parent="Objects" instance=ExtResource("2_ambn0")]
-position = Vector2(-270, 50)
+position = Vector2(-169, -10)
+supported_frames = Array[int]([1, 0])
 
 [node name="Mirror4" parent="Objects" instance=ExtResource("2_ambn0")]
-position = Vector2(275, -119)
+position = Vector2(181, 52)
+supported_frames = Array[int]([0, 2])
+
+[node name="Mirror5" parent="Objects" instance=ExtResource("2_ambn0")]
+position = Vector2(-296, 51)
+supported_frames = Array[int]([0, 3])
+
+[node name="Mirror6" parent="Objects" instance=ExtResource("2_ambn0")]
+position = Vector2(-404, -17)
+supported_frames = Array[int]([0, 1])
+
+[node name="Mirror7" parent="Objects" instance=ExtResource("2_ambn0")]
+position = Vector2(264, -158)
+supported_frames = Array[int]([1, 3])
 
 [node name="Exit" type="Node2D" parent="Objects"]
 position = Vector2(0, -479)
