@@ -1,21 +1,23 @@
 if {rope_interacted} == false:
-	if {knife_picked_up} == false:
-		join Bella (question) center
-		Bella: A rope?
-		if {door_interacted} == false:
-			Bella: Why is this here?[pause=0.2] Could it be attached to something?
-		else:
-			Bella: Why is this here?[pause=0.2] Could it be attached to that ball?
-		set {rope_interacted} = true
-		[end_timeline]
+	join Bella (question) center
+	Bella: A rope?
+	if {door_interacted} == false:
+		Bella: Why is this here?[pause=0.2] Could it be attached to something?
 	else:
-		set {rope_interacted} = true
+		Bella: Why is this here?[pause=0.2] Could it be attached to that ball?
+	set {rope_interacted} = true
+elif {door_interacted} == true:
+	join Bella (question) center
+	Bella: Hm...[pause=0.2] This rope could be attached to that ball.
+	if {knife_picked_up} == false:
+		Bella: Perhaps there is something I can do with it?
+else:
+	join Bella (question) center
+	Bella: What is this attached to?
+#	[end_timeline]
 
-if {rope_cut} == true:
-	join Bella (default) center
-	Bella: I don't think there's anything else to do here.
 
-elif {knife_picked_up} == true and {door_interacted} == true:
+if {knife_picked_up} == true and {door_interacted} == true:
 	join Bella (question) center
 	Bella: Maybe I could cut this with the knife I got?
 	
@@ -34,13 +36,6 @@ elif {knife_picked_up} == true and {door_interacted} == true:
 		update Bella (look)
 		Bella: I'm not so sure about this...
 
-elif {door_interacted} == true:
-	join Bella (question) center
-	Bella: Hm...[pause=0.2] This rope could be attached to that ball.
-	Bella: Perhaps there is something I can do with it?
-else:
-	join Bella (question) center
-	Bella: What is this attached to?
 
 leave Bella
 [end_timeline]

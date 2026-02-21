@@ -6,7 +6,7 @@ if {interacted_main_statue} == false:
 		Bella: A statue of me?
 		Statue: We were so virtuous...
 		update Bella (shock)
-		Bella: It talked!
+		Bella: Did it just speak?!
 		set {talked_to_a_statue} = true
 	else:
 		Statue: We were so virtuous...
