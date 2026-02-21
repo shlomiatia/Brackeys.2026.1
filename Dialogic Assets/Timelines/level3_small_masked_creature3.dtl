@@ -4,6 +4,7 @@ if {level3_seen_masked_creature} == false:
 	Bella: Oh my![pause=0.2] What is this?!
 	Bella: ...
 	update Bella (question)
+	Bella: It seems...[pause=0.2]passive?
 	set {level3_seen_masked_creature} = true
 
 if {level3_first_interaction_with_man} == true:
@@ -17,7 +18,7 @@ if {level3_first_interaction_with_man} == true:
 		update Bella (look)
 		Bella: Another one...
 		update Bella (default)
-		Bella: I should kill this one too.
+		Bella: I suppose I'll have to kill this one too.
 	else:
 		Bella: The last one.[pause=0.2] I'm sorry...
 	set {level3_maskedCreaturesKilled} += 1

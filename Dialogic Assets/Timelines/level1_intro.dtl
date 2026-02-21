@@ -16,7 +16,7 @@ Bella: What is this room?[pause=0.2] How did I get here??
 update Bella (default)
 Bella: Ugh...[pause=0.2]I remember nothing.[pause=0.2] Nothing but my name...
 update Bella (question)
-Bella: At least...[pause=0.2]I think its my name?
+Bella: At least...[pause=0.2]I think that's my name?
 update Bella (default)
 Bella: "Bella"[pause=0.2] sounds right though...
 update Bella (look)

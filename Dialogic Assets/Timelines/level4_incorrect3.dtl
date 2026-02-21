@@ -1,6 +1,6 @@
 join Bella (panic) center
 Bella: I'm sure I've been in this room a couple times already!
-Bella: I think I'm getting lost.[pause=0.2] There has to be a way out of here!
+Bella: I think I'm lost.[pause=0.2] There has to be a way out of here!
 update Bella (question)
 Bella: Maybe there's some kind of clue that tells me which way I need to go?
 leave Bella
