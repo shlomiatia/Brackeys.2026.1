@@ -1,6 +1,9 @@
 extends Node2D
 
+const CLOUD_SPEED := 1.0
+
 @onready var player: Player = $Objects/Player
+@onready var clouds_layer: TileMapLayer = $lakeTileMap/CloudsTileMapLayer
 @onready var camera: ShakingCamera = $Objects/Player/ShakingCamera
 @onready var eye_woman: Sprite2D = $Objects/EyeWoman/EyeWomanSprite
 @onready var gaze: Gaze = $Objects/EyeWoman/EyeWomanSprite/Gaze
@@ -11,13 +14,24 @@ extends Node2D
 
 var lake_music = load("res://audio/music/creature with eyes music.mp3")
 var lake_ambi = load("res://audio/sfx/ambi/sfx_ambi_beauty_lake_loop.mp3")
+var _cloud_start_x: float
+var _cloud_wrap_width: float
+
 func _ready() -> void:
+	_cloud_start_x = clouds_layer.position.x
+	var used_rect := clouds_layer.get_used_rect()
+	_cloud_wrap_width = used_rect.size.x * clouds_layer.tile_set.tile_size.x
 	Dialogic.signal_event.connect(_on_dialogic_signal)
 	gaze.all_mirrors_broken.connect(_on_all_mirrors_broken)
 	exit_interactable.interacted.connect(_on_exit_interacted)
 	AudioManager.play_loop_sfx("lake_ambi", lake_ambi, "Ambi")
 	AudioManager.play_music(lake_music)
 	await _start_sequence()
+
+func _process(delta: float) -> void:
+	clouds_layer.position.x -= CLOUD_SPEED * delta
+	if clouds_layer.position.x < _cloud_start_x - _cloud_wrap_width:
+		clouds_layer.position.x += _cloud_wrap_width
 
 func _start_sequence() -> void:
 	Global.can_control = false
