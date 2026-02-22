@@ -2,7 +2,7 @@
 "@path": "res://addons/dialogic/Resources/character.gd",
 "@subpath": NodePath(""),
 &"_translation_id": "",
-&"color": Color(0.96862745, 0.7563113, 0.19215682, 1),
+&"color": Color(0.544508, 0.19299316, 0.96875, 1),
 &"custom_info": {
 "prefix": "",
 "sound_mood_default": "",
@@ -10,10 +10,10 @@
 "Mask Voice": {
 "mode": 2,
 "name": "Mask Voice",
-"pitch_base": 1.0,
+"pitch_base": 0.5,
 "pitch_variance": 0.0,
 "skip_characters": -3.0,
-"sound_path": "res://audio/dialogic/voiceTheron.mp3",
+"sound_path": "res://audio/sfx/voices/sfx_voice_a_pure.mp3",
 "volume_base": 0.0,
 "volume_variance": 0.0
 }

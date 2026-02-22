@@ -13,6 +13,7 @@ shader = ExtResource("4_iy0oy")
 shader_parameter/speed = 0.25
 shader_parameter/intensity = 0.002000000095
 shader_parameter/blur_amount = 0.0
+shader_parameter/modulate_color = Color(1, 1, 1, 1)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iy0oy"]
 texture = ExtResource("4_ej23p")
