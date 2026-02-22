@@ -33,7 +33,7 @@ if {interacted_main_statue} == false:
 	Statue: The truth of who you were lies past this gate.[pause=0.2] For your own safety,[pause=0.2] I cannot.
 	Bella: You must![pause=0.2] I have to know.
 	update Statue (mad)
-	Statue: You fool.[pause=0.2] But that is your choice.
+	Statue: You are a fool.[pause=0.2] But that is your choice.
 	Statue: If you wish to know,[pause=0.2] you must first answer this question\:[pause=0.2] What is it that you valued most in your life?
 	update Bella (shock)
 	Bella: How can I know--?
@@ -61,9 +61,13 @@ else:
 	do Global.format_collected_letters()
 	join Bella (question) right
 	join Statue (default) left
-	Bella: All the statues emphasize a [color="purple"]letter[/color].
-	Statue: Clever...
-	Bella: The important ones I have so far are\:[pause=0.2] {letters_display}.[pause=0.2] It needs to be a [color="purple"]4-letter[/color] word.
+	if {level2_guessed_once} == false:
+		Bella: All the statues emphasize a [color="purple"]letter[/color].
+		Statue: Clever...
+		Bella: The important ones I have so far are\:[pause=0.2] {letters_display}.[pause=0.2] It needs to be a [color="purple"]4-letter[/color] word.
+		set {level2_guessed_once} = true
+	else:
+		Bella: The important letters I have so far are\:[pause=0.2] {letters_display}.[pause=0.2] It needs to be a [color="purple"]4-letter[/color] word.
 	Bella: My answer is...\
 	\
 	[i]Available letters\: {letters_display}[/i]
@@ -88,9 +92,9 @@ else:
 	else:
 		Statue: Ha![pause=0.2] Incorrect~
 		if {bella_suspects_statues} == true:
-			Bella: I have a feeling all these statues aren't giving me the whole truth.
-			Bella: Perhaps that can help me find the answer.
-			Bella: Not the truth,[pause=0.2] but...
+			Bella: [color="purple"]I have a feeling all these statues aren't giving me the whole truth.[/color]
+			Bella: [color="purple"]Perhaps that can help me find the answer.[/color]
+			Bella: [color="purple"]Not the truth,[pause=0.2] but...[/color]
 			set {bella_suspects_statues} = false
 	leave --All--
 	[end_timeline]

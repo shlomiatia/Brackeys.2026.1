@@ -13,7 +13,7 @@ if {level3_first_interaction_with_man} == false:
 	update MaskedMan (mad)
 	MaskedMan: Tch.[pause=0.2] You ignore my demands and dare call me 'rude'?
 	update MaskedMan (default)
-	MaskedMan: In life you were such were delightfully wicked.[pause=0.2] But without your memory...
+	MaskedMan: In life you were so delightfully wicked.[pause=0.2] But without your memory...
 	update MaskedMan (mad)
 	MaskedMan: You're just a pathetic excuse for what you once were.
 	Bella: So you do know.[pause=0.2] Please tell me!
