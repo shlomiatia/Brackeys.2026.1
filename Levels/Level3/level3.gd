@@ -25,6 +25,7 @@ func _ready() -> void:
 	_setup_water_lights()
 	await fade.fade_in()
 	await DialogDisplayer.start("level3_enter_sewers")
+	exit_interactable.add_to_group("interactables")
 
 
 func _setup_water_lights() -> void:
@@ -77,6 +78,8 @@ func _on_dialogic_signal(argument: String) -> void:
 
 
 func _on_exit_interacted() -> void:
+	AudioManager.stop_loop_sfx("sewer")
+	AudioManager.stop_music()
 	Global.change_scene("res://Levels/Level4/maze_entrance_tile_map.tscn")
 
 
