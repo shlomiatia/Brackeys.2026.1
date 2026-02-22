@@ -12,7 +12,8 @@ var _intro_triggered: bool = false
 var boss_dia_music = load("res://audio/music/deaths anticipation.mp3")
 var boss_stinger = load("res://audio/music/boss music stinger.mp3")
 var boss_music = load("res://audio/music/deaths embrace.mp3")
-
+var bella_accept_music = load("res://audio/music/bella accept music.wav")
+var bella_escape_music = load("res://audio/music/bella  escape music loop.wav")
 func _ready() -> void:
 	Dialogic.signal_event.connect(_on_dialogic_signal)
 	target_area.body_entered.connect(_on_target_interacted)
@@ -41,6 +42,7 @@ func _on_intro_area_body_entered(body: Node2D) -> void:
 func _on_dialogic_signal(argument: String) -> void:
 	match argument:
 		"level6_yes":
+			AudioManager.play_music(bella_accept_music)
 			ending1()
 		"level6_no":
 			AudioManager.play_music(boss_music)
@@ -64,7 +66,7 @@ func _on_target_interacted(body: Node2D) -> void:
 	ending2()
 
 func _on_death_caught_player() -> void:
-	AudioManager.stop_music()
+	AudioManager.play_music(bella_accept_music)
 	ending1()
 
 func ending1() -> void:
@@ -73,6 +75,7 @@ func ending1() -> void:
 	Dialogic.start("level6_ending1")
 
 func ending2() -> void:
+	AudioManager.play_music(bella_escape_music)
 	death.chasing = false
 	Global.can_control = false
 	Global.ending_name = "The Escape Ending"

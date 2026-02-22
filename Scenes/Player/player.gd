@@ -1,6 +1,6 @@
 class_name Player extends CharacterBody2D
 
-const SPEED: float = 100.0
+const SPEED: float = 500.0
 
 var speed_modifier: float = 0.0
 
