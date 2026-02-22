@@ -57,7 +57,7 @@ func _try_interact() -> void:
 	var overlapping_bodies = area_2d.get_overlapping_bodies()
 	for body in overlapping_bodies:
 		if body.is_in_group("interactables"):
-			AudioManager.play_sfx(interact_sfx, "SFX", -12.0)
+			AudioManager.play_sfx(interact_sfx, "SFX", -6.0)
 			body.interact()
 			break
 

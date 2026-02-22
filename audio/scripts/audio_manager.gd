@@ -40,7 +40,7 @@ func play_music(stream: AudioStream, fade_time := 1.0):
 	music_tween = create_tween()
 	music_tween.tween_property(music_player, "volume_db", 0, fade_time)
 
-func stop_music(fade_time := 1.0):
+func stop_music(fade_time := 0.5):
 	if not music_player.playing:
 		return
 

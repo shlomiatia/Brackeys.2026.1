@@ -21,6 +21,8 @@ var _can_click: bool = true
 var _time_since_origin: float = 0.0
 var _mask_original_texture: Texture2D
 
+var mask_break_sfx = load("res://audio/sfx/interactions/sfx_mask_break.wav")
+var mask_miss = load("res://audio/sfx/interactions/sfx_mask_miss.wav")
 func _ready() -> void:
 	_mask_original_texture = mask.texture
 
@@ -70,6 +72,7 @@ func _on_click() -> void:
 		stop()
 		mask.texture = MASK_CRACKED
 		animated_sprite.play("default")
+		AudioManager.play_sfx(mask_break_sfx)
 		await animated_sprite.animation_finished
 		_flash_tween = create_tween()
 		_flash_tween.tween_property(self , "modulate:a", 0.0, fadeout_duration)
@@ -80,6 +83,7 @@ func _on_click() -> void:
 	else:
 		_can_click = false
 		mask.modulate = Color.RED
+		AudioManager.play_sfx(mask_miss)
 		_flash_tween = create_tween()
 		_flash_tween.tween_property(mask, "modulate", Color.WHITE, flash_duration)
 		await _flash_tween.finished
