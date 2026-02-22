@@ -3,7 +3,7 @@ if {door_interacted} == false:
 	Bella: A door?[pause=0.2] Maybe it's the way out!
 	update Bella (default)
 	
-	Try to open it?
+	Bella: Try to open it?
 	- Yes
 		update Bella (question)
 		Bella: It's locked...

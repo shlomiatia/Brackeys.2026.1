@@ -4,7 +4,7 @@ Bella: ...
 update Bella (serious)
 Bella: This might be the only way out...
 
-Jump in?
+Bella: Jump in?
 
 - Yes
 	update Bella (look)
@@ -13,5 +13,5 @@ Jump in?
 - No
 	update Bella (panic)
 	Bella: I-[pause=0.2]I can't...
-leave Bella 
+leave Bella
 [end_timeline]
