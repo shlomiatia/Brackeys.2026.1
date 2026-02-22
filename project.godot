@@ -77,6 +77,7 @@ variables={
 "interacted_main_statue": false,
 "knife_picked_up": false,
 "letters_display": "",
+"level2_guessed_once": false,
 "level3_defeated_small_masked_creature1": false,
 "level3_defeated_small_masked_creature2": false,
 "level3_defeated_small_masked_creature3": false,

@@ -200,7 +200,7 @@ stream_6/stream = ExtResource("10_r5xpd")
 script = ExtResource("1_g2els")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -4)
+position = Vector2(0, -5)
 shape = SubResource("CircleShape2D_a3d8c")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -208,7 +208,8 @@ y_sort_enabled = true
 texture_filter = 1
 position = Vector2(0, 1)
 sprite_frames = SubResource("SpriteFrames_ke2ow")
-animation = &"idleFr"
+animation = &"walkFr"
+frame_progress = 0.7191307
 offset = Vector2(0, -17)
 
 [node name="Area2D" type="Area2D" parent="."]

@@ -7,25 +7,25 @@ Death: I go by many names.[pause=0.2] Most humans call me [pause=0.2]'Death'.
 update Bella (panic)
 Bella: Death?!
 Death: You've travelled far.
-Death: Even without your memory,[pause=0.2] you still retain your determination.[pause=0.2] Yet,[pause=0.2] its focused on something less...[pause=0.2]negative.
-Death: You remember now?
+Death: Even without your memory,[pause=0.2] you still retain your determination.[pause=0.2] Yet,[pause=0.2] its focused on something less...[pause=0.2]manipulative and cruel.
+Death: Do you remember now?
 update Bella (sad)
 Bella: I-[pause=0.2]I do...[pause=0.2]I remember it all.
-update Bella (look)
+leave --All--
+[background arg="res://Assets/Death Section/evilBella.PNG" fade="1.0" wait="true"]
 Bella: I am Bella.[pause=0.2] I was born into a rich family, raised in privilege and entitlement.
 Bella: I did whatever it took to get what I wanted.[pause=0.2] It didn't matter what it was.[pause=0.2] Lies,[pause=0.2] deceit,[pause=0.2] manipulation.[pause=0.2] Whatever it took.
-update Bella (serious)
 Bella: Above all,[pause=0.2] I valued my status,[pause=0.2] my beauty.
-update Bella (look)
 Bella: I had a best friend.[pause=0.2] She was just like me.
-update Bella (default)
 Bella: For the longest time,[pause=0.2] I didn't trust anyone.[pause=0.2] Not even her.[pause=0.2] But I began to grow fond of her.
-update Bella (look)
+[background arg="res://Assets/Death Section/poisonedBella.PNG" fade="1.0" wait="true"]
 Bella: I let down my guard,[pause=0.2] and she could tell I was growing soft.
-update Bella (sad)
 Bella: She took advantage of that...[pause=0.2]and poisoned me with [color="purple"]Belladonna[/color].
 Bella: She told me...[pause=0.2]it would make me more beautiful.[pause=0.2] But I just felt sick and dizzy.
 Bella: She told me to go lie down.[pause=0.2] I just barely made it to bed before I passed out...[pause=0.2]and away.
+[background fade="1.0"]
+join Death (default) left 
+join Bella (sad) right
 Death: That is correct.
 Death: And now that you know,[pause=0.2] are you ready to accept it and pass on?
 update Bella (default)
