@@ -71,7 +71,7 @@ func restore_music(time := 0.5):
 # SFX 
 
 func play_sfx(stream: AudioStream, bus := "SFX", volume_db := 0.0, pitch := 1.0):
-	var player := AudioStreamPlayer2D.new()
+	var player := AudioStreamPlayer.new()
 	
 	player.stream = stream
 	player.bus = bus

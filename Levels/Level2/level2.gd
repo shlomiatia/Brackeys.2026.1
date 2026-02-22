@@ -32,4 +32,6 @@ func _on_dialogic_signal(argument: String) -> void:
 			await tween.finished
 			pipe_conversation.interactable_disabled = false
 		"level2_pipe_entered":
+			AudioManager.stop_loop_sfx("hole_ambience")
+			AudioManager.stop_music()
 			Global.change_scene("res://Levels/Level3/Level3.tscn")
